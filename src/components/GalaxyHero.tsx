@@ -15,6 +15,7 @@ export default function GalaxyHero({
   height?: string;
 }) {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
   const [shouldLoad, setShouldLoad] = useState(false);
   const [active, setActive] = useState(true);
   const { BASE_URL } = import.meta.env;
@@ -36,6 +37,33 @@ export default function GalaxyHero({
     return () => observer.disconnect();
   }, [shouldLoad]);
 
+  // The interactive WebGL galaxy (same-origin iframe) consumes wheel events for
+  // its internal zoom, so the page never scrolls while the cursor is over the
+  // hero. We bridge wheel events from inside the iframe back out to the parent
+  // page so normal scrolling always works. Drag-to-orbit still works as before.
+  useEffect(() => {
+    const iframe = iframeRef.current;
+    if (!shouldLoad || !iframe) return;
+
+    let cleanupWheel: (() => void) | null = null;
+    const onLoad = () => {
+      const win = iframe.contentWindow;
+      if (!win) return;
+      const target = win.document.body || win.document.documentElement;
+      const onWheel = (e: WheelEvent) => {
+        e.preventDefault();
+        window.scrollBy({ top: e.deltaY || e.deltaMode, behavior: "auto" });
+      };
+      target.addEventListener("wheel", onWheel, { passive: false });
+      cleanupWheel = () => target.removeEventListener("wheel", onWheel);
+    };
+    iframe.addEventListener("load", onLoad);
+    return () => {
+      iframe.removeEventListener("load", onLoad);
+      if (cleanupWheel) cleanupWheel();
+    };
+  }, [shouldLoad]);
+
   return (
     <div
       ref={sectionRef}
@@ -44,6 +72,7 @@ export default function GalaxyHero({
     >
       {shouldLoad ? (
         <iframe
+          ref={iframeRef}
           src={`${BASE_URL}galaxy/index.html`}
           title="OrbitX Interactive Galaxy"
           className="absolute inset-0 w-full h-full border-0"
