@@ -357,14 +357,14 @@ export default function DiscussionsView({ user }: { user: UserData }) {
   return (
     <div className="max-w-5xl mx-auto space-y-8 pb-20 relative min-h-screen" dir={isAr ? "rtl" : "ltr"}>
       {/* Background ambient gradient */}
-      <div className="absolute top-0 left-0 right-0 h-96 bg-gradient-to-b from-panel/10 to-transparent -z-10 rounded-3xl" />
+      <div className="absolute top-0 left-0 right-0 h-96 bg-gradient-to-b from-indigo-900/10 to-transparent -z-10 rounded-3xl" />
 
       {/* Header section */}
       {!selectedDiscussion && (
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 sticky top-0 z-20 bg-space-dark/80 backdrop-blur-md p-4 rounded-3xl shadow-xl shadow-black/5 border border-white/5">
           <div className="flex items-center gap-4 w-full md:w-auto">
-            <h2 className="text-3xl font-black flex items-center gap-3 bg-clip-text text-transparent bg-gradient-to-r from-violet/85 to-violet/85">
-              <MessageCircle className="w-8 h-8 text-violet" />
+            <h2 className="text-3xl font-black flex items-center gap-3 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400">
+              <MessageCircle className="w-8 h-8 text-indigo-400" />
               {isAr ? "النقاشات" : "Discussions"}
             </h2>
           </div>
@@ -375,13 +375,13 @@ export default function DiscussionsView({ user }: { user: UserData }) {
               placeholder={isAr ? "ابحث في النقاشات..." : "Search discussions..."}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className={cn("bg-black/40 border border-white/10 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-violet/40 w-full md:w-64 transition-all", isAr ? "text-right" : "text-left")}
+              className={cn("bg-black/40 border border-white/10 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-indigo-400 w-full md:w-64 transition-all", isAr ? "text-right" : "text-left")}
               dir={isAr ? "rtl" : "ltr"}
             />
             {!user.isGuest && (
               <button
                 onClick={() => setIsCreating(!isCreating)}
-                className="px-5 py-2.5 bg-violet hover:bg-violet/80 rounded-xl font-bold flex items-center gap-2 transition-all shadow-lg shadow-violet/20 whitespace-nowrap"
+                className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 rounded-xl font-bold flex items-center gap-2 transition-all shadow-lg shadow-indigo-900/20 whitespace-nowrap"
               >
                 {isCreating ? <X size={18} /> : <Plus size={18} />}
                 <span className="hidden sm:inline">
@@ -402,7 +402,7 @@ export default function DiscussionsView({ user }: { user: UserData }) {
               "px-4 py-1.5 rounded-full transition-all border",
               sortBy === "newest"
                 ? "bg-white/10 border-white/20 text-white"
-                : "border-transparent text-white/50 hover:text-white/70",
+                : "border-transparent text-gray-500 hover:text-gray-300",
             )}
           >
             {isAr ? "الأحدث" : "Latest"}
@@ -412,8 +412,8 @@ export default function DiscussionsView({ user }: { user: UserData }) {
             className={cn(
               "px-4 py-1.5 rounded-full flex items-center gap-1.5 transition-all border",
               sortBy === "trending"
-                ? "bg-gold/10 border-gold/20 text-gold"
-                : "border-transparent text-white/50 hover:text-white/70",
+                ? "bg-red-500/10 border-red-500/20 text-red-400"
+                : "border-transparent text-gray-500 hover:text-gray-300",
             )}
           >
             <Flame size={14} />
@@ -428,9 +428,9 @@ export default function DiscussionsView({ user }: { user: UserData }) {
             initial={{ opacity: 0, height: 0, y: -20 }}
             animate={{ opacity: 1, height: "auto", y: 0 }}
             exit={{ opacity: 0, height: 0, y: -20 }}
-            className="p-6 md:p-8 rounded-3xl bg-gradient-to-b from-[#090b1f] to-space-dark shadow-xl shadow-violet/10 border border-violet/20 space-y-5 overflow-hidden"
+            className="p-6 md:p-8 rounded-3xl bg-gradient-to-b from-[#101223] to-space-dark shadow-xl shadow-indigo-900/10 border border-indigo-500/20 space-y-5 overflow-hidden"
           >
-            <h3 className={cn("text-xl font-bold text-violet/90", isAr ? "text-right" : "text-left")}>
+            <h3 className={cn("text-xl font-bold text-indigo-300", isAr ? "text-right" : "text-left")}>
               {isAr ? "بدء موضوع جديد" : "Start a new post"}
             </h3>
 
@@ -440,13 +440,13 @@ export default function DiscussionsView({ user }: { user: UserData }) {
                 placeholder={isAr ? "عنوان الموضوع..." : "Discussion subject..."}
                 value={newTitle}
                 onChange={(e) => setNewTitle(e.target.value)}
-                className={cn("flex-1 bg-black/40 border border-violet/30 rounded-xl px-4 py-3 focus:outline-none focus:ring-1 focus:ring-violet/40 transition-all font-bold placeholder:font-normal placeholder:text-white/45", isAr ? "text-right" : "text-left")}
+                className={cn("flex-1 bg-black/40 border border-indigo-500/30 rounded-xl px-4 py-3 focus:outline-none focus:ring-1 focus:ring-indigo-400 transition-all font-bold placeholder:font-normal placeholder:text-gray-600", isAr ? "text-right" : "text-left")}
                 dir={isAr ? "rtl" : "ltr"}
               />
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className={cn("bg-black/40 border border-white/10 rounded-xl px-4 py-3 focus:outline-none text-sm text-white/70 w-32", isAr ? "text-right" : "text-left")}
+                className={cn("bg-black/40 border border-white/10 rounded-xl px-4 py-3 focus:outline-none text-sm text-gray-300 w-32", isAr ? "text-right" : "text-left")}
                 dir={isAr ? "rtl" : "ltr"}
               >
                 <option value="عام">{isAr ? "عام" : "General"}</option>
@@ -460,7 +460,7 @@ export default function DiscussionsView({ user }: { user: UserData }) {
               placeholder={isAr ? "اكتب ما يدور في ذهنك هنا..." : "Write down what's on your mind here..."}
               value={newContent}
               onChange={(e) => setNewContent(e.target.value)}
-              className={cn("w-full bg-black/40 border border-white/10 rounded-xl px-4 py-4 min-h-[140px] focus:outline-none focus:ring-1 focus:ring-violet/40 transition-all resize-y", isAr ? "text-right" : "text-left")}
+              className={cn("w-full bg-black/40 border border-white/10 rounded-xl px-4 py-4 min-h-[140px] focus:outline-none focus:ring-1 focus:ring-indigo-400 transition-all resize-y", isAr ? "text-right" : "text-left")}
               dir={isAr ? "rtl" : "ltr"}
             />
 
@@ -468,7 +468,7 @@ export default function DiscussionsView({ user }: { user: UserData }) {
               <button
                 onClick={handleCreateDiscussion}
                 disabled={!newTitle.trim() || !newContent.trim()}
-                className="px-8 py-3 bg-gradient-to-r from-violet to-violet rounded-xl font-bold hover:scale-105 active:scale-95 transition-all text-white disabled:opacity-50 disabled:hover:scale-100 flex items-center gap-2"
+                className="px-8 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl font-bold hover:scale-105 active:scale-95 transition-all text-white disabled:opacity-50 disabled:hover:scale-100 flex items-center gap-2"
               >
                 <Rocket size={18} />
                 {isAr ? "نشر الان" : "Publish Now"}
@@ -488,15 +488,15 @@ export default function DiscussionsView({ user }: { user: UserData }) {
           >
             <button
               onClick={() => setSelectedDiscussion(null)}
-              className={cn("text-white/60 hover:text-white font-bold flex items-center gap-2 transition-colors bg-space-dark px-4 py-2 rounded-xl border border-white/5 w-max", isAr ? "flex-row" : "flex-row-reverse")}
+              className={cn("text-gray-400 hover:text-white font-bold flex items-center gap-2 transition-colors bg-space-dark px-4 py-2 rounded-xl border border-white/5 w-max", isAr ? "flex-row" : "flex-row-reverse")}
             >
               {isAr ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
               {isAr ? "العودة للساحة" : "Back to Forum"}
             </button>
 
-            <div className="p-6 md:p-8 rounded-3xl bg-[#090b1f] shadow-2xl shadow-black/40 border border-white/10 space-y-6 relative overflow-hidden">
+            <div className="p-6 md:p-8 rounded-3xl bg-[#0e1021] shadow-2xl shadow-black/40 border border-white/10 space-y-6 relative overflow-hidden">
               {/* Decorative elements */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-violet/10 blur-3xl rounded-full pointer-events-none" />
+              <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 blur-3xl rounded-full pointer-events-none" />
 
               <div className={cn("flex items-start justify-between relative z-10", isAr ? "flex-row text-right" : "flex-row-reverse text-left")}>
                 <div className={cn("flex items-center gap-4", isAr ? "flex-row" : "flex-row-reverse")}>
@@ -505,7 +505,7 @@ export default function DiscussionsView({ user }: { user: UserData }) {
                       selectedDiscussion.userPhoto ||
                       `https://api.dicebear.com/7.x/bottts/svg?seed=${selectedDiscussion.userId}`
                     }
-                    className="w-14 h-14 rounded-2xl border-2 border-violet/20 shadow-lg"
+                    className="w-14 h-14 rounded-2xl border-2 border-indigo-500/20 shadow-lg"
                     referrerPolicy="no-referrer"
                     alt={selectedDiscussion.userName}
                   />
@@ -513,7 +513,7 @@ export default function DiscussionsView({ user }: { user: UserData }) {
                     <p className="font-bold text-lg text-white">
                       {selectedDiscussion.userName}
                     </p>
-                    <p className="text-xs text-white/60 font-mono">
+                    <p className="text-xs text-gray-400 font-mono">
                       {selectedDiscussion.timestamp &&
                       typeof (selectedDiscussion.timestamp as any).toDate ===
                         "function"
@@ -526,7 +526,7 @@ export default function DiscussionsView({ user }: { user: UserData }) {
                 </div>
 
                 <div className="flex gap-2">
-                  <span className="px-3 py-1 bg-white/5 rounded-full text-xs text-violet/90 font-medium border border-violet/10 flex items-center gap-1">
+                  <span className="px-3 py-1 bg-white/5 rounded-full text-xs text-indigo-300 font-medium border border-indigo-500/10 flex items-center gap-1">
                     <Hash size={12} />
                     {((selectedCategory) => {
                       if (selectedCategory === "عام") return isAr ? "عام" : "General";
@@ -543,16 +543,16 @@ export default function DiscussionsView({ user }: { user: UserData }) {
                 {selectedDiscussion.title}
               </h3>
 
-              <div className={cn("w-12 h-1 bg-violet/50 rounded-full", isAr ? "ml-auto" : "mr-auto")} />
+              <div className={cn("w-12 h-1 bg-indigo-500/50 rounded-full", isAr ? "ml-auto" : "mr-auto")} />
 
               <p
-                className={cn("text-white/80 leading-relaxed relative z-10 text-lg md:text-xl whitespace-pre-wrap font-medium", isAr ? "text-right" : "text-left")}
+                className={cn("text-gray-200 leading-relaxed relative z-10 text-lg md:text-xl whitespace-pre-wrap font-medium", isAr ? "text-right" : "text-left")}
                 dir={isAr ? "rtl" : "ltr"}
               >
                 {selectedDiscussion.content}
               </p>
 
-              <div className="flex items-center justify-between pt-6 mt-6 border-t border-white/5 text-sm text-white/50">
+              <div className="flex items-center justify-between pt-6 mt-6 border-t border-white/5 text-sm text-gray-500">
                 <div className="flex items-center gap-4">
                   {!user.isGuest && (
                     <button
@@ -562,8 +562,8 @@ export default function DiscussionsView({ user }: { user: UserData }) {
                         ((selectedDiscussion as any).likedBy || []).includes(
                           user.uid,
                         )
-                          ? "text-violet hover:text-violet"
-                          : "text-white/60 hover:text-violet",
+                          ? "text-pink-500 hover:text-pink-400"
+                          : "text-gray-400 hover:text-pink-400",
                       )}
                     >
                       <Heart
@@ -572,7 +572,7 @@ export default function DiscussionsView({ user }: { user: UserData }) {
                           ((selectedDiscussion as any).likedBy || []).includes(
                             user.uid,
                           )
-                            ? "fill-violet"
+                            ? "fill-pink-500"
                             : ""
                         }
                       />
@@ -598,7 +598,7 @@ export default function DiscussionsView({ user }: { user: UserData }) {
                         selectedDiscussion.userId,
                       );
                     }}
-                    className="text-gold/70 hover:text-gold transition-colors flex items-center gap-1"
+                    className="text-red-500/70 hover:text-red-400 transition-colors flex items-center gap-1"
                   >
                     <Trash2 size={16} />
                     <span className="hidden sm:inline">{isAr ? "حذف" : "Delete"}</span>
@@ -607,7 +607,7 @@ export default function DiscussionsView({ user }: { user: UserData }) {
               </div>
             </div>
 
-            <div className="space-y-4 pr-4 md:pr-12 relative before:content-[''] before:absolute before:right-0 before:top-4 before:bottom-0 before:w-0.5 before:bg-gradient-to-b before:from-violet/50 before:to-transparent">
+            <div className="space-y-4 pr-4 md:pr-12 relative before:content-[''] before:absolute before:right-0 before:top-4 before:bottom-0 before:w-0.5 before:bg-gradient-to-b before:from-indigo-500/50 before:to-transparent">
               {repliesLoading ? (
                 <div className="space-y-4">
                   {[1, 2, 3].map((i) => (
@@ -623,7 +623,7 @@ export default function DiscussionsView({ user }: { user: UserData }) {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     key={reply.id}
-                    className="p-5 rounded-3xl bg-[#090b1f]/80 shadow-md border border-white/5 space-y-3 ms-auto max-w-[95%] relative before:content-[''] before:absolute before:-right-4 md:before:-right-12 before:top-8 before:w-4 md:before:w-12 before:h-0.5 before:bg-violet/30"
+                    className="p-5 rounded-3xl bg-[#0e1021]/80 shadow-md border border-white/5 space-y-3 ms-auto max-w-[95%] relative before:content-[''] before:absolute before:-right-4 md:before:-right-12 before:top-8 before:w-4 md:before:w-12 before:h-0.5 before:bg-indigo-500/30"
                   >
                     <div className={cn("flex items-center justify-between", isAr ? "flex-row" : "flex-row-reverse")}>
                       <div className={cn("flex items-center gap-3", isAr ? "flex-row" : "flex-row-reverse")}>
@@ -635,12 +635,12 @@ export default function DiscussionsView({ user }: { user: UserData }) {
                           className="w-8 h-8 rounded-full border border-white/10"
                           referrerPolicy="no-referrer"
                         />
-                        <span className="font-bold text-sm text-white/80">
+                        <span className="font-bold text-sm text-gray-200">
                           {reply.userName}
                         </span>
                       </div>
                       <div className={cn("flex items-center gap-3", isAr ? "flex-row" : "flex-row-reverse")}>
-                        <span className="text-xs text-white/50 font-mono">
+                        <span className="text-xs text-gray-500 font-mono">
                           {reply.timestamp &&
                           typeof (reply.timestamp as any).toDate === "function"
                             ? (reply.timestamp as any)
@@ -652,7 +652,7 @@ export default function DiscussionsView({ user }: { user: UserData }) {
                           reply.userId === user.uid) && (
                           <button
                             onClick={() => handleDeleteReply(reply.id)}
-                            className="text-white/45 hover:text-gold transition-colors cursor-pointer"
+                            className="text-gray-600 hover:text-red-500 transition-colors cursor-pointer"
                           >
                             <Trash2 size={14} />
                           </button>
@@ -660,7 +660,7 @@ export default function DiscussionsView({ user }: { user: UserData }) {
                       </div>
                     </div>
                     <p
-                      className={cn("text-base text-white/70 leading-relaxed whitespace-pre-wrap", isAr ? "text-right" : "text-left")}
+                      className={cn("text-base text-gray-300 leading-relaxed whitespace-pre-wrap", isAr ? "text-right" : "text-left")}
                       dir={isAr ? "rtl" : "ltr"}
                     >
                       {reply.text}
@@ -672,16 +672,16 @@ export default function DiscussionsView({ user }: { user: UserData }) {
 
             <div className="sticky bottom-4 z-20">
               {user.isGuest ? (
-                <div className={cn("p-4 bg-[#090b1f]/90 backdrop-blur-xl border border-violet/20 rounded-3xl shadow-2xl shadow-black/50 flex items-center gap-3", isAr ? "flex-row" : "flex-row-reverse")}>
-                  <Lock className="w-4 h-4 text-violet shrink-0" />
-                  <p className="text-sm text-violet/80 font-medium">
+                <div className={cn("p-4 bg-[#0e1021]/90 backdrop-blur-xl border border-indigo-500/20 rounded-3xl shadow-2xl shadow-black/50 flex items-center gap-3", isAr ? "flex-row" : "flex-row-reverse")}>
+                  <Lock className="w-4 h-4 text-indigo-400 shrink-0" />
+                  <p className="text-sm text-indigo-200/80 font-medium">
                     {isAr
                       ? "أنت في وضع المشاهدة — النقاشات للقراءة فقط. سجّل الدخول للمشاركة."
                       : "You're in guest mode — discussions are read-only. Sign in to participate."}
                   </p>
                 </div>
               ) : (
-                <div className={cn("relative p-2 bg-[#090b1f]/90 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl flex gap-2 w-full mx-auto shadow-black/50", isAr ? "flex-row" : "flex-row-reverse")}>
+                <div className={cn("relative p-2 bg-[#0e1021]/90 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl flex gap-2 w-full mx-auto shadow-black/50", isAr ? "flex-row" : "flex-row-reverse")}>
                   <input
                     type="text"
                     placeholder={isAr ? "أكتب ردك هنا..." : "Write your reply..."}
@@ -693,13 +693,13 @@ export default function DiscussionsView({ user }: { user: UserData }) {
                         handleSendReply();
                       }
                     }}
-                    className={cn("flex-1 bg-transparent px-4 py-3 focus:outline-none text-white placeholder-white/50", isAr ? "text-right" : "text-left")}
+                    className={cn("flex-1 bg-transparent px-4 py-3 focus:outline-none text-white placeholder-gray-500", isAr ? "text-right" : "text-left")}
                     dir={isAr ? "rtl" : "ltr"}
                   />
                   <button
                     onClick={handleSendReply}
                     disabled={!newReply.trim()}
-                    className="px-6 bg-violet/80 hover:bg-violet rounded-2xl font-bold transition-all disabled:opacity-50 disabled:hover:bg-violet/80 flex items-center justify-center flex-shrink-0"
+                    className="px-6 bg-indigo-500 hover:bg-indigo-600 rounded-2xl font-bold transition-all disabled:opacity-50 disabled:hover:bg-indigo-500 flex items-center justify-center flex-shrink-0"
                   >
                     {isAr ? "إرسال" : "Send"}
                   </button>
@@ -720,17 +720,17 @@ export default function DiscussionsView({ user }: { user: UserData }) {
               </div>
             ) : filteredDiscussions.length === 0 ? (
               <div className="py-24 text-center flex flex-col items-center justify-center gap-4 bg-space-dark/50 rounded-3xl border border-dashed border-white/10 mx-auto max-w-lg">
-                <MessageCircle className="w-16 h-16 text-white/45" />
-                <p className="text-xl text-white/60 font-bold">
+                <MessageCircle className="w-16 h-16 text-gray-600" />
+                <p className="text-xl text-gray-400 font-bold">
                   {isAr ? "الساحة صامتة اليوم" : "The forum is quiet today"}
                 </p>
-                <p className="text-white/50 text-sm">
+                <p className="text-gray-500 text-sm">
                   {isAr ? "كن أول من يفتح نقاشاً مثيراً للاهتمام!" : "Be the first to start an exciting discussion!"}
                 </p>
                 {!user.isGuest && (
                   <button
                     onClick={() => setIsCreating(true)}
-                    className="mt-4 px-6 py-2 bg-violet/20 text-violet rounded-xl hover:bg-violet/30 transition-all font-bold"
+                    className="mt-4 px-6 py-2 bg-indigo-500/20 text-indigo-400 rounded-xl hover:bg-indigo-500/30 transition-all font-bold"
                   >
                     {isAr ? "إبدأ نقاشاً" : "Start a discussion"}
                   </button>
@@ -744,9 +744,9 @@ export default function DiscussionsView({ user }: { user: UserData }) {
                   transition={{ delay: index * 0.05 }}
                   key={disc.id}
                   onClick={() => setSelectedDiscussion(disc)}
-                  className="p-5 md:p-6 rounded-3xl bg-[#090b1f] border border-white/5 hover:border-violet/30 hover:bg-[#090b1f] transition-all cursor-pointer group shadow-sm hover:shadow-xl hover:shadow-violet/20 relative"
+                  className="p-5 md:p-6 rounded-3xl bg-[#0e1021] border border-white/5 hover:border-indigo-500/30 hover:bg-[#121528] transition-all cursor-pointer group shadow-sm hover:shadow-xl hover:shadow-indigo-900/20 relative"
                 >
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-violet to-violet rounded-l-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-500 to-purple-500 rounded-l-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
 
                   <div className={cn("flex flex-col items-start justify-between gap-4", isAr ? "md:flex-row" : "md:flex-row-reverse")}>
                     {/* User Info & Category */}
@@ -761,10 +761,10 @@ export default function DiscussionsView({ user }: { user: UserData }) {
                       />
                       <div className={isAr ? "text-right" : "text-left"}>
                         <div className={cn("flex items-center gap-2", isAr ? "justify-start" : "justify-start")}>
-                          <p className="font-bold text-sm text-white/80">
+                          <p className="font-bold text-sm text-gray-200">
                             {disc.userName}
                           </p>
-                          <span className="px-2 py-0.5 bg-white/5 rounded text-[10px] text-white/60 w-max">
+                          <span className="px-2 py-0.5 bg-white/5 rounded text-[10px] text-gray-400 w-max">
                             {((selectedCategory) => {
                               if (selectedCategory === "عام") return isAr ? "عام" : "General";
                               if (selectedCategory === "دراسة") return isAr ? "دراسة" : "Study";
@@ -774,7 +774,7 @@ export default function DiscussionsView({ user }: { user: UserData }) {
                             })((disc as any).category || "عام")}
                           </span>
                         </div>
-                        <p className="text-[10px] text-white/50 font-mono">
+                        <p className="text-[10px] text-gray-500 font-mono">
                           {disc.timestamp &&
                           typeof (disc.timestamp as any).toDate === "function"
                             ? (disc.timestamp as any)
@@ -787,11 +787,11 @@ export default function DiscussionsView({ user }: { user: UserData }) {
 
                     {/* Title & Stats */}
                     <div className={cn("flex-1 flex flex-col", isAr ? "text-right items-end" : "text-left items-start")}>
-                      <h3 className="text-lg md:text-xl font-bold text-white group-hover:text-violet/90 transition-colors line-clamp-1 mb-2">
+                      <h3 className="text-lg md:text-xl font-bold text-white group-hover:text-indigo-300 transition-colors line-clamp-1 mb-2">
                         {disc.title}
                       </h3>
                       <p
-                        className={cn("text-sm text-white/60 line-clamp-2 md:w-3/4 mb-4", isAr ? "text-right" : "text-left")}
+                        className={cn("text-sm text-gray-400 line-clamp-2 md:w-3/4 mb-4", isAr ? "text-right" : "text-left")}
                         dir={isAr ? "rtl" : "ltr"}
                       >
                         {disc.content}
@@ -800,8 +800,8 @@ export default function DiscussionsView({ user }: { user: UserData }) {
                       <div className={cn("flex gap-4 items-center w-full justify-between md:justify-start", isAr ? "flex-row" : "flex-row-reverse")}>
                         <div className="flex gap-4 items-center">
                           {/* Replies display */}
-                          <div className="flex items-center gap-1.5 text-xs font-semibold text-white/60">
-                            <MessageSquare size={14} className="text-violet" />
+                          <div className="flex items-center gap-1.5 text-xs font-semibold text-gray-400">
+                            <MessageSquare size={14} className="text-indigo-400" />
                             <span>{disc.repliesCount || 0}</span>
                           </div>
 
@@ -814,15 +814,15 @@ export default function DiscussionsView({ user }: { user: UserData }) {
                             className={cn(
                               "flex items-center gap-1 text-xs font-semibold px-2 py-1 rounded-lg transition-all duration-300 h-8",
                               ((disc as any).likedBy || []).includes(user.uid)
-                                ? "text-violet bg-violet/10 border border-violet/20"
-                                : "text-white/60 hover:text-violet hover:bg-white/5 border border-transparent"
+                                ? "text-pink-400 bg-pink-500/10 border border-pink-500/20"
+                                : "text-gray-400 hover:text-pink-400 hover:bg-white/5 border border-transparent"
                             )}
                           >
                             <Heart
                               size={14}
                               className={
                                 ((disc as any).likedBy || []).includes(user.uid)
-                                  ? "fill-violet text-violet"
+                                  ? "fill-pink-500 text-pink-500"
                                   : ""
                               }
                             />
@@ -841,7 +841,7 @@ export default function DiscussionsView({ user }: { user: UserData }) {
                               e.stopPropagation();
                               handleDeleteDiscussion(disc.id, disc.userId);
                             }}
-                            className="p-1.5 rounded-lg text-white/60 sm:text-white/45 hover:text-gold hover:bg-gold/10 transition-all opacity-100 sm:opacity-0 group-hover:opacity-100 cursor-pointer"
+                            className="p-1.5 rounded-lg text-gray-400 sm:text-gray-600 hover:text-red-400 hover:bg-red-400/10 transition-all opacity-100 sm:opacity-0 group-hover:opacity-100 cursor-pointer"
                           >
                             <Trash2 size={14} />
                           </button>
@@ -857,7 +857,7 @@ export default function DiscussionsView({ user }: { user: UserData }) {
               <div className="flex justify-center pt-4 pb-10">
                 <button
                   onClick={() => setLimitCount((prev) => prev + 20)}
-                  className="px-6 py-2 rounded-full border border-white/10 text-white/60 hover:text-white hover:bg-white/5 transition-all text-sm font-bold"
+                  className="px-6 py-2 rounded-full border border-white/10 text-gray-400 hover:text-white hover:bg-white/5 transition-all text-sm font-bold"
                 >
                   {isAr ? "تحميل المزيد" : "Load More"}
                 </button>

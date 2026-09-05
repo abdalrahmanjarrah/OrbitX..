@@ -44,7 +44,7 @@ function StudyRoomParticipantsComponent({
         {[0, 1, 2, 3, 4].map((i) => (
           <div
             key={i}
-            className="absolute rounded-full border border-violet/30 shadow-[0_0_15px_rgb(140,82,255,0.05)]"
+            className="absolute rounded-full border border-indigo-500/30 shadow-[0_0_15px_rgba(99,102,241,0.05)]"
             style={{
               width: `${380 + i * 90}px`,
               height: `${380 + i * 90}px`,
@@ -105,8 +105,8 @@ function StudyRoomParticipantsComponent({
                       className={cn(
                         "w-10 h-10 md:w-12 md:h-12 rounded-full border-2 p-0.5 overflow-hidden shadow-xl transition-all",
                         p.uid === user.uid
-                          ? "border-gold/40 shadow-gold/40"
-                          : "border-violet/40 shadow-violet/20",
+                          ? "border-amber-400 shadow-amber-400/40"
+                          : "border-indigo-400 shadow-indigo-400/20",
                       )}
                     >
                       <img
@@ -115,7 +115,7 @@ function StudyRoomParticipantsComponent({
                           `https://api.dicebear.com/7.x/avataaars/svg?seed=${p.uid}`
                         }
                         alt={p.displayName}
-                        className="w-full h-full rounded-full object-cover bg-navy"
+                        className="w-full h-full rounded-full object-cover bg-slate-900"
                         referrerPolicy="no-referrer"
                       />
                     </button>

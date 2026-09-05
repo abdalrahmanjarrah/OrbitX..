@@ -24,7 +24,7 @@ interface SectionHeaderProps {
   accent?: string;
 }
 
-const SectionHeader: React.FC<SectionHeaderProps> = ({ icon, title, count, accent = "text-gold" }) => (
+const SectionHeader: React.FC<SectionHeaderProps> = ({ icon, title, count, accent = "text-rose-400" }) => (
   <div className="flex items-center justify-between gap-4 mb-5">
     <div className="flex items-center gap-2.5">
       <span className={cn("w-8 h-8 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-center", accent)}>
@@ -32,7 +32,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({ icon, title, count, accen
       </span>
       <h2 className="text-lg font-black text-white tracking-tight">{title}</h2>
       {typeof count === "number" && count > 0 && (
-        <span className="px-2 py-0.5 rounded-full bg-gold/10 border border-gold/25 text-[11px] font-bold text-gold/90 font-mono">
+        <span className="px-2 py-0.5 rounded-full bg-rose-500/10 border border-rose-500/25 text-[11px] font-bold text-rose-300 font-mono">
           {count}
         </span>
       )}
@@ -129,8 +129,8 @@ export default function ChallengesHubView({
         />
         {loading && challenges.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-16 rounded-3xl border border-white/5 bg-space-dark/20">
-            <Loader2 size={32} className="text-gold animate-spin mb-4" />
-            <span className="text-xs text-white/50 font-mono">
+            <Loader2 size={32} className="text-rose-500 animate-spin mb-4" />
+            <span className="text-xs text-gray-500 font-mono">
               {isAr ? "تحديث رادار الفضاء..." : "Scanning deep space radar..."}
             </span>
           </div>
@@ -151,7 +151,7 @@ export default function ChallengesHubView({
           icon={<Swords size={15} />}
           title={isAr ? "مركز القيادة" : "Command Center"}
           count={incomingInvites.length + outgoingInvites.length}
-          accent="text-gold"
+          accent="text-amber-400"
         />
         <ChallengeInvites
           incomingInvites={incomingInvites}
@@ -167,7 +167,7 @@ export default function ChallengesHubView({
           icon={<Trophy size={15} />}
           title={isAr ? "سجل النزالات" : "Duel History"}
           count={completedChallenges.length}
-          accent="text-gold"
+          accent="text-amber-400"
         />
         <ChallengeHistory challenges={challenges} currentUser={user} />
       </section>

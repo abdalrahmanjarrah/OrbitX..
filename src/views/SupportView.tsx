@@ -396,27 +396,27 @@ export default function SupportView({ user }: { user: UserData }) {
       dir={isAr ? "rtl" : "ltr"}
     >
       {/* Cinematic Header Block */}
-      <div className="bg-gradient-to-br from-[#090b1f] to-[#04040a] border border-white/10 p-6 md:p-8 rounded-3xl relative overflow-hidden shadow-2xl">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-violet/10 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-violet/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="bg-gradient-to-br from-[#0c0c16] to-[#050510] border border-white/10 p-6 md:p-8 rounded-3xl relative overflow-hidden shadow-2xl">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-fuchsia-500/10 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="flex flex-col lg:flex-row gap-6 justify-between items-start lg:items-center relative z-10">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <span className="px-3 py-1 text-[10px] uppercase tracking-widest font-mono bg-violet/10 text-violet border border-violet/20 rounded-full">
+              <span className="px-3 py-1 text-[10px] uppercase tracking-widest font-mono bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 rounded-full">
                 OrbitX Communications
               </span>
               {isAdminUser && (
-                <span className="px-3 py-1 text-[10px] uppercase tracking-widest font-mono bg-lemon/10 text-lemon border border-lemon/20 rounded-full flex items-center gap-1">
+                <span className="px-3 py-1 text-[10px] uppercase tracking-widest font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full flex items-center gap-1">
                   <ShieldCheck size={10} /> {isAr ? "الادارة" : "Admin Panel"}
                 </span>
               )}
             </div>
             <h1 className="text-3xl font-black text-white flex items-center gap-3 tracking-tight">
-              <HelpCircle className="text-violet" size={32} />
+              <HelpCircle className="text-indigo-400" size={32} />
               {isAr ? "مركز الدعم والاتصالات الفنية" : "Cosmic Support & Comms Hub"}
             </h1>
-            <p className="text-white/60 max-w-xl text-xs md:text-sm leading-relaxed">
+            <p className="text-gray-400 max-w-xl text-xs md:text-sm leading-relaxed">
               {isAr
                 ? "يمكنك فتح قناة اتصال مباشرة وآمنة مع الإدارة لحل أي مشكلة، أو إرسال اقتراحات إبداعية لتطوير المحطة."
                 : "Open an encrypted direct channel with the administration, or dispatch custom ideas via the Suggestions module."}
@@ -430,8 +430,8 @@ export default function SupportView({ user }: { user: UserData }) {
               className={cn(
                 "flex-1 lg:flex-none px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all text-xs md:text-sm",
                 tab === "support"
-                  ? "bg-violet text-white shadow-xl"
-                  : "text-white/60 hover:text-white hover:bg-white/5",
+                  ? "bg-indigo-600 text-white shadow-xl"
+                  : "text-gray-400 hover:text-white hover:bg-white/5",
               )}
             >
               <MessageSquare size={16} />
@@ -442,8 +442,8 @@ export default function SupportView({ user }: { user: UserData }) {
               className={cn(
                 "flex-1 lg:flex-none px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all text-xs md:text-sm",
                 tab === "suggestions"
-                  ? "bg-violet text-white shadow-xl"
-                  : "text-white/60 hover:text-white hover:bg-white/5",
+                  ? "bg-fuchsia-600 text-white shadow-xl"
+                  : "text-gray-400 hover:text-white hover:bg-white/5",
               )}
             >
               <Activity size={16} />
@@ -463,9 +463,9 @@ export default function SupportView({ user }: { user: UserData }) {
             <div className="lg:col-span-5 bg-space-dark border border-white/10 rounded-3xl p-5 flex flex-col space-y-4 shadow-xl">
               <div className="flex items-center justify-between">
                 <h2 className="text-lg font-bold text-white flex items-center gap-2">
-                  <Inbox size={18} className="text-violet" />
+                  <Inbox size={18} className="text-indigo-400" />
                   {isAr ? "قائمة التذاكر المستلمة" : "Dispatched Transmissions"}
-                  <span className="text-xs bg-[#090b1f] text-violet/90 font-mono px-2 py-0.5 rounded-full border border-violet/20">
+                  <span className="text-xs bg-[#16182e] text-indigo-300 font-mono px-2 py-0.5 rounded-full border border-indigo-500/20">
                     {adminFilteredTickets.length}
                   </span>
                 </h2>
@@ -474,7 +474,7 @@ export default function SupportView({ user }: { user: UserData }) {
                     onClick={() => setStatusFilter("all")}
                     className={cn(
                       "px-2.5 py-1 rounded-lg text-[10px] font-bold transition-all",
-                      statusFilter === "all" ? "bg-white/10 text-white border border-white/20" : "text-white/50 hover:text-white"
+                      statusFilter === "all" ? "bg-white/10 text-white border border-white/20" : "text-gray-500 hover:text-white"
                     )}
                   >
                     {isAr ? "الكل" : "All"}
@@ -483,7 +483,7 @@ export default function SupportView({ user }: { user: UserData }) {
                     onClick={() => setStatusFilter("open")}
                     className={cn(
                       "px-2.5 py-1 rounded-lg text-[10px] font-bold transition-all",
-                      statusFilter === "open" ? "bg-violet/10 text-violet border border-violet/20" : "text-white/50 hover:text-white"
+                      statusFilter === "open" ? "bg-indigo-500/10 text-indigo-400 border border-indigo-500/20" : "text-gray-500 hover:text-white"
                     )}
                   >
                     {isAr ? "المفتوحة" : "Open"}
@@ -492,7 +492,7 @@ export default function SupportView({ user }: { user: UserData }) {
                     onClick={() => setStatusFilter("closed")}
                     className={cn(
                       "px-2.5 py-1 rounded-lg text-[10px] font-bold transition-all",
-                      statusFilter === "closed" ? "bg-white/5 text-white/60 border border-white/5" : "text-white/50 hover:text-white"
+                      statusFilter === "closed" ? "bg-white/5 text-gray-400 border border-white/5" : "text-gray-500 hover:text-white"
                     )}
                   >
                     {isAr ? "المغلقة" : "Closed"}
@@ -502,20 +502,20 @@ export default function SupportView({ user }: { user: UserData }) {
 
               {/* Search ticket box */}
               <div className="relative">
-                <Search size={16} className="absolute start-3 top-1/2 -translate-y-1/2 text-white/50" />
+                <Search size={16} className="absolute start-3 top-1/2 -translate-y-1/2 text-gray-500" />
                 <input
                   type="text"
                   placeholder={isAr ? "ابحث باسم المستخدم أو نص الرسالة..." : "Search tickets, message content..."}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-space-dark border border-white/10 rounded-xl ps-10 pe-4 py-2 text-xs text-white placeholder-white/50 focus:outline-none focus:border-violet/40 transition-all"
+                  className="w-full bg-space-dark border border-white/10 rounded-xl ps-10 pe-4 py-2 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 transition-all"
                 />
               </div>
 
               {/* Scroller list */}
               <div className="flex-1 overflow-y-auto max-h-[500px] space-y-2 pr-1 custom-scrollbar">
                 {adminFilteredTickets.length === 0 ? (
-                  <div className="py-12 text-center text-white/50 text-xs">
+                  <div className="py-12 text-center text-gray-500 text-xs">
                     {isAr ? "لا توجد تذاكر دعم تطابق معايير البحث." : "No support tickets matching these parameters."}
                   </div>
                 ) : (
@@ -528,36 +528,36 @@ export default function SupportView({ user }: { user: UserData }) {
                         className={cn(
                           "p-4 rounded-2xl border transition-all cursor-pointer relative overflow-hidden group",
                           isSelected
-                            ? "bg-violet/10 border-violet/40 shadow-inner shadow-violet/50"
+                            ? "bg-indigo-600/10 border-indigo-500/40 shadow-inner shadow-indigo-950/50"
                             : "bg-space-dark/60 border-white/5 hover:border-white/15"
                         )}
                       >
                         {t.status === "open" && (
-                          <div className="absolute right-0 top-0 bottom-0 w-1 bg-lemon/80" />
+                          <div className="absolute right-0 top-0 bottom-0 w-1 bg-emerald-500" />
                         )}
                         <div className="flex justify-between items-start mb-1">
                           <div className="flex items-center gap-1.5">
-                            <User size={13} className="text-white/60" />
-                            <span className="text-sm font-bold text-white group-hover:text-violet/90 transition-colors">
+                            <User size={13} className="text-gray-400" />
+                            <span className="text-sm font-bold text-white group-hover:text-indigo-300 transition-colors">
                               {t.userName}
                             </span>
                           </div>
-                          <span className="text-[10px] text-white/50 font-mono">
+                          <span className="text-[10px] text-gray-500 font-mono">
                             {getTicketTimeLabel(t)}
                           </span>
                         </div>
-                        <p className="text-xs text-white/60 truncate max-w-[280px]">
+                        <p className="text-xs text-gray-400 truncate max-w-[280px]">
                           {t.lastMessage}
                         </p>
                         
                         <div className="mt-3 flex justify-between items-center text-[10px]">
                           <span className={cn(
                             "px-2 py-0.5 rounded-md font-bold font-mono tracking-wide",
-                            t.status === "open" ? "bg-lemon/10 text-lemon border border-lemon/20" : "bg-white/5 text-white/50 border border-white/5"
+                            t.status === "open" ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" : "bg-white/5 text-gray-500 border border-white/5"
                           )}>
                             {t.status === "open" ? (isAr ? "مفتوحة" : "OPEN") : (isAr ? "مغلقة" : "CLOSED")}
                           </span>
-                          <span className="text-white/50 group-hover:text-gold transition-colors flex items-center gap-1">
+                          <span className="text-gray-500 group-hover:text-amber-400 transition-colors flex items-center gap-1">
                             {t.messages.length} {isAr ? "رسائل" : "messages"}
                           </span>
                         </div>
@@ -579,12 +579,12 @@ export default function SupportView({ user }: { user: UserData }) {
                         <h3 className="font-bold text-white text-base">{activeTicket.userName}</h3>
                         <span className={cn(
                           "px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono tracking-widest",
-                          activeTicket.status === "open" ? "bg-lemon/10 text-lemon border border-lemon/20 animate-pulse" : "bg-white/5 text-white/50"
+                          activeTicket.status === "open" ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 animate-pulse" : "bg-white/5 text-gray-500"
                         )}>
                           {activeTicket.status === "open" ? (isAr ? "نشط" : "ACTIVE") : (isAr ? "مغلق" : "CLOSED")}
                         </span>
                       </div>
-                      <p className="text-[10px] text-white/50 font-mono">{activeTicket.id}</p>
+                      <p className="text-[10px] text-gray-500 font-mono">{activeTicket.id}</p>
                     </div>
 
                     <div className="flex gap-2">
@@ -593,8 +593,8 @@ export default function SupportView({ user }: { user: UserData }) {
                         className={cn(
                           "p-2.5 rounded-xl border text-xs font-bold transition-all flex items-center gap-1.5",
                           activeTicket.status === "open" 
-                            ? "bg-gold/10 border-gold/30 text-gold hover:bg-gold/20"
-                            : "bg-lemon/10 border-lemon/30 text-lemon hover:bg-lemon/20"
+                            ? "bg-amber-600/10 border-amber-500/30 text-amber-400 hover:bg-amber-600/20"
+                            : "bg-emerald-600/10 border-emerald-500/30 text-emerald-400 hover:bg-emerald-600/20"
                         )}
                         title={activeTicket.status === "open" ? (isAr ? "إغلاق التذكرة" : "Close Ticket") : isAr ? "إعادة فتح التذكرة" : "Reopen Ticket"}
                       >
@@ -613,7 +613,7 @@ export default function SupportView({ user }: { user: UserData }) {
                       
                       <button
                         onClick={() => handleDeleteTicket(activeTicket.id)}
-                        className="p-2.5 rounded-xl border border-gold/30 bg-gold/10 text-gold hover:bg-gold/20 transition-all"
+                        className="p-2.5 rounded-xl border border-red-500/30 bg-red-500/10 text-red-400 hover:bg-red-500/20 transition-all"
                         title={isAr ? "حذف التذكرة" : "Delete Ticket"}
                       >
                         <Trash size={14} />
@@ -624,7 +624,7 @@ export default function SupportView({ user }: { user: UserData }) {
                   {/* Message scroll areas */}
                   <div className="flex-1 overflow-y-auto p-4 md:p-6 space-y-4 max-h-[400px]">
                     {activeTicket.messages.length === 0 ? (
-                      <div className="py-12 text-center text-white/50 text-xs">
+                      <div className="py-12 text-center text-gray-500 text-xs">
                         {isAr ? "لا توجد رسائل في هذه المحادثة." : "No messages found in this chat channel."}
                       </div>
                     ) : (
@@ -638,15 +638,15 @@ export default function SupportView({ user }: { user: UserData }) {
                               isAdminMsg ? "mr-auto items-start" : "ml-auto items-end"
                             )}
                           >
-                            <span className="text-[10px] text-white/50 font-mono mb-1 px-1">
+                            <span className="text-[10px] text-gray-500 font-mono mb-1 px-1">
                               {msg.senderName} • {formatMessageTime(msg.createdAt)}
                             </span>
                             <div
                               className={cn(
                                 "p-3.5 rounded-2xl relative border shadow-lg flex items-start gap-2",
                                 isAdminMsg
-                                  ? "bg-lemon/10 border-lemon/30 text-white rounded-tl-none font-medium"
-                                  : "bg-[#090b1f] border-white/5 text-white/80 rounded-tr-none"
+                                  ? "bg-emerald-600/10 border-emerald-500/30 text-white rounded-tl-none font-medium"
+                                  : "bg-[#16182e] border-white/5 text-gray-200 rounded-tr-none"
                               )}
                             >
                               <div className="break-words max-w-full text-xs md:text-sm whitespace-pre-wrap leading-relaxed">
@@ -656,7 +656,7 @@ export default function SupportView({ user }: { user: UserData }) {
                               {/* Option to delete specific message */}
                               <button
                                 onClick={() => handleDeleteMessage(activeTicket, msg)}
-                                className="opacity-60 lg:opacity-0 lg:group-hover/msg:opacity-100 hover:text-gold text-white/50 transition-all rounded p-1 hover:bg-white/5"
+                                className="opacity-60 lg:opacity-0 lg:group-hover/msg:opacity-100 hover:text-red-400 text-gray-500 transition-all rounded p-1 hover:bg-white/5"
                                 title={isAr ? "حذف الرسالة" : "Delete message"}
                               >
                                 <Trash size={12} />
@@ -675,7 +675,7 @@ export default function SupportView({ user }: { user: UserData }) {
                       value={adminReplyText}
                       onChange={(e) => setAdminReplyText(e.target.value)}
                       placeholder={isAr ? "اكتب الرد الرسمي للإدارة هنا..." : "Compose official administration response..."}
-                      className="flex-1 bg-space-dark border border-white/10 rounded-xl px-4 py-3 text-white text-xs md:text-sm focus:outline-none focus:border-violet/40 transition-all resize-none h-12"
+                      className="flex-1 bg-space-dark border border-white/10 rounded-xl px-4 py-3 text-white text-xs md:text-sm focus:outline-none focus:border-indigo-500 transition-all resize-none h-12"
                       onKeyDown={(e) => {
                         if (e.key === "Enter" && !e.shiftKey) {
                           e.preventDefault();
@@ -686,7 +686,7 @@ export default function SupportView({ user }: { user: UserData }) {
                     <button
                       onClick={() => handleAdminSendReply(activeTicket)}
                       disabled={!adminReplyText.trim()}
-                      className="px-5 bg-lemon hover:bg-lemon disabled:opacity-50 text-white rounded-xl transition-all flex items-center justify-center gap-1"
+                      className="px-5 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white rounded-xl transition-all flex items-center justify-center gap-1"
                     >
                       <Send size={15} />
                     </button>
@@ -694,13 +694,13 @@ export default function SupportView({ user }: { user: UserData }) {
                 </div>
               ) : (
                 <div className="flex-grow flex flex-col justify-center items-center py-20 text-center px-4">
-                  <div className="w-16 h-16 bg-[#090b1f] rounded-full border border-violet/20 flex items-center justify-center text-violet mb-4 animate-pulse">
+                  <div className="w-16 h-16 bg-[#16182e] rounded-full border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-4 animate-pulse">
                     <MessageSquare size={30} />
                   </div>
                   <h3 className="text-white font-bold text-lg mb-2">
                     {isAr ? "لم يتم تحديد أي محادثة" : "No Dispatch Selected"}
                   </h3>
-                  <p className="text-white/60 text-xs max-w-sm leading-relaxed">
+                  <p className="text-gray-400 text-xs max-w-sm leading-relaxed">
                     {isAr
                       ? "الرجاء تحديد تذكرة دعم فني من العمود الأيسر وبدء التشغيل لمعالجة استفسار العميل."
                       : "Choose an active transmission from the list to synchronize feed and transmit responses."}
@@ -722,7 +722,7 @@ export default function SupportView({ user }: { user: UserData }) {
                     onClick={() => setActiveTicketTab("new")}
                     className={cn(
                       "flex-1 px-3 py-2 rounded-lg text-xs font-bold transition-all",
-                      activeTicketTab === "new" ? "bg-violet text-white" : "text-white/60 hover:text-white"
+                      activeTicketTab === "new" ? "bg-indigo-600 text-white" : "text-gray-400 hover:text-white"
                     )}
                   >
                     {isAr ? "تذكرة جديدة" : "Open New Ticket"}
@@ -731,13 +731,13 @@ export default function SupportView({ user }: { user: UserData }) {
                     onClick={() => setActiveTicketTab("history")}
                     className={cn(
                       "flex-1 px-3 py-2 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1.5",
-                      activeTicketTab === "history" ? "bg-violet text-white" : "text-white/60 hover:text-white"
+                      activeTicketTab === "history" ? "bg-indigo-600 text-white" : "text-gray-400 hover:text-white"
                     )}
                   >
                     <History size={13} />
                     {isAr ? "محادثاتك" : "My Chats"}
                     {tickets.length > 0 && (
-                      <span className="bg-violet/10 text-violet/90 border border-violet/20 px-1.5 py-0.5 rounded-full text-[11px]">
+                      <span className="bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-1.5 py-0.5 rounded-full text-[11px]">
                         {tickets.length}
                       </span>
                     )}
@@ -747,7 +747,7 @@ export default function SupportView({ user }: { user: UserData }) {
                 {activeTicketTab === "history" && (
                   <div className="space-y-1.5 max-h-[300px] overflow-y-auto">
                     {tickets.length === 0 ? (
-                      <p className="text-center text-[11px] text-white/50 py-6">
+                      <p className="text-center text-[11px] text-gray-500 py-6">
                         {isAr ? "لا توجد أي محادثات دعم سابقة." : "You have no support history."}
                       </p>
                     ) : (
@@ -760,18 +760,18 @@ export default function SupportView({ user }: { user: UserData }) {
                           className={cn(
                             "p-3 rounded-xl border text-right cursor-pointer transition-all",
                             t.id === selectedTicketId
-                              ? "bg-violet/10 border-violet/40 text-white"
-                              : "bg-space-dark/40 border-white/5 text-white/60 hover:border-white/10"
+                              ? "bg-indigo-600/10 border-indigo-500/40 text-white"
+                              : "bg-space-dark/40 border-white/5 text-gray-400 hover:border-white/10"
                           )}
                         >
                           <div className="flex justify-between items-center mb-1">
                             <span className={cn(
                               "text-[11px] px-1.5 py-0.5 rounded-md font-bold",
-                              t.status === "open" ? "bg-lemon/10 text-lemon border border-lemon/20" : "bg-white/5 text-white/50"
+                              t.status === "open" ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" : "bg-white/5 text-gray-500"
                             )}>
                               {t.status === "open" ? (isAr ? "مفتوحة" : "OPEN") : (isAr ? "مغلقة" : "CLOSED")}
                             </span>
-                            <span className="text-[10px] text-white/50">
+                            <span className="text-[10px] text-gray-500">
                               {getTicketTimeLabel(t)}
                             </span>
                           </div>
@@ -784,13 +784,13 @@ export default function SupportView({ user }: { user: UserData }) {
               </div>
 
               {/* Security Banner */}
-              <div className="bg-violet/20 border border-violet/20 p-4 rounded-2xl relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-violet/10 rounded-full blur-[40px] pointer-events-none" />
-                <h4 className="text-xs font-bold text-violet/90 flex items-center gap-1.5 mb-1.5">
+              <div className="bg-indigo-950/20 border border-indigo-500/20 p-4 rounded-2xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-indigo-500/10 rounded-full blur-[40px] pointer-events-none" />
+                <h4 className="text-xs font-bold text-indigo-300 flex items-center gap-1.5 mb-1.5">
                   <ShieldCheck size={14} />
                   {isAr ? "اتصال مشفر وآمن" : "Encrypted Comms"}
                 </h4>
-                <p className="text-[10px] text-violet/70 leading-relaxed">
+                <p className="text-[10px] text-indigo-200/70 leading-relaxed">
                   {isAr
                     ? "تخضع جميع المحادثات لحماية الخصوصية ومراقبة الجودة لزيادة كفاءة واستقرار بيئة OrbitX."
                     : "For planetary validation guidelines, all messages are timestamped & securely stored."}
@@ -805,10 +805,10 @@ export default function SupportView({ user }: { user: UserData }) {
                 <div className="p-6 md:p-8 space-y-6 flex-grow flex flex-col justify-center max-w-2xl mx-auto">
                   <div className="text-center space-y-2">
                     <h2 className="text-xl font-bold text-white flex items-center justify-center gap-2">
-                      <Mail size={22} className="text-violet" />
+                      <Mail size={22} className="text-indigo-400" />
                       {isAr ? "وصف المشكلة التقنية" : "Transmit Support Request"}
                     </h2>
-                    <p className="text-white/60 text-xs md:text-sm">
+                    <p className="text-gray-400 text-xs md:text-sm">
                       {isAr
                         ? "يرجى كتابة شرح وافٍ للمشكلة، وسنقوم بالرد المباشر عليك ومناقشتها في الشات الفوري هنا."
                         : "Describe the parameters of the anomaly. Our dispatchers will assist you in this sandbox chat."}
@@ -820,12 +820,12 @@ export default function SupportView({ user }: { user: UserData }) {
                       value={ticketText}
                       onChange={(e) => setTicketText(e.target.value)}
                       placeholder={isAr ? "مثال: واجهت مشكلة في زيادة XP عند الانتهاء من الدراسة..." : "E.g., Having issues syncing XP updates upon study completion..."}
-                      className="w-full bg-space-dark border border-white/10 rounded-2xl p-5 text-white text-xs md:text-sm focus:outline-none focus:border-violet/40 transition-all h-36 resize-none shadow-inner"
+                      className="w-full bg-space-dark border border-white/10 rounded-2xl p-5 text-white text-xs md:text-sm focus:outline-none focus:border-indigo-500 transition-all h-36 resize-none shadow-inner"
                     />
                     <button
                       onClick={handleCreateTicket}
                       disabled={isSubmitting || !ticketText.trim()}
-                      className="w-full bg-violet hover:bg-violet disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-4 rounded-xl transition-all shadow-[0_0_20px_rgb(140,82,255,0.3)] hover:shadow-[0_0_30px_rgb(140,82,255,0.5)] flex items-center justify-center gap-2"
+                      className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-4 rounded-xl transition-all shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:shadow-[0_0_30px_rgba(79,70,229,0.5)] flex items-center justify-center gap-2"
                     >
                       {isSubmitting ? (
                         <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -849,18 +849,18 @@ export default function SupportView({ user }: { user: UserData }) {
                           <div className="flex items-center gap-1.5">
                             <h4 className="font-bold text-white text-sm">{isAr ? "غرفة المحادثة النشطة" : "Active Flight Support"}</h4>
                             {activeTicket.status === "closed" && (
-                              <span className="px-2 py-0.5 rounded bg-gold/20 text-gold border border-gold/20 text-[11px] font-bold">
+                              <span className="px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/20 text-[11px] font-bold">
                                 {isAr ? "مغلقة ومؤرشفة" : "CLOSED & ARCHIVED"}
                               </span>
                             )}
                           </div>
-                          <p className="text-[10px] text-white/50 font-mono">ID: {activeTicket.id}</p>
+                          <p className="text-[10px] text-gray-500 font-mono">ID: {activeTicket.id}</p>
                         </div>
                         
                         {activeTicket.status === "open" && (
                           <button
                             onClick={() => handleToggleTicketStatus(activeTicket)}
-                            className="px-3 py-1 flex items-center gap-1 rounded bg-white/5 hover:bg-white/10 border border-white/10 text-[10px] text-white/70 font-bold transition-all"
+                            className="px-3 py-1 flex items-center gap-1 rounded bg-white/5 hover:bg-white/10 border border-white/10 text-[10px] text-gray-300 font-bold transition-all"
                           >
                             <XCircle size={11} />
                             {isAr ? "إغلاق كـ منتهي" : "Mark resolved"}
@@ -880,15 +880,15 @@ export default function SupportView({ user }: { user: UserData }) {
                                 isAdminMsg ? "mr-auto items-start" : "ml-auto items-end"
                               )}
                             >
-                              <span className="text-[11px] text-white/50 mb-0.5 px-1 font-mono">
+                              <span className="text-[11px] text-gray-500 mb-0.5 px-1 font-mono">
                                 {isAdminMsg ? (isAr ? "الادارة 🛡️" : "SUPPORT CREW") : (isAr ? "أنت" : "YOU")} • {formatMessageTime(msg.createdAt)}
                               </span>
                               <div
                                 className={cn(
                                   "p-3 rounded-2xl text-xs md:text-sm border shadow-lg leading-relaxed whitespace-pre-wrap break-words",
                                   isAdminMsg
-                                    ? "bg-violet/10 border-violet/20 text-white rounded-tl-none font-medium"
-                                    : "bg-[#090b1f]/80 border-white/15 text-white/80 rounded-tr-none"
+                                    ? "bg-indigo-600/10 border-indigo-500/20 text-white rounded-tl-none font-medium"
+                                    : "bg-[#16182e]/80 border-white/15 text-gray-200 rounded-tr-none"
                                 )}
                               >
                                 {msg.text}
@@ -910,7 +910,7 @@ export default function SupportView({ user }: { user: UserData }) {
                               ? (isAr ? "المحادثاة مغلقة. اكتب رسالة لفتحها مجدداً..." : "Ticket is closed. Write to reopen...")
                               : (isAr ? "اكتب تفاصيل إضافية ليقرأها الدعم الفني..." : "Type clear details for dispatch staff...")
                           }
-                          className="flex-1 bg-space-dark border border-white/10 rounded-xl px-4 py-3 text-white text-xs md:text-sm focus:outline-none focus:border-violet/40 transition-all h-11"
+                          className="flex-1 bg-space-dark border border-white/10 rounded-xl px-4 py-3 text-white text-xs md:text-sm focus:outline-none focus:border-indigo-500 transition-all h-11"
                           onKeyDown={(e) => {
                             if (e.key === "Enter") {
                               e.preventDefault();
@@ -921,7 +921,7 @@ export default function SupportView({ user }: { user: UserData }) {
                         <button
                           onClick={() => handleUserSendMessage(activeTicket)}
                           disabled={!userReplyText.trim()}
-                          className="px-5 bg-violet hover:bg-violet disabled:opacity-50 text-white rounded-xl transition-all flex items-center justify-center gap-1"
+                          className="px-5 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white rounded-xl transition-all flex items-center justify-center gap-1"
                         >
                           <Send size={14} />
                         </button>
@@ -929,13 +929,13 @@ export default function SupportView({ user }: { user: UserData }) {
                     </div>
                   ) : (
                     <div className="flex-grow flex flex-col justify-center items-center py-20 text-center px-4">
-                      <div className="w-16 h-16 bg-[#090b1f] rounded-full border border-violet/20 flex items-center justify-center text-violet mb-4 animate-pulse">
+                      <div className="w-16 h-16 bg-[#16182e] rounded-full border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-4 animate-pulse">
                         <MessageSquare size={30} />
                       </div>
                       <h3 className="text-white font-bold text-lg mb-2">
                         {isAr ? "اختر محادثة لاستئنافها" : "No Support Session Loaded"}
                       </h3>
-                      <p className="text-white/60 text-xs max-w-sm leading-relaxed">
+                      <p className="text-gray-400 text-xs max-w-sm leading-relaxed">
                         {isAr
                           ? "يمكنك الانتقال لقسم 'محادثاتك' في اليمين للاطلاع عليها أو فتح تذكرة جديدة تماماً."
                           : "Choose an existing support chat on the sidebar, or compose a new study dispatch signal above."}
@@ -959,10 +959,10 @@ export default function SupportView({ user }: { user: UserData }) {
           <div className="md:col-span-8 space-y-6">
             <div>
               <h2 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
-                <MessageSquare className="text-violet" />
+                <MessageSquare className="text-fuchsia-400" />
                 {isAr ? "صندوق الاقتراحات الفضائية" : "Cosmic Suggestions Module"}
               </h2>
-              <p className="text-white/60 text-xs md:text-sm leading-relaxed">
+              <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
                 {isAr
                   ? "نحن نستمع دوماً! شاركنا أفكارك الإبداعية، ميزات جديدة تتمنى إضافتها، أو تعديلات لتحسين تجربة OrbitX لزملائك الرواد."
                   : "We always monitor high frequencies. Share custom feature designs, physics enhancements, or optimization ideas."}
@@ -974,12 +974,12 @@ export default function SupportView({ user }: { user: UserData }) {
                 value={suggestionText}
                 onChange={(e) => setSuggestionText(e.target.value)}
                 placeholder={isAr ? "اقتراحي لتطوير المحطة هو... (اكتب بحرية، فريق الإدارة يقرأ كل المقترحات ويناقشها)" : "Describe your suggestion with detail... (we evaluate every payload, admin crew reads everything)"}
-                className="w-full bg-space-dark border border-white/10 rounded-2xl p-6 text-white text-xs md:text-sm focus:outline-none focus:border-violet/40 focus:ring-1 focus:ring-violet/40 min-h-[180px] transition-all resize-none shadow-inner"
+                className="w-full bg-space-dark border border-white/10 rounded-2xl p-6 text-white text-xs md:text-sm focus:outline-none focus:border-fuchsia-500 focus:ring-1 focus:ring-fuchsia-500 min-h-[180px] transition-all resize-none shadow-inner"
               />
               <button
                 onClick={handleSubmitSuggestion}
                 disabled={isSubmitting || !suggestionText.trim()}
-                className="w-full bg-violet hover:bg-violet disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-4 rounded-xl transition-all shadow-[0_0_20px_rgb(140,82,255,0.3)] hover:shadow-[0_0_30px_rgb(140,82,255,0.5)] flex items-center justify-center gap-2 text-xs md:text-sm"
+                className="w-full bg-fuchsia-600 hover:bg-fuchsia-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-4 rounded-xl transition-all shadow-[0_0_20px_rgba(192,38,211,0.3)] hover:shadow-[0_0_30px_rgba(192,38,211,0.5)] flex items-center justify-center gap-2 text-xs md:text-sm"
               >
                 {isSubmitting ? (
                   <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -993,13 +993,13 @@ export default function SupportView({ user }: { user: UserData }) {
             </div>
           </div>
 
-          <div className="md:col-span-4 flex flex-col justify-center bg-gradient-to-br from-panel/20 to-panel/10 border border-violet/20 p-6 rounded-2xl relative overflow-hidden self-stretch">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-violet/10 rounded-full blur-[40px] pointer-events-none" />
-            <h3 className="text-violet/90 font-bold mb-3 flex items-center gap-2 text-sm">
+          <div className="md:col-span-4 flex flex-col justify-center bg-gradient-to-br from-fuchsia-950/20 to-pink-950/10 border border-fuchsia-500/20 p-6 rounded-2xl relative overflow-hidden self-stretch">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-fuchsia-500/10 rounded-full blur-[40px] pointer-events-none" />
+            <h3 className="text-fuchsia-300 font-bold mb-3 flex items-center gap-2 text-sm">
               <Sparkles size={16} />
               {isAr ? "فكرة ملهمة؟ 💡" : "Cosmic Sparks 💡"}
             </h3>
-            <p className="text-violet/80 text-xs leading-relaxed">
+            <p className="text-fuchsia-200/80 text-xs leading-relaxed">
               {isAr
                 ? "هل تعلم أن الكثير من الميزات الملحمية مثل جدول العادات وتدفق XP بدأت كفكرة بسيطة في صندوق الاقتراحات الفضية؟ لا تتردد أبداً في طرح أي فكرة مهما بدت غريبة!"
                 : "Many features inside our station began as creative suggestions. Help us optimize OrbitX for everyone."}
@@ -1017,16 +1017,16 @@ export default function SupportView({ user }: { user: UserData }) {
         >
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold text-white flex items-center gap-2">
-              <Activity size={18} className="text-violet" />
+              <Activity size={18} className="text-fuchsia-400" />
               {isAr ? "الاقتراحات المنشورة" : "Published Suggestions"}
-              <span className="text-xs bg-[#090b1f] text-violet/90 font-mono px-2 py-0.5 rounded-full border border-violet/20">
+              <span className="text-xs bg-[#16182e] text-fuchsia-300 font-mono px-2 py-0.5 rounded-full border border-fuchsia-500/20">
                 {suggestionsList.length}
               </span>
             </h2>
           </div>
 
           {suggestionsList.length === 0 ? (
-            <div className="py-12 text-center text-white/50 text-sm">
+            <div className="py-12 text-center text-gray-500 text-sm">
               {isAr
                 ? "لا توجد اقتراحات بعد — كن أول من يطلق فكرة!"
                 : "No suggestions yet — be the first to launch an idea!"}
@@ -1039,7 +1039,7 @@ export default function SupportView({ user }: { user: UserData }) {
                   className="p-4 md:p-5 rounded-2xl bg-space-dark border border-white/10"
                 >
                   <div className="flex items-center justify-between mb-2 gap-3">
-                    <div className="flex items-center gap-2 text-xs font-bold text-violet/90">
+                    <div className="flex items-center gap-2 text-xs font-bold text-fuchsia-300">
                       <Sparkles size={13} />
                       {s.userName || "رائد"}
                     </div>
@@ -1050,26 +1050,26 @@ export default function SupportView({ user }: { user: UserData }) {
                             setReplyingSuggestionId(s.id);
                             setSuggestionReplyText(s.reply || "");
                           }}
-                          className="text-[11px] text-neon hover:underline"
+                          className="text-[11px] text-blue-400 hover:underline"
                         >
                           {isAr ? "رد" : "Reply"}
                         </button>
                       )}
                       {(isAdminUser || s.userId === user.uid) &&
                         (deletingSuggestionId === s.id ? (
-                          <div className="flex items-center gap-1.5 bg-gold/10 px-1.5 py-0.5 rounded border border-gold/30">
-                            <span className="text-[10px] text-gold">
+                          <div className="flex items-center gap-1.5 bg-red-500/10 px-1.5 py-0.5 rounded border border-red-500/30">
+                            <span className="text-[10px] text-red-500">
                               {isAr ? "حذف؟" : "Delete?"}
                             </span>
                             <button
                               onClick={() => handleDeleteSuggestion(s.id)}
-                              className="text-[10px] text-gold font-bold"
+                              className="text-[10px] text-red-500 font-bold"
                             >
                               {isAr ? "نعم" : "Yes"}
                             </button>
                             <button
                               onClick={() => setDeletingSuggestionId(null)}
-                              className="text-[10px] text-white/60"
+                              className="text-[10px] text-gray-400"
                             >
                               {isAr ? "لا" : "No"}
                             </button>
@@ -1077,7 +1077,7 @@ export default function SupportView({ user }: { user: UserData }) {
                         ) : (
                           <button
                             onClick={() => setDeletingSuggestionId(s.id)}
-                            className="text-[11px] text-gold hover:underline"
+                            className="text-[11px] text-red-400 hover:underline"
                           >
                             {isAr ? "حذف" : "Delete"}
                           </button>
@@ -1085,12 +1085,12 @@ export default function SupportView({ user }: { user: UserData }) {
                     </div>
                   </div>
 
-                  <p className="text-sm text-white/90 leading-relaxed">
+                  <p className="text-sm text-gray-100 leading-relaxed">
                     {s.text}
                   </p>
 
                   {replyingSuggestionId === s.id && (
-                    <div className="flex items-center gap-2 mt-3 bg-neon/20 p-2 rounded-xl border border-neon/30">
+                    <div className="flex items-center gap-2 mt-3 bg-blue-900/20 p-2 rounded-xl border border-blue-500/30">
                       <input
                         type="text"
                         value={suggestionReplyText}
@@ -1099,14 +1099,14 @@ export default function SupportView({ user }: { user: UserData }) {
                           isAr ? "اكتب رد الإدارة هنا..." : "Write admin reply..."
                         }
                         className={cn(
-                          "flex-1 bg-transparent text-xs text-neon/70 placeholder-white/50 outline-none",
+                          "flex-1 bg-transparent text-xs text-blue-100 placeholder-blue-300/50 outline-none",
                           isAr ? "text-right" : "text-left",
                         )}
                         dir={isAr ? "rtl" : "ltr"}
                       />
                       <button
                         onClick={() => handleReplySuggestion(s.id)}
-                        className="text-[10px] bg-neon/80 hover:bg-neon text-white px-3 py-1.5 rounded-lg font-bold"
+                        className="text-[10px] bg-blue-500 hover:bg-blue-600 text-white px-3 py-1.5 rounded-lg font-bold"
                       >
                         {isAr ? "حفظ" : "Save"}
                       </button>
@@ -1115,7 +1115,7 @@ export default function SupportView({ user }: { user: UserData }) {
                           setReplyingSuggestionId(null);
                           setSuggestionReplyText("");
                         }}
-                        className="text-[10px] bg-white/10 hover:bg-white/20 text-white/70 px-3 py-1.5 rounded-lg"
+                        className="text-[10px] bg-white/10 hover:bg-white/20 text-gray-300 px-3 py-1.5 rounded-lg"
                       >
                         {isAr ? "إلغاء" : "Cancel"}
                       </button>
@@ -1123,7 +1123,7 @@ export default function SupportView({ user }: { user: UserData }) {
                   )}
 
                   {s.reply && (
-                    <div className="mt-3 p-3 rounded-xl bg-neon/10 border-r-2 border-neon/40 text-xs text-neon/90">
+                    <div className="mt-3 p-3 rounded-xl bg-blue-500/10 border-r-2 border-blue-500 text-xs text-blue-300">
                       <span className="font-bold block mb-1">
                         {isAr ? "رد الإدارة:" : "Admin reply:"}
                       </span>

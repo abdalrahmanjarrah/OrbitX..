@@ -260,12 +260,12 @@ export default function SuggestionsSection({ user }: { user: UserData }) {
           value={newSuggestion}
           onChange={(e) => setNewSuggestion(e.target.value)}
           placeholder={isAr ? "لديك فكرة؟ شاركنا بها..." : "Have an idea? Share it with us..."}
-          className={cn("w-full bg-white/5 shadow-inner border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-neon/50 transition-all min-h-[100px]", isAr ? "text-right" : "text-left")}
+          className={cn("w-full bg-white/5 shadow-inner border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all min-h-[100px]", isAr ? "text-right" : "text-left")}
           dir={isAr ? "rtl" : "ltr"}
         />
         <button
           onClick={handleSubmit}
-          className={cn("absolute bottom-4 px-6 py-2 bg-neon rounded-xl font-bold hover:bg-neon transition-colors", isAr ? "left-4" : "right-4")}
+          className={cn("absolute bottom-4 px-6 py-2 bg-blue-600 rounded-xl font-bold hover:bg-blue-700 transition-colors", isAr ? "left-4" : "right-4")}
         >
           {isAr ? "إرسال الاقتراح" : "Send Suggestion"}
         </button>
@@ -275,7 +275,7 @@ export default function SuggestionsSection({ user }: { user: UserData }) {
         {suggestions.map((s) => (
           <div
             key={s.id}
-            className={cn("p-4 rounded-2xl bg-space-dark shadow-lg shadow-violet/10 border border-white/10", isAr ? "text-right" : "text-left")}
+            className={cn("p-4 rounded-2xl bg-space-dark shadow-lg shadow-indigo-900/10 border border-white/10", isAr ? "text-right" : "text-left")}
           >
             <div className="flex flex-col mb-2 gap-2">
               <div className="flex items-center justify-between">
@@ -286,24 +286,24 @@ export default function SuggestionsSection({ user }: { user: UserData }) {
                         setReplyingSuggestionId(s.id);
                         setReplyText(s.reply || "");
                       }}
-                      className="text-xs text-neon hover:underline"
+                      className="text-xs text-blue-400 hover:underline"
                     >
                       رد
                     </button>
                   )}
                   {(user.role === "admin" || s.userId === user.uid) &&
                     (deletingSuggestionId === s.id ? (
-                      <div className="flex items-center gap-1.5 bg-gold/10 px-1.5 py-0.5 rounded border border-gold/30">
-                        <span className="text-[10px] text-gold">حذف؟</span>
+                      <div className="flex items-center gap-1.5 bg-red-500/10 px-1.5 py-0.5 rounded border border-red-500/30">
+                        <span className="text-[10px] text-red-500">حذف؟</span>
                         <button
                           onClick={() => handleDelete(s.id)}
-                          className="text-[10px] text-gold font-bold"
+                          className="text-[10px] text-red-500 font-bold"
                         >
                           نعم
                         </button>
                         <button
                           onClick={() => setDeletingSuggestionId(null)}
-                          className="text-[10px] text-white/60"
+                          className="text-[10px] text-gray-400"
                         >
                           لا
                         </button>
@@ -311,29 +311,29 @@ export default function SuggestionsSection({ user }: { user: UserData }) {
                     ) : (
                       <button
                         onClick={() => setDeletingSuggestionId(s.id)}
-                        className="text-xs text-gold hover:underline"
+                        className="text-xs text-red-400 hover:underline"
                       >
                         حذف
                       </button>
                     ))}
                 </div>
-                <span className="text-xs font-bold text-white/60">
+                <span className="text-xs font-bold text-gray-400">
                   {s.userName}
                 </span>
               </div>
               {replyingSuggestionId === s.id && (
-                <div className="flex items-center gap-2 mt-2 bg-neon/20 p-2 rounded-xl border border-neon/30">
+                <div className="flex items-center gap-2 mt-2 bg-blue-900/20 p-2 rounded-xl border border-blue-500/30">
                   <input
                     type="text"
                     value={replyText}
                     onChange={(e) => setReplyText(e.target.value)}
                     placeholder={isAr ? "اكتب ردك هنا..." : "Write your reply here..."}
-                    className={cn("flex-1 bg-transparent text-xs text-neon/70 placeholder-white/50 outline-none", isAr ? "text-right" : "text-left")}
+                    className={cn("flex-1 bg-transparent text-xs text-blue-100 placeholder-blue-300/50 outline-none", isAr ? "text-right" : "text-left")}
                     dir={isAr ? "rtl" : "ltr"}
                   />
                   <button
                     onClick={() => handleReply(s.id)}
-                    className="text-[10px] bg-neon/80 hover:bg-neon text-white px-3 py-1.5 rounded-lg font-bold"
+                    className="text-[10px] bg-blue-500 hover:bg-blue-600 text-white px-3 py-1.5 rounded-lg font-bold"
                   >
                     {isAr ? "حفظ" : "Save"}
                   </button>
@@ -342,16 +342,16 @@ export default function SuggestionsSection({ user }: { user: UserData }) {
                       setReplyingSuggestionId(null);
                       setReplyText("");
                     }}
-                    className="text-[10px] bg-white/10 hover:bg-white/20 text-white/70 px-3 py-1.5 rounded-lg"
+                    className="text-[10px] bg-white/10 hover:bg-white/20 text-gray-300 px-3 py-1.5 rounded-lg"
                   >
                     إلغاء
                   </button>
                 </div>
               )}
             </div>
-            <p className="text-sm text-white/80">{s.text}</p>
+            <p className="text-sm text-gray-200">{s.text}</p>
             {s.reply && (
-              <div className="mt-3 p-3 rounded-xl bg-neon/10 border-r-2 border-neon/40 text-xs text-neon/90">
+              <div className="mt-3 p-3 rounded-xl bg-blue-500/10 border-r-2 border-blue-500 text-xs text-blue-300">
                 <span className="font-bold block mb-1">رد الإدارة:</span>
                 {s.reply}
               </div>

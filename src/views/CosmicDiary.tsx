@@ -176,7 +176,7 @@ export default function CosmicDiary({
     description: isOwner
       ? "بداية الرحلة الكونية في المنصة 🚀"
       : "بداية رحلته الكونية في المنصة 🚀",
-    color: "bg-violet/80",
+    color: "bg-indigo-500",
     icon: <Rocket size={18} />,
   });
 
@@ -186,7 +186,7 @@ export default function CosmicDiary({
       description: isOwner
         ? "إتمام أول جلسة تركيز بنجاح! ⏱️"
         : "أتم أول جلسة تركيز بنجاح! ⏱️",
-      color: "bg-violet/80",
+      color: "bg-fuchsia-500",
       icon: <Timer size={18} />,
     });
   }
@@ -195,7 +195,7 @@ export default function CosmicDiary({
     milestones.push({
       title: "كسر حاجز الغلاف الجوي",
       description: "تم الوصول إلى 100 نجمة ضوئية (XP) 🌟",
-      color: "bg-neon/80",
+      color: "bg-blue-500",
       icon: <Target size={18} />,
     });
   }
@@ -206,7 +206,7 @@ export default function CosmicDiary({
       description: isOwner
         ? `تم مشاركة أول اكتشاف في محطة المعرض 📸`
         : `شارك أول اكتشاف في محطة المعرض 📸`,
-      color: "bg-violet/80",
+      color: "bg-pink-500",
       icon: <ImageIcon size={18} />,
     });
   }
@@ -217,7 +217,7 @@ export default function CosmicDiary({
       description: isOwner
         ? `تم الوصول إلى المستوى ${user.level} في التسلسل القيادي للأسطول الفضائي! 🎖️`
         : `وصل إلى المستوى ${user.level} في التسلسل القيادي! 🎖️`,
-      color: "bg-gold/80",
+      color: "bg-orange-500",
       icon: <Award size={18} />,
     });
   }
@@ -228,7 +228,7 @@ export default function CosmicDiary({
       description: isOwner
         ? "تم استحقاق وسام جدارة لتسجيل نقطة مهمة في الرحلة 🏅"
         : "استحق وسام جدارة لتسجيل نقطة مهمة 🏅",
-      color: "bg-violet/80",
+      color: "bg-violet-500",
       icon: <Activity size={18} />,
     });
   }
@@ -240,7 +240,7 @@ export default function CosmicDiary({
       description: isOwner
         ? `إتمام أكثر من ${focusHours} ساعة تركيز كرواد فضاء معتمدين 🚀`
         : `إكمال أكثر من ${focusHours} ساعة تركيز 🚀`,
-      color: "bg-neon",
+      color: "bg-cyan-600",
       icon: <Rocket size={18} />,
     });
   }
@@ -249,17 +249,17 @@ export default function CosmicDiary({
 
   return (
     <div className="p-6 rounded-3xl bg-space-dark/80 backdrop-blur-xl border border-white/5 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-violet via-violet to-transparent"></div>
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-transparent"></div>
 
       <div className="flex items-center gap-3 mb-8">
-        <div className="p-3 bg-violet/20 rounded-2xl border border-violet/30 text-violet">
+        <div className="p-3 bg-indigo-500/20 rounded-2xl border border-indigo-500/30 text-indigo-400">
           <BookOpen size={24} />
         </div>
         <div>
           <h3 className="text-xl font-bold text-white">
             مذكرات الرحلة الكونية
           </h3>
-          <p className="text-sm text-white/60">
+          <p className="text-sm text-gray-400">
             {isOwner
               ? "سجل الإنجازات والمحطات المهمة في مسيرتك الفضائية"
               : "سجل الإنجازات والمحطات المهمة في مسيرته الفضائية"}
@@ -267,7 +267,7 @@ export default function CosmicDiary({
         </div>
       </div>
 
-      <div className="relative border-r-2 border-violet/20 pr-8 space-y-8 mt-6 mr-2">
+      <div className="relative border-r-2 border-indigo-500/20 pr-8 space-y-8 mt-6 mr-2">
         {sortedMilestones.map((m, i) => (
           <motion.div
             key={i}
@@ -278,14 +278,14 @@ export default function CosmicDiary({
             viewport={{ once: true }}
           >
             <div
-              className={`absolute -right-[43px] top-1/2 -translate-y-1/2 w-8 h-8 rounded-full border-4 border-[#090b1f] flex items-center justify-center ${m.color} text-white shadow-[0_0_15px_rgb(0,0,0,0.5)] z-10`}
+              className={`absolute -right-[43px] top-1/2 -translate-y-1/2 w-8 h-8 rounded-full border-4 border-[#0a0b16] flex items-center justify-center ${m.color} text-white shadow-[0_0_15px_rgba(0,0,0,0.5)] z-10`}
             >
               {m.icon}
             </div>
             <div className="bg-white/5 border border-white/5 rounded-2xl p-4 hover:bg-white/10 transition-colors cursor-default relative overflow-hidden group ml-4">
               <div className="absolute top-0 right-0 w-1 h-full bg-white/10 group-hover:bg-white/20 transition-colors" />
               <h4 className="text-white font-bold mb-1 text-sm">{m.title}</h4>
-              <p className="text-xs text-white/60 leading-relaxed">
+              <p className="text-xs text-gray-400 leading-relaxed">
                 {m.description}
               </p>
             </div>

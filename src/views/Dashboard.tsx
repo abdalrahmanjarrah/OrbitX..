@@ -267,8 +267,8 @@ export default function Dashboard({
     return (
       <React.Suspense fallback={
         <div className="min-h-screen bg-space-dark flex flex-col items-center justify-center relative">
-          <Rocket className="w-12 h-12 text-violet animate-bounce" />
-          <p className="text-xs text-violet/90 font-mono tracking-widest mt-4 animate-pulse">
+          <Rocket className="w-12 h-12 text-indigo-400 animate-bounce" />
+          <p className="text-xs text-indigo-300 font-mono tracking-widest mt-4 animate-pulse">
             {isAr ? "بروتوكول تهيئة المحطة..." : "INITIALIZING SECTOR PORTAL..."}
           </p>
         </div>
@@ -343,15 +343,15 @@ export default function Dashboard({
   };
 
   return (
-    <div className="min-h-screen relative flex flex-col font-sans overflow-x-hidden selection:bg-violet/30 selection:text-violet/80" dir={isAr ? "rtl" : "ltr"}>
+    <div className="min-h-screen relative flex flex-col font-sans overflow-x-hidden selection:bg-indigo-500/30 selection:text-indigo-200" dir={isAr ? "rtl" : "ltr"}>
       {/* Background Ambience */}
       <div className="fixed inset-0 bg-space-dark z-[-2]" />
       <StarBackground />
       <div className="fixed inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay z-[-1]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`, backgroundRepeat: 'repeat' }} />
       
       {/* Cosmic Gradient Overlays */}
-      <div className="fixed top-[-10%] -left-64 w-[600px] h-[600px] bg-violet/10 rounded-full blur-[120px] pointer-events-none mix-blend-screen z-[-1]" />
-      <div className="fixed top-1/2 -right-64 w-[800px] h-[800px] bg-violet/5 rounded-full blur-[150px] pointer-events-none mix-blend-screen z-[-1]" />
+      <div className="fixed top-[-10%] -left-64 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none mix-blend-screen z-[-1]" />
+      <div className="fixed top-1/2 -right-64 w-[800px] h-[800px] bg-fuchsia-600/5 rounded-full blur-[150px] pointer-events-none mix-blend-screen z-[-1]" />
 
       <React.Suspense fallback={null}>
         <Joyride
@@ -364,7 +364,7 @@ export default function Dashboard({
         styles={{
            // @ts-ignore
           options: {
-            primaryColor: "#8c52ff", backgroundColor: "#090b1f", textColor: "#ffffff", arrowColor: "#090b1f", zIndex: 1000,
+            primaryColor: "#6366f1", backgroundColor: "#0b0c16", textColor: "#fff", arrowColor: "#0b0c16", zIndex: 1000,
           },
         }}
         locale={{ back: "السابق", close: "إغلاق", last: "إنهاء", next: "التالي", skip: "تخطي" }}
@@ -387,21 +387,21 @@ export default function Dashboard({
         className={cn(
            "fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl rounded-full transition-all duration-500 px-2 py-2 flex items-center justify-between border",
            scrolled 
-             ? "bg-space-dark/80 backdrop-blur-xl shadow-[0_8px_32px_rgb(0,0,0,0.6)] border-white/10"
-             : "bg-space-dark/40 backdrop-blur-md border-transparent shadow-[0_8px_32px_rgb(0,0,0,0.3)]"
+             ? "bg-space-dark/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.6)] border-white/10"
+             : "bg-space-dark/40 backdrop-blur-md border-transparent shadow-[0_8px_32px_rgba(0,0,0,0.3)]"
         )}
       >
         <div className="flex items-center">
             {/* Desktop Animated Logo */}
             <div className="hidden md:flex items-center gap-2 pr-2 pl-6 cursor-pointer group" onClick={() => handleTabChange("home")}>
               <div className="relative flex items-center justify-center w-8 h-8">
-                <div className="absolute inset-0 border-2 border-violet/30 rounded-full"></div>
-                <div className="absolute inset-0 border-2 border-transparent border-t-violet/40 border-l-violet/40 rounded-full animate-[spin_4s_linear_infinite]"></div>
-                <div className="absolute inset-1 border-2 border-transparent border-b-neon/40 border-r-violet/40 rounded-full animate-[spin_3s_linear_infinite_reverse]"></div>
-                <div className="absolute w-2 h-2 bg-white rounded-full shadow-[0_0_10px_rgb(255,255,255,0.8)] z-10 group-hover:scale-125 transition-transform" />
+                <div className="absolute inset-0 border-2 border-indigo-500/30 rounded-full"></div>
+                <div className="absolute inset-0 border-2 border-transparent border-t-indigo-400 border-l-fuchsia-400 rounded-full animate-[spin_4s_linear_infinite]"></div>
+                <div className="absolute inset-1 border-2 border-transparent border-b-cyan-400 border-r-indigo-400 rounded-full animate-[spin_3s_linear_infinite_reverse]"></div>
+                <div className="absolute w-2 h-2 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.8)] z-10 group-hover:scale-125 transition-transform" />
               </div>
               <span className="font-display font-black text-white text-xl tracking-wider uppercase drop-shadow-md">
-                Orbit<span className="text-transparent bg-clip-text bg-gradient-to-l from-violet/85 to-violet/85">X</span>
+                Orbit<span className="text-transparent bg-clip-text bg-gradient-to-l from-indigo-400 to-fuchsia-400">X</span>
               </span>
             </div>
 
@@ -440,13 +440,13 @@ export default function Dashboard({
             {/* Mobile Title View */}
             <div className="md:hidden flex items-center gap-2 pr-3">
               <div className="relative flex items-center justify-center w-6 h-6">
-                <div className="absolute inset-0 border-2 border-violet/30 rounded-full"></div>
-                <div className="absolute inset-0 border-2 border-transparent border-t-violet/40 border-l-violet/40 rounded-full animate-[spin_4s_linear_infinite]"></div>
-                <div className="absolute inset-0.5 border-2 border-transparent border-b-neon/40 border-r-violet/40 rounded-full animate-[spin_3s_linear_infinite_reverse]"></div>
-                <div className="absolute w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_10px_rgb(255,255,255,0.8)] z-10" />
+                <div className="absolute inset-0 border-2 border-indigo-500/30 rounded-full"></div>
+                <div className="absolute inset-0 border-2 border-transparent border-t-indigo-400 border-l-fuchsia-400 rounded-full animate-[spin_4s_linear_infinite]"></div>
+                <div className="absolute inset-0.5 border-2 border-transparent border-b-cyan-400 border-r-indigo-400 rounded-full animate-[spin_3s_linear_infinite_reverse]"></div>
+                <div className="absolute w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.8)] z-10" />
               </div>
-              <span className="font-display font-black text-white text-[16px] drop-shadow-[0_0_8px_rgb(255,255,255,0.4)] tracking-wide uppercase">
-                {currentCategory === 'focus' ? <>Orbit<span className="text-transparent bg-clip-text bg-gradient-to-l from-violet/85 to-violet/85">X</span> Focus</> : (currentCategory === 'community' ? <>Orbit<span className="text-transparent bg-clip-text bg-gradient-to-l from-violet/85 to-violet/85">X</span> Social</> : <>Orbit<span className="text-transparent bg-clip-text bg-gradient-to-l from-violet/85 to-violet/85">X</span> Profile</>)}
+              <span className="font-display font-black text-white text-[16px] drop-shadow-[0_0_8px_rgba(255,255,255,0.4)] tracking-wide uppercase">
+                {currentCategory === 'focus' ? <>Orbit<span className="text-transparent bg-clip-text bg-gradient-to-l from-indigo-400 to-fuchsia-400">X</span> Focus</> : (currentCategory === 'community' ? <>Orbit<span className="text-transparent bg-clip-text bg-gradient-to-l from-indigo-400 to-fuchsia-400">X</span> Social</> : <>Orbit<span className="text-transparent bg-clip-text bg-gradient-to-l from-indigo-400 to-fuchsia-400">X</span> Profile</>)}
               </span>
             </div>
         </div>
@@ -458,11 +458,11 @@ export default function Dashboard({
               toggleLanguage();
               playSound("timer");
             }}
-            className="p-2 hover:bg-white/10 text-white/60 hover:text-violet rounded-full transition-colors flex items-center justify-center relative group"
+            className="p-2 hover:bg-white/10 text-gray-400 hover:text-indigo-400 rounded-full transition-colors flex items-center justify-center relative group"
             title={lang === "ar" ? "Switch to English" : "العربية"}
           >
-            <Globe2 size={18} className={cn(lang === "en" ? "text-violet animate-pulse" : "text-white/60")} />
-            <span className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 transition-all text-[10px] bg-violet text-violet/90 border border-violet/50 px-2 py-0.5 rounded whitespace-nowrap shadow-xl">
+            <Globe2 size={18} className={cn(lang === "en" ? "text-indigo-400 animate-pulse" : "text-gray-400")} />
+            <span className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 transition-all text-[10px] bg-indigo-950 text-indigo-300 border border-indigo-800/50 px-2 py-0.5 rounded whitespace-nowrap shadow-xl">
               {lang === "ar" ? "English" : "العربية"}
             </span>
           </button>
@@ -473,11 +473,11 @@ export default function Dashboard({
               setRunTour(true);
               playSound("timer");
             }}
-            className="p-2 hover:bg-white/10 text-white/60 hover:text-violet rounded-full transition-colors flex items-center justify-center relative group"
+            className="p-2 hover:bg-white/10 text-gray-400 hover:text-indigo-400 rounded-full transition-colors flex items-center justify-center relative group"
             title={t("top.tour", "بدء الجولة الإرشادية")}
           >
             <Info size={18} />
-            <span className="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 transition-all text-[10px] bg-violet text-violet/90 border border-violet/50 px-2 py-0.5 rounded whitespace-nowrap">{t("top.tour_sub", "🧭 جولة سريعة")}</span>
+            <span className="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 transition-all text-[10px] bg-indigo-950 text-indigo-300 border border-indigo-800/50 px-2 py-0.5 rounded whitespace-nowrap">{t("top.tour_sub", "🧭 جولة سريعة")}</span>
           </button>
 
           {!isGuest && (
@@ -494,34 +494,34 @@ export default function Dashboard({
           {!isGuest && (
             <button
               onClick={handleInviteCopy}
-              className="p-2 hover:bg-white/10 text-white/60 hover:text-violet rounded-full transition-colors flex items-center justify-center relative group"
+              className="p-2 hover:bg-white/10 text-gray-400 hover:text-fuchsia-400 rounded-full transition-colors flex items-center justify-center relative group"
               title={isAr ? "ادعُ صديقاً إلى المجرة" : "Invite a friend to the galaxy"}
             >
               <UserPlus size={18} className="group-hover:scale-110 transition-transform" />
-              <span className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 transition-all text-[10px] bg-violet text-violet/90 border border-violet/50 px-2 py-0.5 rounded whitespace-nowrap shadow-xl">
+              <span className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 transition-all text-[10px] bg-indigo-950 text-fuchsia-300 border border-fuchsia-800/50 px-2 py-0.5 rounded whitespace-nowrap shadow-xl">
                 {isAr ? "ادعُ صديقاً 🚀" : "Invite a friend 🚀"}
               </span>
             </button>
           )}
 
           <div
-            className="tour-step-stats flex items-center gap-2.5 bg-gradient-to-r from-violet/10 to-transparent hover:bg-violet/20 transition-all border border-violet/20 rounded-full p-1 pl-3 cursor-pointer backdrop-blur-xl group"
+            className="tour-step-stats flex items-center gap-2.5 bg-gradient-to-r from-indigo-500/10 to-transparent hover:bg-indigo-500/20 transition-all border border-indigo-500/20 rounded-full p-1 pl-3 cursor-pointer backdrop-blur-xl group"
             onClick={() => handleTabChange("profile")}
           >
             <div className="hidden md:flex flex-col gap-0.5">
-              <div className="text-[10px] font-bold text-violet/90 flex items-center gap-1">
+              <div className="text-[10px] font-bold text-indigo-300 flex items-center gap-1">
                 LVL {user.level || 1}
               </div>
-              <div className="w-20 h-1.5 bg-violet rounded-full overflow-hidden">
+              <div className="w-20 h-1.5 bg-indigo-950 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-gradient-to-r from-violet to-violet rounded-full transition-all"
+                  className="h-full bg-gradient-to-r from-indigo-500 to-fuchsia-500 rounded-full transition-all"
                   style={{ width: `${getLevelProgress(user.xp, user.level || 1)}%` }}
                 />
               </div>
             </div>
 
             <div className="relative">
-              <div className="w-9 h-9 rounded-full border-2 border-violet/40 overflow-hidden bg-space-dark shadow-[0_0_20px_rgb(140,82,255,0.4)]">
+              <div className="w-9 h-9 rounded-full border-2 border-indigo-500/40 overflow-hidden bg-space-dark shadow-[0_0_20px_rgba(99,102,241,0.4)]">
                 <img
                   src={user.photoURL || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user.uid}`}
                   alt="avatar"
@@ -529,7 +529,7 @@ export default function Dashboard({
                   referrerPolicy="no-referrer"
                 />
               </div>
-              <div className="absolute -bottom-1 -right-1 bg-violet text-[7px] font-black text-white rounded-full w-4 h-4 flex items-center justify-center border border-violet/40 shadow-md">
+              <div className="absolute -bottom-1 -right-1 bg-indigo-600 text-[7px] font-black text-white rounded-full w-4 h-4 flex items-center justify-center border border-indigo-400 shadow-md">
                 {user.level || 1}
               </div>
             </div>
@@ -540,9 +540,9 @@ export default function Dashboard({
       {/* Guest Mode Banner */}
       {isGuest && (
         <div className="fixed top-[72px] left-1/2 -translate-x-1/2 z-40 w-[calc(100%-2rem)] max-w-5xl">
-          <div className="flex items-center justify-between gap-3 px-4 py-2.5 rounded-2xl border border-violet/20 bg-violet/60 backdrop-blur-xl shadow-[0_8px_32px_rgb(0,0,0,0.5)]">
-            <div className="flex items-center gap-2.5 text-violet/80 text-xs md:text-sm font-bold">
-              <Eye size={16} className="text-violet shrink-0" />
+          <div className="flex items-center justify-between gap-3 px-4 py-2.5 rounded-2xl border border-indigo-500/20 bg-indigo-950/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+            <div className="flex items-center gap-2.5 text-indigo-200 text-xs md:text-sm font-bold">
+              <Eye size={16} className="text-indigo-400 shrink-0" />
               <span className="hidden sm:inline">
                 {isAr ? "أنت في وضع المشاهدة — شاهد المحطات والنقاشات والتصنيف دون حفظ أي تقدم." : "You're in guest mode — watch stations, discussions, and the leaderboard without saving any progress."}
               </span>
@@ -553,7 +553,7 @@ export default function Dashboard({
             {onLogin && (
               <button
                 onClick={onLogin}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-violet to-violet hover:scale-105 active:scale-95 transition-all text-white text-xs font-black whitespace-nowrap"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-indigo-500 to-fuchsia-600 hover:scale-105 active:scale-95 transition-all text-white text-xs font-black whitespace-nowrap"
               >
                 <Rocket size={14} />
                 {isAr ? "سجّل وأطلق مجرتك" : "Sign in & launch"}
@@ -576,8 +576,8 @@ export default function Dashboard({
           >
             <React.Suspense fallback={
               <div className="flex flex-col items-center justify-center min-h-[400px] w-full relative">
-                <Rocket className="w-10 h-10 text-violet animate-bounce" />
-                <p className="text-[10px] text-violet/90 font-mono tracking-widest mt-4 animate-pulse uppercase">
+                <Rocket className="w-10 h-10 text-indigo-400 animate-bounce" />
+                <p className="text-[10px] text-indigo-300 font-mono tracking-widest mt-4 animate-pulse uppercase">
                   {isAr ? "تحميل قطاع المدار الفضائي..." : "CONNECTING TO SECTOR PROTOCOL..."}
                 </p>
               </div>
@@ -633,22 +633,22 @@ export default function Dashboard({
 
       {/* Floating Bottom Dock */}
       <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
-        <div className="flex items-center gap-2 bg-space-dark/80 backdrop-blur-xl p-2 rounded-full border border-white/12 shadow-[0_25px_65px_rgb(0,0,0,0.9),0_0_30px_rgb(140,82,255,0.06)] hover:border-white/20 transition-all duration-300 relative isolate before:absolute before:inset-0 before:-z-10 before:rounded-full before:bg-gradient-to-t before:from-white/[0.04] before:to-transparent before:shadow-[inset_y_1px_rgb(255,255,255,0.15)]">
+        <div className="flex items-center gap-2 bg-space-dark/80 backdrop-blur-xl p-2 rounded-full border border-white/12 shadow-[0_25px_65px_rgba(0,0,0,0.9),0_0_30px_rgba(99,102,241,0.06)] hover:border-white/20 transition-all duration-300 relative isolate before:absolute before:inset-0 before:-z-10 before:rounded-full before:bg-gradient-to-t before:from-white/[0.04] before:to-transparent before:shadow-[inset_y_1px_rgba(255,255,255,0.15)]">
           <DockButton
             icon={<Rocket size={20} />}
             label={t("cat.focus", "التركيز")}
             active={currentCategory === "focus"}
             onClick={() => setCategory("focus")}
-            colorClass="from-violet to-violet/85"
-            glowClass="bg-violet/30"
+            colorClass="from-indigo-600 to-indigo-400"
+            glowClass="bg-indigo-500/30"
           />
           <DockButton
             icon={<Globe2 size={20} />}
             label={t("cat.community", "المجرة")}
             active={currentCategory === "community"}
             onClick={() => setCategory("community")}
-            colorClass="from-violet to-violet"
-            glowClass="bg-violet/30"
+            colorClass="from-fuchsia-600 to-pink-500"
+            glowClass="bg-fuchsia-500/30"
           />
           {!isGuest && (
             <DockButton
@@ -656,8 +656,8 @@ export default function Dashboard({
               label={t("cat.profile", "الهوية")}
               active={currentCategory === "profile"}
               onClick={() => setCategory("profile")}
-              colorClass="from-neon to-lemon/85"
-              glowClass="bg-neon/30"
+              colorClass="from-cyan-600 to-emerald-400"
+              glowClass="bg-cyan-500/30"
             />
           )}
         </div>

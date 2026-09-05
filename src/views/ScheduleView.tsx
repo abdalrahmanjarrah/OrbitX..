@@ -77,23 +77,23 @@ const PRIORITIES = [
   {
     value: "low",
     label: "عادلة",
-    color: "text-lemon",
-    bg: "bg-lemon/10",
-    border: "border-lemon/30",
+    color: "text-green-400",
+    bg: "bg-green-500/10",
+    border: "border-green-500/30",
   },
   {
     value: "medium",
     label: "متوسطة",
-    color: "text-gold",
-    bg: "bg-gold/10",
-    border: "border-gold/30",
+    color: "text-yellow-400",
+    bg: "bg-yellow-500/10",
+    border: "border-yellow-500/30",
   },
   {
     value: "high",
     label: "عالية",
-    color: "text-gold",
-    bg: "bg-gold/10",
-    border: "border-gold/30",
+    color: "text-red-400",
+    bg: "bg-red-500/10",
+    border: "border-red-500/30",
   },
 ] as const;
 
@@ -323,20 +323,20 @@ export default function ScheduleView({ user }: { user: UserData }) {
   return (
     <div className="max-w-7xl mx-auto space-y-8 pb-20 relative min-h-screen">
       {/* Background ambient gradient */}
-      <div className="absolute top-0 left-0 right-0 h-96 bg-gradient-to-b from-panel/10 to-transparent -z-10 rounded-3xl pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-96 bg-gradient-to-b from-blue-900/10 to-transparent -z-10 rounded-3xl pointer-events-none" />
 
       {/* Header */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 bg-space-dark/80 backdrop-blur-md p-6 rounded-3xl shadow-xl border border-white/5 sticky top-0 z-30">
         <div className="flex flex-col md:flex-row md:items-center gap-4 w-full md:w-auto">
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-neon to-violet flex items-center justify-center shadow-lg shadow-neon/20">
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-blue-500/20">
               <Calendar className="w-7 h-7 text-white" />
             </div>
             <div>
               <h2 className="text-2xl md:text-3xl font-black text-white">
                 مركز المهام
               </h2>
-              <p className="text-sm text-neon/90 font-medium tracking-wide">
+              <p className="text-sm text-blue-300 font-medium tracking-wide">
                 خطط، نفذ، وانطلق
               </p>
             </div>
@@ -348,25 +348,25 @@ export default function ScheduleView({ user }: { user: UserData }) {
           <div className="flex items-center gap-4 bg-white/5 rounded-2xl p-3 border border-white/10 shrink-0 w-full md:w-auto">
             <div className="text-right flex-1 md:w-32">
               <div className="flex justify-between items-center text-xs mb-1.5">
-                <span className="font-bold text-white/70">إنجاز الأسبوع</span>
-                <span className="text-neon font-bold">{progress}%</span>
+                <span className="font-bold text-gray-300">إنجاز الأسبوع</span>
+                <span className="text-blue-400 font-bold">{progress}%</span>
               </div>
               <div className="h-2 w-full bg-black/50 rounded-full overflow-hidden">
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${progress}%` }}
-                  className="h-full bg-gradient-to-r from-neon to-violet rounded-full"
+                  className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"
                 />
               </div>
             </div>
-            <div className="w-10 h-10 rounded-xl bg-neon/10 flex items-center justify-center border border-neon/20 shrink-0">
-              <Target size={20} className="text-neon" />
+            <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-500/20 shrink-0">
+              <Target size={20} className="text-blue-400" />
             </div>
           </div>
 
           <button
             onClick={() => setIsCreating(!isCreating)}
-            className="w-full md:w-auto px-6 py-3.5 bg-neon hover:bg-neon/80 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg shadow-neon/20 whitespace-nowrap text-white"
+            className="w-full md:w-auto px-6 py-3.5 bg-blue-600 hover:bg-blue-500 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg shadow-blue-900/20 whitespace-nowrap text-white"
           >
             {isCreating ? <X size={20} /> : <Plus size={20} />}
             <span className="">
@@ -379,16 +379,16 @@ export default function ScheduleView({ user }: { user: UserData }) {
       {/* Filters & Search */}
       {!loading && !isCreating && (
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="w-full md:w-64 relative border border-white/10 rounded-xl bg-space-dark focus-within:border-neon/50 transition-colors">
+          <div className="w-full md:w-64 relative border border-white/10 rounded-xl bg-space-dark focus-within:border-blue-500/50 transition-colors">
             <input
               type="text"
               placeholder={isAr ? "ابحث في مهامك..." : "Search your tasks..."}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className={cn("w-full bg-transparent px-10 py-2.5 text-sm focus:outline-none text-white placeholder-white/45 font-medium", isAr ? "text-right" : "text-left")}
+              className={cn("w-full bg-transparent px-10 py-2.5 text-sm focus:outline-none text-white placeholder-gray-600 font-medium", isAr ? "text-right" : "text-left")}
               dir={isAr ? "rtl" : "ltr"}
             />
-            <Search className="absolute top-3 start-3 w-4 h-4 text-white/50" />
+            <Search className="absolute top-3 start-3 w-4 h-4 text-gray-500" />
           </div>
 
           <div className="flex items-center justify-end gap-2 text-sm font-bold bg-space-dark/60 p-1.5 rounded-2xl border border-white/5 w-full md:w-auto overflow-x-auto custom-scrollbar">
@@ -398,7 +398,7 @@ export default function ScheduleView({ user }: { user: UserData }) {
                 "px-4 py-2 rounded-xl transition-all flex items-center gap-2 whitespace-nowrap",
                 filterMode === "all"
                   ? "bg-white/10 text-white shadow-sm"
-                  : "text-white/50 hover:text-white/70",
+                  : "text-gray-500 hover:text-gray-300",
               )}
             >
               <Calendar size={16} /> كل المهام
@@ -408,8 +408,8 @@ export default function ScheduleView({ user }: { user: UserData }) {
               className={cn(
                 "px-4 py-2 rounded-xl transition-all flex items-center gap-2 whitespace-nowrap",
                 filterMode === "today"
-                  ? "bg-neon/10 text-neon border border-neon/20 shadow-sm"
-                  : "text-white/50 hover:text-white/70",
+                  ? "bg-blue-500/10 text-blue-400 border border-blue-500/20 shadow-sm"
+                  : "text-gray-500 hover:text-gray-300",
               )}
             >
               <Zap size={16} /> لليوم فقط
@@ -419,8 +419,8 @@ export default function ScheduleView({ user }: { user: UserData }) {
               className={cn(
                 "px-4 py-2 rounded-xl transition-all flex items-center gap-2 whitespace-nowrap",
                 filterMode === "pending"
-                  ? "bg-gold/10 text-gold border border-gold/20 shadow-sm"
-                  : "text-white/50 hover:text-white/70",
+                  ? "bg-orange-500/10 text-orange-400 border border-orange-500/20 shadow-sm"
+                  : "text-gray-500 hover:text-gray-300",
               )}
             >
               <AlertCircle size={16} /> قيد الانتظار
@@ -450,20 +450,20 @@ export default function ScheduleView({ user }: { user: UserData }) {
                 className={cn(
                   "flex flex-col items-center gap-1 py-3 px-1 rounded-2xl border transition-all",
                   isActive
-                    ? "bg-neon/15 border-neon/40 shadow-lg shadow-neon/10"
+                    ? "bg-blue-500/15 border-blue-500/40 shadow-lg shadow-blue-500/10"
                     : "bg-space-dark/70 border-white/5 hover:border-white/15 hover:bg-white/5",
                 )}
               >
                 <span
                   className={cn(
                     "text-xs md:text-sm font-black tracking-wide",
-                    isToday ? "text-neon" : "text-white/70",
+                    isToday ? "text-blue-400" : "text-gray-300",
                   )}
                 >
                   {dayName}
                 </span>
                 <div className="flex items-center gap-1 text-[10px] font-bold">
-                  <span className={total > 0 && done === total ? "text-lemon" : "text-white/50"}>
+                  <span className={total > 0 && done === total ? "text-green-400" : "text-gray-500"}>
                     {done}/{total}
                   </span>
                 </div>
@@ -472,14 +472,14 @@ export default function ScheduleView({ user }: { user: UserData }) {
                     <div
                       className={cn(
                         "h-full rounded-full transition-all",
-                        done === total ? "bg-lemon/80" : "bg-neon/80",
+                        done === total ? "bg-green-500" : "bg-blue-500",
                       )}
                       style={{ width: `${pct}%` }}
                     />
                   </div>
                 )}
                 {isToday && (
-                  <span className="text-[11px] bg-neon/80 font-bold px-1.5 py-0.5 rounded-full text-white">
+                  <span className="text-[11px] bg-blue-500 font-bold px-1.5 py-0.5 rounded-full text-white">
                     اليوم
                   </span>
                 )}
@@ -497,9 +497,9 @@ export default function ScheduleView({ user }: { user: UserData }) {
             initial={{ opacity: 0, height: 0, y: -20 }}
             animate={{ opacity: 1, height: "auto", y: 0 }}
             exit={{ opacity: 0, height: 0, y: -20 }}
-            className="p-6 md:p-8 rounded-3xl bg-gradient-to-b from-[#090b1f] to-space-dark shadow-2xl border border-neon/30 space-y-6 overflow-hidden"
+            className="p-6 md:p-8 rounded-3xl bg-gradient-to-b from-[#101223] to-space-dark shadow-2xl border border-blue-500/30 space-y-6 overflow-hidden"
           >
-            <h3 className={cn("text-xl font-bold text-neon/90", isAr ? "text-right" : "text-left")}>
+            <h3 className={cn("text-xl font-bold text-blue-300", isAr ? "text-right" : "text-left")}>
               {isAr ? "تفاصيل المهمة الجديدة" : "New Task Details"}
             </h3>
 
@@ -507,22 +507,22 @@ export default function ScheduleView({ user }: { user: UserData }) {
               {/* Right column in RTL */}
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <label className={cn("text-sm font-bold text-white/60 block", isAr ? "text-right" : "text-left")}>
-                    {isAr ? "عنوان المهمة" : "Task Title"} <span className="text-gold">*</span>
+                  <label className={cn("text-sm font-bold text-gray-400 block", isAr ? "text-right" : "text-left")}>
+                    {isAr ? "عنوان المهمة" : "Task Title"} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
                     value={task}
                     onChange={(e) => setTask(e.target.value)}
                     placeholder={isAr ? "مثال: مراجعة فيزياء الوحدة 3" : "e.g. Study Physics Chapter 3"}
-                    className={cn("w-full bg-black/40 border border-neon/30 rounded-xl px-4 py-3 focus:outline-none focus:ring-1 focus:ring-neon/40 font-bold placeholder:font-medium placeholder:text-white/45 transition-all text-white", isAr ? "text-right" : "text-left")}
+                    className={cn("w-full bg-black/40 border border-blue-500/30 rounded-xl px-4 py-3 focus:outline-none focus:ring-1 focus:ring-blue-500 font-bold placeholder:font-medium placeholder:text-gray-600 transition-all text-white", isAr ? "text-right" : "text-left")}
                     dir={isAr ? "rtl" : "ltr"}
                   />
                 </div>
 
                 <div className={cn("flex gap-4", isAr ? "flex-row" : "flex-row-reverse")}>
                   <div className="space-y-2 w-full">
-                    <label className={cn("text-sm font-bold text-white/60 block", isAr ? "text-right" : "text-left")}>
+                    <label className={cn("text-sm font-bold text-gray-400 block", isAr ? "text-right" : "text-left")}>
                       {isAr ? "اليوم المستهدف" : "Target Day"}
                     </label>
                     <select
@@ -540,8 +540,8 @@ export default function ScheduleView({ user }: { user: UserData }) {
                   </div>
 
                   <div className="space-y-2 w-full">
-                    <label className={cn("text-sm font-bold text-white/60 block", isAr ? "text-right" : "text-left")}>
-                      {isAr ? "الساعة" : "Time"} <span className="text-gold">*</span>
+                    <label className={cn("text-sm font-bold text-gray-400 block", isAr ? "text-right" : "text-left")}>
+                      {isAr ? "الساعة" : "Time"} <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="time"
@@ -557,7 +557,7 @@ export default function ScheduleView({ user }: { user: UserData }) {
               {/* Left column in RTL */}
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <label className={cn("text-sm font-bold text-white/60 block", isAr ? "text-right" : "text-left")}>
+                  <label className={cn("text-sm font-bold text-gray-400 block", isAr ? "text-right" : "text-left")}>
                     {isAr ? "الأهمية" : "Priority"}
                   </label>
                   <div className={cn("flex gap-2", isAr ? "flex-row" : "flex-row-reverse")}>
@@ -569,7 +569,7 @@ export default function ScheduleView({ user }: { user: UserData }) {
                           "flex-1 py-3 rounded-xl border text-sm font-bold transition-all",
                           priority === p.value
                             ? `${p.bg} ${p.border} ${p.color} ring-1 ring-white/10`
-                            : "bg-black/20 border-white/5 text-white/50 hover:bg-white/5",
+                            : "bg-black/20 border-white/5 text-gray-500 hover:bg-white/5",
                         )}
                       >
                         {p.label}
@@ -580,7 +580,7 @@ export default function ScheduleView({ user }: { user: UserData }) {
 
                 <div className={cn("flex gap-4", isAr ? "flex-row" : "flex-row-reverse")}>
                   <div className="space-y-2 w-full">
-                    <label className={cn("text-sm font-bold text-white/60 block", isAr ? "text-right" : "text-left")}>
+                    <label className={cn("text-sm font-bold text-gray-400 block", isAr ? "text-right" : "text-left")}>
                       {isAr ? "المدة (دقائق) - اختياري" : "Duration (mins) - Optional"}
                     </label>
                     <input
@@ -588,13 +588,13 @@ export default function ScheduleView({ user }: { user: UserData }) {
                       value={duration}
                       onChange={(e) => setDuration(e.target.value)}
                       placeholder={isAr ? "مثال: 45" : "e.g. 45"}
-                      className={cn("w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 focus:outline-none text-white text-sm placeholder:text-white/45", isAr ? "text-right" : "text-left")}
+                      className={cn("w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 focus:outline-none text-white text-sm placeholder:text-gray-600", isAr ? "text-right" : "text-left")}
                       dir={isAr ? "rtl" : "ltr"}
                     />
                   </div>
 
                   <div className="space-y-2 w-full">
-                    <label className={cn("text-sm font-bold text-white/60 block", isAr ? "text-right" : "text-left")}>
+                    <label className={cn("text-sm font-bold text-gray-400 block", isAr ? "text-right" : "text-left")}>
                       {isAr ? "التصنيف" : "Category"}
                     </label>
                     <select
@@ -618,7 +618,7 @@ export default function ScheduleView({ user }: { user: UserData }) {
               <button
                 onClick={handleAddItem}
                 disabled={!time || !task}
-                className="px-8 py-3.5 bg-gradient-to-r from-neon to-violet rounded-xl font-bold hover:scale-[1.02] active:scale-95 transition-all text-white disabled:opacity-50 disabled:hover:scale-100 flex items-center justify-center gap-2"
+                className="px-8 py-3.5 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl font-bold hover:scale-[1.02] active:scale-95 transition-all text-white disabled:opacity-50 disabled:hover:scale-100 flex items-center justify-center gap-2"
               >
                 تأكيد المهمة
               </button>
@@ -661,7 +661,7 @@ export default function ScheduleView({ user }: { user: UserData }) {
                 className={cn(
                   "flex flex-col gap-3 p-4 md:p-5 rounded-3xl transition-colors border",
                   isToday
-                    ? "bg-neon/5 border-neon/20"
+                    ? "bg-blue-500/5 border-blue-500/20"
                     : "bg-space-dark/50 border-white/5",
                 )}
                 onDragOver={handleDragOver}
@@ -670,31 +670,31 @@ export default function ScheduleView({ user }: { user: UserData }) {
                 {/* Day Header Row */}
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-neon/10 border border-neon/20 flex items-center justify-center">
-                      <Calendar size={18} className="text-neon" />
+                    <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
+                      <Calendar size={18} className="text-blue-400" />
                     </div>
                     <h3
                       className={cn(
                         "text-lg md:text-xl font-black tracking-wide",
-                        isToday ? "text-neon" : "text-white/80",
+                        isToday ? "text-blue-400" : "text-gray-200",
                       )}
                     >
                       {dayName}
                     </h3>
                     {isToday && (
-                      <span className="text-[10px] bg-neon/80 font-bold px-2 py-0.5 rounded-full text-white">
+                      <span className="text-[10px] bg-blue-500 font-bold px-2 py-0.5 rounded-full text-white">
                         اليوم
                       </span>
                     )}
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <span className="text-sm font-bold text-white/60">
+                    <span className="text-sm font-bold text-gray-400">
                       <span
                         className={
                           dayTotal > 0 && dayCompletedCount === dayTotal
-                            ? "text-lemon"
-                            : "text-neon"
+                            ? "text-green-400"
+                            : "text-blue-400"
                         }
                       >
                         {dayCompletedCount}
@@ -706,8 +706,8 @@ export default function ScheduleView({ user }: { user: UserData }) {
                         className={cn(
                           "h-full rounded-full transition-all",
                           dayTotal > 0 && dayCompletedCount === dayTotal
-                            ? "bg-lemon/80"
-                            : "bg-gradient-to-r from-neon to-violet",
+                            ? "bg-green-500"
+                            : "bg-gradient-to-r from-blue-500 to-indigo-500",
                         )}
                         style={{ width: `${dayPct}%` }}
                       />
@@ -738,7 +738,7 @@ export default function ScheduleView({ user }: { user: UserData }) {
                             "p-3.5 md:p-4 rounded-2xl border relative group cursor-grab active:cursor-grabbing transition-all",
                             isCompleted
                               ? "bg-space-dark/50 border-white/5 opacity-60"
-                              : `bg-[#090b1f] ${pInfo.border} ${pInfo.bg.replace("/10", "/5")}`,
+                              : `bg-[#0e1021] ${pInfo.border} ${pInfo.bg.replace("/10", "/5")}`,
                             draggedItemId === item.id
                               ? "opacity-50 scale-[0.98]"
                               : "",
@@ -750,14 +750,14 @@ export default function ScheduleView({ user }: { user: UserData }) {
                               <span
                                 className={cn(
                                   "text-sm md:text-base font-black",
-                                  isCompleted ? "text-white/50" : "text-white",
+                                  isCompleted ? "text-gray-500" : "text-white",
                                 )}
                                 dir="ltr"
                               >
                                 {item.time}
                               </span>
                               {(item.duration ? item.duration > 0 : false) && (
-                                <span className="flex items-center gap-1 text-[10px] font-bold text-white/50">
+                                <span className="flex items-center gap-1 text-[10px] font-bold text-gray-500">
                                   <Timer size={9} />
                                   {item.duration}د
                                 </span>
@@ -768,7 +768,7 @@ export default function ScheduleView({ user }: { user: UserData }) {
                             <div
                               className={cn(
                                 "w-1 self-stretch rounded-full shrink-0",
-                                isCompleted ? "bg-navy" : pInfo.bg.replace("/10", "/60"),
+                                isCompleted ? "bg-gray-700" : pInfo.bg.replace("/10", "/60"),
                               )}
                             />
 
@@ -778,14 +778,14 @@ export default function ScheduleView({ user }: { user: UserData }) {
                                 className={cn(
                                   "font-bold text-sm md:text-base truncate transition-colors",
                                   isCompleted
-                                    ? "text-white/50 line-through"
+                                    ? "text-gray-500 line-through"
                                     : "text-white",
                                 )}
                               >
                                 {item.task}
                               </p>
                               <div className="flex items-center gap-2 flex-wrap mt-1.5">
-                                <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-white/70">
+                                <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-gray-300">
                                   <Tag size={9} />
                                   {item.category || "عام"}
                                 </span>
@@ -793,7 +793,7 @@ export default function ScheduleView({ user }: { user: UserData }) {
                                   className={cn(
                                     "inline-flex items-center text-[10px] font-bold px-2 py-0.5 rounded-full border",
                                     isCompleted
-                                      ? "bg-white/5 border-white/10 text-white/50"
+                                      ? "bg-white/5 border-white/10 text-gray-500"
                                       : `${pInfo.bg} ${pInfo.border} ${pInfo.color}`,
                                   )}
                                 >
@@ -809,7 +809,7 @@ export default function ScheduleView({ user }: { user: UserData }) {
                                   e.stopPropagation();
                                   handleDeleteItem(item.id);
                                 }}
-                                className="p-2 bg-gold/10 text-gold hover:bg-gold/80 hover:text-white rounded-xl transition-colors opacity-0 group-hover:opacity-100"
+                                className="p-2 bg-red-500/10 text-red-400 hover:bg-red-500 hover:text-white rounded-xl transition-colors opacity-0 group-hover:opacity-100"
                                 title={isAr ? "حذف" : "Delete"}
                               >
                                 <Trash2 size={13} />
@@ -819,8 +819,8 @@ export default function ScheduleView({ user }: { user: UserData }) {
                                 className={cn(
                                   "p-2 rounded-xl transition-all border",
                                   isCompleted
-                                    ? "bg-lemon/80 border-lemon/40 text-white shadow-lemon/20"
-                                    : "bg-black/30 border-white/10 hover:border-neon/40 hover:bg-neon/10 text-white/50 hover:text-neon",
+                                    ? "bg-green-500 border-green-400 text-white shadow-green-500/20"
+                                    : "bg-black/30 border-white/10 hover:border-blue-500 hover:bg-blue-500/10 text-gray-500 hover:text-blue-400",
                                 )}
                                 title={isAr ? "إنجاز" : "Complete"}
                               >
@@ -845,7 +845,7 @@ export default function ScheduleView({ user }: { user: UserData }) {
                   {dayItems.length === 0 && (
                     <div className="border-2 border-dashed border-white/5 rounded-2xl flex flex-col items-center justify-center p-6 text-center opacity-50 pointer-events-none min-h-[90px]">
                       <GripVertical className="text-white/10 mb-2" size={20} />
-                      <p className="text-xs text-white/50 font-bold">
+                      <p className="text-xs text-gray-500 font-bold">
                         {isAr ? "لا مهام لهذا اليوم — اسحب مهمة هنا" : "No tasks — drag a task here"}
                       </p>
                     </div>

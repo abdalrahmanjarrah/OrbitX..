@@ -81,10 +81,10 @@ export default function GalaxyHero({
           onLoad={() => {}}
         />
       ) : (
-        <div className="absolute inset-0 flex items-center justify-center bg-[#04040a]">
+        <div className="absolute inset-0 flex items-center justify-center bg-[#03040a]">
           <div className="text-center">
-            <div className="w-10 h-10 border-2 border-violet/40 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-            <span className="text-xs text-white/50 font-mono tracking-widest uppercase">
+            <div className="w-10 h-10 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+            <span className="text-xs text-gray-500 font-mono tracking-widest uppercase">
               Initializing star charts…
             </span>
           </div>

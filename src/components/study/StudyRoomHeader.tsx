@@ -27,16 +27,16 @@ function StudyRoomHeaderComponent({
   isExiting,
 }: StudyRoomHeaderProps) {
   return (
-    <nav className="z-20 mx-auto mt-6 max-w-[95%] lg:max-w-7xl flex items-center justify-between px-6 py-3 bg-space-dark/80 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl shadow-violet/40">
+    <nav className="z-20 mx-auto mt-6 max-w-[95%] lg:max-w-7xl flex items-center justify-between px-6 py-3 bg-space-dark/80 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl shadow-indigo-900/40">
       {/* Right Side: Station Info */}
       <div className="flex items-center gap-4">
         <div className="relative">
-          <div className="p-2.5 bg-gradient-to-br from-violet/20 to-violet/20 rounded-full border border-violet/30 text-violet">
+          <div className="p-2.5 bg-gradient-to-br from-indigo-400/20 to-indigo-500/20 rounded-full border border-indigo-400/30 text-indigo-500">
             <Rocket size={20} />
           </div>
           {isJoined && (
             <div
-              className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-lemon/80 rounded-full border-2 border-[#090b1f] shadow-[0_0_8px_rgb(0,229,212,0.6)] animate-pulse"
+              className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-[#0a0b16] shadow-[0_0_8px_rgba(34,197,94,0.6)] animate-pulse"
               title="متصل بالمدار"
             />
           )}
@@ -45,7 +45,7 @@ function StudyRoomHeaderComponent({
           <h2 className="text-lg md:text-xl font-black text-white">
             {room.name}
           </h2>
-          <p className="text-[10px] text-white/50 font-bold tracking-wider">
+          <p className="text-[10px] text-gray-500 font-bold tracking-wider">
             {room.participants.length}/{room.maxParticipants} رواد فضاء
           </p>
         </div>
@@ -58,7 +58,7 @@ function StudyRoomHeaderComponent({
           {isHost && (
             <button
               onClick={() => setShowDeleteDialog(true)}
-              className="p-2 text-white/50 hover:text-gold transition-colors hover:bg-gold/10 rounded-xl"
+              className="p-2 text-gray-500 hover:text-red-500 transition-colors hover:bg-red-500/10 rounded-xl"
               title="حذف المحطة"
             >
               <Trash2 size={20} />
@@ -69,8 +69,8 @@ function StudyRoomHeaderComponent({
             className={cn(
               "p-2 rounded-xl transition-all flex items-center gap-2 group",
               isFocusMode
-                ? "bg-violet/80 text-white"
-                : "text-white/50 hover:text-white hover:bg-white/5",
+                ? "bg-indigo-500 text-white"
+                : "text-gray-500 hover:text-white hover:bg-white/5",
             )}
             title={
               isFocusMode ? "إيقاف وضع التركيز" : "تفعيل وضع التركيز العميق"
@@ -87,7 +87,7 @@ function StudyRoomHeaderComponent({
               setShowExitDialog(true);
             }}
             disabled={isExiting}
-            className="p-2 text-white/50 hover:text-white hover:bg-white/5 rounded-xl transition-all flex items-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
+            className="p-2 text-gray-500 hover:text-white hover:bg-white/5 rounded-xl transition-all flex items-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
             title="خروج"
           >
             <span className="text-xs font-bold hidden sm:block">خروج</span>

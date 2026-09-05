@@ -654,7 +654,7 @@ function App() {
   if (loading || (user && !userData)) {
     return (
       <div className="min-h-screen bg-space-dark flex items-center justify-center">
-        <Rocket className="w-12 h-12 text-violet animate-bounce" />
+        <Rocket className="w-12 h-12 text-indigo-400 animate-bounce" />
       </div>
     );
   }
@@ -681,17 +681,17 @@ function App() {
                 loginError.code.includes("anonymous_provider_disabled");
               return (
             <div
-              className={cn("bg-[#090b1f]/95 border border-gold/20 rounded-3xl p-6 md:p-8 max-w-lg w-full shadow-2xl shadow-violet/40 relative overflow-hidden", isAr ? "text-right" : "text-left")}
+              className={cn("bg-[#0a0f25]/95 border border-red-500/20 rounded-3xl p-6 md:p-8 max-w-lg w-full shadow-2xl shadow-indigo-950/40 relative overflow-hidden", isAr ? "text-right" : "text-left")}
               dir={isAr ? "rtl" : "ltr"}
             >
               {/* Absolute floating cosmic decoration */}
-              <div className="absolute top-[-50px] left-[-30px] w-32 h-32 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute top-[-50px] left-[-30px] w-32 h-32 bg-red-500/10 rounded-full blur-3xl pointer-events-none" />
 
               {/* Header */}
               <div className="flex items-start justify-between mb-6">
                 <button
                   onClick={() => setLoginError(null)}
-                  className="p-2 hover:bg-white/5 rounded-xl text-white/60 hover:text-white transition-colors"
+                  className="p-2 hover:bg-white/5 rounded-xl text-gray-400 hover:text-white transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -702,21 +702,21 @@ function App() {
                         ? (isAr ? "وضع المشاهدة مو مفعّل بعد" : "Guest mode isn't enabled yet")
                         : (isAr ? "عقبة في المدار الفضائي" : "Orbital Space Hindrance")}
                     </h2>
-                    <p className="text-xs text-gold/80 mt-0.5">
+                    <p className="text-xs text-red-400/80 mt-0.5">
                       {isAnonDisabled
                         ? (isAr ? "التسجيل المجهول معطّل في إعدادات Supabase" : "Anonymous sign-ins are disabled in the Supabase settings")
                         : (isAr ? "فشل الاتصال بمزود Google Auth" : "Failed to connect to Google Auth provider")}
                     </p>
                   </div>
-                  <div className="w-12 h-12 bg-gold/10 border border-gold/30 rounded-2xl flex items-center justify-center text-gold font-bold shrink-0">
+                  <div className="w-12 h-12 bg-red-400/10 border border-red-500/30 rounded-2xl flex items-center justify-center text-red-400 font-bold shrink-0">
                     <AlertTriangle className="w-6 h-6 animate-pulse" />
                   </div>
                 </div>
               </div>
 
               {/* Main info */}
-              <div className="space-y-4 text-sm text-white/70 leading-relaxed font-sans">
-                <p className="font-semibold text-white/80">
+              <div className="space-y-4 text-sm text-gray-300 leading-relaxed font-sans">
+                <p className="font-semibold text-gray-200">
                   {isAnonDisabled
                     ? (isAr
                         ? "لتفعيل وضع المشاهدة، اذهب إلى لوحة تحكم Supabase وفعّل التسجيل المجهول. الخطوات:"
@@ -726,19 +726,19 @@ function App() {
                         : "We encountered an error from the Google provider or it is restricted in your browser.")}
                 </p>
 
-                <div className="bg-black/40 border border-white/5 rounded-2xl p-4 text-xs font-mono text-white/60 text-left overflow-x-auto">
+                <div className="bg-black/40 border border-white/5 rounded-2xl p-4 text-xs font-mono text-gray-400 text-left overflow-x-auto">
                   {loginError.fullError || loginError.message}
                 </div>
 
                 {isAnonDisabled ? (
-                  <ol className="space-y-2 text-xs text-white/60 font-sans">
+                  <ol className="space-y-2 text-xs text-gray-400 font-sans">
                     <li>1. {isAr ? "افتح " + "Supabase Dashboard" + " ← مشروعك ← Authentication ← Sign In / Providers" : "Open Supabase Dashboard → your project → Authentication → Sign In / Providers"}</li>
                     <li>2. {isAr ? "فعّل خيار " + "Anonymous sign-ins" + " واحفظ التغييرات." : "Enable 'Anonymous sign-ins' and save."}</li>
                     <li>3. {isAr ? "ارجع وجرّب زر المشاهد من جديد." : "Come back and retry the guest button."}</li>
                   </ol>
                 ) : (
                   <>
-                <p className="text-white/60">
+                <p className="text-gray-400">
                   {isAr
                     ? "تمنع المتصفحات الحديثة أحياناً النوافذ المنبثقة للتحقق من الهوية داخل إطارات المعاينة. يرجى تجربة الحل الأنسب أدناه:"
                     : "Modern browsers sometimes block popup logins within preview frames. Please try the solution below:"}
@@ -749,10 +749,10 @@ function App() {
                   <div className="flex items-start gap-3 bg-white/5 p-3 rounded-xl border border-white/5">
                     <span className="text-lg mt-0.5">🌐</span>
                     <div className={isAr ? "text-right" : "text-left"}>
-                      <h4 className="font-bold text-violet/90 text-xs">
+                      <h4 className="font-bold text-indigo-300 text-xs">
                         {isAr ? "العرض في علامة تبويب جديدة (الحل الأسرع والأنسب)" : "Open in a new tab (most reliable)"}
                       </h4>
-                      <p className="text-xs text-white/60 mt-1">
+                      <p className="text-xs text-gray-400 mt-1">
                         {isAr
                           ? "افتح التطبيق في صفحة مستقلة كاملة لتخطي قيود الإطار. اضغط على زر المعاينة الخارجي (Open in new tab) أعلى يمين نافذة AI Studio."
                           : "Open the app in an independent browser tab to bypass iframe restrictions. Click 'Open in new tab' at the top right of the AI Studio window."}
@@ -768,7 +768,7 @@ function App() {
               <div className={cn("flex flex-wrap items-center gap-3 mt-6 pt-6 border-t border-white/5 font-sans", isAr ? "justify-end" : "justify-start")}>
                 <button
                   onClick={() => setLoginError(null)}
-                  className="px-4 py-2.5 bg-white/5 rounded-xl text-xs font-bold text-white/70 hover:bg-white/10 transition-all border border-white/5"
+                  className="px-4 py-2.5 bg-white/5 rounded-xl text-xs font-bold text-gray-300 hover:bg-white/10 transition-all border border-white/5"
                 >
                   {isAr ? "إلغاء" : "Cancel"}
                 </button>
@@ -778,7 +778,7 @@ function App() {
                     setLoginError(null);
                     handleLogin();
                   }}
-                  className="px-4 py-2.5 bg-violet hover:bg-violet/80 rounded-xl text-xs font-bold text-white transition-all shadow-lg shadow-violet/30"
+                  className="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 rounded-xl text-xs font-bold text-white transition-all shadow-lg shadow-indigo-900/30"
                 >
                   {isAr ? "إعادة محاولة Google" : "Retry Google"}
                 </button>
@@ -799,11 +799,11 @@ function App() {
         className="min-h-screen bg-space-dark flex flex-col items-center justify-center p-4 text-center"
         dir={isAr ? "rtl" : "ltr"}
       >
-        <ShieldAlert className="w-24 h-24 text-gold mb-6" />
+        <ShieldAlert className="w-24 h-24 text-red-500 mb-6" />
         <h1 className="text-4xl font-bold text-white mb-4">
           {t("common.banned", "تم حظر حسابك")}
         </h1>
-        <p className="text-white/60 max-w-md">
+        <p className="text-gray-400 max-w-md">
           {t(
             "common.banned_desc",
             "لقد تم حظر وصولك إلى المنصة بسبب مخالفة القوانين. إذا كنت تعتقد أن هذا خطأ، يرجى التواصل مع الإدارة.",
@@ -823,7 +823,7 @@ function App() {
     <>
       {isQuotaExceeded && (
         <div
-          className="bg-gradient-to-r from-gold/90 to-gold/90 text-white text-xs md:text-sm py-2.5 px-4 text-center font-semibold relative z-[300] shadow-md flex items-center justify-center gap-2 select-none"
+          className="bg-gradient-to-r from-amber-600/90 to-red-600/90 text-white text-xs md:text-sm py-2.5 px-4 text-center font-semibold relative z-[300] shadow-md flex items-center justify-center gap-2 select-none"
           dir={isAr ? "rtl" : "ltr"}
         >
           <span>
@@ -846,20 +846,20 @@ function App() {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 20, opacity: 1 }}
             exit={{ y: -100, opacity: 0 }}
-            className="fixed top-20 left-1/2 -translate-x-1/2 z-[200] bg-gradient-to-r from-gold/85 to-gold p-1 rounded-2xl shadow-2xl shadow-violet/20 shadow-gold/40"
+            className="fixed top-20 left-1/2 -translate-x-1/2 z-[200] bg-gradient-to-r from-yellow-400 to-orange-500 p-1 rounded-2xl shadow-2xl shadow-indigo-900/20 shadow-orange-500/40"
           >
             <div
               className="bg-space-dark px-8 py-4 rounded-[calc(1rem-1px)] flex items-center gap-4"
               dir={isAr ? "rtl" : "ltr"}
             >
-              <div className="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-2xl">
+              <div className="w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center text-2xl">
                 🎊
               </div>
               <div className="text-right">
                 <h3 className="text-lg font-black text-white">
                   {t("level_up.title", "ترقية جديدة!")}
                 </h3>
-                <p className="text-white/60 text-xs">
+                <p className="text-gray-400 text-xs">
                   {lang === "ar"
                     ? `لقد وصلت للمستوى ${userData?.level}`
                     : `You reached Level ${userData?.level}`}
@@ -886,7 +886,7 @@ function App() {
       </Suspense>
       {inviteInfo && userData && inviteInfo.inviterId !== userData.uid && (
         <div
-          className="bg-gradient-to-r from-violet/90 via-violet/90 to-violet/90 text-white text-xs md:text-sm py-3 px-4 text-center font-semibold relative z-[120] shadow-md flex flex-wrap items-center justify-center gap-x-4 gap-y-2 select-none"
+          className="bg-gradient-to-r from-indigo-600/90 via-fuchsia-600/90 to-indigo-600/90 text-white text-xs md:text-sm py-3 px-4 text-center font-semibold relative z-[120] shadow-md flex flex-wrap items-center justify-center gap-x-4 gap-y-2 select-none"
           dir={isAr ? "rtl" : "ltr"}
         >
           <span>

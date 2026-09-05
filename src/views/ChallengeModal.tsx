@@ -254,24 +254,24 @@ export default function ChallengeModal({
   };
 
   return (
-    <div className="fixed inset-0 z-[150] flex items-center justify-center p-4 bg-navy/20 backdrop-blur-sm">
+    <div className="fixed inset-0 z-[150] flex items-center justify-center p-4 bg-slate-900/20 backdrop-blur-sm">
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        className="bg-space-dark rounded-3xl p-6 md:p-8 w-full max-w-md border border-white/10 shadow-2xl shadow-violet/20 relative max-h-[90vh] overflow-y-auto custom-scrollbar"
+        className="bg-space-dark rounded-3xl p-6 md:p-8 w-full max-w-md border border-white/10 shadow-2xl shadow-indigo-900/20 relative max-h-[90vh] overflow-y-auto custom-scrollbar"
       >
         <button
           onClick={onClose}
-          className="absolute top-4 left-4 p-2 text-white/50 hover:text-white transition-colors"
+          className="absolute top-4 left-4 p-2 text-gray-500 hover:text-white transition-colors"
         >
           <X size={24} />
         </button>
-        <h2 className="text-2xl font-black mb-6 text-center text-violet">
+        <h2 className="text-2xl font-black mb-6 text-center text-indigo-400">
           اختر صديق للتحدي 🎯
         </h2>
 
         <div className="mb-6">
-          <label className="block text-sm font-bold text-white/70 mb-2">
+          <label className="block text-sm font-bold text-gray-300 mb-2">
             مدة التحدي (مين يخلصها أول بيفوز)
           </label>
           <div className="grid grid-cols-2 gap-2 mb-2">
@@ -282,8 +282,8 @@ export default function ChallengeModal({
                 className={cn(
                   "px-3 py-2 text-sm font-bold rounded-xl border transition-all",
                   selectedDuration === opt.value
-                    ? "bg-violet/20 border-violet/40 text-violet/90"
-                    : "bg-white/5 border-white/10 text-white/60 hover:bg-white/10"
+                    ? "bg-indigo-500/20 border-indigo-500 text-indigo-300"
+                    : "bg-white/5 border-white/10 text-gray-400 hover:bg-white/10"
                 )}
               >
                 {opt.label}
@@ -296,18 +296,18 @@ export default function ChallengeModal({
               placeholder="المدة بالدقائق (مثال: 45)"
               value={customDuration}
               onChange={(e) => setCustomDuration(e.target.value)}
-              className="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-2 text-white focus:outline-none focus:border-violet/40 text-sm"
+              className="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-2 text-white focus:outline-none focus:border-indigo-500 text-sm"
               min="10"
             />
           )}
         </div>
 
         {loading ? (
-          <div className="py-8 text-center text-white/50">
+          <div className="py-8 text-center text-gray-500">
             جاري تحميل الأصدقاء...
           </div>
         ) : friends.length === 0 ? (
-          <div className="py-8 text-center text-white/50">
+          <div className="py-8 text-center text-gray-500">
             لا يوجد أصدقاء. ابحث عن رواد لتضيفهم!
           </div>
         ) : (
@@ -328,7 +328,7 @@ export default function ChallengeModal({
                     {friend.lastActiveTime &&
                       Date.now() - friend.lastActiveTime < 300000 && (
                         <div
-                          className="absolute bottom-0 right-0 w-3 h-3 bg-lemon/80 rounded-full border-2 border-[#090b1f]"
+                          className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-[#0a0b16]"
                           title="متصل الآن"
                         />
                       )}
@@ -337,14 +337,14 @@ export default function ChallengeModal({
                     <div className="font-bold text-sm">
                       {friend.displayName}
                     </div>
-                    <div className="text-[10px] text-white/60">
+                    <div className="text-[10px] text-gray-400">
                       المستوى {friend.level}
                     </div>
                   </div>
                 </div>
                 <button
                   onClick={() => sendChallenge(friend)}
-                  className="px-4 py-2 bg-violet/80 hover:bg-violet rounded-xl text-xs font-bold transition-all shadow-sm shadow-violet/20 text-white"
+                  className="px-4 py-2 bg-indigo-500 hover:bg-indigo-600 rounded-xl text-xs font-bold transition-all shadow-sm shadow-indigo-500/20 text-white"
                 >
                   إرسال تحدي
                 </button>

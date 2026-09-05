@@ -162,36 +162,36 @@ import FleetsView from './FleetsView';
 
 export default function ArticleModal({ onClose }: { onClose: () => void }) {
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-navy/20 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/20 backdrop-blur-sm">
       <div className="min-h-full flex items-center justify-center p-4">
         <motion.div
           initial={{ scale: 0.9, opacity: 0, y: 20 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
-          className="bg-space-dark rounded-3xl p-6 md:p-8 w-full max-w-2xl border border-violet/20 shadow-2xl shadow-violet/40 relative my-8"
+          className="bg-space-dark rounded-3xl p-6 md:p-8 w-full max-w-2xl border border-indigo-500/20 shadow-2xl shadow-indigo-900/40 relative my-8"
         >
           <button
             onClick={onClose}
-            className="absolute top-4 left-4 p-2 text-white/50 hover:text-white transition-colors bg-white/5 rounded-full z-10"
+            className="absolute top-4 left-4 p-2 text-gray-500 hover:text-white transition-colors bg-white/5 rounded-full z-10"
           >
             <X size={20} />
           </button>
 
           <div className="flex items-center gap-4 mb-6 pt-4">
-            <div className="p-4 rounded-2xl bg-violet/20 text-violet shadow-inner">
+            <div className="p-4 rounded-2xl bg-indigo-500/20 text-indigo-400 shadow-inner">
               <BookOpen size={32} />
             </div>
             <div>
               <h2 className="text-2xl md:text-3xl font-black text-white leading-tight mb-2">
                 كيف تتغلب على التشتت في العالم الرقمي؟
               </h2>
-              <div className="text-sm text-violet/90 font-bold flex items-center gap-2">
+              <div className="text-sm text-indigo-300 font-bold flex items-center gap-2">
                 <Telescope size={16} />{" "}
                 <span>استراتيجيات رواد الفضاء لإدارة الوقت</span>
               </div>
             </div>
           </div>
 
-          <div className="prose prose-invert max-w-none text-white/70 space-y-6 text-sm md:text-base leading-relaxed">
+          <div className="prose prose-invert prose-indigo max-w-none text-gray-300 space-y-6 text-sm md:text-base leading-relaxed">
             <p>
               في عصرنا الحالي المليء بالإشعارات والتنبيهات المستمرة، أصبح الحفاظ
               على التركيز تحدياً يشبه محاولة توجيه مركبة فضائية عبر حقل من
@@ -200,8 +200,8 @@ export default function ArticleModal({ onClose }: { onClose: () => void }) {
               المطلق: <strong>رواد الفضاء</strong>.
             </p>
 
-            <div className="p-5 rounded-2xl bg-violet/20 border border-violet/10">
-              <h4 className="text-violet font-bold text-lg mb-3 flex items-center gap-2">
+            <div className="p-5 rounded-2xl bg-indigo-900/20 border border-indigo-500/10">
+              <h4 className="text-indigo-400 font-bold text-lg mb-3 flex items-center gap-2">
                 <Target size={20} /> 1. قاعدة "الصندوق المغلق" (The Airlock
                 Strategy)
               </h4>
@@ -214,8 +214,8 @@ export default function ArticleModal({ onClose }: { onClose: () => void }) {
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-violet/20 border border-violet/10">
-              <h4 className="text-violet font-bold text-lg mb-3 flex items-center gap-2">
+            <div className="p-5 rounded-2xl bg-indigo-900/20 border border-indigo-500/10">
+              <h4 className="text-indigo-400 font-bold text-lg mb-3 flex items-center gap-2">
                 <Timer size={20} /> 2. المهام المجدولة بالدقائق
                 (Micro-Scheduling)
               </h4>
@@ -228,8 +228,8 @@ export default function ArticleModal({ onClose }: { onClose: () => void }) {
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-violet/20 border border-violet/10">
-              <h4 className="text-violet font-bold text-lg mb-3 flex items-center gap-2">
+            <div className="p-5 rounded-2xl bg-indigo-900/20 border border-indigo-500/10">
+              <h4 className="text-indigo-400 font-bold text-lg mb-3 flex items-center gap-2">
                 <Radio size={20} /> 3. تواصل فعّال ومحدّد (Houston, We Have a
                 Protocol)
               </h4>
@@ -241,7 +241,7 @@ export default function ArticleModal({ onClose }: { onClose: () => void }) {
               </p>
             </div>
 
-            <blockquote className="border-r-4 border-violet/40 pr-4 italic text-white/60 bg-white/5 p-4 rounded-l-xl">
+            <blockquote className="border-r-4 border-indigo-500 pr-4 italic text-gray-400 bg-white/5 p-4 rounded-l-xl">
               "التركيز ليس مجرد اختيار ما يجب التركيز عليه، بل هو بالأحرى اختيار
               ملايين الأشياء التي يجب تجاهلها."
             </blockquote>
@@ -257,7 +257,7 @@ export default function ArticleModal({ onClose }: { onClose: () => void }) {
           <div className="mt-8 flex justify-end border-t border-white/10 pt-6">
             <button
               onClick={onClose}
-              className="px-6 py-3 bg-violet hover:bg-violet rounded-xl text-white font-bold transition-all shadow-lg shadow-violet/30 flex items-center gap-2"
+              className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white font-bold transition-all shadow-lg shadow-indigo-600/30 flex items-center gap-2"
             >
               <CheckCircle size={18} />
               إتمام القراءة

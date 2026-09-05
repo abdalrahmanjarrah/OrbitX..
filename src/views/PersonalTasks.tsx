@@ -226,7 +226,7 @@ export default function PersonalTasks() {
         className={cn(
           "fixed bottom-6 ltr:left-6 rtl:right-6 z-40 w-12 h-12 rounded-full flex items-center justify-center transition-all shadow-xl",
           isOpen
-            ? "bg-lemon text-white shadow-lemon/50"
+            ? "bg-green-600 text-white shadow-green-900/50"
             : "bg-space-dark border border-white/10 hover:bg-white/5 shadow-black/50",
         )}
         title={isAr ? "المهام الجانبية" : "Side Quests"}
@@ -235,11 +235,11 @@ export default function PersonalTasks() {
           size={20}
           className={cn(
             !isOpen &&
-              "text-lemon drop-shadow-[0_0_8px_rgb(167,201,87,0.6)]",
+              "text-green-400 drop-shadow-[0_0_8px_rgba(74,222,128,0.6)]",
           )}
         />
         {tasks.filter((t) => !t.done).length > 0 && !isOpen && (
-          <span className="absolute -top-1 -right-1 w-5 h-5 bg-lemon/80 text-white text-[10px] font-bold rounded-full flex items-center justify-center border-2 border-[#090b1f]">
+          <span className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center border-2 border-[#0a0b16]">
             {tasks.filter((t) => !t.done).length}
           </span>
         )}
@@ -251,7 +251,7 @@ export default function PersonalTasks() {
             initial={{ opacity: 0, scale: 0.9, x: -20 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             exit={{ opacity: 0, scale: 0.9, x: -20 }}
-            className="fixed bottom-[88px] ltr:left-6 rtl:right-6 z-50 w-96 max-w-[calc(100vw-2rem)] bg-gradient-to-br from-[#090b1f]/95 to-[#04040a]/95 border border-white/10 rounded-2xl overflow-hidden backdrop-blur-xl shadow-2xl shadow-lemon/20 max-h-[500px] flex flex-col"
+            className="fixed bottom-[88px] ltr:left-6 rtl:right-6 z-50 w-96 max-w-[calc(100vw-2rem)] bg-gradient-to-br from-[#0c0c16]/95 to-[#050510]/95 border border-white/10 rounded-2xl overflow-hidden backdrop-blur-xl shadow-2xl shadow-green-900/20 max-h-[500px] flex flex-col"
             dir={isAr ? "rtl" : "ltr"}
           >
             {/* Header */}
@@ -259,7 +259,7 @@ export default function PersonalTasks() {
               <div className={cn("flex items-center gap-2", isAr ? "flex-row" : "flex-row-reverse")}>
                 <CheckSquare
                   size={18}
-                  className="text-lemon drop-shadow-[0_0_10px_rgb(167,201,87,0.5)]"
+                  className="text-green-400 drop-shadow-[0_0_10px_rgba(74,222,128,0.5)]"
                 />
                 <h3 className="font-bold text-sm tracking-wide text-white">
                   {isAr ? "المهام الجانبية" : "Side Quests"}
@@ -267,7 +267,7 @@ export default function PersonalTasks() {
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-white/60 hover:text-white transition-colors"
+                className="text-gray-400 hover:text-white transition-colors"
               >
                 <X size={18} />
               </button>
@@ -284,8 +284,8 @@ export default function PersonalTasks() {
                       onClick={() => toggleTask(task.id)}
                       className={
                         task.done
-                          ? "text-lemon hover:text-lemon"
-                          : "text-white/50 hover:text-lemon transition-colors"
+                          ? "text-green-400 hover:text-green-500"
+                          : "text-gray-500 hover:text-green-400 transition-colors"
                       }
                     >
                       {task.done ? (
@@ -297,7 +297,7 @@ export default function PersonalTasks() {
                     <span
                       className={cn(
                         "flex-1 break-words cursor-pointer transition-colors text-sm",
-                        task.done ? "line-through text-white/50" : "text-white/70 hover:text-white",
+                        task.done ? "line-through text-gray-500" : "text-gray-300 hover:text-white",
                         isAr ? "text-right" : "text-left"
                       )}
                       onClick={() => toggleTask(task.id)}
@@ -306,22 +306,22 @@ export default function PersonalTasks() {
                     </span>
                     <button
                       onClick={() => deleteTask(task.id)}
-                      className="opacity-0 group-hover:opacity-100 text-gold hover:text-gold transition-opacity p-1.5 bg-gold/10 rounded-lg"
+                      className="opacity-0 group-hover:opacity-100 text-red-500 hover:text-red-400 transition-opacity p-1.5 bg-red-500/10 rounded-lg"
                     >
                       <X size={16} />
                     </button>
                   </div>
                 ))}
                 {tasks.length === 0 && (
-                  <div className="text-center py-8 text-white/50 border border-white/5 border-dashed rounded-xl mx-1 bg-white/[0.02]">
+                  <div className="text-center py-8 text-gray-500 border border-white/5 border-dashed rounded-xl mx-1 bg-white/[0.02]">
                     <CheckSquare
                       size={32}
-                      className="mx-auto mb-3 opacity-30 text-lemon"
+                      className="mx-auto mb-3 opacity-30 text-green-400"
                     />
                     <p className="text-sm font-medium">
                       {isAr ? "لا توجد مهام حالياً..." : "No active quests..."}
                     </p>
-                    <p className="text-xs text-white/45 mt-1">
+                    <p className="text-xs text-gray-600 mt-1">
                       {isAr ? "أضف مهمتك الأولى وباشر العمل" : "Add your first task and start the countdown"}
                     </p>
                   </div>
@@ -335,13 +335,13 @@ export default function PersonalTasks() {
                   onChange={(e) => setNewTask(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && addTask()}
                   placeholder={isAr ? "مهمة جديدة لغزوها..." : "New quest to conquer..."}
-                  className={cn("flex-1 bg-space-dark shadow-inner border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-lemon/50 focus:bg-space-dark text-white transition-colors placeholder:text-white/45", isAr ? "text-right" : "text-left")}
+                  className={cn("flex-1 bg-space-dark shadow-inner border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-green-500/50 focus:bg-space-dark text-white transition-colors placeholder:text-gray-600", isAr ? "text-right" : "text-left")}
                   dir={isAr ? "rtl" : "ltr"}
                 />
                 <button
                   onClick={addTask}
                   disabled={!newTask.trim()}
-                  className="px-4 bg-lemon/20 text-lemon hover:bg-lemon/80 hover:text-white disabled:opacity-50 disabled:bg-white/5 disabled:text-white/45 rounded-xl transition-all flex items-center justify-center border border-lemon/20 disabled:border-transparent"
+                  className="px-4 bg-green-500/20 text-green-400 hover:bg-green-500 hover:text-white disabled:opacity-50 disabled:bg-white/5 disabled:text-gray-600 rounded-xl transition-all flex items-center justify-center border border-green-500/20 disabled:border-transparent"
                 >
                   <Plus size={20} />
                 </button>

@@ -44,7 +44,7 @@ export const SessionCompletionModal: React.FC<SessionCompletionModalProps> = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-[#04040a]/80 backdrop-blur-md cursor-default z-10"
+          className="fixed inset-0 bg-[#020309]/80 backdrop-blur-md cursor-default z-10"
         />
 
         {/* Cinematic Modal Main Panel */}
@@ -53,7 +53,7 @@ export const SessionCompletionModal: React.FC<SessionCompletionModalProps> = ({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: -16 }}
           transition={{ type: "spring", damping: 25, stiffness: 180 }}
-          className="relative max-w-lg w-full p-6 rounded-2xl border border-white/10 bg-[#090b1f]/95 backdrop-blur-xl shadow-[0_20px_50px_rgb(0,0,0,0.8),_inset_0_1px_1px_rgb(255,255,255,0.05)] overflow-hidden text-right z-20 flex flex-col"
+          className="relative max-w-lg w-full p-6 rounded-2xl border border-white/10 bg-[#030616]/95 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.8),_inset_0_1px_1px_rgba(255,255,255,0.05)] overflow-hidden text-right z-20 flex flex-col"
           id="completion-modal-card"
         >
           {/* Cosmic visual ambient orbiting shapes in background */}

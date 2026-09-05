@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-const NEON_COLOR = new THREE.Color('#00d4ff');
+const NEON_COLOR = new THREE.Color('#00f3ff');
 
 interface NeonStripProps {
   position: [number, number, number];
@@ -24,7 +24,7 @@ export function NeonStrip({ position, rotation, length }: NeonStripProps) {
       <boxGeometry args={[length, 0.04, 0.02]} />
       <meshStandardMaterial
         ref={matRef}
-        color="#090b1f"
+        color="#001a22"
         emissive={NEON_COLOR}
         emissiveIntensity={0.5}
         transparent
@@ -53,7 +53,7 @@ export function NeonRing({ position, radius = 3.5 }: NeonRingProps) {
       <torusGeometry args={[radius, 0.02, 8, 64]} />
       <meshStandardMaterial
         ref={matRef}
-        color="#090b1f"
+        color="#001a22"
         emissive={NEON_COLOR}
         emissiveIntensity={0.4}
         transparent

@@ -233,23 +233,23 @@ export default function StationCard({
         tabIndex={0}
         onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") onEnter(); }}
         className={cn(
-          "relative rounded-2xl px-4 py-3 md:px-5 md:py-4 flex items-center gap-3 md:gap-4 overflow-hidden group cursor-pointer border transition-all duration-500 hover:-translate-y-0.5 hover:border-neon/30 hover:bg-[#090b1f]",
+          "relative rounded-2xl px-4 py-3 md:px-5 md:py-4 flex items-center gap-3 md:gap-4 overflow-hidden group cursor-pointer border transition-all duration-500 hover:-translate-y-0.5 hover:border-cyan-500/30 hover:bg-[#0e0f22]",
           isAr ? "text-right" : "text-left",
           isFocusing
-            ? "bg-space-dark border-violet/30 shadow-[0_0_30px_rgb(140,82,255,0.12)]"
-            : "bg-[#090b1f] border-white/5"
+            ? "bg-space-dark border-indigo-500/30 shadow-[0_0_30px_rgba(99,102,241,0.12)]"
+            : "bg-[#0a0b18] border-white/5"
         )}
-        style={room.imageUrl ? { backgroundImage: `linear-gradient(120deg, rgb(9,11,31,0.94), rgb(9,11,31,0.7)), url(${room.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {}}
+        style={room.imageUrl ? { backgroundImage: `linear-gradient(120deg, rgba(8,9,20,0.94), rgba(15,17,35,0.7)), url(${room.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {}}
       >
-        <div className={cn("shrink-0 px-2.5 py-1 rounded-full backdrop-blur-md flex items-center gap-1.5 text-[10px] md:text-xs font-bold border", isFocusing ? "bg-violet/20 text-violet/80 border-violet/30" : "bg-white/5 text-white/60 border-white/10")}>
-          <div className={cn("w-1.5 h-1.5 rounded-full", isFocusing ? "bg-neon/55 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]" : "bg-navy/85")} />
+        <div className={cn("shrink-0 px-2.5 py-1 rounded-full backdrop-blur-md flex items-center gap-1.5 text-[10px] md:text-xs font-bold border", isFocusing ? "bg-indigo-500/20 text-indigo-200 border-indigo-400/30" : "bg-white/5 text-gray-400 border-white/10")}>
+          <div className={cn("w-1.5 h-1.5 rounded-full", isFocusing ? "bg-cyan-400 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]" : "bg-gray-500")} />
           {isFocusing ? (isAr ? "تدفق" : "Focus") : (isAr ? "مدار" : "Orbit")}
         </div>
 
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
             {room.isPrivate && (
-              <span className="inline-flex items-center gap-1 bg-neon/90 font-bold text-white px-1.5 py-0.5 rounded-md text-[11px]">
+              <span className="inline-flex items-center gap-1 bg-cyan-600/90 font-bold text-white px-1.5 py-0.5 rounded-md text-[11px]">
                 <Lock size={9} /> {isAr ? "خاص" : "Private"}
               </span>
             )}
@@ -257,8 +257,8 @@ export default function StationCard({
               {room.name}
             </h4>
           </div>
-          <div className="flex items-center gap-1.5 text-[11px] md:text-xs font-bold text-violet/80 mt-0.5">
-            <Timer size={12} className={isFocusing ? "text-neon/80 animate-pulse" : "text-white/50"} />
+          <div className="flex items-center gap-1.5 text-[11px] md:text-xs font-bold text-indigo-300/80 mt-0.5">
+            <Timer size={12} className={isFocusing ? "text-cyan-400/80 animate-pulse" : "text-gray-500"} />
             <span>{uptime}</span>
           </div>
         </div>
@@ -269,7 +269,7 @@ export default function StationCard({
             return (
               <div
                 key={i}
-                className={cn("w-6 h-6 md:w-7 md:h-7 rounded-full border-2 border-[#090b1f] bg-navy overflow-hidden relative z-10", isAr ? "-ml-1.5 first:ml-0" : "-mr-1.5 first:mr-0")}
+                className={cn("w-6 h-6 md:w-7 md:h-7 rounded-full border-2 border-[#090a16] bg-gray-800 overflow-hidden relative z-10", isAr ? "-ml-1.5 first:ml-0" : "-mr-1.5 first:mr-0")}
                 title={userMatch?.displayName || (isAr ? "رائد" : "Pilot")}
               >
                 <img src={userMatch?.photoURL || `https://api.dicebear.com/7.x/avataaars/svg?seed=${p}`} alt="user" className="w-full h-full object-cover" />
@@ -277,13 +277,13 @@ export default function StationCard({
             );
           })}
           {room.participants.length > 4 && (
-            <div className={cn("w-6 h-6 md:w-7 md:h-7 rounded-full border-2 border-[#090b1f] bg-violet/80 flex items-center justify-center text-[11px] font-black text-white", isAr ? "-ml-1.5" : "-mr-1.5")}>
+            <div className={cn("w-6 h-6 md:w-7 md:h-7 rounded-full border-2 border-[#090a16] bg-indigo-600/80 flex items-center justify-center text-[11px] font-black text-white", isAr ? "-ml-1.5" : "-mr-1.5")}>
               +{room.participants.length - 4}
             </div>
           )}
         </div>
 
-        <div className={cn("flex items-center gap-1 text-[11px] font-black tracking-wide text-violet/80 group-hover:text-neon/90 transition-colors uppercase shrink-0", isAr ? "flex-row" : "flex-row-reverse")}>
+        <div className={cn("flex items-center gap-1 text-[11px] font-black tracking-wide text-indigo-400/80 group-hover:text-cyan-300 transition-colors uppercase shrink-0", isAr ? "flex-row" : "flex-row-reverse")}>
           <span className="hidden md:inline">{isAr ? "استكشاف" : "Explore"}</span>
           <ChevronLeft size={13} className={cn("transition-transform duration-300", isAr ? "group-hover:-translate-x-1" : "group-hover:translate-x-1 rotate-180")} />
         </div>
@@ -301,11 +301,11 @@ export default function StationCard({
       className={cn(
         "relative rounded-[1.75rem] p-5 flex flex-col justify-between aspect-[1.12/1] sm:aspect-square md:aspect-[1.08/1] overflow-hidden group cursor-pointer border transition-all duration-700 hover:-translate-y-2",
         isAr ? "text-right" : "text-left",
-        room.imageUrl ? "border-transparent" : (isFocusing ? "bg-space-dark border-violet/30 shadow-[0_0_40px_rgb(140,82,255,0.15)]" : "bg-space-dark border-white/5 hover:border-white/10")
+        room.imageUrl ? "border-transparent" : (isFocusing ? "bg-space-dark border-indigo-500/30 shadow-[0_0_40px_rgba(99,102,241,0.15)]" : "bg-space-dark border-white/5 hover:border-white/10")
       )}
       style={
         room.imageUrl
-          ? { backgroundImage: `linear-gradient(135deg, rgb(9,11,31, 0.9) 0%, rgb(9,11,31, 0.6) 100%), url(${room.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }
+          ? { backgroundImage: `linear-gradient(135deg, rgba(8, 9, 20, 0.9) 0%, rgba(15, 17, 35, 0.6) 100%), url(${room.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }
           : {}
       }
     >
@@ -313,20 +313,20 @@ export default function StationCard({
       {!room.imageUrl && isFocusing && (
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
            {/* Center Planet Glow */}
-           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-violet/20 blur-[40px] rounded-full mix-blend-screen group-hover:scale-110 transition-transform duration-1000" />
+           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-indigo-500/20 blur-[40px] rounded-full mix-blend-screen group-hover:scale-110 transition-transform duration-1000" />
            {/* Orbit Rings */}
-           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-violet/10 rounded-full border-dashed animate-[spin_10s_linear_infinite]" />
-           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 border border-neon/10 rounded-full border-dotted animate-[spin_15s_linear_infinite_reverse]" />
+           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-indigo-500/10 rounded-full border-dashed animate-[spin_10s_linear_infinite]" />
+           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 border border-cyan-500/10 rounded-full border-dotted animate-[spin_15s_linear_infinite_reverse]" />
            {/* Corner Nebulas */}
-           <div className="absolute -top-20 -right-20 w-64 h-64 bg-violet/10 blur-[60px] rounded-full group-hover:bg-violet/20 transition-colors duration-700" />
-           <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-neon/5 blur-[50px] rounded-full group-hover:bg-neon/10 transition-colors duration-700" />
+           <div className="absolute -top-20 -right-20 w-64 h-64 bg-fuchsia-500/10 blur-[60px] rounded-full group-hover:bg-fuchsia-500/20 transition-colors duration-700" />
+           <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-cyan-500/5 blur-[50px] rounded-full group-hover:bg-cyan-500/10 transition-colors duration-700" />
         </div>
       )}
 
       {/* Header logic */}
       <div className={cn("relative z-10 flex items-start justify-between", isAr ? "flex-row" : "flex-row-reverse")}>
-         <div className={cn("px-2.5 py-1 rounded-full backdrop-blur-md flex items-center gap-1.5 text-[11px] md:text-xs font-bold border shadow-sm", isFocusing ? "bg-violet/20 text-violet/80 border-violet/30" : "bg-white/5 text-white/60 border-white/10")}>
-            <div className={cn("w-1.5 h-1.5 rounded-full", isFocusing ? "bg-neon/55 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]" : "bg-navy/85")} />
+         <div className={cn("px-2.5 py-1 rounded-full backdrop-blur-md flex items-center gap-1.5 text-[11px] md:text-xs font-bold border shadow-sm", isFocusing ? "bg-indigo-500/20 text-indigo-200 border-indigo-400/30" : "bg-white/5 text-gray-400 border-white/10")}>
+            <div className={cn("w-1.5 h-1.5 rounded-full", isFocusing ? "bg-cyan-400 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]" : "bg-gray-500")} />
             {isFocusing 
               ? (isAr ? "حالة التدفق" : "Flow State") 
               : (isAr ? "في المدار" : "In Orbit")}
@@ -334,7 +334,7 @@ export default function StationCard({
          {isAdmin && (
             <button
                onClick={async (e) => { e.stopPropagation(); if(await confirmDialog(isAr ? 'حذف المحطة؟' : 'Delete station?', { title: isAr ? 'حذف المحطة' : 'Delete station', danger: true })) await deleteDoc(doc(db, "rooms", room.id)).catch(()=>{}); }}
-               className="p-1.5 bg-gold/10 text-gold hover:bg-gold/80 hover:text-white rounded-full transition-colors backdrop-blur-md"
+               className="p-1.5 bg-red-500/10 text-red-400 hover:bg-red-500 hover:text-white rounded-full transition-colors backdrop-blur-md"
             >
                <Trash2 size={13} />
             </button>
@@ -344,32 +344,32 @@ export default function StationCard({
       {/* Main Content */}
       <div className="relative z-10 mt-auto pb-3 md:pb-4">
          {room.isChallenge && (
-            <div className="inline-flex items-center gap-1 bg-violet font-bold text-white px-2 py-0.5 rounded-md text-[11px] mb-1.5 shadow-sm shadow-violet/30">
+            <div className="inline-flex items-center gap-1 bg-fuchsia-600 font-bold text-white px-2 py-0.5 rounded-md text-[11px] mb-1.5 shadow-sm shadow-fuchsia-600/30">
                <Swords size={10} /> {isAr ? "تحدي خاص" : "Private Duel"}
             </div>
          )}
          {room.isPrivate && (
-            <div className="inline-flex items-center gap-1 bg-neon/90 font-bold text-white px-2 py-0.5 rounded-md text-[11px] mb-1.5 shadow-sm shadow-neon/30">
+            <div className="inline-flex items-center gap-1 bg-cyan-600/90 font-bold text-white px-2 py-0.5 rounded-md text-[11px] mb-1.5 shadow-sm shadow-cyan-600/30">
                <Lock size={10} /> {isAr ? "خاص برمز" : "Invite Only"}
             </div>
          )}
-         <h4 className="text-xl sm:text-2xl font-black font-display text-white mb-1.5 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-l group-hover:from-white group-hover:to-neon/70 transition-all duration-500 leading-tight">
+         <h4 className="text-xl sm:text-2xl font-black font-display text-white mb-1.5 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-l group-hover:from-white group-hover:to-cyan-300 transition-all duration-500 leading-tight">
             {room.name}
          </h4>
-         <div className={cn("flex items-center gap-1.5 text-xs sm:text-sm font-bold text-violet/80", isAr ? "flex-row" : "flex-row-reverse")}>
-            <Timer size={13} className={isFocusing ? "text-neon/80 animate-pulse" : "text-white/50"} /> <span>{uptime}</span>
+         <div className={cn("flex items-center gap-1.5 text-xs sm:text-sm font-bold text-indigo-300/80", isAr ? "flex-row" : "flex-row-reverse")}>
+            <Timer size={13} className={isFocusing ? "text-cyan-400/80 animate-pulse" : "text-gray-500"} /> <span>{uptime}</span>
          </div>
       </div>
 
       {/* Footer / Participants */}
-      <div className={cn("relative z-10 pt-3 border-t border-white/5 flex justify-between items-center bg-gradient-to-t from-[#04040a]/40 to-transparent -mx-5 px-5 -mb-5 h-14 md:h-[3.75rem] backdrop-blur-[2px]", isAr ? "flex-row" : "flex-row-reverse")}>
+      <div className={cn("relative z-10 pt-3 border-t border-white/5 flex justify-between items-center bg-gradient-to-t from-[#000]/40 to-transparent -mx-5 px-5 -mb-5 h-14 md:h-[3.75rem] backdrop-blur-[2px]", isAr ? "flex-row" : "flex-row-reverse")}>
          <div className={cn("flex items-center w-1/2 justify-end", isAr ? "flex-row-reverse -space-x-2.5" : "flex-row space-x-1")}>
             {room.participants.slice(0, 4).map((p, i) => {
               const userMatch = activeUsers?.find((u) => u.uid === p);
               return (
                 <div
                   key={i}
-                  className="w-7 h-7 rounded-full border-2 border-[#090b1f] bg-navy overflow-hidden relative z-10 hover:z-20 transform transition-all duration-300 hover:scale-125 shadow-lg"
+                  className="w-7 h-7 rounded-full border-2 border-[#090a16] bg-gray-800 overflow-hidden relative z-10 hover:z-20 transform transition-all duration-300 hover:scale-125 shadow-lg"
                   title={userMatch?.displayName || (isAr ? "رائد" : "Pilot")}
                 >
                   <img src={userMatch?.photoURL || `https://api.dicebear.com/7.x/avataaars/svg?seed=${p}`} alt="user" className="w-full h-full object-cover" />
@@ -377,12 +377,12 @@ export default function StationCard({
               );
             })}
             {room.participants.length > 4 && (
-              <div className="w-7 h-7 rounded-full border-2 border-[#090b1f] bg-violet/80 backdrop-blur-sm flex items-center justify-center text-[11px] font-black text-white relative z-10 shadow-lg">
+              <div className="w-7 h-7 rounded-full border-2 border-[#090a16] bg-indigo-600/80 backdrop-blur-sm flex items-center justify-center text-[11px] font-black text-white relative z-10 shadow-lg">
                 +{room.participants.length - 4}
               </div>
             )}
          </div>
-         <div className={cn("flex items-center gap-1 text-[11px] font-black tracking-wide text-violet/80 group-hover:text-neon/90 transition-colors uppercase", isAr ? "flex-row" : "flex-row-reverse")}>
+         <div className={cn("flex items-center gap-1 text-[11px] font-black tracking-wide text-indigo-400/80 group-hover:text-cyan-300 transition-colors uppercase", isAr ? "flex-row" : "flex-row-reverse")}>
             <span>{isAr ? "استكشاف" : "Explore"}</span> 
             <ChevronLeft size={13} className={cn("transition-transform duration-300", isAr ? "group-hover:-translate-x-1" : "group-hover:translate-x-1 rotate-180")} />
          </div>

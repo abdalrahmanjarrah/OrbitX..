@@ -23,8 +23,8 @@ export default defineConfig(({mode}) => {
           short_name: 'OrbitX',
           start_url: env.VITE_BASE_PATH || '/',
           scope: env.VITE_BASE_PATH || '/',
-          theme_color: '#04040a',
-          background_color: '#04040a',
+          theme_color: '#0a0b16',
+          background_color: '#0a0b16',
           display: 'standalone',
           icons: [
             { src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' },

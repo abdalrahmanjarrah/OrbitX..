@@ -179,8 +179,8 @@ export default function NavLink({
       className={cn(
         "flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl transition-all text-xs lg:text-sm font-bold truncate flex-shrink min-w-0 max-w-[140px]",
         active
-          ? "bg-violet/20 text-violet border border-violet/30 shadow-sm shadow-violet/10"
-          : "text-white/60 hover:text-white hover:bg-white/5 shadow-none",
+          ? "bg-indigo-500/20 text-indigo-500 border border-indigo-400/30 shadow-sm shadow-indigo-500/10"
+          : "text-gray-400 hover:text-white hover:bg-white/5 shadow-none",
         className,
       )}
       title={label}

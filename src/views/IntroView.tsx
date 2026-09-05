@@ -13,17 +13,17 @@ function LoadingScreen() {
       style={{
         width: '100vw',
         height: '100vh',
-        background: '#04040a',
+        background: '#000008',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        color: '#00d4ff',
+        color: '#00f3ff',
         fontFamily: 'Inter, system-ui, sans-serif',
       }}
     >
       <div style={{ fontSize: 36, fontWeight: 900, letterSpacing: -1 }}>OrbitX</div>
-      <div style={{ fontSize: 11, color: '#16002d', letterSpacing: 4, marginTop: 8 }}>
+      <div style={{ fontSize: 11, color: '#334455', letterSpacing: 4, marginTop: 8 }}>
         INITIALIZING SECTOR...
       </div>
       <div
@@ -31,7 +31,7 @@ function LoadingScreen() {
           marginTop: 24,
           width: 120,
           height: 2,
-          background: '#090b1f',
+          background: '#0a1a2a',
           borderRadius: 1,
           overflow: 'hidden',
         }}
@@ -40,7 +40,7 @@ function LoadingScreen() {
           style={{
             width: '60%',
             height: '100%',
-            background: '#00d4ff',
+            background: '#00f3ff',
             animation: 'loading-bar 1.5s ease-in-out infinite',
           }}
         />
@@ -57,7 +57,7 @@ function LoadingScreen() {
 
 export default function IntroView({ onLogin, onGuest, inviterName }: IntroViewProps) {
   return (
-    <div style={{ width: '100vw', height: '100vh', overflow: 'hidden', background: '#04040a' }}>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'hidden', background: '#000008' }}>
       <Suspense fallback={<LoadingScreen />}>
         <IntroExperience onLogin={onLogin} onGuest={onGuest} inviterName={inviterName} />
       </Suspense>

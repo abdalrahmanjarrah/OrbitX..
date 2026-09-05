@@ -178,10 +178,10 @@ export const MILESTONE_LEVELS = new Set([
  * Color scheme for level badges based on level tier.
  */
 export function getLevelColor(level: number): { bg: string; text: string; glow: string; border: string } {
-  if (level >= 100) return { bg: "bg-gradient-to-r from-gold to-gold/85", text: "text-gold/50", glow: "shadow-[0_0_30px_rgb(212,175,55,0.6)]", border: "border-gold/40" };
-  if (level >= 75) return { bg: "bg-gradient-to-r from-violet to-violet", text: "text-white", glow: "shadow-[0_0_20px_rgb(140,82,255,0.5)]", border: "border-violet/40" };
-  if (level >= 50) return { bg: "bg-gradient-to-r from-violet to-neon", text: "text-white", glow: "shadow-[0_0_16px_rgb(140,82,255,0.4)]", border: "border-violet/40" };
-  if (level >= 25) return { bg: "bg-gradient-to-r from-lemon to-turq/85", text: "text-white", glow: "shadow-[0_0_12px_rgb(0,229,212,0.4)]", border: "border-lemon/40" };
-  if (level >= 10) return { bg: "bg-gradient-to-r from-neon to-neon/85", text: "text-white", glow: "shadow-[0_0_10px_rgb(140,82,255,0.3)]", border: "border-neon/40" };
-  return { bg: "bg-gradient-to-r from-white/50 to-white/60", text: "text-white", glow: "", border: "border-white/30" };
+  if (level >= 100) return { bg: "bg-gradient-to-r from-amber-500 to-yellow-400", text: "text-yellow-900", glow: "shadow-[0_0_30px_rgba(251,191,36,0.6)]", border: "border-amber-400" };
+  if (level >= 75) return { bg: "bg-gradient-to-r from-fuchsia-500 to-purple-500", text: "text-white", glow: "shadow-[0_0_20px_rgba(192,132,252,0.5)]", border: "border-fuchsia-400" };
+  if (level >= 50) return { bg: "bg-gradient-to-r from-indigo-500 to-blue-500", text: "text-white", glow: "shadow-[0_0_16px_rgba(99,102,241,0.4)]", border: "border-indigo-400" };
+  if (level >= 25) return { bg: "bg-gradient-to-r from-emerald-500 to-teal-400", text: "text-white", glow: "shadow-[0_0_12px_rgba(16,185,129,0.4)]", border: "border-emerald-400" };
+  if (level >= 10) return { bg: "bg-gradient-to-r from-blue-500 to-cyan-400", text: "text-white", glow: "shadow-[0_0_10px_rgba(59,130,246,0.3)]", border: "border-blue-400" };
+  return { bg: "bg-gradient-to-r from-gray-500 to-gray-400", text: "text-white", glow: "", border: "border-gray-400" };
 }

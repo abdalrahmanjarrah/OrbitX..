@@ -173,13 +173,13 @@ export default function BadgeCard({ icon, title, xp, active = false }: BadgeCard
       className={cn(
         "p-4 rounded-3xl border flex flex-col items-center text-center gap-2 transition-all",
         active
-          ? "bg-violet/20 border-violet/50"
-          : "bg-space-dark shadow-lg shadow-violet/10 border-white/10 opacity-40 grayscale",
+          ? "bg-indigo-500/20 border-indigo-400/50"
+          : "bg-space-dark shadow-lg shadow-indigo-900/10 border-white/10 opacity-40 grayscale",
       )}
     >
       <span className="text-3xl mb-1">{icon}</span>
       <h4 className="font-bold text-[10px]">{title}</h4>
-      <span className="text-[8px] text-white/60 uppercase tracking-wider">
+      <span className="text-[8px] text-gray-400 uppercase tracking-wider">
         {xp}
       </span>
     </div>

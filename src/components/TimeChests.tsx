@@ -44,11 +44,11 @@ export function TimeChests({ user }: TimeChestsProps) {
   const nextLockedIdx = state.statuses.findIndex((s) => s === "locked");
 
   return (
-    <div className="relative rounded-3xl bg-[#090b1f]/80 backdrop-blur-xl border border-white/5 p-5 overflow-hidden group hover:border-gold/20 transition-all">
-      <div className="absolute inset-0 bg-gradient-to-tr from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+    <div className="relative rounded-3xl bg-[#0e1025]/80 backdrop-blur-xl border border-white/5 p-5 overflow-hidden group hover:border-amber-500/20 transition-all">
+      <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
       <div className="relative flex items-center gap-2 mb-4">
-        <Timer size={16} className="text-gold" />
+        <Timer size={16} className="text-amber-400" />
         <h3 className="text-sm font-black text-white">
           {isAr ? "صناديق الوقت" : "Time Chests"}
         </h3>
@@ -65,19 +65,19 @@ export function TimeChests({ user }: TimeChestsProps) {
               className={`
                 relative flex items-center justify-center w-12 h-12 rounded-2xl text-xl transition-all
                 ${status === "claimed"
-                  ? "bg-lemon/10 border border-lemon/30"
+                  ? "bg-emerald-500/10 border border-emerald-500/30"
                   : status === "ready"
-                    ? "bg-gold/15 border border-gold/40 hover:scale-110 hover:shadow-[0_0_20px_rgb(212,175,55,0.3)] cursor-pointer animate-pulse"
+                    ? "bg-amber-500/15 border border-amber-500/40 hover:scale-110 hover:shadow-[0_0_20px_rgba(245,158,11,0.3)] cursor-pointer animate-pulse"
                     : "bg-white/5 border border-white/5 opacity-40"
                 }
               `}
             >
               {status === "claimed" ? (
-                <CheckCircle size={18} className="text-lemon" />
+                <CheckCircle size={18} className="text-emerald-400" />
               ) : status === "ready" ? (
-                <Gift size={18} className="text-gold" />
+                <Gift size={18} className="text-amber-400" />
               ) : (
-                <Lock size={14} className="text-white/45" />
+                <Lock size={14} className="text-gray-600" />
               )}
             </button>
           );
@@ -85,16 +85,16 @@ export function TimeChests({ user }: TimeChestsProps) {
       </div>
 
       {state.allClaimed ? (
-        <div className="relative text-center text-xs font-bold text-lemon/80">
+        <div className="relative text-center text-xs font-bold text-emerald-400/80">
           {isAr ? "أكملت الدورة! تتجدد بعد 24 ساعة" : "Cycle complete! Resets in 24h"}
         </div>
       ) : nextLockedIdx >= 0 ? (
-        <div className="relative text-center text-xs font-bold text-white/50">
+        <div className="relative text-center text-xs font-bold text-gray-500">
           {isAr ? "الصندوق الجاي يفتح بعد" : "Next chest in"}{" "}
-          <span className="text-gold font-black">{formatTime(state.timeUntilNext)}</span>
+          <span className="text-amber-400 font-black">{formatTime(state.timeUntilNext)}</span>
         </div>
       ) : (
-        <div className="relative text-center text-xs font-bold text-gold/80">
+        <div className="relative text-center text-xs font-bold text-amber-400/80">
           {isAr ? "صندوق جاهز! اضغط لفتحه" : "Chest ready! Tap to open"}
         </div>
       )}
@@ -107,9 +107,9 @@ export function TimeChests({ user }: TimeChestsProps) {
             exit={{ opacity: 0, y: -30, scale: 0.8 }}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10"
           >
-            <div className="bg-gold/20 border border-gold/40 rounded-2xl px-5 py-3 backdrop-blur-xl shadow-[0_0_40px_rgb(212,175,55,0.3)]">
+            <div className="bg-amber-500/20 border border-amber-500/40 rounded-2xl px-5 py-3 backdrop-blur-xl shadow-[0_0_40px_rgba(245,158,11,0.3)]">
               <div className="text-2xl mb-1">{showReward.icon}</div>
-              <div className="text-sm font-black text-gold/90">+{showReward.xp} XP</div>
+              <div className="text-sm font-black text-amber-300">+{showReward.xp} XP</div>
             </div>
           </motion.div>
         )}

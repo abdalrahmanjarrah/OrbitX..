@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
-@source not "../docs/**";
-@source not "../**/*.md";
-@source not "../tests/**";
 
 @layer utilities {
   .custom-scrollbar::-webkit-scrollbar {
@@ -27,21 +24,11 @@
   --font-mono: "JetBrains Mono", monospace;
   --font-arabic: "Cairo", "Inter", sans-serif;
   
-  --color-void: #04040a;
-  --color-navy: #090b1f;
-  --color-panel: #16002d;
-  --color-neon: #00d4ff;
-  --color-turq: #00e5d4;
-  --color-lemon: #a7c957;
-  --color-gold: #d4af37;
-  --color-violet: #8c52ff;
-
-  /* Legacy space tokens aliased onto the palette */
-  --color-space-dark: #04040a;
-  --color-space-card: rgba(9, 11, 31, 0.6);
-  --color-space-purple: #8c52ff;
-  --color-space-blue: #00d4ff;
-  --color-space-accent: #00e5d4;
+  --color-space-dark: #0a0b16;
+  --color-space-card: rgba(20, 22, 43, 0.6);
+  --color-space-purple: #818cf8;
+  --color-space-blue: #38bdf8;
+  --color-space-accent: #e879f9;
   
   --radius-3xl: 1.5rem;
   --radius-4xl: 2rem;
@@ -52,8 +39,7 @@
 }
 
 body {
-  background: linear-gradient(135deg, #16002d 0%, #090b1f 45%, #04040a 100%);
-  background-attachment: fixed;
+  background-color: var(--color-space-dark);
   color: #f8fafc;
   overflow-x: hidden;
   font-family: var(--font-sans);
@@ -70,24 +56,23 @@ body {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background:
-    radial-gradient(circle at 15% 40%, rgba(0, 212, 255, 0.12) 0%, transparent 60%),
-    radial-gradient(circle at 85% 60%, rgba(140, 82, 255, 0.1) 0%, transparent 60%),
-    radial-gradient(circle at 55% 85%, rgba(0, 229, 212, 0.08) 0%, transparent 55%);
+  background: 
+    radial-gradient(circle at 15% 40%, rgba(129, 140, 248, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 85% 60%, rgba(232, 121, 249, 0.08) 0%, transparent 60%);
   filter: blur(80px);
 }
 
 /* Soft Glassmorphism */
 .glass {
-  background: rgba(9, 11, 31, 0.4);
+  background: rgba(20, 22, 43, 0.4);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(140, 82, 255, 0.15);
+  border: 1px solid rgba(129, 140, 248, 0.1);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
 }
 
 .glass-hover:hover {
-  background: rgba(22, 0, 45, 0.5);
-  border-color: rgba(140, 82, 255, 0.3);
+  background: rgba(30, 33, 63, 0.5);
+  border-color: rgba(129, 140, 248, 0.25);
 }
 
 /* Star background effect */
@@ -98,7 +83,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: radial-gradient(ellipse at bottom, #090b1f 0%, #04040a 100%);
+  background: radial-gradient(ellipse at bottom, #0f1123 0%, #0a0b16 100%);
   overflow: hidden;
 }
 
@@ -108,7 +93,7 @@ body {
   border-radius: 50%;
   opacity: 0.6;
   animation: twinkle var(--duration) infinite ease-in-out;
-  box-shadow: 0 0 4px #8c52ff, 0 0 10px #00d4ff;
+  box-shadow: 0 0 4px #e879f9, 0 0 10px #818cf8;
 }
 
 @keyframes twinkle {
@@ -131,16 +116,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #04040a;
+  background: #0a0b16;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #16002d;
+  background: #312e81;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(140, 82, 255, 0.5);
+  background: #4338ca;
 }
 
 /* Custom scrollbar and masks */
@@ -182,7 +167,7 @@ body {
 .cursor-dot {
   position: fixed; top: 0; left: 0;
   width: 8px; height: 8px;
-  background: var(--cursor-dot, #00d4ff);
+  background: var(--cursor-dot, #818cf8);
   border-radius: 50%;
   pointer-events: none; z-index: 99999;
   mix-blend-mode: difference;
@@ -192,7 +177,7 @@ body {
 .cursor-ring {
   position: fixed; top: 0; left: 0;
   width: 36px; height: 36px;
-  border: 1.5px solid var(--cursor-ring, rgba(0, 212, 255, 0.5));
+  border: 1.5px solid var(--cursor-ring, rgba(129, 140, 248, 0.5));
   border-radius: 50%; pointer-events: none;
   z-index: 99998;
   transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
@@ -200,7 +185,7 @@ body {
 
 .cursor-ring.hovering {
   width: 56px; height: 56px;
-  border-color: var(--cursor-hover, rgba(140, 82, 255, 0.7));
+  border-color: var(--cursor-hover, rgba(232, 121, 249, 0.7));
 }
 
 @media (pointer: coarse) {
@@ -211,21 +196,45 @@ body {
 /* ═══════════════════════════════════════════════════════════
    THEME: AMBER — remap indigo→amber, fuchsia→teal
    ═══════════════════════════════════════════════════════════ */
-/* GOLD warm theme — stays strictly inside the palette: violet-role → gold, accent → turquoise */
 .theme-amber {
-  --cursor-dot: #d4af37;
-  --cursor-ring: rgba(212, 175, 55, 0.5);
-  --cursor-hover: rgba(0, 229, 212, 0.7);
+  /* Cursor colors */
+  --cursor-dot: #fbbf24;
+  --cursor-ring: rgba(251, 191, 36, 0.5);
+  --cursor-hover: rgba(45, 212, 191, 0.7);
 
-  --atmosphere-a: rgba(212, 175, 55, 0.12);
-  --atmosphere-b: rgba(0, 229, 212, 0.1);
+  /* Atmosphere glow */
+  --atmosphere-a: rgba(251, 191, 36, 0.12);
+  --atmosphere-b: rgba(20, 184, 166, 0.08);
 
+  /* Indigo → Amber */
+  --color-indigo-50: oklch(0.97 0.02 95);
+  --color-indigo-100: oklch(0.93 0.04 95);
+  --color-indigo-200: oklch(0.88 0.08 90);
+  --color-indigo-300: oklch(0.82 0.12 85);
+  --color-indigo-400: oklch(0.77 0.15 75);
+  --color-indigo-500: oklch(0.72 0.18 75);
+  --color-indigo-600: oklch(0.65 0.20 70);
+  --color-indigo-700: oklch(0.55 0.18 70);
+  --color-indigo-800: oklch(0.45 0.15 70);
+  --color-indigo-900: oklch(0.37 0.12 70);
+  --color-indigo-950: oklch(0.25 0.08 70);
 
+  /* Fuchsia → Teal */
+  --color-fuchsia-50: oklch(0.97 0.02 175);
+  --color-fuchsia-100: oklch(0.94 0.05 175);
+  --color-fuchsia-200: oklch(0.88 0.08 175);
+  --color-fuchsia-300: oklch(0.82 0.12 175);
+  --color-fuchsia-400: oklch(0.75 0.15 175);
+  --color-fuchsia-500: oklch(0.70 0.18 175);
+  --color-fuchsia-600: oklch(0.62 0.20 175);
+  --color-fuchsia-700: oklch(0.55 0.18 175);
+  --color-fuchsia-800: oklch(0.45 0.15 175);
+  --color-fuchsia-900: oklch(0.35 0.12 175);
+  --color-fuchsia-950: oklch(0.25 0.08 175);
 
-  --color-violet: #d4af37;
-  --color-gold: #00e5d4;
-  --color-space-purple: #d4af37;
-  --color-space-accent: #00e5d4;
+  /* Space palette */
+  --color-space-purple: #f59e0b;
+  --color-space-accent: #14b8a6;
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -233,26 +242,26 @@ body {
    ═══════════════════════════════════════════════════════════ */
 .theme-amber .atmosphere-bg {
   background:
-    radial-gradient(circle at 15% 40%, rgba(212, 175, 55, 0.12) 0%, transparent 60%),
-    radial-gradient(circle at 85% 60%, rgba(0, 229, 212, 0.1) 0%, transparent 60%);
+    radial-gradient(circle at 15% 40%, rgba(251, 191, 36, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 85% 60%, rgba(20, 184, 166, 0.08) 0%, transparent 60%);
 }
 
 .theme-amber .glass {
-  border-color: rgba(212, 175, 55, 0.15);
+  border-color: rgba(251, 191, 36, 0.1);
 }
 
 .theme-amber .glass-hover:hover {
-  border-color: rgba(212, 175, 55, 0.3);
+  border-color: rgba(251, 191, 36, 0.25);
 }
 
 .theme-amber .star {
-  box-shadow: 0 0 4px #00e5d4, 0 0 10px #d4af37;
+  box-shadow: 0 0 4px #14b8a6, 0 0 10px #f59e0b;
 }
 
 .theme-amber ::-webkit-scrollbar-thumb {
-  background: rgba(212, 175, 55, 0.6);
+  background: #78350f;
 }
 
 .theme-amber ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 229, 212, 0.6);
+  background: #92400e;
 }

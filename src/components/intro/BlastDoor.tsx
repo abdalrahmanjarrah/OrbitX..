@@ -22,15 +22,15 @@ export function BlastDoor({ position }: BlastDoorProps) {
   const doorOpen = useIntroStore((s) => s.doorOpen);
 
   const doorMat = useMemo(
-    () => new THREE.MeshStandardMaterial({ color: '#16002d', metalness: 0.95, roughness: 0.2 }),
+    () => new THREE.MeshStandardMaterial({ color: '#1a1a2e', metalness: 0.95, roughness: 0.2 }),
     [],
   );
   const pistonMat = useMemo(
-    () => new THREE.MeshStandardMaterial({ color: '#16002d', metalness: 0.9, roughness: 0.3 }),
+    () => new THREE.MeshStandardMaterial({ color: '#333344', metalness: 0.9, roughness: 0.3 }),
     [],
   );
   const warningMat = useMemo(
-    () => new THREE.MeshStandardMaterial({ color: '#d4af37', emissive: '#d4af37', emissiveIntensity: 0.8 }),
+    () => new THREE.MeshStandardMaterial({ color: '#ff8c00', emissive: '#ff8c00', emissiveIntensity: 0.8 }),
     [],
   );
 
@@ -77,14 +77,14 @@ export function BlastDoor({ position }: BlastDoorProps) {
           <boxGeometry args={[0.8, 0.06, 0.02]} />
         </mesh>
       ))}
-      <pointLight ref={warningRef} color="#d4af37" intensity={1.5} distance={6} position={[0, DOOR_HEIGHT * 0.45, 0.5]} />
+      <pointLight ref={warningRef} color="#ff8c00" intensity={1.5} distance={6} position={[0, DOOR_HEIGHT * 0.45, 0.5]} />
       {[
         [0, DOOR_HEIGHT / 2 + 0.1, 0, DOOR_WIDTH * 2 + 0.6, 0.2, 0.5],
         [0, -DOOR_HEIGHT / 2 - 0.1, 0, DOOR_WIDTH * 2 + 0.6, 0.2, 0.5],
       ].map((args, i) => (
         <mesh key={i} position={[args[0] as number, args[1] as number, args[2] as number]}>
           <boxGeometry args={[args[3] as number, args[4] as number, args[5] as number]} />
-          <meshStandardMaterial color="#090b1f" metalness={0.95} roughness={0.2} />
+          <meshStandardMaterial color="#0d0d1a" metalness={0.95} roughness={0.2} />
         </mesh>
       ))}
     </group>

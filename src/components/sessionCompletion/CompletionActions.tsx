@@ -45,7 +45,7 @@ export const CompletionActions: React.FC<CompletionActionsProps> = ({
         whileTap={{ scale: 0.98 }}
         onClick={handleShare}
         disabled={sharing !== "idle"}
-        className="w-full py-2.5 px-4 rounded-lg bg-gradient-to-r from-violet to-gold hover:from-violet/85 hover:to-gold/85 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-[0_4px_18px_rgb(140,82,255,0.3)] border border-violet/30 cursor-pointer transition-all disabled:opacity-80"
+        className="w-full py-2.5 px-4 rounded-lg bg-gradient-to-r from-fuchsia-500 to-rose-500 hover:from-fuchsia-400 hover:to-rose-400 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-[0_4px_18px_rgba(217,70,239,0.3)] border border-fuchsia-400/30 cursor-pointer transition-all disabled:opacity-80"
         id="btn-complete-share"
       >
         {sharing === "shared" ? (
@@ -70,7 +70,7 @@ export const CompletionActions: React.FC<CompletionActionsProps> = ({
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           onClick={onContinue}
-          className="w-full sm:flex-1 py-2.5 px-4 rounded-lg bg-gradient-to-r from-neon to-violet hover:from-neon/85 hover:to-violet text-white font-bold text-xs flex items-center justify-center gap-2 shadow-[0_4px_16px_rgb(0,229,212,0.25)] border border-neon/20 cursor-pointer transition-all"
+          className="w-full sm:flex-1 py-2.5 px-4 rounded-lg bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-[0_4px_16px_rgba(6,182,212,0.25)] border border-cyan-400/20 cursor-pointer transition-all"
           id="btn-complete-continue"
         >
           <Rocket className="w-3.5 h-3.5" />
@@ -82,7 +82,7 @@ export const CompletionActions: React.FC<CompletionActionsProps> = ({
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           onClick={onExitToStations}
-          className="w-full sm:w-auto py-2.5 px-4 rounded-lg bg-gold/20 hover:bg-gold/40 text-gold hover:text-gold/90 font-bold text-xs flex items-center justify-center gap-2 border border-gold/10 cursor-pointer transition-all"
+          className="w-full sm:w-auto py-2.5 px-4 rounded-lg bg-red-950/20 hover:bg-red-950/40 text-red-400 hover:text-red-300 font-bold text-xs flex items-center justify-center gap-2 border border-red-500/10 cursor-pointer transition-all"
           id="btn-complete-exit"
         >
           <LogOut className="w-3.5 h-3.5" />

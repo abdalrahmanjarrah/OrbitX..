@@ -195,7 +195,7 @@ export default function ExhibitionGallery() {
         <motion.div
           key={ex.id}
           whileHover={{ scale: 1.05 }}
-          className="aspect-square rounded-3xl overflow-hidden border border-white/10 bg-space-dark shadow-lg shadow-violet/10 relative group"
+          className="aspect-square rounded-3xl overflow-hidden border border-white/10 bg-space-dark shadow-lg shadow-indigo-900/10 relative group"
         >
           {ex.url ? (
             <img
@@ -204,17 +204,17 @@ export default function ExhibitionGallery() {
               referrerPolicy="no-referrer"
             />
           ) : (
-            <div className="w-full h-full bg-space-dark flex items-center justify-center text-[10px] text-white/50 font-mono">LOADING</div>
+            <div className="w-full h-full bg-space-dark flex items-center justify-center text-[10px] text-gray-500 font-mono">LOADING</div>
           )}
-          <div className="absolute inset-0 bg-navy/20 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-2 text-center">
-            <span className="text-[10px] font-bold text-violet">
+          <div className="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-2 text-center">
+            <span className="text-[10px] font-bold text-indigo-500">
               {ex.userName}
             </span>
           </div>
         </motion.div>
       ))}
       {exhibitions.length === 0 && (
-        <p className="col-span-full text-white/50 text-sm italic py-10 text-center">
+        <p className="col-span-full text-gray-500 text-sm italic py-10 text-center">
           {isAr ? "المعرض فارغ حالياً" : "The exhibition is currently empty"}
         </p>
       )}
