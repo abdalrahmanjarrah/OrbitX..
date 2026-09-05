@@ -367,7 +367,7 @@ export default function LandingPage({
     },
     {
       icon: Rocket,
-      color: "text-rose-400",
+      color: "text-fuchsia-400",
       title: isAr ? "الثقب الأسود الأسبوعي" : "Weekly Black Hole",
       desc: isAr
         ? "تحدٍ جماعي: كل الرواد يجمعون ساعات تركيز لاختراق هدف الأسبوع وسحب الجائزة السرية."
@@ -375,7 +375,7 @@ export default function LandingPage({
     },
     {
       icon: Users,
-      color: "text-amber-400",
+      color: "text-amber-300",
       title: isAr ? "الأساطيل" : "Fleets",
       desc: isAr
         ? "تحالفات من حتى 10 رواد: سجلّ مشترك، ساعات جماعية، ورحلة تعاون تكسر وحدة الكسل."
@@ -391,7 +391,7 @@ export default function LandingPage({
     },
     {
       icon: BookOpen,
-      color: "text-purple-400",
+      color: "text-indigo-400",
       title: isAr ? "الوعي والقرآن" : "Awareness & Quran",
       desc: isAr
         ? "مستودع مقالات العقلية على كرة أرضية تفاعلية، ولاعب قرآن كامل: 114 سورة و8 قرّاء."
@@ -519,8 +519,8 @@ export default function LandingPage({
     },
     {
       icon: Rocket,
-      color: "text-rose-400",
-      bg: "bg-rose-500/10 border-rose-500/20",
+      color: "text-fuchsia-400",
+      bg: "bg-fuchsia-500/10 border-fuchsia-500/20",
       value: 89,
       suffix: " F",
       label: isAr ? "أسطول متحالف" : "Active fleets",
@@ -546,8 +546,8 @@ export default function LandingPage({
           50% { opacity: 0.6; transform: scale(1.08); }
         }
         @keyframes warning-breathe {
-          0%, 100% { background-color: rgba(239, 68, 68, 0.05); border-color: rgba(239, 68, 68, 0.2); }
-          50% { background-color: rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.5); }
+          0%, 100% { background-color: rgba(217, 70, 239, 0.05); border-color: rgba(217, 70, 239, 0.2); }
+          50% { background-color: rgba(217, 70, 239, 0.15); border-color: rgba(217, 70, 239, 0.5); }
         }
         @keyframes aura-rotate {
           from { transform: rotate(0deg); }
@@ -863,14 +863,14 @@ export default function LandingPage({
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6" dir={isAr ? "rtl" : "ltr"}>
-              <div className="inline-flex items-center gap-2 font-mono text-xs text-rose-500 tracking-[0.2em] mb-4 uppercase">
-                <span className="w-6 h-px bg-rose-500/50" />
+              <div className="inline-flex items-center gap-2 font-mono text-xs text-fuchsia-500 tracking-[0.2em] mb-4 uppercase">
+                <span className="w-6 h-px bg-fuchsia-500/50" />
                 {isAr ? "درع الحماية من التشتت" : "Anti-Distraction Shield"}
               </div>
               <h3 className="text-[clamp(28px,4vw,44px)] font-black leading-tight mb-6">
                 {isAr ? "إنفاذ حقيقي لوجودك" : "Real enforcement of your presence"}
                 <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-l from-rose-400 to-amber-400">
+                <span className="text-transparent bg-clip-text bg-gradient-to-l from-fuchsia-400 to-amber-300">
                   {isAr ? "لا تايمر زائف ولا تحايل." : "No fake timers, no cheating."}
                 </span>
               </h3>
@@ -882,7 +882,7 @@ export default function LandingPage({
               <div className="space-y-5">
                 {shieldPoints.map((sh, index) => (
                   <div key={index} className="flex gap-4">
-                    <div className="w-6 h-6 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center shrink-0 text-xs text-rose-400 mt-1 font-bold">
+                    <div className="w-6 h-6 rounded-full bg-fuchsia-500/10 border border-fuchsia-500/30 flex items-center justify-center shrink-0 text-xs text-fuchsia-400 mt-1 font-bold">
                       ✓
                     </div>
                     <div>
@@ -894,12 +894,12 @@ export default function LandingPage({
               </div>
             </div>
 
-            <div className="lg:col-span-6 bg-[#090508]/80 border border-rose-500/20 rounded-[2.5rem] p-8 relative overflow-hidden flex flex-col justify-between shadow-[0_0_60px_rgba(239,68,68,0.06)] min-h-[380px]">
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-rose-500 to-transparent animate-pulse" />
-              <div className="flex items-center justify-between border-b border-rose-500/10 pb-4 mb-6" dir="ltr">
+            <div className="lg:col-span-6 bg-[#0a0412]/80 border border-fuchsia-500/20 rounded-[2.5rem] p-8 relative overflow-hidden flex flex-col justify-between shadow-[0_0_60px_rgba(217,70,239,0.06)] min-h-[380px]">
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-fuchsia-500 to-transparent animate-pulse" />
+              <div className="flex items-center justify-between border-b border-fuchsia-500/10 pb-4 mb-6" dir="ltr">
                 <div className="flex items-center gap-2">
-                  <ShieldAlert className="w-5 h-5 text-rose-400" />
-                  <span className="font-mono text-[10px] text-rose-400 font-bold tracking-widest uppercase">
+                  <ShieldAlert className="w-5 h-5 text-fuchsia-400" />
+                  <span className="font-mono text-[10px] text-fuchsia-400 font-bold tracking-widest uppercase">
                     ANTI_DISTRACTION_SHIELD
                   </span>
                 </div>
@@ -908,8 +908,8 @@ export default function LandingPage({
 
               <div className="space-y-4 text-right">
                 {[
-                  { label: "BIOMETRIC PRESENCE PROXY", percent: "99.8%", color: "text-emerald-400", status: "STABLE" },
-                  { label: "WINDOW FOCUS GUARANTOR", percent: "ACTIVE", color: "text-rose-500 animate-pulse", status: "LOCKDOWN" },
+                  { label: "BIOMETRIC PRESENCE PROXY", percent: "99.8%", color: "text-cyan-400", status: "STABLE" },
+                  { label: "WINDOW FOCUS GUARANTOR", percent: "ACTIVE", color: "text-fuchsia-500 animate-pulse", status: "LOCKDOWN" },
                   { label: "MECHANICAL CLICK DETECTOR", percent: "100%", color: "text-indigo-400", status: "ARMED" },
                 ].map((guard, idx) => (
                   <div key={idx} className="bg-black/40 border border-white/5 p-4 rounded-xl flex items-center justify-between">
@@ -926,7 +926,7 @@ export default function LandingPage({
                 ))}
               </div>
 
-              <div className="mt-8 text-center bg-rose-500/10 border border-rose-500/20 rounded-xl p-3 text-[10px] text-rose-400 font-mono tracking-wide uppercase">
+              <div className="mt-8 text-center bg-fuchsia-500/10 border border-fuchsia-500/20 rounded-xl p-3 text-[10px] text-fuchsia-400 font-mono tracking-wide uppercase">
                 ⚠️ PENALTY OF ESCAPING THE CABIN: -50 XP PER LEAVE INTRUSION
               </div>
             </div>
@@ -1009,7 +1009,7 @@ export default function LandingPage({
             <div className="lg:col-span-8 bg-[#04040a] border-2 border-indigo-500/15 rounded-[2.5rem] p-6 md:p-10 relative overflow-hidden flex flex-col justify-between shadow-[0_0_60px_rgba(99,102,241,0.1)]">
               <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[size:100%_4px,3px_100%] pointer-events-none opacity-30" />
               {simAlertActive && (
-                <div className="absolute inset-0 bg-red-950/20 z-0 animate-warning-breathe pointer-events-none" />
+                <div className="absolute inset-0 bg-fuchsia-950/20 z-0 animate-warning-breathe pointer-events-none" />
               )}
 
               <div className="flex items-center justify-between border-b border-white/5 pb-4.5 mb-6 relative z-10">
@@ -1027,7 +1027,7 @@ export default function LandingPage({
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-cyan-500 animate-pulse" />
                   <span className="text-[11px] text-gray-400 font-mono">1,480 PILOTS ONLINE</span>
                 </div>
               </div>
@@ -1040,7 +1040,7 @@ export default function LandingPage({
                       initial={{ opacity: 1, y: 15 }}
                       animate={{ opacity: 0, y: -45 }}
                       transition={{ duration: 1.2, ease: "easeOut" }}
-                      className="absolute left-1/2 -translate-x-1/2 text-emerald-400 text-xs font-mono font-black"
+                      className="absolute left-1/2 -translate-x-1/2 text-cyan-400 text-xs font-mono font-black"
                     >
                       +15 XP ⚡ CAPTURED
                     </motion.div>
@@ -1057,7 +1057,7 @@ export default function LandingPage({
                 <div className="inline-flex items-center gap-6 bg-black/40 border border-white/5 p-4 rounded-2xl mb-8">
                   <div className="text-right">
                     <div className="text-[11px] text-[#818cf8] font-mono leading-none mb-1">XP ENERGY BANK</div>
-                    <div className="text-lg font-black font-mono text-emerald-400">{simXp} XP</div>
+                    <div className="text-lg font-black font-mono text-cyan-400">{simXp} XP</div>
                   </div>
                   <div className="w-px h-8 bg-white/10" />
                   <div className="text-right">
@@ -1072,15 +1072,15 @@ export default function LandingPage({
                       initial={{ opacity: 0, scale: 0.95, y: 10 }}
                       animate={{ opacity: 1, scale: 1, y: 0 }}
                       exit={{ opacity: 0, scale: 0.95, y: 10 }}
-                      className="max-w-md mx-auto p-4 border border-red-500/30 bg-red-950/20 rounded-xl text-right mb-8"
+                      className="max-w-md mx-auto p-4 border border-fuchsia-500/30 bg-fuchsia-950/20 rounded-xl text-right mb-8"
                     >
                       <div className="flex items-start gap-3">
-                        <AlertTriangle className="w-5 h-5 text-red-400 shrink-0 mt-0.5 animate-bounce" />
+                        <AlertTriangle className="w-5 h-5 text-fuchsia-400 shrink-0 mt-0.5 animate-bounce" />
                         <div>
-                          <h4 className="text-xs font-black text-red-300">
+                          <h4 className="text-xs font-black text-fuchsia-300">
                             {isAr ? "خرق الحضور! غادرت كبينة القيادة 🚨" : "Presence breach! You left the cockpit 🚨"}
                           </h4>
-                          <p className="text-[11px] text-red-200/50 leading-relaxed mt-1">
+                          <p className="text-[11px] text-fuchsia-200/50 leading-relaxed mt-1">
                             {isAr ? "رصد النظام تغييراً في النشاط. العودة الفورية مطلوبة خلال" : "The system detected an activity change. Return immediately within"}{" "}
                             <b className="text-white font-mono text-xs">{simAlertCountdown}ث</b>{" "}
                             {isAr ? "لتجنب سحب كتل الطاقة." : "to avoid XP energy drain."}
@@ -1090,7 +1090,7 @@ export default function LandingPage({
                       <div className="mt-3 flex gap-2 justify-end">
                         <button
                           onClick={cancelMockDistraction}
-                          className="bg-red-500 hover:bg-red-600 text-white font-bold text-[10px] px-3.5 py-1.5 rounded-lg transition-colors"
+                          className="bg-fuchsia-500 hover:bg-fuchsia-600 text-white font-bold text-[10px] px-3.5 py-1.5 rounded-lg transition-colors"
                         >
                           {isAr ? "تأكيد الحضور (إلغاء الإنذار)" : "Confirm presence (cancel alert)"}
                         </button>
@@ -1100,11 +1100,11 @@ export default function LandingPage({
                 </AnimatePresence>
 
                 {simSuccess && (
-                  <div className="max-w-md mx-auto p-4 border border-emerald-500/30 bg-emerald-950/10 rounded-xl text-center mb-8">
-                    <h4 className="text-xs font-black text-emerald-400">
+                  <div className="max-w-md mx-auto p-4 border border-cyan-500/30 bg-cyan-950/10 rounded-xl text-center mb-8">
+                    <h4 className="text-xs font-black text-cyan-400">
                       {isAr ? "انتهت الرحلة المدارية بنجاح! 🎉" : "Orbital journey completed! 🎉"}
                     </h4>
-                    <p className="text-[11px] text-emerald-200/50 mt-1">
+                    <p className="text-[11px] text-cyan-200/50 mt-1">
                       {isAr ? "اكتملت جلسة التركيز وحصدت نقاط الخبرة. مستعد للمزيد؟" : "Your focus session completed and you earned XP. Ready for more?"}
                     </p>
                   </div>
@@ -1117,7 +1117,7 @@ export default function LandingPage({
                   className={cn(
                     "flex-1 min-w-[150px] font-black rounded-xl py-3.5 text-xs transition-all flex items-center justify-center gap-2",
                     simActive
-                      ? "bg-red-500 hover:bg-red-600 text-white shadow-[0_0_20px_rgba(239,68,68,0.2)]"
+                      ? "bg-fuchsia-500 hover:bg-fuchsia-600 text-white shadow-[0_0_20px_rgba(217,70,239,0.2)]"
                       : "bg-indigo-500 hover:bg-indigo-600 text-white",
                   )}
                 >
@@ -1132,9 +1132,9 @@ export default function LandingPage({
                 <button
                   onClick={triggerMockDistraction}
                   disabled={simAlertActive}
-                  className="bg-black/40 hover:bg-white/5 border border-white/10 hover:border-red-500/40 text-xs font-bold font-sans text-gray-400 hover:text-red-400 rounded-xl px-5 py-3.5 transition-all text-center flex items-center justify-center gap-2 disabled:opacity-30 disabled:pointer-events-none"
+                  className="bg-black/40 hover:bg-white/5 border border-white/10 hover:border-fuchsia-500/40 text-xs font-bold font-sans text-gray-400 hover:text-fuchsia-400 rounded-xl px-5 py-3.5 transition-all text-center flex items-center justify-center gap-2 disabled:opacity-30 disabled:pointer-events-none"
                 >
-                  <ShieldAlert className="w-4 h-4 text-red-500 animate-pulse" />
+                  <ShieldAlert className="w-4 h-4 text-fuchsia-500 animate-pulse" />
                   <span>{isAr ? "محاكاة إنذار التشتت" : "Simulate distraction alert"}</span>
                 </button>
               </div>
@@ -1149,21 +1149,21 @@ export default function LandingPage({
       <section className="py-24 px-6 relative z-10 overflow-hidden bg-black border-t border-white/5">
         <div className="absolute inset-0 z-0 pointer-events-none w-full h-full flex items-center justify-center">
           <div className="absolute w-[600px] h-[600px] rounded-full border border-fuchsia-600/10 bg-gradient-to-tr from-[#9d174d]/15 via-transparent to-[#1e1b4b]/20 filter blur-[80px] animate-cosmic-pulse" />
-          <div className="absolute w-[420px] h-[420px] rounded-full border-[10px] border-amber-500/10 border-t-amber-400/50 border-b-indigo-500/40" style={{ filter: "blur(18px)", animation: "aura-rotate 16s linear infinite" }} />
-          <div className="absolute w-[440px] h-[440px] rounded-full border-[2px] border-dashed border-rose-500/20" style={{ filter: "blur(4px)", animation: "aura-rotate 28s linear infinite reverse" }} />
-          <div className="absolute w-44 h-44 rounded-full bg-black shadow-[0_0_120px_rgba(244,63,94,0.35),0_0_40px_rgba(0,0,0,1)] z-10" />
+          <div className="absolute w-[420px] h-[420px] rounded-full border-[10px] border-amber-500/10 border-t-amber-300/50 border-b-indigo-500/40" style={{ filter: "blur(18px)", animation: "aura-rotate 16s linear infinite" }} />
+          <div className="absolute w-[440px] h-[440px] rounded-full border-[2px] border-dashed border-fuchsia-500/20" style={{ filter: "blur(4px)", animation: "aura-rotate 28s linear infinite reverse" }} />
+          <div className="absolute w-44 h-44 rounded-full bg-black shadow-[0_0_120px_rgba(232,121,249,0.35),0_0_40px_rgba(0,0,0,1)] z-10" />
         </div>
 
         <div className="relative z-10 max-w-3xl mx-auto text-center py-10 px-4">
-          <div className="inline-flex items-center gap-2 bg-[#1c0812]/50 border border-rose-500/30 rounded-full px-4 py-1.5 text-[10px] text-rose-300 font-bold tracking-widest mb-8">
-            <Flame className="w-3.5 h-3.5 text-rose-400 animate-bounce" />
+          <div className="inline-flex items-center gap-2 bg-[#17031a]/50 border border-fuchsia-500/30 rounded-full px-4 py-1.5 text-[10px] text-fuchsia-300 font-bold tracking-widest mb-8">
+            <Flame className="w-3.5 h-3.5 text-fuchsia-400 animate-bounce" />
             {isAr ? "بروتوكول التركيز الجماعي الأسبوعي" : "Weekly Collective Focus Protocol"}
           </div>
 
           <h3 className="text-[clamp(32px,5vw,60px)] font-black leading-tight mb-8">
             {isAr ? "تحدي الثقب الأسود" : "The Black Hole Challenge"}
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-amber-400 to-indigo-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 via-amber-300 to-indigo-500">
               {isAr ? "ساعات جماعية وجوائز أسبوعية!" : "Pooled hours & weekly bounties!"}
             </span>
           </h3>
@@ -1176,7 +1176,7 @@ export default function LandingPage({
 
           <button
             onClick={() => setShowLoginModal(true)}
-            className="group relative overflow-hidden bg-[#2d020c] hover:bg-[#470313] border border-rose-500/50 rounded-2xl px-12 py-4.5 text-xs font-black text-rose-200 shadow-[0_0_35px_rgba(239,68,68,0.25)] hover:shadow-[0_0_55px_rgba(239,68,68,0.45)] transition-all"
+            className="group relative overflow-hidden bg-[#23031a] hover:bg-[#3b0529] border border-fuchsia-500/50 rounded-2xl px-12 py-4.5 text-xs font-black text-fuchsia-200 shadow-[0_0_35px_rgba(217,70,239,0.25)] hover:shadow-[0_0_55px_rgba(217,70,239,0.45)] transition-all"
           >
             <span className="relative z-10">{isAr ? "انضم للتحدي الآن" : "Join the challenge now"}</span>
           </button>
@@ -1189,14 +1189,14 @@ export default function LandingPage({
       <section id="awareness" className="py-24 px-6 relative z-10 bg-[#020207] border-t border-white/5 scroll-mt-20">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12" dir={isAr ? "rtl" : "ltr"}>
-            <div className="inline-flex items-center gap-2 font-mono text-xs text-purple-400 tracking-[0.2em] mb-4 uppercase">
-              <span className="w-6 h-px bg-purple-500/50" />
+            <div className="inline-flex items-center gap-2 font-mono text-xs text-indigo-400 tracking-[0.2em] mb-4 uppercase">
+              <span className="w-6 h-px bg-indigo-500/50" />
               {isAr ? "الوعي وبناء العقلية" : "Awareness & Mindset"}
             </div>
             <h3 className="text-[clamp(28px,4vw,42px)] font-black leading-tight">
               {isAr ? "التركيز ليس ميكانيكياً فقط" : "Focus is not purely mechanical"}
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-l from-purple-400 via-indigo-400 to-cyan-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-l from-indigo-400 via-fuchsia-400 to-cyan-400">
                 {isAr ? "بل وعي سلوكي يُبنى." : "It is a built behavioral craft."}
               </span>
             </h3>
