@@ -10,7 +10,6 @@ import {
 import type { UserData } from "../shared";
 
 export function DailyHabitCard({ user }: { user: UserData }) {
-  const isGuest = !!user.isGuest;
   const [info, setInfo] = useState<{
     streak: number;
     rewardDue: boolean;
@@ -19,7 +18,7 @@ export function DailyHabitCard({ user }: { user: UserData }) {
 
   const streak = info?.streak ?? user.streak ?? 0;
   const rewardDue =
-    info?.rewardDue ?? (!isGuest && user.lastDailyReward !== todayDateString());
+    info?.rewardDue ?? user.lastDailyReward !== todayDateString();
 
   useEffect(() => {
     let mounted = true;
@@ -60,25 +59,24 @@ export function DailyHabitCard({ user }: { user: UserData }) {
       <p className="text-[10px] text-gray-500 font-mono leading-relaxed mt-1">
         كل يوم تركّز = +1 في السلسلة. فاتك يوم؟ ترجع من الأول.
       </p>
-      {!isGuest &&
-        (rewardDue ? (
-          <button
-            onClick={handleClaim}
-            disabled={claiming}
-            className={cn(
-              "mt-3 flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-black transition-all",
-              "bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-[#101223]",
-              "shadow-[0_0_20px_rgba(245,158,11,0.35)] disabled:opacity-50 disabled:cursor-not-allowed",
-            )}
-          >
-            <Gift size={14} />
-            {claiming ? "..." : "استلم مكافأة اليوم +15 XP"}
-          </button>
-        ) : (
-          <div className="mt-3 text-[11px] font-bold text-emerald-400/90 flex items-center gap-1.5">
-            <Gift size={12} /> استلمت مكافأة اليوم ✓
-          </div>
-        ))}
+      {rewardDue ? (
+        <button
+          onClick={handleClaim}
+          disabled={claiming}
+          className={cn(
+            "mt-3 flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-black transition-all",
+            "bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-[#101223]",
+            "shadow-[0_0_20px_rgba(245,158,11,0.35)] disabled:opacity-50 disabled:cursor-not-allowed",
+          )}
+        >
+          <Gift size={14} />
+          {claiming ? "..." : "استلم مكافأة اليوم +15 XP"}
+        </button>
+      ) : (
+        <div className="mt-3 text-[11px] font-bold text-emerald-400/90 flex items-center gap-1.5">
+          <Gift size={12} /> استلمت مكافأة اليوم ✓
+        </div>
+      )}
     </div>
   );
 }

@@ -321,6 +321,30 @@ CREATE TRIGGER trg_protect_progression
 -- only lets these (or admins) modify xp/level/role.
 -- =========================================================================
 
+-- level_for_xp: computes the level from total XP using the SAME cumulative
+-- threshold table as the client (src/lib/levelConfig.ts). Keeps the server
+-- in perfect sync with the UI level bar, unlike the old floor(xp/1000)+1.
+CREATE OR REPLACE FUNCTION public.level_for_xp(p_xp bigint)
+RETURNS bigint
+LANGUAGE plpgsql
+IMMUTABLE
+SET search_path = public
+AS $$
+DECLARE
+    v_levels bigint[] := ARRAY[0,500,1200,2100,3200,4500,6000,7700,9600,12000,14800,17800,21000,24400,28000,32000,36200,40600,45200,50000,55600,61200,66800,72400,78000,84400,90800,97200,103600,110000,117600,125200,132800,140400,148000,156400,164800,173200,181600,190000,198600,207200,215800,224400,233000,242400,251800,261200,270600,280000,289800,299600,309400,319200,329000,339200,349400,359600,369800,380000,389800,399600,409400,419200,429000,439200,449400,459600,469800,480000,489800,499600,509400,519200,529000,539200,549400,559600,569800,580000,589800,599600,609400,619200,629000,639200,649400,659600,669800,680000,691800,703600,715400,727200,739000,751200,763400,775600,787800,800000];
+    v_i int;
+BEGIN
+    FOR v_i IN 1..array_length(v_levels, 1) LOOP
+        IF p_xp < v_levels[v_i] THEN
+            RETURN (v_i - 1)::bigint;
+        END IF;
+    END LOOP;
+    RETURN array_length(v_levels, 1)::bigint;
+END;
+$$;
+
+GRANT EXECUTE ON FUNCTION public.level_for_xp(bigint) TO authenticated;
+
 -- grant_xp: server-verified XP grant/deduct with cooldown + level recalc
 CREATE OR REPLACE FUNCTION public.grant_xp(
     p_user_id text,
@@ -407,7 +431,7 @@ BEGIN
     END IF;
 
     v_new_xp := v_old_xp + p_amount;
-    v_level := floor(v_new_xp / 1000) + 1;
+    v_level := public.level_for_xp(v_new_xp);
 
     v_row.data := jsonb_set(v_row.data, '{xp}', to_jsonb(v_new_xp));
     v_row.data := jsonb_set(v_row.data, '{level}', to_jsonb(v_level));
@@ -607,7 +631,7 @@ BEGIN
     END IF;
 
     v_new_xp := v_old_xp - p_price;
-    v_level := floor(v_new_xp / 1000) + 1;
+    v_level := public.level_for_xp(v_new_xp);
 
     v_row.data := jsonb_set(jsonb_set(v_row.data, '{xp}', to_jsonb(v_new_xp)), '{level}', to_jsonb(v_level));
 
@@ -647,7 +671,7 @@ BEGIN
     END IF;
 
     IF v_level IS NULL THEN
-        v_level := floor(p_xp / 1000) + 1;
+        v_level := public.level_for_xp(p_xp);
     END IF;
 
     PERFORM set_config('app.progression_allowed', '1', true);

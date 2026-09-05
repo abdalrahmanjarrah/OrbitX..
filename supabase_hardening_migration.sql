@@ -205,14 +205,14 @@ AS $$
     )
 $$;
 
--- هل المستوى متوافق مع XP؟ (level = floor(xp/1000)+1)
+-- هل المستوى متوافق مع XP؟ (بنفس جدول levelConfig.ts عبر level_for_xp)
 CREATE OR REPLACE FUNCTION public.level_anchored_ok(old_data jsonb, new_data jsonb)
 RETURNS boolean
 LANGUAGE sql IMMUTABLE
 AS $$
     SELECT (
         COALESCE((new_data->>'level')::bigint, 1)
-            = (floor(COALESCE((new_data->>'xp')::bigint, 0) / 1000) + 1)
+            = public.level_for_xp(COALESCE((new_data->>'xp')::bigint, 0))
         OR (
             (new_data->>'level') IS NULL
             AND (old_data->>'level') IS NULL

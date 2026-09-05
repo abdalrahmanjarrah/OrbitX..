@@ -7,7 +7,8 @@
  *   calendar day is detected, so re-mounting the home tab never causes
  *   extra writes (important for our Firestore quota headroom).
  * - The reward is granted through requestXpGrant -> grant_xp RPC, so it is
- *   capped (≤120) and anti-cheat safe. Guests never earn rewards.
+ *   capped (≤120) and anti-cheat safe. Guests may claim it too, but do not
+ *   get a public profile.
  */
 import { db, updateDoc } from "../firebase";
 import { doc } from "firebase/firestore";
@@ -56,7 +57,7 @@ export async function applyDailyStreak(
     }
   }
 
-  const rewardDue = !user.isGuest && user.lastDailyReward !== today;
+  const rewardDue = user.lastDailyReward !== today;
   return { streak, isNewDay, rewardDue };
 }
 

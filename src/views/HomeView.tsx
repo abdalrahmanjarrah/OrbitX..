@@ -763,7 +763,7 @@ export default function HomeView({
 
       {/* Time Chests + Referral — at the bottom */}
       <div className="flex flex-col sm:flex-row gap-4 mt-6">
-        {!user.isGuest && <TimeChests user={user} />}
+        <TimeChests user={user} />
         {!user.isGuest && <ReferralCard user={user} />}
       </div>
     </div>
