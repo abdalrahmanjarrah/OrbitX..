@@ -63,12 +63,12 @@ function Scene() {
     <>
       <CameraRig />
 
-      <ambientLight intensity={0.15} color="#1a2a4a" />
-      <pointLight position={[0, 2, 0]} intensity={1} color="#00f3ff" distance={15} decay={0.5} />
-      <pointLight position={[0, 2, -30]} intensity={0.8} color="#0088ff" distance={15} decay={0.5} />
-      <pointLight position={[0, 2, -60]} intensity={0.6} color="#00f3ff" distance={15} decay={0.5} />
-      <pointLight position={[0, 2, -90]} intensity={0.8} color="#ff8800" distance={15} decay={0.5} />
-      <fog attach="fog" args={['#000010', 20, 80]} />
+      <ambientLight intensity={0.15} color="#16002d" />
+      <pointLight position={[0, 2, 0]} intensity={1} color="#00d4ff" distance={15} decay={0.5} />
+      <pointLight position={[0, 2, -30]} intensity={0.8} color="#00d4ff" distance={15} decay={0.5} />
+      <pointLight position={[0, 2, -60]} intensity={0.6} color="#00d4ff" distance={15} decay={0.5} />
+      <pointLight position={[0, 2, -90]} intensity={0.8} color="#d4af37" distance={15} decay={0.5} />
+      <fog attach="fog" args={['#04040a', 20, 80]} />
 
       <Corridor />
 
@@ -120,7 +120,7 @@ export function IntroExperience({ onLogin, onGuest, inviterName }: IntroViewProp
   return (
     <div
       onWheel={handleWheel}
-      style={{ width: '100vw', height: '100vh', background: '#000008', position: 'relative' }}
+      style={{ width: '100vw', height: '100vh', background: '#04040a', position: 'relative' }}
     >
       <Canvas
         gl={{
@@ -132,7 +132,7 @@ export function IntroExperience({ onLogin, onGuest, inviterName }: IntroViewProp
         dpr={[1, 1.5]}
         style={{ position: 'absolute', inset: 0 }}
       >
-        <color attach="background" args={['#000008']} />
+        <color attach="background" args={['#04040a']} />
         <Scene />
       </Canvas>
 

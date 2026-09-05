@@ -215,16 +215,16 @@ export default function LeaderboardView({
     >
       <div className={cn("flex items-center justify-between mb-8", isAr ? "flex-row" : "flex-row-reverse")}>
         <h2 className="text-3xl font-black flex items-center gap-3">
-          <Trophy className="text-yellow-400" size={32} />
+          <Trophy className="text-gold" size={32} />
           {isAr ? "قائمة المتصدرين" : "Cosmic Leaderboard"}
         </h2>
-        <div className="px-4 py-2 bg-space-dark shadow-lg shadow-indigo-900/10 rounded-xl border border-white/10 text-sm text-gray-400">
+        <div className="px-4 py-2 bg-space-dark shadow-lg shadow-violet/10 rounded-xl border border-white/10 text-sm text-white/60">
           {isAr ? "أفضل 50 رائد فضاء" : "Top 50 Astronauts"}
         </div>
       </div>
 
-      <div className="bg-space-dark shadow-lg shadow-indigo-900/10 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-lg bg-space-dark/60">
-        <div className={cn("grid grid-cols-12 gap-2 md:gap-4 p-4 border-b border-white/10 text-sm font-bold text-gray-400", isAr ? "text-right" : "text-left")}>
+      <div className="bg-space-dark shadow-lg shadow-violet/10 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-lg bg-space-dark/60">
+        <div className={cn("grid grid-cols-12 gap-2 md:gap-4 p-4 border-b border-white/10 text-sm font-bold text-white/60", isAr ? "text-right" : "text-left")}>
           <div className="col-span-2 md:col-span-1 text-center">{isAr ? "المركز" : "Rank"}</div>
           <div className="col-span-5 md:col-span-6">{isAr ? "الرائد" : "Astronaut"}</div>
           <div className="col-span-2 text-center">{isAr ? "المستوى" : "Lvl"}</div>
@@ -234,33 +234,33 @@ export default function LeaderboardView({
         <div className="divide-y divide-white/5">
           {loading && (
             <div className="flex flex-col items-center justify-center py-16 gap-3">
-              <div className="w-8 h-8 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin" />
-              <span className="text-sm text-gray-400">{isAr ? "جارٍ تحميل المتصدرين..." : "Loading leaderboard..."}</span>
+              <div className="w-8 h-8 border-2 border-violet/40 border-t-transparent rounded-full animate-spin" />
+              <span className="text-sm text-white/60">{isAr ? "جارٍ تحميل المتصدرين..." : "Loading leaderboard..."}</span>
             </div>
           )}
           {!loading && error && (
             <div className="flex flex-col items-center justify-center py-16 gap-3">
-              <div className="w-12 h-12 rounded-full bg-red-500/10 border border-red-500/30 flex items-center justify-center">
-                <Zap size={20} className="text-red-400" />
+              <div className="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center">
+                <Zap size={20} className="text-gold" />
               </div>
-              <span className="text-sm text-red-400 font-semibold">{error}</span>
+              <span className="text-sm text-gold font-semibold">{error}</span>
             </div>
           )}
           {!loading && !error && leaders.length === 0 && (
             <div className="flex flex-col items-center justify-center py-16 gap-3">
               <span className="text-4xl">🌌</span>
-              <span className="text-sm text-gray-400">{isAr ? "لا يوجد رائد فضاء في القائمة بعد" : "No astronauts on the leaderboard yet"}</span>
+              <span className="text-sm text-white/60">{isAr ? "لا يوجد رائد فضاء في القائمة بعد" : "No astronauts on the leaderboard yet"}</span>
             </div>
           )}
           {!loading && !error && leaders.map((leader, index) => {
             const rankStyle =
               index === 0
-                ? "bg-yellow-500/20 text-yellow-400 border-yellow-500/30"
+                ? "bg-gold/20 text-gold border-gold/30"
                 : index === 1
-                  ? "bg-gray-300/20 text-gray-300 border-gray-300/30"
+                  ? "bg-white/20 text-white/70 border-white/30"
                   : index === 2
-                    ? "bg-amber-700/20 text-amber-600 border-amber-700/30"
-                    : "bg-space-dark shadow-lg shadow-indigo-900/10 text-gray-400 border-white/10";
+                    ? "bg-gold/20 text-gold/75 border-gold/30"
+                    : "bg-space-dark shadow-lg shadow-violet/10 text-white/60 border-white/10";
 
             return (
               <motion.div
@@ -269,8 +269,8 @@ export default function LeaderboardView({
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.05 }}
                 className={cn(
-                  "grid grid-cols-12 gap-2 md:gap-4 p-4 items-center transition-colors hover:bg-space-dark shadow-lg shadow-indigo-900/10",
-                  leader.uid === user.uid && "bg-indigo-500/10",
+                  "grid grid-cols-12 gap-2 md:gap-4 p-4 items-center transition-colors hover:bg-space-dark shadow-lg shadow-violet/10",
+                  leader.uid === user.uid && "bg-violet/10",
                 )}
               >
                 <div className="col-span-2 md:col-span-1 flex justify-center">
@@ -291,11 +291,11 @@ export default function LeaderboardView({
                   >
                     <img
                       src={leader.photoURL || `https://api.dicebear.com/7.x/bottts/svg?seed=${leader.uid}`}
-                      className="w-10 h-10 rounded-full border border-white/10 group-hover:border-indigo-400 transition-colors"
+                      className="w-10 h-10 rounded-full border border-white/10 group-hover:border-violet/40 transition-colors"
                       referrerPolicy="no-referrer"
                     />
                     {leader.uid === user.uid && (
-                      <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-indigo-500 rounded-full border-2 border-[#0a0a1a] flex items-center justify-center">
+                      <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-violet/80 rounded-full border-2 border-[#090b1f] flex items-center justify-center">
                         <Star size={8} className="text-white" />
                       </div>
                     )}
@@ -303,7 +303,7 @@ export default function LeaderboardView({
                   <div className={cn("flex flex-col overflow-hidden", isAr ? "text-right" : "text-left")}>
                     <button
                       onClick={() => onSelectUser(leader.uid)}
-                      className={cn("font-bold hover:text-indigo-500 transition-colors truncate", isAr ? "text-right" : "text-left")}
+                      className={cn("font-bold hover:text-violet transition-colors truncate", isAr ? "text-right" : "text-left")}
                     >
                       {leader.displayName}
                     </button>
@@ -319,13 +319,13 @@ export default function LeaderboardView({
                 </div>
 
                 <div className="col-span-2 flex justify-center">
-                  <div className="px-2 md:px-3 py-1 bg-space-dark/80 shadow-lg shadow-indigo-900/10 rounded-lg font-mono font-bold text-indigo-500 text-[10px] md:text-sm">
+                  <div className="px-2 md:px-3 py-1 bg-space-dark/80 shadow-lg shadow-violet/10 rounded-lg font-mono font-bold text-violet text-[10px] md:text-sm">
                     {leader.level}
                   </div>
                 </div>
 
                 <div className="col-span-3 flex justify-center">
-                  <div className="flex items-center gap-1 font-mono font-bold text-yellow-400 whitespace-nowrap">
+                  <div className="flex items-center gap-1 font-mono font-bold text-gold whitespace-nowrap">
                     <Zap size={14} className="hidden sm:block" />
                     {(leader.xp ?? 0).toLocaleString()}
                   </div>

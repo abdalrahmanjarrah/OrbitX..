@@ -186,18 +186,18 @@ export default function FocusHeatmap() {
 
   const getDayColor = (minutes: number) => {
     if (minutes === 0) return "bg-space-dark border-white/5";
-    if (minutes < 30) return "bg-fuchsia-900/60 border-fuchsia-500/20";
-    if (minutes < 60) return "bg-fuchsia-600/80 border-fuchsia-400/40";
+    if (minutes < 30) return "bg-violet/60 border-violet/20";
+    if (minutes < 60) return "bg-violet/80 border-violet/40";
     if (minutes < 120)
-      return "bg-purple-500 border-purple-400/60 shadow-[0_0_8px_rgba(168,85,247,0.5)]";
-    return "bg-purple-300 border-purple-200 shadow-[0_0_12px_rgba(216,180,254,0.8)] animate-pulse";
+      return "bg-violet/80 border-violet/60 shadow-[0_0_8px_rgb(140,82,255,0.5)]";
+    return "bg-violet/35 border-violet/18 shadow-[0_0_12px_rgb(255,255,255,0.8)] animate-pulse";
   };
 
   return (
-    <div className="p-6 rounded-3xl glass border border-fuchsia-500/10 space-y-4">
+    <div className="p-6 rounded-3xl glass border border-violet/10 space-y-4">
       <h4 className="text-sm font-bold text-white flex items-center justify-end gap-2">
         <span>نشاط المجرة (التركيز)</span>
-        <Activity size={16} className="text-fuchsia-400" />
+        <Activity size={16} className="text-violet" />
       </h4>
       <div className="flex flex-wrap gap-1.5 justify-end" dir="ltr">
         {days.map((d, i) => {
@@ -215,12 +215,12 @@ export default function FocusHeatmap() {
           );
         })}
       </div>
-      <div className="flex items-center justify-end gap-2 text-[10px] text-gray-500 mt-2 font-bold uppercase tracking-widest">
+      <div className="flex items-center justify-end gap-2 text-[10px] text-white/50 mt-2 font-bold uppercase tracking-widest">
         <span>أكثر</span>
-        <div className="w-2.5 h-2.5 rounded-sm bg-purple-300 border border-purple-200"></div>
-        <div className="w-2.5 h-2.5 rounded-sm bg-purple-500 border border-purple-400/60"></div>
-        <div className="w-2.5 h-2.5 rounded-sm bg-fuchsia-600/80 border border-fuchsia-400/40"></div>
-        <div className="w-2.5 h-2.5 rounded-sm bg-fuchsia-900/60 border border-fuchsia-500/20"></div>
+        <div className="w-2.5 h-2.5 rounded-sm bg-violet/35 border border-violet/18"></div>
+        <div className="w-2.5 h-2.5 rounded-sm bg-violet/80 border border-violet/60"></div>
+        <div className="w-2.5 h-2.5 rounded-sm bg-violet/80 border border-violet/40"></div>
+        <div className="w-2.5 h-2.5 rounded-sm bg-violet/60 border border-violet/20"></div>
         <div className="w-2.5 h-2.5 rounded-sm bg-space-dark border border-white/5"></div>
         <span>أقل</span>
       </div>

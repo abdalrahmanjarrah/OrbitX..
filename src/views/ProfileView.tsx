@@ -295,13 +295,13 @@ export default function ProfileView({
 
   return (
     <div
-      className="w-full max-w-6xl mx-auto pb-24 overflow-x-hidden min-h-screen font-sans selection:bg-indigo-500/30 text-white"
+      className="w-full max-w-6xl mx-auto pb-24 overflow-x-hidden min-h-screen font-sans selection:bg-violet/30 text-white"
       dir={isAr ? "rtl" : "ltr"}
     >
       {/* Dynamic Background */}
       <div className="fixed inset-0 z-[-1] pointer-events-none opacity-40">
-        <div className="absolute top-[10%] left-[20%] w-[40vw] h-[40vw] bg-indigo-600/20 blur-[120px] rounded-full mix-blend-screen animate-[pulse_10s_ease-in-out_infinite]" />
-        <div className="absolute bottom-[20%] right-[10%] w-[50vw] h-[50vw] bg-fuchsia-600/10 blur-[150px] rounded-full mix-blend-screen animate-[pulse_15s_ease-in-out_infinite_reverse]" />
+        <div className="absolute top-[10%] left-[20%] w-[40vw] h-[40vw] bg-violet/20 blur-[120px] rounded-full mix-blend-screen animate-[pulse_10s_ease-in-out_infinite]" />
+        <div className="absolute bottom-[20%] right-[10%] w-[50vw] h-[50vw] bg-violet/10 blur-[150px] rounded-full mix-blend-screen animate-[pulse_15s_ease-in-out_infinite_reverse]" />
       </div>
 
       {/* Main Profile Hero Section */}
@@ -310,30 +310,30 @@ export default function ProfileView({
         animate={{ opacity: 1, y: 0 }}
         className="relative mb-12"
       >
-        <div className="bg-[#080b1a]/80 backdrop-blur-xl border border-indigo-500/20 rounded-[3rem] p-8 md:p-12 shadow-[0_0_80px_rgba(30,27,75,0.8)] overflow-hidden relative group">
+        <div className="bg-[#090b1f]/80 backdrop-blur-xl border border-violet/20 rounded-[3rem] p-8 md:p-12 shadow-[0_0_80px_rgb(22,0,45,0.8)] overflow-hidden relative group">
           {/* Subtle Grid Pattern Overlay */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:10px_10px] opacity-20 pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgb(255,255,255,0.05)_1px,transparent_1px)] bg-[size:10px_10px] opacity-20 pointer-events-none" />
 
           {/* Action Buttons Top Left */}
           <div className="absolute top-8 left-8 flex gap-3 z-20">
             <button
               onClick={() => setIsEditing(!isEditing)}
-              className="p-3 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 rounded-2xl transition-all group/edit shadow-lg"
+              className="p-3 bg-white/5 hover:bg-violet/20 border border-white/10 hover:border-violet/50 rounded-2xl transition-all group/edit shadow-lg"
             >
-              <Edit3 className="w-5 h-5 text-indigo-300 group-hover/edit:text-indigo-200" />
+              <Edit3 className="w-5 h-5 text-violet/90 group-hover/edit:text-violet/80" />
             </button>
             <button
               onClick={logout}
-              className="p-3 bg-white/5 hover:bg-red-500/20 border border-white/10 hover:border-red-500/50 rounded-2xl transition-all group/logout shadow-lg"
+              className="p-3 bg-white/5 hover:bg-gold/20 border border-white/10 hover:border-gold/50 rounded-2xl transition-all group/logout shadow-lg"
             >
-              <LogOut className="w-5 h-5 text-red-300 group-hover/logout:text-red-200" />
+              <LogOut className="w-5 h-5 text-gold/90 group-hover/logout:text-gold/80" />
             </button>
             <button
               onClick={toggleTheme}
               title={theme === "amber" ? (isAr ? "الوضع الأصلي" : "Default theme") : (isAr ? "الوضع الذهبي" : "Amber theme")}
-              className="p-3 bg-white/5 hover:bg-amber-500/20 border border-white/10 hover:border-amber-500/50 rounded-2xl transition-all group/theme shadow-lg"
+              className="p-3 bg-white/5 hover:bg-gold/20 border border-white/10 hover:border-gold/50 rounded-2xl transition-all group/theme shadow-lg"
             >
-              <Palette className={cn("w-5 h-5 transition-colors", theme === "amber" ? "text-amber-400 group-hover/theme:text-amber-300" : "text-gray-400 group-hover/theme:text-amber-400")} />
+              <Palette className={cn("w-5 h-5 transition-colors", theme === "amber" ? "text-gold group-hover/theme:text-gold/90" : "text-white/60 group-hover/theme:text-gold")} />
             </button>
           </div>
 
@@ -341,8 +341,8 @@ export default function ProfileView({
             {/* Avatar with Orbit */}
             <div className="relative w-48 h-48 md:w-56 md:h-56 shrink-0 flex items-center justify-center">
               {/* Rotating Rings */}
-              <div className="absolute inset-0 border-[1px] border-indigo-500/20 rounded-full animate-[spin_10s_linear_infinite]" />
-              <div className="absolute inset-2 border-[1px] border-dashed border-fuchsia-500/30 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
+              <div className="absolute inset-0 border-[1px] border-violet/20 rounded-full animate-[spin_10s_linear_infinite]" />
+              <div className="absolute inset-2 border-[1px] border-dashed border-violet/30 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
 
               {/* Glowing Aura based on Level */}
               <div
@@ -364,7 +364,7 @@ export default function ProfileView({
                 className={cn(
                   "absolute top-2 left-2 px-3 py-1.5 rounded-full text-[11px] font-black border z-30 shadow-[0_0_20px_currentColor] flex items-center gap-1",
                   levelColors.text,
-                  "border-current bg-[#080b1a]",
+                  "border-current bg-[#090b1f]",
                 )}
               >
                 <Award size={12} />
@@ -374,8 +374,8 @@ export default function ProfileView({
               {/* Main Avatar Avatar */}
               <div
                 className={cn(
-                  "w-36 h-36 md:w-44 md:h-44 rounded-full border-4 relative z-20 overflow-hidden cursor-pointer group/avatar max-w-full bg-[#080b1a] shrink-0",
-                  "border-indigo-400",
+                  "w-36 h-36 md:w-44 md:h-44 rounded-full border-4 relative z-20 overflow-hidden cursor-pointer group/avatar max-w-full bg-[#090b1f] shrink-0",
+                  "border-violet/40",
                 )}
                 onClick={() => fileInputRef.current?.click()}
               >
@@ -413,7 +413,7 @@ export default function ProfileView({
                   cy="50"
                   r="48"
                   fill="none"
-                  stroke="rgba(255,255,255,0.05)"
+                  stroke="rgb(255,255,255,0.05)"
                   strokeWidth="4"
                 />
                 <motion.circle
@@ -439,8 +439,8 @@ export default function ProfileView({
                     x2="100%"
                     y2="0%"
                   >
-                    <stop offset="0%" stopColor="#818cf8" />
-                    <stop offset="100%" stopColor="#c084fc" />
+                    <stop offset="0%" stopColor="#8c52ff" />
+                    <stop offset="100%" stopColor="#8c52ff" />
                   </linearGradient>
                 </defs>
               </svg>
@@ -454,24 +454,24 @@ export default function ProfileView({
                     value={displayName}
                     onChange={(e) => setDisplayName(e.target.value)}
                     placeholder="الأسم المستعار..."
-                    className="w-full bg-[#0a0f25] border border-white/10 rounded-xl px-5 py-3 focus:outline-none focus:border-indigo-400 text-2xl font-bold font-display shadow-inner"
+                    className="w-full bg-[#090b1f] border border-white/10 rounded-xl px-5 py-3 focus:outline-none focus:border-violet/40 text-2xl font-bold font-display shadow-inner"
                   />
                   <input
                     value={missionRoleStr}
                     onChange={(e) => setMissionRoleStr(e.target.value)}
                     placeholder="تخصصك الفضائي (مثل مبرمج، مهندس، الخ)..."
-                    className="w-full bg-[#0a0f25] border border-white/10 rounded-xl px-4 py-2 focus:outline-none focus:border-indigo-400 text-sm font-mono text-indigo-300"
+                    className="w-full bg-[#090b1f] border border-white/10 rounded-xl px-4 py-2 focus:outline-none focus:border-violet/40 text-sm font-mono text-violet/90"
                   />
                   <textarea
                     value={bio}
                     onChange={(e) => setBio(e.target.value)}
                     placeholder="اكتب نبذتك..."
                     rows={3}
-                    className="w-full bg-[#0a0f25] border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-indigo-400 text-sm resize-none"
+                    className="w-full bg-[#090b1f] border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-violet/40 text-sm resize-none"
                   />
                   <button
                     onClick={handleUpdateBio}
-                    className="px-8 py-3 bg-gradient-to-r from-indigo-500 to-fuchsia-500 rounded-xl font-bold text-sm shadow-[0_0_20px_rgba(99,102,241,0.4)] hover:shadow-[0_0_30px_rgba(99,102,241,0.6)] transition-all flex items-center justify-center gap-2 w-full sm:w-auto ml-0"
+                    className="px-8 py-3 bg-gradient-to-r from-violet to-violet rounded-xl font-bold text-sm shadow-[0_0_20px_rgb(140,82,255,0.4)] hover:shadow-[0_0_30px_rgb(140,82,255,0.6)] transition-all flex items-center justify-center gap-2 w-full sm:w-auto ml-0"
                   >
                     <CheckCircle size={16} /> حفظ الهوية
                   </button>
@@ -479,8 +479,8 @@ export default function ProfileView({
               ) : (
                 <>
                   <div>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[11px] font-mono tracking-widest text-indigo-300 mb-4 shadow-sm">
-                      <Rocket size={12} className="text-fuchsia-400" />
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[11px] font-mono tracking-widest text-violet/90 mb-4 shadow-sm">
+                      <Rocket size={12} className="text-violet" />
                       {user.missionRole || (isAr ? "مستكشف مبتدئ" : "ROOKIE EXPLORER")}
                     </div>
                     <h1 className="text-4xl md:text-5xl font-black font-display tracking-tight text-white drop-shadow-lg mb-2 flex items-center gap-3">
@@ -490,8 +490,8 @@ export default function ProfileView({
                           className="relative flex h-3 w-3"
                           title="في وضع التركيز"
                         >
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lemon/55 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-3 w-3 bg-lemon/80"></span>
                         </span>
                       )}
                     </h1>
@@ -504,12 +504,12 @@ export default function ProfileView({
                       >
                         المستوى {userLevel}
                       </span>
-                      <div className="w-1.5 h-1.5 rounded-full bg-gray-600" />
-                      <span className="text-sm font-mono text-gray-400 bg-white/5 px-2 py-0.5 rounded-md">
+                      <div className="w-1.5 h-1.5 rounded-full bg-navy" />
+                      <span className="text-sm font-mono text-white/60 bg-white/5 px-2 py-0.5 rounded-md">
                         {user.xp} XP
                       </span>
                     </div>
-                    <div className="max-w-2xl text-gray-400 text-[15px] leading-relaxed">
+                    <div className="max-w-2xl text-white/60 text-[15px] leading-relaxed">
                       {user.bio ||
                         "مجرد شرارة تسبح في سديم واسع. لم يكتب صاحب هذا الحساب قصته بعد."}
                     </div>
@@ -531,33 +531,33 @@ export default function ProfileView({
                 title: "الخبرة الكلية",
                 value: `${user.xp || 0} XP`,
                 icon: <Zap size={20} />,
-                color: "text-amber-400",
-                bg: "bg-amber-500/10",
-                border: "border-amber-500/20",
+                color: "text-gold",
+                bg: "bg-gold/10",
+                border: "border-gold/20",
               },
               {
                 title: "ساعات التركيز",
                 value: `${Math.round((user.xp / 60) * 10) / 10} س`,
                 icon: <Clock size={20} />,
-                color: "text-blue-400",
-                bg: "bg-blue-500/10",
-                border: "border-blue-500/20",
+                color: "text-neon",
+                bg: "bg-neon/10",
+                border: "border-neon/20",
               },
               {
                 title: "السباقات الفائزة",
                 value: user.challengeWins || 0,
                 icon: <Swords size={20} />,
-                color: "text-indigo-400",
-                bg: "bg-indigo-500/10",
-                border: "border-indigo-500/20",
+                color: "text-violet",
+                bg: "bg-violet/10",
+                border: "border-violet/20",
               },
               {
                 title: "الأصدقاء",
                 value: friends.length,
                 icon: <Users size={20} />,
-                color: "text-emerald-400",
-                bg: "bg-emerald-500/10",
-                border: "border-emerald-500/20",
+                color: "text-lemon",
+                bg: "bg-lemon/10",
+                border: "border-lemon/20",
               },
             ].map((stat, i) => (
               <motion.div
@@ -565,7 +565,7 @@ export default function ProfileView({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 key={i}
-                className={`p-5 rounded-3xl bg-[#080b1a]/40 backdrop-blur-md border ${stat.border} hover:bg-[#080b1a]/80 transition-colors group relative overflow-hidden`}
+                className={`p-5 rounded-3xl bg-[#090b1f]/40 backdrop-blur-md border ${stat.border} hover:bg-[#090b1f]/80 transition-colors group relative overflow-hidden`}
               >
                 <div
                   className={`absolute top-0 right-0 w-24 h-24 rounded-bl-full ${stat.bg} -translate-y-8 translate-x-8 group-hover:scale-150 transition-transform duration-700 ease-out`}
@@ -577,7 +577,7 @@ export default function ProfileView({
                 </div>
                 <div className="relative z-10 flex items-end justify-between">
                   <div>
-                    <p className="text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-1">
+                    <p className="text-[11px] font-bold text-white/50 uppercase tracking-widest mb-1">
                       {stat.title}
                     </p>
                     <p
@@ -596,7 +596,7 @@ export default function ProfileView({
                             `https://api.dicebear.com/7.x/bottts/svg?seed=${f.uid}`
                           }
                           alt={f.displayName}
-                          className="w-6 h-6 rounded-full border-2 border-[#080b1a] object-cover"
+                          className="w-6 h-6 rounded-full border-2 border-[#090b1f] object-cover"
                           referrerPolicy="no-referrer"
                         />
                       ))}
@@ -608,26 +608,26 @@ export default function ProfileView({
           </div>
 
           {/* Achievements Galaxy Section */}
-          <div className="bg-[#080b1a]/60 backdrop-blur-xl border border-white/10 rounded-[3rem] p-8 md:p-10 relative overflow-hidden">
+          <div className="bg-[#090b1f]/60 backdrop-blur-xl border border-white/10 rounded-[3rem] p-8 md:p-10 relative overflow-hidden">
             <div className="absolute top-0 right-0 p-12 opacity-5 pointer-events-none">
               <Globe size={150} />
             </div>
             <div className="flex items-center justify-between mb-8 relative z-10">
               <div>
                 <h3 className="text-2xl font-black font-display text-white flex items-center gap-3">
-                  <Star className="text-amber-400" /> مجرة الإنجازات
+                  <Star className="text-gold" /> مجرة الإنجازات
                 </h3>
-                <p className="text-sm text-gray-400 font-mono mt-1">
+                <p className="text-sm text-white/60 font-mono mt-1">
                   {achievementCount} / {BADGES.length} UNLOCKED
                 </p>
               </div>
               <div className="text-right">
-                <div className="text-[11px] text-gray-500 font-bold uppercase tracking-widest mb-1">
+                <div className="text-[11px] text-white/50 font-bold uppercase tracking-widest mb-1">
                   التقدم الكلي
                 </div>
                 <div className="w-32 h-2 bg-black rounded-full overflow-hidden border border-white/5">
                   <div
-                    className="h-full bg-amber-500/80 rounded-full"
+                    className="h-full bg-gold/80 rounded-full"
                     style={{
                       width: `${(achievementCount / BADGES.length) * 100}%`,
                     }}
@@ -652,50 +652,50 @@ export default function ProfileView({
                         : "Common";
                 const rarityColors = {
                   Legendary:
-                    "bg-fuchsia-500/20 text-fuchsia-400 border-fuchsia-500/40 shadow-[0_0_20px_theme(colors.fuchsia.500/30)]",
-                  Epic: "bg-indigo-500/20 text-indigo-400 border-indigo-500/30 shadow-[0_0_15px_theme(colors.indigo.500/20)]",
-                  Rare: "bg-blue-500/20 text-blue-400 border-blue-500/30 shadow-[0_0_10px_theme(colors.blue.500/20)]",
-                  Common: "bg-green-500/10 text-green-400 border-green-500/20",
+                    "bg-violet/20 text-violet border-violet/40 shadow-[0_0_20px_rgb(140,82,255,0.3)]",
+                  Epic: "bg-violet/20 text-violet border-violet/30 shadow-[0_0_15px_rgb(140,82,255,0.2)]",
+                  Rare: "bg-neon/20 text-neon border-neon/30 shadow-[0_0_10px_rgb(0,212,255,0.2)]",
+                  Common: "bg-lemon/10 text-lemon border-lemon/20",
                 };
 
                 return (
                   <div
                     key={i}
-                    className={`p-4 rounded-3xl flex flex-col items-center justify-center text-center group cursor-pointer transition-all duration-300 ${unlocked ? "bg-[#0a0f25] border border-white/10 hover:-translate-y-1 hover:shadow-xl" : "bg-black/40 border border-white/5 opacity-50 blur-[0.5px] hover:blur-none hover:opacity-100"}`}
+                    className={`p-4 rounded-3xl flex flex-col items-center justify-center text-center group cursor-pointer transition-all duration-300 ${unlocked ? "bg-[#090b1f] border border-white/10 hover:-translate-y-1 hover:shadow-xl" : "bg-black/40 border border-white/5 opacity-50 blur-[0.5px] hover:blur-none hover:opacity-100"}`}
                   >
                     <div
-                      className={`w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-3 transition-transform duration-500 group-hover:scale-110 ${unlocked ? rarityColors[rarity] : "bg-white/5 text-gray-500 border-white/10"}`}
+                      className={`w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-3 transition-transform duration-500 group-hover:scale-110 ${unlocked ? rarityColors[rarity] : "bg-white/5 text-white/50 border-white/10"}`}
                     >
                       {unlocked ? badge.icon : <Shield size={20} />}
                     </div>
                     <h4
-                      className={`font-bold text-[13px] mb-1 leading-tight ${unlocked ? "text-white" : "text-gray-500"}`}
+                      className={`font-bold text-[13px] mb-1 leading-tight ${unlocked ? "text-white" : "text-white/50"}`}
                     >
                       {badge.title}
                     </h4>
-                    <p className="text-[10px] text-gray-500 font-mono tracking-widest">
+                    <p className="text-[10px] text-white/50 font-mono tracking-widest">
                       {badge.minXp} XP
                     </p>
 
                     {/* Hover Tooltip/Detail inside the card container for simplicity (modern SaaS pop) */}
-                    <div className="absolute inset-0 bg-[#0a0f25]/95 backdrop-blur-md rounded-3xl opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300 border border-white/20 p-4 flex flex-col items-center justify-center text-center shadow-2xl z-50">
+                    <div className="absolute inset-0 bg-[#090b1f]/95 backdrop-blur-md rounded-3xl opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300 border border-white/20 p-4 flex flex-col items-center justify-center text-center shadow-2xl z-50">
                       <div
-                        className={`text-xl mb-2 ${unlocked ? rarityColors[rarity] : "text-gray-500"}`}
+                        className={`text-xl mb-2 ${unlocked ? rarityColors[rarity] : "text-white/50"}`}
                       >
                         {unlocked ? badge.icon : <Shield size={20} />}
                       </div>
                       <h4
-                        className={`font-bold text-[13px] mb-1 ${unlocked ? "text-white" : "text-gray-500"}`}
+                        className={`font-bold text-[13px] mb-1 ${unlocked ? "text-white" : "text-white/50"}`}
                       >
                         {badge.title}
                       </h4>
-                      <p className="text-[10px] text-gray-400 leading-tight mb-2 line-clamp-3">
+                      <p className="text-[10px] text-white/60 leading-tight mb-2 line-clamp-3">
                         {unlocked
                           ? badge.description
                           : "مغلق. احصل على المزيد من الطاقة لفتحه."}
                       </p>
                       <span
-                        className={`text-[11px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full ${unlocked ? rarityColors[rarity] : "bg-white/5 text-gray-600"}`}
+                        className={`text-[11px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full ${unlocked ? rarityColors[rarity] : "bg-white/5 text-white/45"}`}
                       >
                         {unlocked ? rarity : "LOCKED"}
                       </span>
@@ -708,11 +708,11 @@ export default function ProfileView({
 
           {/* Mission Progress + Today's Missions — powered by real data */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-[#080b1a]/60 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 overflow-hidden relative group">
-              <div className="absolute top-0 left-0 w-32 h-32 bg-amber-500/10 rounded-br-full -translate-x-16 -translate-y-16 blur-2xl pointer-events-none" />
+            <div className="bg-[#090b1f]/60 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 overflow-hidden relative group">
+              <div className="absolute top-0 left-0 w-32 h-32 bg-gold/10 rounded-br-full -translate-x-16 -translate-y-16 blur-2xl pointer-events-none" />
               <div className="flex items-center justify-between mb-6 gap-3">
                 <h3 className="text-lg font-bold font-display text-white flex items-center gap-3">
-                  <Rocket className="text-amber-400" /> رحلتك نحو المستوى التالي
+                  <Rocket className="text-gold" /> رحلتك نحو المستوى التالي
                 </h3>
                 <span
                   className={`text-[11px] font-bold px-3 py-1 rounded-full border border-white/10 bg-white/5 ${levelColors.text} whitespace-nowrap`}
@@ -722,12 +722,12 @@ export default function ProfileView({
               </div>
               <div className="relative z-10">
                 <div className="flex items-end justify-between mb-2">
-                  <p className="text-[12px] text-gray-400">
+                  <p className="text-[12px] text-white/60">
                     {isAr
                       ? `${getXpToNextLevel(userLevel)} XP متبقية للمستوى ${userLevel + 1}`
                       : `${getXpToNextLevel(userLevel)} XP left to Level ${userLevel + 1}`}
                   </p>
-                  <p className="text-sm font-mono font-bold text-amber-400">
+                  <p className="text-sm font-mono font-bold text-gold">
                     {Math.round(levelProgress)}%
                   </p>
                 </div>
@@ -736,7 +736,7 @@ export default function ProfileView({
                     initial={{ width: 0 }}
                     animate={{ width: `${levelProgress}%` }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="h-full rounded-full bg-gradient-to-r from-amber-400 to-orange-500 shadow-[0_0_12px_rgba(251,191,36,0.5)]"
+                    className="h-full rounded-full bg-gradient-to-r from-gold/85 to-gold shadow-[0_0_12px_rgb(212,175,55,0.5)]"
                   />
                 </div>
                 <div className="grid grid-cols-3 gap-3 mt-6">
@@ -745,25 +745,25 @@ export default function ProfileView({
                       label: "سلسلة الأيام",
                       value: `${user.streak || 0}`,
                       icon: <Flame size={16} />,
-                      color: "text-orange-400",
-                      bg: "bg-orange-500/10",
-                      border: "border-orange-500/20",
+                      color: "text-gold",
+                      bg: "bg-gold/10",
+                      border: "border-gold/20",
                     },
                     {
                       label: "جلسات التركيز",
                       value: `${user.focusSessions || user.totalFocusSessions || 0}`,
                       icon: <Clock size={16} />,
-                      color: "text-blue-400",
-                      bg: "bg-blue-500/10",
-                      border: "border-blue-500/20",
+                      color: "text-neon",
+                      bg: "bg-neon/10",
+                      border: "border-neon/20",
                     },
                     {
                       label: "تحديات مكسبة",
                       value: `${user.challengeWins || 0}`,
                       icon: <Swords size={16} />,
-                      color: "text-indigo-400",
-                      bg: "bg-indigo-500/10",
-                      border: "border-indigo-500/20",
+                      color: "text-violet",
+                      bg: "bg-violet/10",
+                      border: "border-violet/20",
                     },
                   ].map((m, i) => (
                     <div
@@ -778,17 +778,17 @@ export default function ProfileView({
                       <p className={`text-lg font-black font-mono ${m.color}`}>
                         {m.value}
                       </p>
-                      <p className="text-[11px] text-gray-500">{m.label}</p>
+                      <p className="text-[11px] text-white/50">{m.label}</p>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
 
-            <div className="bg-[#080b1a]/60 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 overflow-hidden relative">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-bl-full translate-x-16 -translate-y-16 blur-2xl pointer-events-none" />
+            <div className="bg-[#090b1f]/60 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 overflow-hidden relative">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-lemon/10 rounded-bl-full translate-x-16 -translate-y-16 blur-2xl pointer-events-none" />
               <h3 className="text-lg font-bold font-display text-white flex items-center gap-3 mb-6">
-                <Calendar className="text-emerald-400" /> مهامك اليوم
+                <Calendar className="text-lemon" /> مهامك اليوم
               </h3>
               <div className="relative z-10 space-y-3">
                 {tasksLoading ? (
@@ -801,11 +801,11 @@ export default function ProfileView({
                 ) : todayTasks.length === 0 ? (
                   <div className="py-10 text-center">
                     <CheckCircle
-                      className="mx-auto text-emerald-400/40 mb-3"
+                      className="mx-auto text-lemon/40 mb-3"
                       size={36}
                     />
-                    <p className="text-sm text-gray-400">لا مهام مجدولة لليوم</p>
-                    <p className="text-[11px] text-gray-600 mt-1">
+                    <p className="text-sm text-white/60">لا مهام مجدولة لليوم</p>
+                    <p className="text-[11px] text-white/45 mt-1">
                       خطّط مهامك من صفحة الجدول
                     </p>
                   </div>
@@ -813,10 +813,10 @@ export default function ProfileView({
                   todayTasks.map((task) => {
                     const prioColor =
                       task.priority === "high"
-                        ? "border-red-500/30 text-red-400"
+                        ? "border-gold/30 text-gold"
                         : task.priority === "medium"
-                          ? "border-amber-500/30 text-amber-400"
-                          : "border-emerald-500/30 text-emerald-400";
+                          ? "border-gold/30 text-gold"
+                          : "border-lemon/30 text-lemon";
                     return (
                       <div
                         key={task.id}
@@ -824,20 +824,20 @@ export default function ProfileView({
                       >
                         <div
                           className={`w-1.5 self-stretch rounded-full ${
-                            task.completed ? "bg-emerald-500/60" : "bg-white/15"
+                            task.completed ? "bg-lemon/60" : "bg-white/15"
                           }`}
                         />
                         <div className="flex-1 min-w-0">
                           <p
                             className={`text-[13px] font-bold text-white truncate ${
-                              task.completed ? "line-through text-gray-500" : ""
+                              task.completed ? "line-through text-white/50" : ""
                             }`}
                           >
                             {task.task}
                           </p>
                           <div className="flex items-center gap-2 mt-0.5">
                             <span
-                              className="text-[11px] font-mono text-gray-500"
+                              className="text-[11px] font-mono text-white/50"
                               dir="ltr"
                             >
                               {task.time}
@@ -858,7 +858,7 @@ export default function ProfileView({
                         {task.completed ? (
                           <CheckCircle
                             size={18}
-                            className="text-emerald-400 shrink-0"
+                            className="text-lemon shrink-0"
                           />
                         ) : (
                           <span className="w-5 h-5 rounded-full border border-white/15 shrink-0" />
@@ -875,20 +875,20 @@ export default function ProfileView({
         {/* Right/Side Column */}
         <div className="lg:col-span-1 space-y-6 flex flex-col">
           {/* Exhibitions Gallery Redesign - Masonry feel */}
-          <div className="bg-[#080b1a]/60 backdrop-blur-xl border border-indigo-400/20 rounded-[3rem] p-6 flex flex-col h-full relative overflow-hidden">
+          <div className="bg-[#090b1f]/60 backdrop-blur-xl border border-violet/20 rounded-[3rem] p-6 flex flex-col h-full relative overflow-hidden">
             <div className="flex items-center justify-between mb-6">
               <div>
                 <h3 className="text-lg font-black font-display text-white flex items-center gap-2">
-                  <ImageIcon className="w-5 h-5 text-indigo-400" /> معرض
+                  <ImageIcon className="w-5 h-5 text-violet" /> معرض
                   الذكريات
                 </h3>
-                <p className="text-[11px] text-gray-500 font-mono mt-1">
+                <p className="text-[11px] text-white/50 font-mono mt-1">
                   {exhibitions.length} MEDIA LOGS
                 </p>
               </div>
               <button
                 onClick={() => fileInputExhibitionRef.current?.click()}
-                className="w-10 h-10 bg-indigo-500/20 hover:bg-indigo-500 text-indigo-300 hover:text-white rounded-full transition-all flex items-center justify-center shadow-lg hover:shadow-[0_0_20px_theme(colors.indigo.500/50)] group/plus"
+                className="w-10 h-10 bg-violet/20 hover:bg-violet/80 text-violet/90 hover:text-white rounded-full transition-all flex items-center justify-center shadow-lg hover:shadow-[0_0_20px_rgb(140,82,255,0.5)] group/plus"
               >
                 <Plus
                   size={18}
@@ -927,12 +927,12 @@ export default function ProfileView({
                           referrerPolicy="no-referrer"
                         />
                       ) : (
-                        <div className="w-full h-full bg-space-dark flex items-center justify-center text-[10px] text-gray-500 font-mono">
+                        <div className="w-full h-full bg-space-dark flex items-center justify-center text-[10px] text-white/50 font-mono">
                           LOADING
                         </div>
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover/ex:opacity-100 transition-opacity flex flex-col justify-end p-3">
-                        <span className="text-[10px] font-mono text-gray-300 font-bold mb-2">
+                        <span className="text-[10px] font-mono text-white/70 font-bold mb-2">
                           {ex.timestamp
                             ? new Date(
                                 ex.timestamp.toDate(),
@@ -949,7 +949,7 @@ export default function ProfileView({
                                 );
                                 setDeletingExhibitionId(null);
                               }}
-                              className="flex-1 py-1 bg-red-500 text-white rounded-lg text-[10px] font-bold"
+                              className="flex-1 py-1 bg-gold/80 text-white rounded-lg text-[10px] font-bold"
                             >
                               حذف
                             </button>
@@ -969,7 +969,7 @@ export default function ProfileView({
                               e.stopPropagation();
                               setDeletingExhibitionId(ex.id);
                             }}
-                            className="absolute top-2 left-2 p-1.5 bg-red-500/80 hover:bg-red-500 rounded-full text-white backdrop-blur-md opacity-0 group-hover/ex:opacity-100 transition-all -translate-y-2 group-hover/ex:translate-y-0"
+                            className="absolute top-2 left-2 p-1.5 bg-gold/80 hover:bg-gold/80 rounded-full text-white backdrop-blur-md opacity-0 group-hover/ex:opacity-100 transition-all -translate-y-2 group-hover/ex:translate-y-0"
                           >
                             <Trash2 size={12} />
                           </button>
@@ -983,12 +983,12 @@ export default function ProfileView({
                   className="h-48 flex flex-col items-center justify-center text-center opacity-50 relative group cursor-pointer"
                   onClick={() => fileInputExhibitionRef.current?.click()}
                 >
-                  <div className="absolute inset-0 border-2 border-dashed border-white/20 rounded-2xl group-hover:border-indigo-500/50 transition-colors" />
+                  <div className="absolute inset-0 border-2 border-dashed border-white/20 rounded-2xl group-hover:border-violet/50 transition-colors" />
                   <ImageIcon
                     size={32}
-                    className="text-gray-500 mb-3 group-hover:text-indigo-400 group-hover:scale-110 transition-all duration-500"
+                    className="text-white/50 mb-3 group-hover:text-violet group-hover:scale-110 transition-all duration-500"
                   />
-                  <p className="text-xs font-mono text-gray-400">
+                  <p className="text-xs font-mono text-white/60">
                     NO MEDIA DETECTED
                     <br />
                     CLICK TO UPLOAD LOG

@@ -160,10 +160,10 @@ export default function StudyRoomView(props: {
 
   if (authStatus === "loading") {
     return (
-      <div className="min-h-screen bg-[#070b14] flex items-center justify-center text-white relative z-50">
+      <div className="min-h-screen bg-[#090b1f] flex items-center justify-center text-white relative z-50">
         <div className="flex flex-col items-center space-y-4">
-          <Rocket className="w-12 h-12 animate-bounce text-blue-500" />
-          <p className="font-mono text-blue-300">يتم التحقق من التصريح...</p>
+          <Rocket className="w-12 h-12 animate-bounce text-neon" />
+          <p className="font-mono text-neon/90">يتم التحقق من التصريح...</p>
         </div>
       </div>
     );
@@ -284,8 +284,8 @@ function StudyRoomContent({
 
       {isSpectator && (
         <div className="fixed top-6 left-1/2 -translate-x-1/2 z-40">
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-950/80 backdrop-blur-xl border border-indigo-500/30 text-indigo-200 text-xs font-bold shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
-            <Eye size={14} className="text-indigo-400" />
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-violet/80 backdrop-blur-xl border border-violet/30 text-violet/80 text-xs font-bold shadow-[0_8px_32px_rgb(0,0,0,0.5)]">
+            <Eye size={14} className="text-violet" />
             {isAr
               ? "وضع المشاهدة — أنت تشاهد المحطة فقط، لا تُسجَّل أي نقاط"
               : "Spectator mode — you're just watching; no XP is recorded"}
@@ -392,21 +392,21 @@ function StudyRoomContent({
 
           return (
             <div className="z-20 px-8 pt-4 w-full max-w-5xl mx-auto">
-              <div className="bg-[#131526]/90 backdrop-blur-md rounded-3xl p-6 border border-fuchsia-500/20 shadow-2xl flex flex-col gap-4">
+              <div className="bg-[#090b1f]/90 backdrop-blur-md rounded-3xl p-6 border border-violet/20 shadow-2xl flex flex-col gap-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className="font-bold text-fuchsia-400 flex items-center gap-2 text-sm mb-1">
+                    <h3 className="font-bold text-violet flex items-center gap-2 text-sm mb-1">
                       <Swords size={16} className="animate-pulse" /> نزاع المدار
                       المشترك
                     </h3>
-                    <p className="text-xs text-gray-400">
+                    <p className="text-xs text-white/60">
                       {challengeData.status === "completed"
                         ? `مكتمل (${challengeData.durationMinutes} دقيقة)`
                         : `المدة الكلية: ${challengeData.durationMinutes} دقيقة / الوقت المتبقي: ${countdownStr}`}
                     </p>
                   </div>
                   {challengeData.status === "completed" ? (
-                    <div className="text-sm font-bold text-green-400 bg-green-500/10 border border-green-500/20 rounded-full px-4 py-1.5 flex items-center gap-1.5">
+                    <div className="text-sm font-bold text-lemon bg-lemon/10 border border-lemon/20 rounded-full px-4 py-1.5 flex items-center gap-1.5">
                       🏆 انتهى السباق! البطل الفائز:{" "}
                       {challengeData.winnerId === challengeData.challengerId
                         ? challengeData.challengerName
@@ -417,18 +417,18 @@ function StudyRoomContent({
                   ) : (
                     <div className="flex gap-8">
                       <div className="flex flex-col items-center">
-                        <span className="text-[10px] text-indigo-300 font-bold mb-1">
+                        <span className="text-[10px] text-violet/90 font-bold mb-1">
                           {challengeData.challengerName}
                         </span>
                         <span className="font-black text-xl text-white font-mono">
                           {p1} د
                         </span>
                       </div>
-                      <div className="flex items-center justify-center text-rose-500 font-mono font-bold text-xs px-2">
+                      <div className="flex items-center justify-center text-gold font-mono font-bold text-xs px-2">
                         VS
                       </div>
                       <div className="flex flex-col items-center">
-                        <span className="text-[10px] text-fuchsia-300 font-bold mb-1">
+                        <span className="text-[10px] text-violet/90 font-bold mb-1">
                           {challengeData.challengedName}
                         </span>
                         <span className="font-black text-xl text-white font-mono">
@@ -444,14 +444,14 @@ function StudyRoomContent({
                     <div className="h-2 rounded-full bg-white/5 flex overflow-hidden border border-white/5">
                       <div
                         style={{ width: `${p1Pct}%` }}
-                        className="bg-gradient-to-r from-indigo-500 to-indigo-400 h-full transition-all duration-500"
+                        className="bg-gradient-to-r from-violet to-violet/85 h-full transition-all duration-500"
                       />
                       <div
                         style={{ width: `${p2Pct}%` }}
-                        className="bg-gradient-to-r from-fuchsia-400 to-fuchsia-600 h-full transition-all duration-500"
+                        className="bg-gradient-to-r from-violet/85 to-violet h-full transition-all duration-500"
                       />
                     </div>
-                    <div className="flex justify-between text-[10px] font-mono font-bold text-gray-500">
+                    <div className="flex justify-between text-[10px] font-mono font-bold text-white/50">
                       <span>
                         قوة {challengeData.challengerName}: {p1Pct}%
                       </span>
@@ -479,8 +479,8 @@ function StudyRoomContent({
                 className={cn(
                   "w-full backdrop-blur-xl border rounded-full px-6 py-3 flex items-center justify-between shadow-lg",
                   alert.type === "distraction"
-                    ? "bg-red-500/20 border-red-500/40 text-red-200"
-                    : "bg-indigo-500/20 border-indigo-500/40 text-indigo-200",
+                    ? "bg-gold/20 border-gold/40 text-gold/80"
+                    : "bg-violet/20 border-violet/40 text-violet/80",
                 )}
               >
                 <div className="flex items-center gap-3">
@@ -488,14 +488,14 @@ function StudyRoomContent({
                     className={cn(
                       "p-2 rounded-full",
                       alert.type === "distraction"
-                        ? "bg-red-500/20"
-                        : "bg-indigo-500/20",
+                        ? "bg-gold/20"
+                        : "bg-violet/20",
                     )}
                   >
                     {alert.type === "distraction" ? (
-                      <AlertTriangle size={18} className="text-red-400" />
+                      <AlertTriangle size={18} className="text-gold" />
                     ) : (
-                      <Info size={18} className="text-indigo-400" />
+                      <Info size={18} className="text-violet" />
                     )}
                   </div>
                   <span className="text-sm font-bold tracking-wide">
@@ -520,9 +520,9 @@ function StudyRoomContent({
 
       {/* Task Bar / Info Badge */}
       <div className="z-10 px-8 py-2 max-w-5xl mx-auto -mt-2 space-y-2">
-        <div className="w-full bg-space-dark/80 backdrop-blur-xl border border-white/5 rounded-full px-6 py-2 flex items-center justify-between shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
-          <div className={cn("flex items-center gap-3", room.timerStatus === "focus" ? "text-cyan-400" : room.timerStatus === "break" ? "text-teal-400" : "text-gray-500")}>
-            <div className={cn("p-1 rounded-full", room.timerStatus === "focus" ? "bg-cyan-500/20" : room.timerStatus === "break" ? "bg-teal-500/20" : "bg-white/10")}>
+        <div className="w-full bg-space-dark/80 backdrop-blur-xl border border-white/5 rounded-full px-6 py-2 flex items-center justify-between shadow-[0_4px_30px_rgb(0,0,0,0.1)]">
+          <div className={cn("flex items-center gap-3", room.timerStatus === "focus" ? "text-neon" : room.timerStatus === "break" ? "text-turq" : "text-white/50")}>
+            <div className={cn("p-1 rounded-full", room.timerStatus === "focus" ? "bg-neon/20" : room.timerStatus === "break" ? "bg-turq/20" : "bg-white/10")}>
               <CheckCircle size={16} />
             </div>
             <span className="text-xs font-bold tracking-wide">
@@ -533,7 +533,7 @@ function StudyRoomContent({
                   : "المحطة جاهزة"}
             </span>
           </div>
-          <div className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors cursor-pointer">
+          <div className="flex items-center gap-2 text-white/50 hover:text-white transition-colors cursor-pointer">
             <span className="text-[10px] font-medium uppercase tracking-widest hidden md:block">
               معلومات المحطة
             </span>
@@ -547,9 +547,9 @@ function StudyRoomContent({
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="w-full bg-orange-500/10 backdrop-blur-xl border border-orange-500/30 rounded-full px-6 py-3 flex items-center justify-center shadow-[0_4px_30px_rgba(249,115,22,0.2)]"
+              className="w-full bg-gold/10 backdrop-blur-xl border border-gold/30 rounded-full px-6 py-3 flex items-center justify-center shadow-[0_4px_30px_rgb(212,175,55,0.2)]"
             >
-              <div className="flex flex-col items-center gap-1 text-orange-400">
+              <div className="flex flex-col items-center gap-1 text-gold">
                 <span className="text-[10px] uppercase tracking-widest font-bold opacity-80">
                   مهمتك المعلقة في المدار
                 </span>
@@ -582,7 +582,7 @@ function StudyRoomContent({
             {/* Sun Timer */}
             <div className="relative w-40 h-40 md:w-56 md:h-56 flex items-center justify-center z-10">
               {room.timerStatus === "focus" && (
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180%] h-[180%] bg-yellow-400/10 mix-blend-screen rounded-full animate-bio-pulse blur-[30px] pointer-events-none -z-10" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180%] h-[180%] bg-gold/10 mix-blend-screen rounded-full animate-bio-pulse blur-[30px] pointer-events-none -z-10" />
               )}
               {/* Fuel Gauge Ring */}
               <svg className="absolute inset-0 w-full h-full -rotate-90">
@@ -591,7 +591,7 @@ function StudyRoomContent({
                   cy="50%"
                   r="48%"
                   fill="none"
-                  stroke="rgba(255,255,255,0.05)"
+                  stroke="rgb(255,255,255,0.05)"
                   strokeWidth="8"
                 />
                 <motion.circle
@@ -599,7 +599,7 @@ function StudyRoomContent({
                   cy="50%"
                   r="48%"
                   fill="none"
-                  stroke={room.timerStatus === "focus" ? "#fde047" : "#2dd4bf"}
+                  stroke={room.timerStatus === "focus" ? "#d4af37" : "#00e5d4"}
                   strokeWidth="8"
                   strokeDasharray="100 100"
                   animate={{
@@ -648,17 +648,17 @@ function StudyRoomContent({
                     className={cn(
                       "w-[85%] h-[85%] rounded-full flex items-center justify-center transition-all duration-1000",
                       room.timerStatus === "break"
-                        ? "bg-gradient-to-br from-indigo-400 via-fuchsia-400 to-emerald-600 shadow-[0_0_120px_rgba(45,212,191,0.5)] border-4 border-indigo-400/50"
+                        ? "bg-gradient-to-br from-violet/85 via-violet/85 to-lemon shadow-[0_0_120px_rgb(0,229,212,0.5)] border-4 border-violet/50"
                         : room.timerStatus === "idle"
-                          ? "bg-[#090915] border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)]"
+                          ? "bg-[#090b1f] border border-white/10 shadow-[0_0_50px_rgb(0,0,0,0.5)]"
                           : "",
                     )}
                     style={
                       isFocus
                         ? {
-                            background: `radial-gradient(circle at center, rgb(253, 224, 71) 0%, rgb(${251 - invProgress * 50}, ${191 - invProgress * 120}, ${36 - invProgress * 36}) 100%)`,
-                            boxShadow: `0 0 ${80 + invProgress * 60}px rgba(251, 146, 60, ${0.4 + invProgress * 0.4})`,
-                            border: `4px solid rgba(253, 224, 71, ${0.6 - invProgress * 0.3})`,
+                            background: `radial-gradient(circle at center, rgb(212,175,55) 0%, rgb(${251 - invProgress * 50}, ${191 - invProgress * 120}, ${36 - invProgress * 36}) 100%)`,
+                            boxShadow: `0 0 ${80 + invProgress * 60}px rgb(212,175,55, ${0.4 + invProgress * 0.4})`,
+                            border: `4px solid rgb(212,175,55, ${0.6 - invProgress * 0.3})`,
                           }
                         : {}
                     }
@@ -668,8 +668,8 @@ function StudyRoomContent({
                         className={cn(
                           "text-4xl md:text-6xl font-black tracking-tighter drop-shadow-sm flex items-center gap-2",
                           room.timerStatus === "idle"
-                            ? "text-gray-600"
-                            : "text-white drop-shadow-[0_2px_10px_rgba(255,255,255,0.4)]",
+                            ? "text-white/45"
+                            : "text-white drop-shadow-[0_2px_10px_rgb(255,255,255,0.4)]",
                         )}
                       >
                         {formatTime(timeLeft)}
@@ -705,7 +705,7 @@ function StudyRoomContent({
               {room.timerStatus === "idle" && (
                 <div className="flex gap-4 mb-4">
                   <div className="flex flex-col items-center gap-1">
-                    <span className="text-[10px] text-gray-500 font-bold">
+                    <span className="text-[10px] text-white/50 font-bold">
                       وقت التركيز
                     </span>
                     <input
@@ -716,11 +716,11 @@ function StudyRoomContent({
                           timerDuration: parseInt(e.target.value) || 25,
                         })
                       }
-                      className="w-16 p-2 rounded-xl bg-space-dark shadow-lg shadow-indigo-900/10 border border-white/10 text-center text-sm focus:border-orange-500 outline-none"
+                      className="w-16 p-2 rounded-xl bg-space-dark shadow-lg shadow-violet/10 border border-white/10 text-center text-sm focus:border-gold/40 outline-none"
                     />
                   </div>
                   <div className="flex flex-col items-center gap-1">
-                    <span className="text-[10px] text-gray-500 font-bold">
+                    <span className="text-[10px] text-white/50 font-bold">
                       وقت الاستراحة
                     </span>
                     <input
@@ -731,7 +731,7 @@ function StudyRoomContent({
                           breakDuration: parseInt(e.target.value) || 5,
                         })
                       }
-                      className="w-16 p-2 rounded-xl bg-space-dark shadow-lg shadow-indigo-900/10 border border-white/10 text-center text-sm focus:border-blue-500 outline-none"
+                      className="w-16 p-2 rounded-xl bg-space-dark shadow-lg shadow-violet/10 border border-white/10 text-center text-sm focus:border-neon/40 outline-none"
                     />
                   </div>
                 </div>
@@ -747,14 +747,14 @@ function StudyRoomContent({
                           startTime: serverTimestamp(),
                         })
                       }
-                      className="px-8 py-3 rounded-2xl bg-indigo-600 hover:bg-indigo-700 transition-all shadow-xl font-bold text-xl flex items-center justify-center gap-3"
+                      className="px-8 py-3 rounded-2xl bg-violet hover:bg-violet transition-all shadow-xl font-bold text-xl flex items-center justify-center gap-3"
                     >
                       <Play size={24} fill="currentColor" />
                       بدء التركيز
                     </button>
                     <button
                       onClick={() => setShowBetModal(true)}
-                      className="px-8 py-3 outline-none border border-transparent rounded-2xl bg-space-dark hover:bg-white/5 transition-all text-orange-500 font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-black/20 group"
+                      className="px-8 py-3 outline-none border border-transparent rounded-2xl bg-space-dark hover:bg-white/5 transition-all text-gold font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-black/20 group"
                     >
                       <Flame size={18} className="group-hover:animate-pulse" />
                       التركيز بنظام الرهان (الضياع الكوني)
@@ -764,7 +764,7 @@ function StudyRoomContent({
                         setStudyLink(studyLinkRef.current);
                         setShowStudyLinkModal(true);
                       }}
-                      className="px-8 py-3 outline-none border border-white/10 rounded-2xl bg-space-dark hover:bg-white/5 transition-all text-indigo-400 font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-black/20 group"
+                      className="px-8 py-3 outline-none border border-white/10 rounded-2xl bg-space-dark hover:bg-white/5 transition-all text-violet font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-black/20 group"
                     >
                       <Target size={18} />
                       {studyLinkRef.current &&
@@ -774,7 +774,7 @@ function StudyRoomContent({
                     </button>
                   </div>
                 ) : (
-                  <div className="px-8 py-4 rounded-2xl bg-space-dark shadow-lg shadow-indigo-900/10 border border-white/10 flex items-center gap-3 font-bold text-xl text-gray-500 cursor-not-allowed">
+                  <div className="px-8 py-4 rounded-2xl bg-space-dark shadow-lg shadow-violet/10 border border-white/10 flex items-center gap-3 font-bold text-xl text-white/50 cursor-not-allowed">
                     <Lock size={24} />
                     المحطة في المدار
                   </div>
@@ -790,7 +790,7 @@ function StudyRoomContent({
                         startTime: deleteField(),
                       });
                     }}
-                    className="px-4 py-2 rounded-xl bg-space-dark border border-red-500/30 text-red-500 hover:bg-red-500/10 transition-all text-xs font-bold flex items-center gap-2"
+                    className="px-4 py-2 rounded-xl bg-space-dark border border-gold/30 text-gold hover:bg-gold/10 transition-all text-xs font-bold flex items-center gap-2"
                   >
                     <Square size={14} fill="currentColor" />
                     إيقاف العداد

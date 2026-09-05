@@ -425,8 +425,8 @@ export default function HomeView({
   return (
     <div className="w-full relative min-h-screen pb-32">
       {/* Background Ambient Glows */}
-      <div className="fixed top-0 left-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none z-0 mix-blend-screen" />
-      <div className="fixed bottom-0 right-1/4 w-[30rem] h-[30rem] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none z-0 mix-blend-screen" />
+      <div className="fixed top-0 left-1/4 w-96 h-96 bg-violet/10 rounded-full blur-[100px] pointer-events-none z-0 mix-blend-screen" />
+      <div className="fixed bottom-0 right-1/4 w-[30rem] h-[30rem] bg-neon/10 rounded-full blur-[120px] pointer-events-none z-0 mix-blend-screen" />
       
       <motion.div
         variants={bentoContainer}
@@ -437,10 +437,10 @@ export default function HomeView({
         {/* Welcome Section / Deep Focus Overview */}
         <motion.div variants={bentoItem} className="flex flex-col md:flex-row items-center justify-between gap-8 pt-6">
           <div className="flex-1 space-y-4">
-            <h1 className="text-4xl md:text-5xl font-black font-display text-transparent bg-clip-text bg-gradient-to-l from-white via-indigo-100 to-indigo-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+            <h1 className="text-4xl md:text-5xl font-black font-display text-transparent bg-clip-text bg-gradient-to-l from-white via-violet/70 to-violet/70 drop-shadow-[0_2px_4px_rgb(0,0,0,0.5)]">
               {greeting.text}{isAr ? " يا " : ", "}{user.displayName}
             </h1>
-            <p className="text-lg text-indigo-200/80 max-w-lg shadow-sm">
+            <p className="text-lg text-violet/80 max-w-lg shadow-sm">
               {greeting.subtext}
             </p>
             
@@ -448,38 +448,38 @@ export default function HomeView({
               {!user.isGuest && (
                 <button
                   onClick={() => setShowCreateModal(true)}
-                  className="group relative px-6 py-3 rounded-2xl bg-[#1a1b32]/80 backdrop-blur-xl border border-indigo-500/30 overflow-hidden shadow-[0_0_20px_rgba(99,102,241,0.2)] hover:shadow-[0_0_40px_rgba(99,102,241,0.4)] transition-all duration-500"
+                  className="group relative px-6 py-3 rounded-2xl bg-[#16002d]/80 backdrop-blur-xl border border-violet/30 overflow-hidden shadow-[0_0_20px_rgb(140,82,255,0.2)] hover:shadow-[0_0_40px_rgb(140,82,255,0.4)] transition-all duration-500"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/50 to-cyan-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-violet/50 to-neon/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative flex items-center justify-center gap-3 text-white font-bold">
-                    <Plus size={18} className="text-cyan-400 group-hover:rotate-90 transition-transform duration-500" />
+                    <Plus size={18} className="text-neon group-hover:rotate-90 transition-transform duration-500" />
                     <span>{t("home.create_station", "برمجة محطة جديدة")}</span>
                   </div>
                 </button>
               )}
 
               {user.isGuest ? (
-                <div className="flex items-center gap-2 rounded-2xl bg-[#1a1b32]/80 backdrop-blur-xl border border-indigo-500/20 px-4 py-3 flex-1 min-w-0">
-                  <Eye size={16} className="text-indigo-400 shrink-0" />
-                  <span className="text-xs text-indigo-200/80 font-medium">
+                <div className="flex items-center gap-2 rounded-2xl bg-[#16002d]/80 backdrop-blur-xl border border-violet/20 px-4 py-3 flex-1 min-w-0">
+                  <Eye size={16} className="text-violet shrink-0" />
+                  <span className="text-xs text-violet/80 font-medium">
                     {isAr ? "وضع المشاهدة — انضم بحسابك لإنشاء محطات أو دخول غرف خاصة" : "Guest mode — sign in to create stations or join private rooms"}
                   </span>
                 </div>
               ) : (
-                <div className="flex items-center gap-2 rounded-2xl bg-[#1a1b32]/80 backdrop-blur-xl border border-white/10 px-2 overflow-hidden flex-1 min-w-0">
+                <div className="flex items-center gap-2 rounded-2xl bg-[#16002d]/80 backdrop-blur-xl border border-white/10 px-2 overflow-hidden flex-1 min-w-0">
                   <input
                     value={joinCodeInput}
                     onChange={(e) => setJoinCodeInput(e.target.value.toUpperCase())}
                     onKeyDown={(e) => e.key === "Enter" && handleJoinByCode()}
                     placeholder={isAr ? "رمز المحطة" : "Station code"}
-                    className="w-24 sm:w-28 bg-transparent outline-none text-white text-sm font-mono placeholder-gray-600 p-3"
+                    className="w-24 sm:w-28 bg-transparent outline-none text-white text-sm font-mono placeholder-white/45 p-3"
                     dir="ltr"
                     maxLength={6}
                   />
                   <button
                     onClick={handleJoinByCode}
                     disabled={joiningByCode || !joinCodeInput.trim()}
-                    className="px-4 py-2.5 rounded-xl bg-cyan-500/15 hover:bg-cyan-500/25 border border-cyan-500/30 text-cyan-300 text-xs font-bold transition-colors disabled:opacity-40 flex items-center gap-1.5 whitespace-nowrap"
+                    className="px-4 py-2.5 rounded-xl bg-neon/15 hover:bg-neon/25 border border-neon/30 text-neon/90 text-xs font-bold transition-colors disabled:opacity-40 flex items-center gap-1.5 whitespace-nowrap"
                   >
                     <Lock size={14} />
                     {joiningByCode ? "..." : isAr ? "انضم" : "Join"}
@@ -491,19 +491,19 @@ export default function HomeView({
 
           <div className="w-full md:w-auto flex flex-col sm:flex-row gap-4 shrink-0">
              <div className="flex flex-col justify-center px-6 py-4 rounded-3xl bg-space-dark/60 backdrop-blur-md border border-white/5 relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <span className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-1 flex items-center gap-2">
-                  <Timer size={12} className="text-cyan-400" /> {t("home.focus_hours", "ساعات التركيز")}
+                <div className="absolute inset-0 bg-gradient-to-tr from-neon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <span className="text-white/60 text-xs font-bold uppercase tracking-widest mb-1 flex items-center gap-2">
+                  <Timer size={12} className="text-neon" /> {t("home.focus_hours", "ساعات التركيز")}
                 </span>
-                <div className="text-3xl font-black text-white">{Math.round((user.xp / 60) * 10) / 10} <span className="text-xs font-semibold text-gray-500">{isAr ? "ساعة" : "hrs"}</span></div>
+                <div className="text-3xl font-black text-white">{Math.round((user.xp / 60) * 10) / 10} <span className="text-xs font-semibold text-white/50">{isAr ? "ساعة" : "hrs"}</span></div>
              </div>
              
              <div className="flex flex-col justify-center px-6 py-4 rounded-3xl bg-space-dark/60 backdrop-blur-md border border-white/5 relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-tr from-fuchsia-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <span className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-1 flex items-center gap-2">
-                  <Star size={12} className="text-fuchsia-400" /> {t("home.space_rank", "المستوى")}
+                <div className="absolute inset-0 bg-gradient-to-tr from-violet/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <span className="text-white/60 text-xs font-bold uppercase tracking-widest mb-1 flex items-center gap-2">
+                  <Star size={12} className="text-violet" /> {t("home.space_rank", "المستوى")}
                 </span>
-                <div className="text-3xl font-black text-white">Lvl {user.level || 1} <span className="text-xs font-semibold text-gray-500"></span></div>
+                <div className="text-3xl font-black text-white">Lvl {user.level || 1} <span className="text-xs font-semibold text-white/50"></span></div>
              </div>
 
              <DailyHabitCard user={user} />
@@ -518,11 +518,11 @@ export default function HomeView({
            <div className="flex flex-wrap items-center justify-between gap-4">
               <h2 className="text-xl md:text-2xl font-black font-display text-white flex items-center gap-3">
                  <div className="relative flex h-3 w-3">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-cyan-500"></span>
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon/55 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-neon/80"></span>
                  </div>
                  {t("home.active_stations", "المحطات المدارية النشطة")}
-                 <span className="text-sm font-bold text-cyan-400/70 bg-cyan-500/10 border border-cyan-500/20 rounded-full px-2.5 py-0.5">
+                 <span className="text-sm font-bold text-neon/70 bg-neon/10 border border-neon/20 rounded-full px-2.5 py-0.5">
                     {filteredRooms.length}
                  </span>
               </h2>
@@ -531,16 +531,16 @@ export default function HomeView({
            {/* Station Controls: Search + Filters + View Toggle */}
            <div className="flex flex-col md:flex-row md:items-center gap-3">
               <div className="relative flex-1 min-w-0">
-                 <Search size={16} className="absolute top-1/2 -translate-y-1/2 text-gray-500 ltr:left-4 rtl:right-4" />
+                 <Search size={16} className="absolute top-1/2 -translate-y-1/2 text-white/50 ltr:left-4 rtl:right-4" />
                  <input
                    value={searchTerm}
                    onChange={(e) => setSearchTerm(e.target.value)}
                    placeholder={isAr ? "ابحث عن محطة بالاسم..." : "Search stations by name..."}
-                   className="w-full py-3 ltr:pl-11 ltr:pr-4 rtl:pr-11 rtl:pl-4 rounded-2xl bg-[#1a1b32]/80 backdrop-blur-xl border border-white/10 focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/30 outline-none transition-all text-white text-sm placeholder-gray-600"
+                   className="w-full py-3 ltr:pl-11 ltr:pr-4 rtl:pr-11 rtl:pl-4 rounded-2xl bg-[#16002d]/80 backdrop-blur-xl border border-white/10 focus:border-neon/50 focus:ring-1 focus:ring-neon/30 outline-none transition-all text-white text-sm placeholder-white/45"
                  />
               </div>
 
-              <div className="flex items-center gap-1.5 rounded-2xl bg-[#1a1b32]/80 backdrop-blur-xl border border-white/10 p-1 overflow-x-auto">
+              <div className="flex items-center gap-1.5 rounded-2xl bg-[#16002d]/80 backdrop-blur-xl border border-white/10 p-1 overflow-x-auto">
                  {([
                     { key: "all", label: isAr ? "الكل" : "All", icon: Globe2 },
                     { key: "mine", label: isAr ? "محطاتي" : "Mine", icon: UserCircle },
@@ -553,8 +553,8 @@ export default function HomeView({
                       className={cn(
                         "flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all",
                         stationFilter === f.key
-                          ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/30"
-                          : "text-gray-400 hover:text-white border border-transparent",
+                          ? "bg-neon/20 text-neon/90 border border-neon/30"
+                          : "text-white/60 hover:text-white border border-transparent",
                       )}
                     >
                        <f.icon size={13} />
@@ -563,18 +563,18 @@ export default function HomeView({
                  ))}
               </div>
 
-              <div className="flex items-center gap-1 rounded-2xl bg-[#1a1b32]/80 backdrop-blur-xl border border-white/10 p-1">
+              <div className="flex items-center gap-1 rounded-2xl bg-[#16002d]/80 backdrop-blur-xl border border-white/10 p-1">
                  <button
                    onClick={() => setStationView("grid")}
                    title={isAr ? "عرض شبكة" : "Grid view"}
-                   className={cn("p-2 rounded-xl transition-all", stationView === "grid" ? "bg-white/10 text-white" : "text-gray-500 hover:text-white")}
+                   className={cn("p-2 rounded-xl transition-all", stationView === "grid" ? "bg-white/10 text-white" : "text-white/50 hover:text-white")}
                  >
                     <LayoutGrid size={15} />
                  </button>
                  <button
                    onClick={() => setStationView("list")}
                    title={isAr ? "عرض قائمة" : "List view"}
-                   className={cn("p-2 rounded-xl transition-all", stationView === "list" ? "bg-white/10 text-white" : "text-gray-500 hover:text-white")}
+                   className={cn("p-2 rounded-xl transition-all", stationView === "list" ? "bg-white/10 text-white" : "text-white/50 hover:text-white")}
                  >
                     <List size={15} />
                  </button>
@@ -582,18 +582,18 @@ export default function HomeView({
            </div>
 
            {filteredRooms.length === 0 ? (
-              <motion.div variants={bentoItem} className="w-full flex flex-col items-center justify-center p-12 md:p-24 rounded-3xl bg-gradient-to-br from-[#0c0d1e]/50 to-[#050510]/50 backdrop-blur-xl border border-white/5 text-center">
+              <motion.div variants={bentoItem} className="w-full flex flex-col items-center justify-center p-12 md:p-24 rounded-3xl bg-gradient-to-br from-[#090b1f]/50 to-[#04040a]/50 backdrop-blur-xl border border-white/5 text-center">
                   <div className="w-24 h-24 mb-6 relative">
-                      <div className="absolute inset-0 rounded-full border-t-2 border-indigo-500 animate-spin opacity-50" style={{ animationDuration: '3s' }} />
-                      <div className="absolute inset-2 rounded-full border-r-2 border-cyan-400 animate-spin opacity-30" style={{ animationDuration: '4s', animationDirection: 'reverse' }} />
-                      <Rocket size={40} className="absolute inset-0 m-auto text-indigo-400 opacity-40" />
+                      <div className="absolute inset-0 rounded-full border-t-2 border-violet/40 animate-spin opacity-50" style={{ animationDuration: '3s' }} />
+                      <div className="absolute inset-2 rounded-full border-r-2 border-neon/40 animate-spin opacity-30" style={{ animationDuration: '4s', animationDirection: 'reverse' }} />
+                      <Rocket size={40} className="absolute inset-0 m-auto text-violet opacity-40" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">
                      {searchTerm || stationFilter !== "all"
                         ? (isAr ? "لا توجد محطات مطابقة" : "No matching stations")
                         : t("home.silent_orbit", "المدار هادئ تماماً")}
                   </h3>
-                  <p className="text-indigo-200/50 max-w-sm">
+                  <p className="text-violet/50 max-w-sm">
                      {searchTerm || stationFilter !== "all"
                         ? (isAr ? "جرب تعديل البحث أو الفلاتر للعثور على محطات أخرى." : "Try adjusting your search or filters.")
                         : t("home.silent_orbit_desc", "لا يوجد أحد في المدار حالياً. لتكن أنت أول من يطلق محطته ويبدأ جلسة تركيز عميقة.")}
@@ -632,29 +632,29 @@ export default function HomeView({
       <AnimatePresence>
         {showCreateModal && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-             <div className="absolute inset-0 bg-[#000108]/90 backdrop-blur-xl" />
+             <div className="absolute inset-0 bg-[#04040a]/90 backdrop-blur-xl" />
             <motion.div
               initial={{ scale: 0.95, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 20 }}
-              className={cn("w-full max-w-md p-8 rounded-[2rem] bg-space-dark border border-indigo-500/30 shadow-[0_0_80px_rgba(99,102,241,0.2)] relative z-10", isAr ? "text-right" : "text-left")}
+              className={cn("w-full max-w-md p-8 rounded-[2rem] bg-space-dark border border-violet/30 shadow-[0_0_80px_rgb(140,82,255,0.2)] relative z-10", isAr ? "text-right" : "text-left")}
               dir={isAr ? "rtl" : "ltr"}
             >
               <div className="flex items-center justify-between mb-8">
-                <h3 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-l from-white to-gray-400">
+                <h3 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-l from-white to-white/60">
                   {isAr ? "تأسيس محطة تركيز جديدة" : "Deploy New Focus Station"}
                 </h3>
                 <button
                   onClick={() => setShowCreateModal(false)}
                   className="p-2 bg-white/5 hover:bg-white/10 rounded-full transition-colors"
                 >
-                  <X size={20} className="text-gray-400" />
+                  <X size={20} className="text-white/60" />
                 </button>
               </div>
 
               <div className="space-y-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-400 px-1">
+                  <label className="text-sm font-bold text-white/60 px-1">
                     {isAr ? "اسم المحطة الخاصة بك" : "Station Identifier Name"}
                   </label>
                   <input
@@ -662,7 +662,7 @@ export default function HomeView({
                     value={newRoomName}
                     onChange={(e) => setNewRoomName(e.target.value)}
                     placeholder={isAr ? "مثال: مدار التركيز العميق..." : "e.g. Deep Coding Chambers, Science Lab..."}
-                    className="w-full p-4 rounded-2xl bg-space-dark border border-white/10 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 outline-none transition-all text-white text-lg placeholder-gray-700"
+                    className="w-full p-4 rounded-2xl bg-space-dark border border-white/10 focus:border-violet/40 focus:ring-1 focus:ring-violet/50 outline-none transition-all text-white text-lg placeholder-white/45"
                   />
                 </div>
 
@@ -673,17 +673,17 @@ export default function HomeView({
                     className={cn(
                       "w-full flex items-center justify-between gap-3 p-4 rounded-2xl border transition-all",
                       isPrivateRoom
-                        ? "bg-cyan-500/10 border-cyan-400/40 shadow-[0_0_15px_rgba(34,211,238,0.15)]"
+                        ? "bg-neon/10 border-neon/40 shadow-[0_0_15px_rgb(0,212,255,0.15)]"
                         : "bg-space-dark border-white/10 hover:border-white/25",
                     )}
                   >
                     <div className="flex items-center gap-3">
-                      <Lock size={20} className={isPrivateRoom ? "text-cyan-400" : "text-gray-500"} />
+                      <Lock size={20} className={isPrivateRoom ? "text-neon" : "text-white/50"} />
                       <div className="text-right">
-                        <p className={cn("font-bold text-sm", isPrivateRoom ? "text-cyan-300" : "text-gray-300")}>
+                        <p className={cn("font-bold text-sm", isPrivateRoom ? "text-neon/90" : "text-white/70")}>
                           {isAr ? "محطة خاصة (فقط برمز)" : "Private Station (Invite Only)"}
                         </p>
-                        <p className="text-xs text-gray-500 mt-0.5">
+                        <p className="text-xs text-white/50 mt-0.5">
                           {isAr
                             ? "أصدقاؤك يدخلون برمز سري تصنعه أنت"
                             : "Friends join with a secret code you generate"}
@@ -693,7 +693,7 @@ export default function HomeView({
                     <div
                       className={cn(
                         "w-11 h-6 rounded-full p-0.5 transition-colors shrink-0",
-                        isPrivateRoom ? "bg-cyan-500" : "bg-white/10",
+                        isPrivateRoom ? "bg-neon/80" : "bg-white/10",
                       )}
                     >
                       <div
@@ -707,7 +707,7 @@ export default function HomeView({
                 </div>
 
                 <div className="space-y-3">
-                  <label className="text-sm font-bold text-gray-400 px-1">
+                  <label className="text-sm font-bold text-white/60 px-1">
                     {isAr ? "خلفية المحطة المدارية (اختياري)" : "Station Background Wall (Optional)"}
                   </label>
                   <div className="grid grid-cols-3 gap-3">
@@ -719,7 +719,7 @@ export default function HomeView({
                         className={cn(
                           "relative rounded-2xl overflow-hidden aspect-[4/3] border-2 transition-all object-cover hover:scale-105",
                           newRoomImageUrl === url
-                            ? "border-indigo-400 shadow-[0_0_15px_rgba(99,102,241,0.4)] opacity-100"
+                            ? "border-violet/40 shadow-[0_0_15px_rgb(140,82,255,0.4)] opacity-100"
                             : "border-transparent opacity-40 hover:opacity-80",
                         )}
                         style={{
@@ -729,7 +729,7 @@ export default function HomeView({
                         }}
                       >
                         {newRoomImageUrl === url && (
-                          <div className="absolute inset-0 bg-indigo-500/30 flex items-center justify-center backdrop-blur-[2px]">
+                          <div className="absolute inset-0 bg-violet/30 flex items-center justify-center backdrop-blur-[2px]">
                             <CheckCircle size={24} className="text-white drop-shadow-md" />
                           </div>
                         )}
@@ -739,7 +739,7 @@ export default function HomeView({
                   {newRoomImageUrl && (
                     <button
                       onClick={() => setNewRoomImageUrl("")}
-                      className="text-xs font-bold text-gray-500 hover:text-red-400 transition-colors w-full text-center mt-2"
+                      className="text-xs font-bold text-white/50 hover:text-gold transition-colors w-full text-center mt-2"
                     >
                       {isAr ? "بدون خلفية مخصصة" : "No Custom Image Background"}
                     </button>
@@ -750,7 +750,7 @@ export default function HomeView({
               <button
                 onClick={handleCreateRoom}
                 disabled={isCreating || !newRoomName}
-                className="w-full mt-8 p-4 rounded-2xl bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 disabled:from-[#131526] disabled:to-[#131526] disabled:text-gray-500 disabled:border disabled:border-white/5 transition-all font-bold text-lg shadow-[0_0_20px_rgba(99,102,241,0.2)] disabled:shadow-none text-white flex justify-center items-center gap-2 group"
+                className="w-full mt-8 p-4 rounded-2xl bg-gradient-to-r from-violet to-violet hover:from-violet hover:to-violet/85 disabled:from-[#090b1f] disabled:to-[#090b1f] disabled:text-white/50 disabled:border disabled:border-white/5 transition-all font-bold text-lg shadow-[0_0_20px_rgb(140,82,255,0.2)] disabled:shadow-none text-white flex justify-center items-center gap-2 group"
               >
                 {isCreating ? (isAr ? "جاري الإطلاق الكوني..." : "Launching Cockpit Space...") : (
                   <> {isAr ? "إطلاق المحطة الفضائية" : "Deploy Cosmic Station"} <Rocket size={20} className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" /> </> 

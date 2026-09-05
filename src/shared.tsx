@@ -366,7 +366,7 @@ export const MeteorEffect = ({ trigger }: { trigger: any }) => {
               />
 
               {/* Brilliant shining nucleus/head of the meteor leading the charge - now larger & thicker */}
-              <div className="w-[6px] h-[6px] bg-white rounded-full shadow-[0_0_22px_10px_rgba(255,255,255,1),0_0_44px_22px_rgba(199,210,254,0.8),0_0_75px_35px_rgba(147,197,253,0.5)] relative z-10" />
+              <div className="w-[6px] h-[6px] bg-white rounded-full shadow-[0_0_22px_10px_rgb(255,255,255,1),0_0_44px_22px_rgb(255,255,255,0.8),0_0_75px_35px_rgb(140,82,255,0.5)] relative z-10" />
 
               {/* Thicker, elegant trail going from maximum brightness to transparent to the back */}
               <div 
@@ -581,25 +581,25 @@ export class ErrorBoundary extends Component<any, any> {
       const errMsg = this.state.error?.message || String(this.state.error || "");
       return (
         <div className="min-h-screen bg-space-dark flex flex-col items-center justify-center p-6 text-center">
-          <ShieldAlert className="w-20 h-20 text-red-500 mb-6" />
+          <ShieldAlert className="w-20 h-20 text-gold mb-6" />
           <h1 className="text-3xl font-bold text-white mb-4">
             عذراً، حدث خطأ غير متوقع
           </h1>
-          <p className="text-gray-400 max-w-md mb-8">
+          <p className="text-white/60 max-w-md mb-8">
             لقد واجهنا مشكلة تقنية. يرجى محاولة إعادة تحميل الصفحة.
           </p>
           <button
             onClick={() => window.location.reload()}
-            className="px-8 py-3 bg-indigo-500 rounded-xl font-bold hover:bg-indigo-700 transition-all"
+            className="px-8 py-3 bg-violet/80 rounded-xl font-bold hover:bg-violet transition-all"
           >
             إعادة تحميل الصفحة
           </button>
-          <pre className="mt-8 p-4 bg-white/5 shadow-inner rounded-xl text-left text-[10px] text-red-400 overflow-auto max-w-full" dir="ltr">
+          <pre className="mt-8 p-4 bg-white/5 shadow-inner rounded-xl text-left text-[10px] text-gold overflow-auto max-w-full" dir="ltr">
             {errMsg}
           </pre>
           <button
             onClick={() => navigator.clipboard?.writeText(errMsg).catch(() => {})}
-            className="mt-4 px-5 py-2 bg-white/5 rounded-xl text-xs font-bold text-gray-300 hover:bg-white/10 transition-all border border-white/5"
+            className="mt-4 px-5 py-2 bg-white/5 rounded-xl text-xs font-bold text-white/70 hover:bg-white/10 transition-all border border-white/5"
           >
             📋 نسخ تفاصيل الخطأ
           </button>

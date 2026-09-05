@@ -179,18 +179,18 @@ export default function DockButton({ icon, label, active, onClick, colorClass, g
       <div 
          className={cn(
             "relative z-10 transition-all duration-300",
-            active ? `text-transparent bg-clip-text bg-gradient-to-r ${colorClass} drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] -translate-y-1` : "text-gray-400 group-hover:text-gray-200"
+            active ? `text-transparent bg-clip-text bg-gradient-to-r ${colorClass} drop-shadow-[0_0_8px_rgb(255,255,255,0.5)] -translate-y-1` : "text-white/60 group-hover:text-white/80"
          )}
       >
          {React.cloneElement(icon, { 
-            className: cn("transition-all duration-300", active ? "text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" : "") 
+            className: cn("transition-all duration-300", active ? "text-white drop-shadow-[0_0_8px_rgb(255,255,255,0.5)]" : "") 
          })}
       </div>
       
       <div 
          className={cn(
             "text-[11px] font-black uppercase tracking-wider absolute bottom-2 z-10 transition-all duration-300",
-            active ? "opacity-100 translate-y-0 text-white" : "opacity-0 translate-y-2 text-gray-500"
+            active ? "opacity-100 translate-y-0 text-white" : "opacity-0 translate-y-2 text-white/50"
          )}
       >
          {label}

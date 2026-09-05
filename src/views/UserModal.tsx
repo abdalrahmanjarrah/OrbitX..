@@ -348,13 +348,13 @@ export default function UserModal({
   if (!userData) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] bg-[#000108]/90 overflow-y-auto backdrop-blur-xl">
+    <div className="fixed inset-0 z-[100] bg-[#04040a]/90 overflow-y-auto backdrop-blur-xl">
       <div className="w-full min-h-screen p-4 md:p-8 relative">
         <button
           onClick={onClose}
           className="fixed top-6 left-6 p-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-colors z-[110] shadow-xl backdrop-blur-md"
         >
-          <X size={24} className="text-gray-300" />
+          <X size={24} className="text-white/70" />
         </button>
 
         <motion.div
@@ -363,9 +363,9 @@ export default function UserModal({
           className="max-w-4xl mx-auto space-y-8 pt-16 md:pt-4 pb-20"
         >
           {/* Profile Header */}
-          <div className="p-8 rounded-[2.5rem] glass border-indigo-400/20 relative overflow-hidden group flex flex-col justify-center transition-colors mt-8">
+          <div className="p-8 rounded-[2.5rem] glass border-violet/20 relative overflow-hidden group flex flex-col justify-center transition-colors mt-8">
             <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:scale-110 transition-transform">
-              <UserIcon size={200} className="text-indigo-500" />
+              <UserIcon size={200} className="text-violet" />
             </div>
             <div className="flex flex-col md:flex-row items-center gap-8 relative z-10">
               <div className="flex items-center justify-center">
@@ -377,7 +377,7 @@ export default function UserModal({
                     )}
                   ></div>
 
-                  <div className="w-32 h-32 rounded-full border-4 border-indigo-400 p-1 relative overflow-hidden z-10 bg-space-dark">
+                  <div className="w-32 h-32 rounded-full border-4 border-violet/40 p-1 relative overflow-hidden z-10 bg-space-dark">
                     <img
                       src={userData.photoURL || `https://api.dicebear.com/7.x/bottts/svg?seed=${userData.uid}`}
                       className="w-full h-full rounded-full object-cover"
@@ -386,7 +386,7 @@ export default function UserModal({
                   </div>
                   <div
                     className={cn(
-                      "absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold border-2 border-[#0a0b16] z-20 whitespace-nowrap shadow-xl",
+                      "absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold border-2 border-[#090b1f] z-20 whitespace-nowrap shadow-xl",
                       getLevelColor(getLevelFromXp(userData.xp)).bg,
                       getLevelColor(getLevelFromXp(userData.xp)).text === "text-white"
                         ? "text-black"
@@ -408,7 +408,7 @@ export default function UserModal({
                           "px-6 py-2 rounded-xl font-bold transition-all text-sm flex items-center gap-2",
                           isFriend
                             ? "bg-white/5 border border-white/10 hover:bg-white/10"
-                            : "bg-indigo-500 hover:bg-indigo-700",
+                            : "bg-violet/80 hover:bg-violet",
                         )}
                       >
                         {isFriend ? <Users size={16} /> : <Plus size={16} />}
@@ -418,7 +418,7 @@ export default function UserModal({
                     {userId !== currentUserId && !currentUser?.isGuest && (
                       <button
                         onClick={() => setShowChallengeModal(true)}
-                        className="px-6 py-2 rounded-xl font-bold transition-all text-sm flex items-center gap-2 bg-gradient-to-l from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 border border-amber-300/30"
+                        className="px-6 py-2 rounded-xl font-bold transition-all text-sm flex items-center gap-2 bg-gradient-to-l from-gold to-gold hover:from-gold/85 hover:to-gold border border-gold/30"
                       >
                         <Swords size={16} /> صفخة تحدي
                       </button>
@@ -431,7 +431,7 @@ export default function UserModal({
                       !userData.fleetId && (
                         <button
                           onClick={handleInviteToFleet}
-                          className="px-6 py-2 rounded-xl font-bold transition-all text-sm flex items-center gap-2 bg-fuchsia-500 hover:bg-fuchsia-600 border border-fuchsia-400/30"
+                          className="px-6 py-2 rounded-xl font-bold transition-all text-sm flex items-center gap-2 bg-violet/80 hover:bg-violet border border-violet/30"
                         >
                           <Shield size={16} /> دعوة للأسطول
                         </button>
@@ -452,26 +452,26 @@ export default function UserModal({
 
                 <div className="flex flex-wrap justify-center md:justify-end gap-3 text-xs">
                   <div className="text-center px-6 py-3 bg-space-dark rounded-2xl border border-white/5 backdrop-blur-md shadow-inner shadow-black/20">
-                    <span className="block font-black text-2xl text-indigo-400">
+                    <span className="block font-black text-2xl text-violet">
                       {exhibitions.length}
                     </span>
-                    <span className="text-gray-400 text-[11px] uppercase font-bold tracking-wider">
+                    <span className="text-white/60 text-[11px] uppercase font-bold tracking-wider">
                       منشور
                     </span>
                   </div>
                   <div className="text-center px-6 py-3 bg-space-dark rounded-2xl border border-white/5 backdrop-blur-md shadow-inner shadow-black/20">
-                    <span className="block font-black text-2xl text-blue-400">
+                    <span className="block font-black text-2xl text-neon">
                       {userData.xp}
                     </span>
-                    <span className="text-gray-400 text-[11px] uppercase font-bold tracking-wider">
+                    <span className="text-white/60 text-[11px] uppercase font-bold tracking-wider">
                       XP
                     </span>
                   </div>
                   <div className="text-center px-6 py-3 bg-space-dark rounded-2xl border border-white/5 backdrop-blur-md shadow-inner shadow-black/20">
-                    <span className="block font-black text-2xl text-fuchsia-400">
+                    <span className="block font-black text-2xl text-violet">
                       {friends.length}
                     </span>
-                    <span className="text-gray-400 text-[11px] uppercase font-bold tracking-wider">
+                    <span className="text-white/60 text-[11px] uppercase font-bold tracking-wider">
                       صديق
                     </span>
                   </div>
@@ -479,11 +479,11 @@ export default function UserModal({
 
                 <div className="space-y-4">
                   <div className="space-y-2 text-right">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-bold text-gray-300">
-                      <Rocket size={12} className="text-indigo-400" />
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-bold text-white/70">
+                      <Rocket size={12} className="text-violet" />
                       {userData.missionRole || "لم يتم تحديد التخصص"}
                     </div>
-                    <p className="text-gray-300 text-sm leading-relaxed">
+                    <p className="text-white/70 text-sm leading-relaxed">
                       {userData.bio || "لا يوجد وصف حالياً..."}
                     </p>
                   </div>
@@ -491,7 +491,7 @@ export default function UserModal({
 
                 {/* Badges Display */}
                 <div className="pt-4 border-t border-white/5">
-                  <h4 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3 text-right">
+                  <h4 className="text-xs font-bold text-white/50 uppercase tracking-widest mb-3 text-right">
                     الأوسمة المستحقة
                   </h4>
                   <div className="flex flex-wrap justify-end gap-3">
@@ -500,14 +500,14 @@ export default function UserModal({
                         const badge = BADGES.find((b) => b.id === badgeId);
                         return badge ? (
                           <div key={badgeId} className="group relative">
-                            <div className="w-10 h-10 rounded-xl bg-space-dark shadow-lg shadow-indigo-900/10 border border-white/10 flex items-center justify-center text-xl hover:bg-white/5 transition-all cursor-help">
+                            <div className="w-10 h-10 rounded-xl bg-space-dark shadow-lg shadow-violet/10 border border-white/10 flex items-center justify-center text-xl hover:bg-white/5 transition-all cursor-help">
                               {badge.icon}
                             </div>
                             <div className="absolute bottom-full right-0 mb-2 w-32 p-2 bg-space-dark border border-white/10 rounded-lg text-[11px] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
-                              <p className="font-bold text-indigo-500">
+                              <p className="font-bold text-violet">
                                 {badge.title}
                               </p>
-                              <p className="text-gray-400">
+                              <p className="text-white/60">
                                 {badge.description}
                               </p>
                             </div>
@@ -515,7 +515,7 @@ export default function UserModal({
                         ) : null;
                       })
                     ) : (
-                      <p className="text-[10px] text-gray-600 italic">
+                      <p className="text-[10px] text-white/45 italic">
                         لا توجد أوسمة بعد.
                       </p>
                     )}
@@ -526,7 +526,7 @@ export default function UserModal({
 
             {/* XP Progress Bar */}
             <div className="mt-8 space-y-2">
-              <div className="flex justify-between items-center text-xs font-bold text-gray-400">
+              <div className="flex justify-between items-center text-xs font-bold text-white/60">
                 <span className={getLevelColor(getLevelFromXp(userData.xp)).text}>
                   {'Level ' + getLevelFromXp(userData.xp)}
                 </span>
@@ -539,9 +539,9 @@ export default function UserModal({
                   animate={{
                     width: `${getLevelProgress(userData.xp, getLevelFromXp(userData.xp))}%`,
                   }}
-                  className="h-full bg-gradient-to-l from-indigo-500 to-blue-400"
+                  className="h-full bg-gradient-to-l from-violet to-neon/85"
                 />
-                <div className="absolute inset-0 flex items-center justify-center text-xs font-black text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
+                <div className="absolute inset-0 flex items-center justify-center text-xs font-black text-white drop-shadow-[0_2px_2px_rgb(0,0,0,0.8)]">
                   {Math.round(getLevelProgress(userData.xp, getLevelFromXp(userData.xp)))}
                   %
                 </div>
@@ -551,14 +551,14 @@ export default function UserModal({
 
           {/* Friends List */}
           {friends.length > 0 && (
-            <div className="p-6 rounded-3xl glass border border-blue-500/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div className="p-6 rounded-3xl glass border border-neon/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-2xl bg-blue-500/20 flex items-center justify-center border border-blue-500/30">
-                  <Users className="w-5 h-5 text-blue-400" />
+                <div className="w-10 h-10 rounded-2xl bg-neon/20 flex items-center justify-center border border-neon/30">
+                  <Users className="w-5 h-5 text-neon" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white">الأصدقاء</h3>
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-white/60">
                     {friends.length} زملاء في المجرة
                   </p>
                 </div>
@@ -572,13 +572,13 @@ export default function UserModal({
                   >
                     <img
                       src={friend.photoURL || `https://api.dicebear.com/7.x/bottts/svg?seed=${friend.uid}`}
-                      className="w-10 h-10 rounded-full border-2 border-[#0a0b16] object-cover hover:scale-110 transition-transform cursor-help"
+                      className="w-10 h-10 rounded-full border-2 border-[#090b1f] object-cover hover:scale-110 transition-transform cursor-help"
                       referrerPolicy="no-referrer"
                     />
                     {friend.lastActiveTime &&
                       Date.now() - friend.lastActiveTime < 300000 && (
                         <div
-                          className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-[#0a0b16]"
+                          className="absolute bottom-0 right-0 w-3 h-3 bg-lemon/80 rounded-full border-2 border-[#090b1f]"
                           title="متصل الآن"
                         />
                       )}
@@ -588,7 +588,7 @@ export default function UserModal({
                   </div>
                 ))}
                 {friends.length > 8 && (
-                  <div className="w-10 h-10 rounded-full border-2 border-[#0a0b16] bg-space-dark text-blue-400 flex items-center justify-center text-xs font-bold relative z-0 shadow-inner">
+                  <div className="w-10 h-10 rounded-full border-2 border-[#090b1f] bg-space-dark text-neon flex items-center justify-center text-xs font-bold relative z-0 shadow-inner">
                     +{friends.length - 8}
                   </div>
                 )}
@@ -614,7 +614,7 @@ export default function UserModal({
             <div className="lg:col-span-2 space-y-6">
               <div className="flex items-center justify-end p-6 rounded-3xl glass border border-white/5">
                 <h3 className="text-xl font-bold flex items-center gap-2">
-                  <ImageIcon className="w-5 h-5 text-pink-400" />
+                  <ImageIcon className="w-5 h-5 text-violet" />
                   معرض المحطات
                 </h3>
               </div>
@@ -623,7 +623,7 @@ export default function UserModal({
                 {exhibitions.map((ex, i) => (
                   <div
                     key={ex.id}
-                    className="aspect-square rounded-3xl overflow-hidden border border-white/10 bg-space-dark shadow-lg shadow-indigo-900/10 group relative"
+                    className="aspect-square rounded-3xl overflow-hidden border border-white/10 bg-space-dark shadow-lg shadow-violet/10 group relative"
                   >
                     {ex.url ? (
                       <img
@@ -632,9 +632,9 @@ export default function UserModal({
                         referrerPolicy="no-referrer"
                       />
                     ) : (
-                      <div className="w-full h-full bg-space-dark flex items-center justify-center text-[10px] text-gray-500 font-mono">LOADING</div>
+                      <div className="w-full h-full bg-space-dark flex items-center justify-center text-[10px] text-white/50 font-mono">LOADING</div>
                     )}
-                    <div className="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div className="absolute inset-0 bg-navy/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <span className="text-xs font-bold">
                         {ex.timestamp
                           ? new Date(ex.timestamp.toDate()).toLocaleDateString(
@@ -647,7 +647,7 @@ export default function UserModal({
                 ))}
                 {exhibitions.length === 0 && (
                   <div className="col-span-full py-20 text-center border-2 border-dashed border-white/10 rounded-3xl">
-                    <p className="text-gray-500 italic">
+                    <p className="text-white/50 italic">
                       لا توجد صور في المعرض بعد
                     </p>
                   </div>
@@ -657,19 +657,19 @@ export default function UserModal({
 
             {/* Right Column - Stats or other bento items */}
             <div className="lg:col-span-1 space-y-6 flex flex-col">
-              <div className="p-6 rounded-3xl glass border border-cyan-500/20 flex flex-col items-center justify-center relative overflow-hidden group">
-                <div className="absolute inset-0 bg-cyan-500/5 group-hover:bg-cyan-500/10 transition-colors"></div>
+              <div className="p-6 rounded-3xl glass border border-neon/20 flex flex-col items-center justify-center relative overflow-hidden group">
+                <div className="absolute inset-0 bg-neon/5 group-hover:bg-neon/10 transition-colors"></div>
                 <Timer
                   size={48}
-                  className="text-cyan-400 mb-4 animate-pulse drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]"
+                  className="text-neon mb-4 animate-pulse drop-shadow-[0_0_10px_rgb(0,212,255,0.8)]"
                 />
                 <h4 className="text-xl font-black text-white mb-1">
                   ساعات التركيز
                 </h4>
-                <p className="text-4xl font-black text-cyan-400 drop-shadow-md">
+                <p className="text-4xl font-black text-neon drop-shadow-md">
                   {Math.round((userData.xp || 0) / 60)}
                 </p>
-                <span className="text-xs text-gray-400 mt-2 font-bold uppercase tracking-widest">
+                <span className="text-xs text-white/60 mt-2 font-bold uppercase tracking-widest">
                   ساعة مقضية
                 </span>
               </div>
@@ -679,17 +679,17 @@ export default function UserModal({
       </div>
 
       {showChallengeModal && userData && (
-        <div className="fixed inset-0 z-[120] bg-[#000108]/90 backdrop-blur-xl flex items-center justify-center p-4" onClick={() => setShowChallengeModal(false)}>
+        <div className="fixed inset-0 z-[120] bg-[#04040a]/90 backdrop-blur-xl flex items-center justify-center p-4" onClick={() => setShowChallengeModal(false)}>
           <div
-            className="w-full max-w-sm rounded-3xl glass border border-amber-500/30 p-6 text-center space-y-5"
+            className="w-full max-w-sm rounded-3xl glass border border-gold/30 p-6 text-center space-y-5"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="mx-auto w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shadow-lg shadow-amber-900/40">
+            <div className="mx-auto w-16 h-16 rounded-2xl bg-gradient-to-br from-gold to-gold flex items-center justify-center shadow-lg shadow-gold/40">
               <Swords size={30} className="text-white" />
             </div>
             <div>
               <h3 className="text-xl font-black text-white">صفخة تحدي لـ {userData.displayName}</h3>
-              <p className="text-sm text-gray-400 mt-1">
+              <p className="text-sm text-white/60 mt-1">
                 اختر مدة السباق — خلالها مين منكم بجمع أكتر دقائق تركيز (بأي محطة) هو الفائز.
               </p>
             </div>
@@ -707,8 +707,8 @@ export default function UserModal({
                   onClick={() => setChallengeDuration(opt.mins)}
                   className={`py-3 rounded-xl font-black text-sm border transition-colors ${
                     challengeDuration === opt.mins
-                      ? "bg-amber-500 text-black border-amber-300"
-                      : "bg-white/5 text-gray-300 border-white/10 hover:bg-white/10"
+                      ? "bg-gold/80 text-black border-gold/25"
+                      : "bg-white/5 text-white/70 border-white/10 hover:bg-white/10"
                   }`}
                 >
                   {opt.label}
@@ -717,13 +717,13 @@ export default function UserModal({
             </div>
             <button
               onClick={sendChallengeFromProfile}
-              className="w-full py-3 rounded-xl font-black text-sm bg-gradient-to-l from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white flex items-center justify-center gap-2 transition-colors"
+              className="w-full py-3 rounded-xl font-black text-sm bg-gradient-to-l from-gold to-gold hover:from-gold/85 hover:to-gold text-white flex items-center justify-center gap-2 transition-colors"
             >
               <Swords size={16} /> إرسال الصفخة
             </button>
             <button
               onClick={() => setShowChallengeModal(false)}
-              className="w-full py-2 text-xs font-bold text-gray-500 hover:text-gray-300 transition-colors"
+              className="w-full py-2 text-xs font-bold text-white/50 hover:text-white/70 transition-colors"
             >
               إلغاء
             </button>

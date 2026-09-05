@@ -148,24 +148,24 @@ export default function InteractiveSecretGlobe() {
 
   return (
     <div
-      className={`mt-16 bg-gradient-to-b from-[#060714] via-[#030409] to-[#010104] border border-indigo-500/10 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden ${isAr ? "text-right" : "text-left"}`}
+      className={`mt-16 bg-gradient-to-b from-[#04040a] via-[#04040a] to-[#04040a] border border-violet/10 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden ${isAr ? "text-right" : "text-left"}`}
       dir={isAr ? "rtl" : "ltr"}
     >
       {/* Absolute futuristic decorative indicators and background grids */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none opacity-40" />
-      <div className="absolute -top-12 -left-12 w-64 h-64 bg-indigo-500/5 rounded-full blur-[90px] pointer-events-none" />
-      <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-purple-500/5 rounded-full blur-[90px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgb(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgb(255,255,255,0.01)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none opacity-40" />
+      <div className="absolute -top-12 -left-12 w-64 h-64 bg-violet/5 rounded-full blur-[90px] pointer-events-none" />
+      <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-violet/5 rounded-full blur-[90px] pointer-events-none" />
 
       {/* Secret Warning Banner - Highly Confidential human tone */}
-      <div className="mb-14 p-5 rounded-2xl bg-gradient-to-r from-red-950/40 via-[#0d0712] to-red-950/40 border border-red-500/20 shadow-[0_0_20px_rgba(239,68,68,0.05)] relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1.5 h-full bg-red-500" />
+      <div className="mb-14 p-5 rounded-2xl bg-gradient-to-r from-panel/40 via-[#04040a] to-panel/40 border border-gold/20 shadow-[0_0_20px_rgb(212,175,55,0.05)] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1.5 h-full bg-gold/80" />
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex items-center gap-3.5">
-            <span className="p-2.5 rounded-xl bg-red-500/10 text-red-400 border border-red-500/20">
+            <span className="p-2.5 rounded-xl bg-gold/10 text-gold border border-gold/20">
               <ShieldAlert className="w-5 h-5" />
             </span>
             <div>
-              <div className="text-xs font-mono font-bold text-red-400 tracking-wider flex items-center gap-2">
+              <div className="text-xs font-mono font-bold text-gold tracking-wider flex items-center gap-2">
                 تصنيف أمني شديد الخطورة // CLASSIFIED INTEL
               </div>
               <h4 className="text-sm font-black text-white mt-1">
@@ -173,12 +173,12 @@ export default function InteractiveSecretGlobe() {
               </h4>
             </div>
           </div>
-          <div className="px-3.5 py-1.5 rounded-lg bg-red-500/10 border border-red-500/30 text-[10px] font-mono font-black text-red-400 flex items-center gap-1.5 self-end md:self-auto select-none uppercase">
+          <div className="px-3.5 py-1.5 rounded-lg bg-gold/10 border border-gold/30 text-[10px] font-mono font-black text-gold flex items-center gap-1.5 self-end md:self-auto select-none uppercase">
             <Lock className="w-3.5 h-3.5" /> SECURE UNLOCKED
           </div>
         </div>
-        <p className="text-gray-300 text-xs mt-3 leading-relaxed border-t border-white/5 pt-3 font-normal">
-          <span className="text-red-400 font-bold ml-1">
+        <p className="text-white/70 text-xs mt-3 leading-relaxed border-t border-white/5 pt-3 font-normal">
+          <span className="text-gold font-bold ml-1">
             [تحذير سري للغاية]:
           </span>
           هذه الملاحظات والمعلومات محمية ومصنّفة للرواد الملتزمين أصحاب الهمم
@@ -191,7 +191,7 @@ export default function InteractiveSecretGlobe() {
       {/* Unified Stage Area - Globe in center, bubble cloud bursting instantly out of Earth */}
       <div className="flex flex-col items-center justify-center relative min-h-[580px] py-6">
         {/* Dynamic Nebula Glowing Center Space behind Earth */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[460px] h-[460px] bg-indigo-500/5 rounded-full blur-[140px] pointer-events-none z-0" />
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[460px] h-[460px] bg-violet/5 rounded-full blur-[140px] pointer-events-none z-0" />
 
         {/* Cinematic Ethereal Cloud - Bursts/Pops out directly from the Earth's Center upwards */}
         <div className="absolute top-2 z-20 w-full max-w-lg px-4 pointer-events-none">
@@ -214,55 +214,55 @@ export default function InteractiveSecretGlobe() {
               className="relative pointer-events-auto"
             >
               {/* Nebulous Soft Atmosphere Backglow */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 via-indigo-500/10 to-purple-500/10 rounded-[2.5rem] blur-[30px] opacity-80 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-neon/10 via-violet/10 to-violet/10 rounded-[2.5rem] blur-[30px] opacity-80 pointer-events-none" />
 
               {/* The Cloud Bubble Container - Highly Refined, glassy, deep shadow */}
-              <div className="bg-[#040513]/85 backdrop-blur-xl border border-indigo-500/20 rounded-[2.5rem] p-6 md:p-8 text-center relative shadow-[0_25px_60px_rgba(0,0,0,0.8),0_0_35px_rgba(99,102,241,0.12)] overflow-hidden">
+              <div className="bg-[#04040a]/85 backdrop-blur-xl border border-violet/20 rounded-[2.5rem] p-6 md:p-8 text-center relative shadow-[0_25px_60px_rgb(0,0,0,0.8),0_0_35px_rgb(140,82,255,0.12)] overflow-hidden">
                 {/* Micro textures inside the cloud */}
-                <div className="absolute -top-12 -left-12 w-32 h-32 bg-cyan-500/5 rounded-full blur-2xl pointer-events-none" />
-                <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-purple-500/5 rounded-full blur-2xl pointer-events-none" />
+                <div className="absolute -top-12 -left-12 w-32 h-32 bg-neon/5 rounded-full blur-2xl pointer-events-none" />
+                <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-violet/5 rounded-full blur-2xl pointer-events-none" />
 
                 {/* Cloud top badge */}
                 <div className="flex items-center justify-between mb-4.5 border-b border-white/5 pb-3">
-                  <span className="text-[10px] font-mono font-black text-cyan-400 tracking-wider uppercase">
+                  <span className="text-[10px] font-mono font-black text-neon tracking-wider uppercase">
                     أرشيف الوعي الكوني
                   </span>
-                  <div className="flex items-center gap-1.5 text-[11px] font-black bg-red-500/10 text-red-400 px-2.5 py-0.5 rounded-full border border-red-500/20">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />
+                  <div className="flex items-center gap-1.5 text-[11px] font-black bg-gold/10 text-gold px-2.5 py-0.5 rounded-full border border-gold/20">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gold/55 animate-pulse" />
                     <span>{currentSecret.securityLevel}</span>
                   </div>
                 </div>
 
                 {/* Secret category */}
-                <span className="text-[10px] text-indigo-400 font-mono font-bold tracking-widest uppercase mb-1.5 block">
+                <span className="text-[10px] text-violet font-mono font-bold tracking-widest uppercase mb-1.5 block">
                   {currentSecret.category}
                 </span>
 
                 {/* Secret Title */}
                 <h3 className="text-base md:text-lg font-black text-white leading-tight flex items-center justify-center gap-2">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-l from-indigo-200 via-cyan-200 to-white">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-l from-violet/70 via-neon/70 to-white">
                     {currentSecret.title}
                   </span>
-                  <Sparkles className="w-4.5 h-4.5 text-cyan-400 shrink-0" />
+                  <Sparkles className="w-4.5 h-4.5 text-neon shrink-0" />
                 </h3>
 
                 {/* Tip Description */}
-                <p className="text-gray-300 text-xs md:text-sm mt-3 leading-relaxed font-normal max-w-sm mx-auto">
+                <p className="text-white/70 text-xs md:text-sm mt-3 leading-relaxed font-normal max-w-sm mx-auto">
                   {currentSecret.desc}
                 </p>
 
                 {/* Inner stats */}
-                <div className="flex items-center justify-center gap-4 mt-5.5 pt-3 border-t border-white/5 font-mono text-[11px] text-gray-500">
+                <div className="flex items-center justify-center gap-4 mt-5.5 pt-3 border-t border-white/5 font-mono text-[11px] text-white/50">
                   <div>
                     <span>معدل الأثر: </span>
-                    <span className="text-emerald-400 font-bold">
+                    <span className="text-lemon font-bold">
                       {currentSecret.impactScore}
                     </span>
                   </div>
                   <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
                   <div>
                     <span>الحالة: </span>
-                    <span className="text-cyan-400 font-bold">
+                    <span className="text-neon font-bold">
                       مشفّر وآمن للأسطول
                     </span>
                   </div>
@@ -270,14 +270,14 @@ export default function InteractiveSecretGlobe() {
               </div>
 
               {/* Pointed cloud bubble pointer looking super cohesive */}
-              <div className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-0 h-0 border-t-[10px] border-t-[#040513]/85 border-x-[10px] border-x-transparent filter drop-shadow-[0_4px_3px_rgba(99,102,241,0.08)] animate-pulse" />
+              <div className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-0 h-0 border-t-[10px] border-t-[#04040a]/85 border-x-[10px] border-x-transparent filter drop-shadow-[0_4px_3px_rgb(140,82,255,0.08)] animate-pulse" />
             </motion.div>
           </AnimatePresence>
         </div>
 
         {/* Outer orbital rings for astronomical aesthetic depth */}
-        <div className="absolute w-[340px] h-[340px] md:w-[380px] md:h-[380px] rounded-full border border-indigo-500/5 pointer-events-none z-0 flex items-center justify-center transform scale-y-[0.3] rotate-[12deg]">
-          <div className="w-[120%] h-[120%] rounded-full border border-dashed border-cyan-500/5 animate-[spin_80s_linear_infinite]" />
+        <div className="absolute w-[340px] h-[340px] md:w-[380px] md:h-[380px] rounded-full border border-violet/5 pointer-events-none z-0 flex items-center justify-center transform scale-y-[0.3] rotate-[12deg]">
+          <div className="w-[120%] h-[120%] rounded-full border border-dashed border-neon/5 animate-[spin_80s_linear_infinite]" />
         </div>
 
         {/* Main Globe Area - positioned nicely under the cloud */}
@@ -294,14 +294,14 @@ export default function InteractiveSecretGlobe() {
             title="امسك واسحب لتدوير الأرض بكل الاتجاهات وفك الأسرار"
           >
             {/* Ambient atmospheric back glow */}
-            <div className="absolute inset-[-12px] rounded-full bg-indigo-500/5 blur-xl group-hover:bg-indigo-500/10 transition-colors duration-700 pointer-events-none" />
-            <div className="absolute inset-0 rounded-full border border-white/5 pointer-events-none shadow-[2px_10px_20px_rgba(0,0,0,0.8)]" />
+            <div className="absolute inset-[-12px] rounded-full bg-violet/5 blur-xl group-hover:bg-violet/10 transition-colors duration-700 pointer-events-none" />
+            <div className="absolute inset-0 rounded-full border border-white/5 pointer-events-none shadow-[2px_10px_20px_rgb(0,0,0,0.8)]" />
 
             {/* Earth Sphere - Smooth, high-fidelity vector earth with 3D translation map inside and ZERO glowing nodes */}
-            <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-tr from-[#010207] via-[#04081c] to-[#040d3a] relative shadow-[inset_0_4px_25px_rgba(0,0,0,0.95),_inset_0_-10px_35px_rgba(99,102,241,0.18)] flex items-center justify-center">
+            <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-tr from-[#04040a] via-[#090b1f] to-[#16002d] relative shadow-[inset_0_4px_25px_rgb(0,0,0,0.95),_inset_0_-10px_35px_rgb(140,82,255,0.18)] flex items-center justify-center">
               {/* Cinematic glass highlights to look ultra realistic */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.06)_0%,transparent_50%)] pointer-events-none" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(99,102,241,0.1)_0%,transparent_60%)] pointer-events-none" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgb(255,255,255,0.06)_0%,transparent_50%)] pointer-events-none" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgb(140,82,255,0.1)_0%,transparent_60%)] pointer-events-none" />
 
               {/* Multidirectional vector rendering shifting with both rotationX (horizontal) and rotationY (vertical) */}
               <svg
@@ -314,7 +314,7 @@ export default function InteractiveSecretGlobe() {
               >
                 <g
                   fill="none"
-                  stroke="rgba(99, 102, 241, 0.22)"
+                  stroke="rgb(140,82,255, 0.22)"
                   strokeWidth="1"
                 >
                   {/* Grid Lines simulating 3D Latitude/Longitude mesh */}
@@ -327,8 +327,8 @@ export default function InteractiveSecretGlobe() {
 
                 {/* Soft, beautiful vector continents - highly refined and classic */}
                 <g
-                  fill="rgba(99, 102, 241, 0.12)"
-                  stroke="rgba(99, 102, 241, 0.28)"
+                  fill="rgb(140,82,255, 0.12)"
+                  stroke="rgb(140,82,255, 0.28)"
                   strokeWidth="1.2"
                 >
                   {/* Continent Block 1 */}
@@ -354,15 +354,15 @@ export default function InteractiveSecretGlobe() {
               </svg>
 
               {/* Atmospheric glass shading covering the top */}
-              <div className="absolute inset-0 bg-radial from-transparent via-[#030612]/30 to-[#020205] pointer-events-none" />
+              <div className="absolute inset-0 bg-radial from-transparent via-[#04040a]/30 to-[#04040a] pointer-events-none" />
             </div>
 
             {/* Earth Drag Ripple Assist Circle - subtle, clean line */}
-            <div className="absolute inset-[-6px] rounded-full border border-dashed border-cyan-500/10 group-hover:border-cyan-500/25 group-hover:scale-105 transition-all duration-700 pointer-events-none" />
+            <div className="absolute inset-[-6px] rounded-full border border-dashed border-neon/10 group-hover:border-neon/25 group-hover:scale-105 transition-all duration-700 pointer-events-none" />
 
             {/* Small Drag Hint badge, bounces and fades out once the user starts interacting */}
             {!hasInteracted && (
-              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-[#04081c] border border-indigo-500/30 text-[8px] font-mono text-indigo-300 rounded-full px-3 py-1 animate-bounce select-none pointer-events-none tracking-widest whitespace-nowrap shadow-md">
+              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-[#090b1f] border border-violet/30 text-[8px] font-mono text-violet/90 rounded-full px-3 py-1 animate-bounce select-none pointer-events-none tracking-widest whitespace-nowrap shadow-md">
                 <RefreshCw className="w-2.5 h-2.5 animate-spin" /> اسحب الأرض
                 بكل الاتجاهات للملاحة
               </div>
@@ -382,7 +382,7 @@ export default function InteractiveSecretGlobe() {
               }}
               className={`w-2.5 h-2.5 rounded-full transition-all duration-500 ${
                 activeSecret === sec.id
-                  ? "bg-cyan-400 w-7 shadow-[0_0_10px_rgba(6,182,212,0.8)]"
+                  ? "bg-neon/55 w-7 shadow-[0_0_10px_rgb(0,229,212,0.8)]"
                   : "bg-white/10 hover:bg-white/20"
               }`}
               title={`فك تشفير المحطة ${sec.id + 1}`}
@@ -392,7 +392,7 @@ export default function InteractiveSecretGlobe() {
 
         {/* Minimalist tracker status text */}
         <div className="mt-3.5 text-center z-10 select-none">
-          <p className="text-[10px] text-gray-500 font-mono tracking-widest uppercase">
+          <p className="text-[10px] text-white/50 font-mono tracking-widest uppercase">
             مستند سري مفكوك: {activeSecret + 1} من {CLASSIFIED_SECRETS.length} •
             الاتصال المداري آمن آلياً 🔐
           </p>

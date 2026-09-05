@@ -387,7 +387,7 @@ export default function AdminView({ user }: { user: UserData }) {
 
   return (
     <div
-      className="min-h-screen bg-[#020308] text-cyan-50 font-mono p-4 md:p-8 space-y-8 relative overflow-x-hidden"
+      className="min-h-screen bg-[#04040a] text-neon/70 font-mono p-4 md:p-8 space-y-8 relative overflow-x-hidden"
       dir="ltr"
     >
       {/* Background Grid & Scanlines */}
@@ -395,42 +395,42 @@ export default function AdminView({ user }: { user: UserData }) {
         className="absolute inset-0 pointer-events-none opacity-20"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px)",
+            "linear-gradient(rgb(0,212,255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgb(0,212,255, 0.1) 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_0%,#020308_100%)] z-0" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_0%,#04040a_100%)] z-0" />
 
       {/* Header */}
-      <header className="relative z-10 flex flex-col md:flex-row justify-between items-center border-b border-cyan-500/30 pb-6 mb-8 drop-shadow-[0_0_15px_rgba(0,255,255,0.3)]">
+      <header className="relative z-10 flex flex-col md:flex-row justify-between items-center border-b border-neon/30 pb-6 mb-8 drop-shadow-[0_0_15px_rgb(0,212,255,0.3)]">
         <div className="flex items-center gap-4">
           <div className="relative">
-            <Shield className="w-12 h-12 text-cyan-400" />
+            <Shield className="w-12 h-12 text-neon" />
             <div className="absolute inset-0 animate-ping opacity-50">
-              <Shield className="w-12 h-12 text-cyan-400" />
+              <Shield className="w-12 h-12 text-neon" />
             </div>
           </div>
           <div>
-            <h1 className="text-2xl md:text-3xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 drop-shadow-[0_0_10px_rgba(0,255,255,0.8)]">
+            <h1 className="text-2xl md:text-3xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-neon/85 to-neon drop-shadow-[0_0_10px_rgb(0,212,255,0.8)]">
               ORBITX OVERSEER
             </h1>
-            <p className="text-cyan-500/80 text-sm tracking-widest uppercase">
+            <p className="text-neon/80 text-sm tracking-widest uppercase">
               {isAr ? "مركز القيادة والتحكم العام" : "Global Command & Control Hub"}
             </p>
           </div>
         </div>
         <div className="flex items-center gap-6 mt-4 md:mt-0">
           <div className="flex flex-col items-end">
-            <span className="text-xs text-cyan-600 uppercase">{isAr ? "توقيت النظام" : "System Time"}</span>
-            <span className="text-xl font-bold font-mono text-cyan-300">
+            <span className="text-xs text-neon/75 uppercase">{isAr ? "توقيت النظام" : "System Time"}</span>
+            <span className="text-xl font-bold font-mono text-neon/90">
               {new Date().toLocaleTimeString("en-US", { hour12: false })}
             </span>
           </div>
           <div className="flex flex-col items-end">
-            <span className="text-xs text-cyan-600 uppercase">
+            <span className="text-xs text-neon/75 uppercase">
               Admin Clearance
             </span>
-            <span className="text-xl font-bold font-mono text-fuchsia-500">
+            <span className="text-xl font-bold font-mono text-violet">
               LEVEL OMEGA
             </span>
           </div>
@@ -440,46 +440,46 @@ export default function AdminView({ user }: { user: UserData }) {
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-4 gap-6">
         {/* Core System Status */}
         <div className="lg:col-span-1 space-y-6">
-          <div className="bg-[#050B14] border border-cyan-500/30 p-6 rounded-xl shadow-[0_0_30px_rgba(0,255,255,0.1)_inset]">
-            <h3 className="text-cyan-400 font-bold uppercase tracking-widest mb-6 flex items-center gap-2">
+          <div className="bg-[#090b1f] border border-neon/30 p-6 rounded-xl shadow-[0_0_30px_rgb(0,212,255,0.1)_inset]">
+            <h3 className="text-neon font-bold uppercase tracking-widest mb-6 flex items-center gap-2">
               <Server size={18} /> Core Telemetry
             </h3>
             <div className="space-y-4">
-              <div className="flex justify-between items-center border-b border-cyan-500/20 pb-2">
-                <span className="text-cyan-600 uppercase text-xs">
+              <div className="flex justify-between items-center border-b border-neon/20 pb-2">
+                <span className="text-neon/75 uppercase text-xs">
                   System Health
                 </span>
-                <span className="text-green-400 font-bold">{sysHealth}%</span>
+                <span className="text-lemon font-bold">{sysHealth}%</span>
               </div>
-              <div className="flex justify-between items-center border-b border-cyan-500/20 pb-2">
-                <span className="text-cyan-600 uppercase text-xs">
+              <div className="flex justify-between items-center border-b border-neon/20 pb-2">
+                <span className="text-neon/75 uppercase text-xs">
                   Active Sessions
                 </span>
-                <span className="text-cyan-400 font-bold">{activeUsers}</span>
+                <span className="text-neon font-bold">{activeUsers}</span>
               </div>
-              <div className="flex justify-between items-center border-b border-cyan-500/20 pb-2">
-                <span className="text-cyan-600 uppercase text-xs">
+              <div className="flex justify-between items-center border-b border-neon/20 pb-2">
+                <span className="text-neon/75 uppercase text-xs">
                   Total Users
                 </span>
-                <span className="text-blue-400 font-bold">{totalUsers}</span>
+                <span className="text-neon font-bold">{totalUsers}</span>
               </div>
-              <div className="flex justify-between items-center border-b border-cyan-500/20 pb-2">
-                <span className="text-cyan-600 uppercase text-xs">
+              <div className="flex justify-between items-center border-b border-neon/20 pb-2">
+                <span className="text-neon/75 uppercase text-xs">
                   Open Tickets
                 </span>
-                <span className="text-amber-400 font-bold">{openTickets}</span>
+                <span className="text-gold font-bold">{openTickets}</span>
               </div>
-              <div className="flex justify-between items-center border-b border-cyan-500/20 pb-2">
-                <span className="text-cyan-600 uppercase text-xs">
+              <div className="flex justify-between items-center border-b border-neon/20 pb-2">
+                <span className="text-neon/75 uppercase text-xs">
                   Incoming Ideas
                 </span>
-                <span className="text-fuchsia-400 font-bold">{openSuggestions}</span>
+                <span className="text-violet font-bold">{openSuggestions}</span>
               </div>
             </div>
           </div>
 
-          <div className="bg-[#050B14] border border-fuchsia-500/30 p-6 rounded-xl shadow-[0_0_30px_rgba(255,0,255,0.05)_inset]">
-            <h3 className="text-fuchsia-400 font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
+          <div className="bg-[#090b1f] border border-violet/30 p-6 rounded-xl shadow-[0_0_30px_rgb(140,82,255,0.05)_inset]">
+            <h3 className="text-violet font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
               <Activity size={18} /> Server Anomaly Sensor
             </h3>
             <div className="h-40">
@@ -487,37 +487,37 @@ export default function AdminView({ user }: { user: UserData }) {
                 <LineChart data={systemData}>
                   <CartesianGrid
                     strokeDasharray="3 3"
-                    stroke="#00FFFF"
+                    stroke="#00d4ff"
                     opacity={0.1}
                   />
                   <XAxis
                     dataKey="time"
-                    stroke="#00FFFF"
+                    stroke="#00d4ff"
                     opacity={0.5}
                     fontSize={10}
                   />
-                  <YAxis stroke="#00FFFF" opacity={0.5} fontSize={10} />
+                  <YAxis stroke="#00d4ff" opacity={0.5} fontSize={10} />
                   <Tooltip
                     contentStyle={{
-                      backgroundColor: "#050B14",
-                      borderColor: "#00FFFF",
-                      color: "#00FFFF",
+                      backgroundColor: "#090b1f",
+                      borderColor: "#00d4ff",
+                      color: "#00d4ff",
                     }}
                   />
                   <Line
                     type="monotone"
                     dataKey="anomalies"
-                    stroke="#FF00FF"
+                    stroke="#8c52ff"
                     strokeWidth={2}
-                    dot={{ r: 2, fill: "#FF00FF" }}
+                    dot={{ r: 2, fill: "#8c52ff" }}
                   />
                 </LineChart>
               </ResponsiveContainer>
             </div>
           </div>
 
-          <div className="bg-[#050B14] border border-yellow-500/30 p-6 rounded-xl shadow-[0_0_30px_rgba(255,255,0,0.05)_inset]">
-            <h3 className="text-yellow-400 font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
+          <div className="bg-[#090b1f] border border-gold/30 p-6 rounded-xl shadow-[0_0_30px_rgb(212,175,55,0.05)_inset]">
+            <h3 className="text-gold font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
               <Radio size={18} /> {isAr ? "البث العام" : "Global Broadcast"}
             </h3>
             <div className="space-y-4">
@@ -525,17 +525,17 @@ export default function AdminView({ user }: { user: UserData }) {
                 value={announcementText}
                 onChange={(e) => setAnnouncementText(e.target.value)}
                 placeholder={isAr ? "اكتب رسالة البث..." : "Enter broadcast message..."}
-                className="w-full bg-[#020308] border border-yellow-900 rounded p-2 text-yellow-300 focus:outline-none focus:border-yellow-400 font-mono text-xs min-h-[80px]"
+                className="w-full bg-[#04040a] border border-gold/25 rounded p-2 text-gold/90 focus:outline-none focus:border-gold/40 font-mono text-xs min-h-[80px]"
               />
               <button
                 onClick={handleSendAnnouncement}
-                className="w-full bg-yellow-600/20 text-yellow-400 border border-yellow-500 py-2 text-xs font-bold uppercase hover:bg-yellow-500 hover:text-[#020308] transition-all cursor-pointer"
+                className="w-full bg-gold/20 text-gold border border-gold/40 py-2 text-xs font-bold uppercase hover:bg-gold/80 hover:text-[#04040a] transition-all cursor-pointer"
               >
                 Execute Broadcast
               </button>
               <button
                 onClick={handleEmergencyAlert}
-                className="w-full mt-2 bg-red-600/20 text-red-500 border border-red-600 py-2 text-xs font-bold uppercase hover:bg-red-600 hover:text-white transition-all shadow-[0_0_15px_rgba(220,38,38,0.3)] animate-pulse cursor-pointer"
+                className="w-full mt-2 bg-gold/20 text-gold border border-gold/30 py-2 text-xs font-bold uppercase hover:bg-gold hover:text-white transition-all shadow-[0_0_15px_rgb(212,175,55,0.3)] animate-pulse cursor-pointer"
               >
                 TRIGGER EMERGENCY ALERT
               </button>
@@ -544,21 +544,21 @@ export default function AdminView({ user }: { user: UserData }) {
 
           {/* New Cosmic App Updates Deployer Card */}
           <div
-            className="bg-[#050B14] border border-fuchsia-500/30 p-6 rounded-xl shadow-[0_0_30px_rgba(236,72,153,0.05)_inset] space-y-4"
+            className="bg-[#090b1f] border border-violet/30 p-6 rounded-xl shadow-[0_0_30px_rgb(140,82,255,0.05)_inset] space-y-4"
             dir={isAr ? "rtl" : "ltr"}
           >
-            <h3 className={cn("text-fuchsia-400 font-bold tracking-widest flex items-center gap-2 text-sm sm:text-base", isAr ? "text-right justify-end" : "text-left justify-start")}>
+            <h3 className={cn("text-violet font-bold tracking-widest flex items-center gap-2 text-sm sm:text-base", isAr ? "text-right justify-end" : "text-left justify-start")}>
               <span>{isAr ? "بث تحديث جديد للمنصة" : "Broadcast Platform Update"}</span>
-              <Zap size={18} className="text-fuchsia-400 animate-pulse" />
+              <Zap size={18} className="text-violet animate-pulse" />
             </h3>
-            <p className={cn("text-[11px] text-gray-400 border-b border-fuchsia-950 pb-2", isAr ? "text-right" : "text-left")}>
+            <p className={cn("text-[11px] text-white/60 border-b border-violet/25 pb-2", isAr ? "text-right" : "text-left")}>
               {isAr
                 ? "سيظهر هذا التحديث لجميع المستخدمين في منتصف الشاشة ولن يتكرر بمجرد إغلاقه."
                 : "This update will pop up in the center screen for all users, only once."}
             </p>
             <div className={cn("space-y-3", isAr ? "text-right" : "text-left")}>
               <div>
-                <label className="text-fuchsia-300 text-xs font-bold block mb-1">
+                <label className="text-violet/90 text-xs font-bold block mb-1">
                   {isAr ? "عنوان التحديث الرئيسي 🚀" : "Primary Update Title 🚀"}
                 </label>
                 <input
@@ -566,11 +566,11 @@ export default function AdminView({ user }: { user: UserData }) {
                   value={updateTitle}
                   onChange={(e) => setUpdateTitle(e.target.value)}
                   placeholder={isAr ? "مثال: إضافة قسم تحدي الفضاء والمجلس المطور" : "e.g. Added Galactic Space Challenges"}
-                  className={cn("w-full bg-[#020308] border border-fuchsia-900/60 rounded p-2 text-fuchsia-200 focus:outline-none focus:border-fuchsia-500 text-xs font-sans placeholder-gray-600", isAr ? "text-right" : "text-left")}
+                  className={cn("w-full bg-[#04040a] border border-violet/60 rounded p-2 text-violet/80 focus:outline-none focus:border-violet/40 text-xs font-sans placeholder-white/45", isAr ? "text-right" : "text-left")}
                 />
               </div>
               <div>
-                <label className="text-fuchsia-300 text-xs font-bold block mb-1">
+                <label className="text-violet/90 text-xs font-bold block mb-1">
                   {isAr ? "رقم الإصدار والترميز 🏷️" : "Version Number & Code 🏷️"}
                 </label>
                 <input
@@ -578,23 +578,23 @@ export default function AdminView({ user }: { user: UserData }) {
                   value={updateVersion}
                   onChange={(e) => setUpdateVersion(e.target.value)}
                   placeholder={isAr ? "مثال: الإصدار الجديد v2.1.0" : "e.g. New Release v2.1.0"}
-                  className={cn("w-full bg-[#020308] border border-fuchsia-900/60 rounded p-2 text-fuchsia-200 focus:outline-none focus:border-fuchsia-500 text-xs font-sans placeholder-gray-600", isAr ? "text-right" : "text-left")}
+                  className={cn("w-full bg-[#04040a] border border-violet/60 rounded p-2 text-violet/80 focus:outline-none focus:border-violet/40 text-xs font-sans placeholder-white/45", isAr ? "text-right" : "text-left")}
                 />
               </div>
               <div>
-                <label className="text-fuchsia-300 text-xs font-bold block mb-1">
+                <label className="text-violet/90 text-xs font-bold block mb-1">
                   {isAr ? "مميزات التحديث (كل ميزة بسطر جديد) ✨" : "Update Features (one per line) ✨"}
                 </label>
                 <textarea
                   value={updateDescription}
                   onChange={(e) => setUpdateDescription(e.target.value)}
                   placeholder={isAr ? "مثال:\n• قمنا بحل مشكلة الإعجابات المزيفة بالنقاشات\n• أضفنا إمكانية حذف النقاشات والردود فوراً" : "e.g.\n• Added personal task lists\n• Built multi-lingual language support context"}
-                  className={cn("w-full bg-[#020308] border border-fuchsia-900/60 rounded p-2 text-fuchsia-200 focus:outline-none focus:border-fuchsia-500 text-xs font-sans min-h-[120px] leading-relaxed placeholder-gray-600", isAr ? "text-right" : "text-left")}
+                  className={cn("w-full bg-[#04040a] border border-violet/60 rounded p-2 text-violet/80 focus:outline-none focus:border-violet/40 text-xs font-sans min-h-[120px] leading-relaxed placeholder-white/45", isAr ? "text-right" : "text-left")}
                 />
               </div>
               <button
                 onClick={handlePublishUpdate}
-                className="w-full bg-fuchsia-600/25 hover:bg-fuchsia-600 text-fuchsia-300 hover:text-white border border-fuchsia-500 py-2.5 rounded text-xs font-black transition-all shadow-[0_2px_12px_rgba(236,72,153,0.15)] hover:shadow-[0_4px_20px_rgba(236,72,153,0.35)] cursor-pointer"
+                className="w-full bg-violet/25 hover:bg-violet text-violet/90 hover:text-white border border-violet/40 py-2.5 rounded text-xs font-black transition-all shadow-[0_2px_12px_rgb(140,82,255,0.15)] hover:shadow-[0_4px_20px_rgb(140,82,255,0.35)] cursor-pointer"
               >
                 {isAr ? "إطلاق ونشر مصفوفة التحديث 🌌" : "Publish & Launch Update Matrix 🌌"}
               </button>
@@ -603,17 +603,17 @@ export default function AdminView({ user }: { user: UserData }) {
         </div>
 
         {/* Global User Monitoring */}
-        <div className="lg:col-span-3 bg-[#050B14] border border-cyan-500/30 p-6 rounded-xl shadow-[0_0_30px_rgba(0,255,255,0.1)_inset] flex flex-col">
+        <div className="lg:col-span-3 bg-[#090b1f] border border-neon/30 p-6 rounded-xl shadow-[0_0_30px_rgb(0,212,255,0.1)_inset] flex flex-col">
           <div className="flex justify-between items-center mb-6">
-            <h3 className="text-cyan-400 font-bold uppercase tracking-widest flex items-center gap-2">
+            <h3 className="text-neon font-bold uppercase tracking-widest flex items-center gap-2">
               <Crosshair size={18} /> {isAr ? "تتبع الطواقم النشطة" : "Active Personnel Tracking"}
             </h3>
-            <div className="relative border border-cyan-500/50 rounded flex items-center">
-              <Search className="absolute left-2 w-4 h-4 text-cyan-500" />
+            <div className="relative border border-neon/50 rounded flex items-center">
+              <Search className="absolute left-2 w-4 h-4 text-neon" />
               <input
                 type="text"
                 placeholder={isAr ? "معرف التتبع أو الاسم..." : "Trace ID or Handle..."}
-                className="bg-[#020308] text-cyan-300 w-full pl-8 pr-2 py-1 text-sm focus:outline-none focus:shadow-[0_0_10px_rgba(0,255,255,0.5)] transition-all rounded"
+                className="bg-[#04040a] text-neon/90 w-full pl-8 pr-2 py-1 text-sm focus:outline-none focus:shadow-[0_0_10px_rgb(0,212,255,0.5)] transition-all rounded"
               />
             </div>
           </div>
@@ -622,7 +622,7 @@ export default function AdminView({ user }: { user: UserData }) {
             {users.map((u) => (
               <div
                 key={u.uid}
-                className="bg-[#020308] border border-cyan-900 hover:border-cyan-500 transition-colors rounded p-3 flex items-center justify-between group"
+                className="bg-[#04040a] border border-neon/25 hover:border-neon/40 transition-colors rounded p-3 flex items-center justify-between group"
               >
                 <div className="flex items-center gap-4">
                   <div className="relative">
@@ -632,22 +632,22 @@ export default function AdminView({ user }: { user: UserData }) {
                         `https://api.dicebear.com/7.x/bottts/svg?seed=${u.uid}`
                       }
                       alt="Avatar"
-                      className="w-10 h-10 rounded border border-cyan-700 object-cover"
+                      className="w-10 h-10 rounded border border-neon/30 object-cover"
                     />
                     {Date.now() - (u.lastActiveTime || 0) < 300000 && (
-                      <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_lime]"></div>
+                      <div className="absolute -top-1 -right-1 w-3 h-3 bg-lemon/80 rounded-full animate-pulse shadow-[0_0_10px_lime]"></div>
                     )}
                   </div>
                   <div>
-                    <div className="font-bold text-cyan-100 flex items-center gap-2">
+                    <div className="font-bold text-neon/70 flex items-center gap-2">
                       {u.displayName}
-                      <span className="text-[11px] px-1.5 py-0.5 border border-cyan-800 rounded bg-cyan-950 text-cyan-400">
+                      <span className="text-[11px] px-1.5 py-0.5 border border-neon/25 rounded bg-neon text-neon">
                         LVL {u.level}
                       </span>
                     </div>
-                    <div className="text-xs text-cyan-600 font-mono mt-1">
+                    <div className="text-xs text-neon/75 font-mono mt-1">
                       {isAr ? "الحالة:" : "STATUS:"}{" "}
-                      <span className="text-cyan-400">
+                      <span className="text-neon">
                         {u.currentActivity || (isAr ? "خامل" : "IDLE")}
                       </span>
                     </div>
@@ -656,7 +656,7 @@ export default function AdminView({ user }: { user: UserData }) {
                 <div className="flex gap-2">
                   <button
                     onClick={() => setEditingUser(u)}
-                    className="p-2 border border-blue-900 text-blue-500 hover:border-blue-400 hover:text-blue-300 hover:bg-blue-900/30 rounded transition-all"
+                    className="p-2 border border-neon/25 text-neon hover:border-neon/40 hover:text-neon/90 hover:bg-neon/30 rounded transition-all"
                     title={isAr ? "تعديل الصلاحيات" : "Modify Clearance"}
                   >
                     <Settings size={16} />
@@ -666,8 +666,8 @@ export default function AdminView({ user }: { user: UserData }) {
                     className={cn(
                       "p-2 border rounded transition-all",
                       u.banned
-                        ? "border-green-900 text-green-500 hover:bg-green-900/30"
-                        : "border-red-900 text-red-500 hover:bg-red-900/30 hover:border-red-500",
+                        ? "border-lemon/25 text-lemon hover:bg-lemon/30"
+                        : "border-gold/25 text-gold hover:bg-gold/30 hover:border-gold/40",
                     )}
                     title={u.banned ? (isAr ? "إعادة الوصول" : "Restore Access") : isAr ? "إلغاء الوصول" : "Revoke Access"}
                   >
@@ -683,68 +683,68 @@ export default function AdminView({ user }: { user: UserData }) {
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* SIGNALS INTERCEPT (suggestions + support tickets) — temporarily removed from admin panel.
         Signals Intercept card
-        <div className="bg-[#050B14] border border-cyan-500/30 p-6 rounded-xl shadow-[0_0_30px_rgba(0,255,255,0.1)_inset] lg:col-span-2">
-          <h3 className="text-cyan-400 font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
+        <div className="bg-[#090b1f] border border-neon/30 p-6 rounded-xl shadow-[0_0_30px_rgb(0,212,255,0.1)_inset] lg:col-span-2">
+          <h3 className="text-neon font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
             <Radio size={18} /> Signals Intercept (Reports & Ideas)
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="space-y-2 max-h-60 overflow-y-auto custom-scrollbar pr-2">
-              <h4 className="text-[10px] text-orange-600 uppercase border-b border-orange-900 pb-1 mb-2 space-y-2">
+              <h4 className="text-[10px] text-gold/75 uppercase border-b border-gold/25 pb-1 mb-2 space-y-2">
                 Support Tickets
               </h4>
               {supportTickets.map((s) => (
                 <div
                   key={s.id}
-                  className="bg-[#020308] border-l-2 border-l-orange-500 p-2 text-xs flex justify-between group"
+                  className="bg-[#04040a] border-l-2 border-l-gold/40 p-2 text-xs flex justify-between group"
                 >
                   <div className="truncate pr-4 w-full">
-                    <span className="text-orange-300 font-bold block mb-1">
+                    <span className="text-gold/90 font-bold block mb-1">
                       {s.userName} ({s.userEmail})
                     </span>
-                    <span className="text-cyan-300 block whitespace-pre-wrap leading-relaxed">
+                    <span className="text-neon/90 block whitespace-pre-wrap leading-relaxed">
                       {s.text}
                     </span>
                   </div>
                   <button
                     onClick={() => handleDeleteDoc("support_tickets", s.id)}
-                    className="text-red-500 opacity-0 group-hover:opacity-100 transition-opacity ml-2 shrink-0"
+                    className="text-gold opacity-0 group-hover:opacity-100 transition-opacity ml-2 shrink-0"
                   >
                     <Trash2 size={12} />
                   </button>
                 </div>
               ))}
               {supportTickets.length === 0 && (
-                <span className="text-xs text-orange-800">
+                <span className="text-xs text-gold/50">
                   NO SUPPORT TICKETS
                 </span>
               )}
             </div>
 
             <div className="space-y-2 max-h-60 overflow-y-auto custom-scrollbar pr-2">
-              <h4 className="text-[10px] text-cyan-600 uppercase border-b border-cyan-900 pb-1 mb-2 space-y-2">
+              <h4 className="text-[10px] text-neon/75 uppercase border-b border-neon/25 pb-1 mb-2 space-y-2">
                 Suggestions Stream
               </h4>
               {suggestions.map((s) => (
                 <div
                   key={s.id}
-                  className="bg-[#020308] border-l-2 border-l-yellow-500 p-2 text-xs flex flex-col gap-1 group"
+                  className="bg-[#04040a] border-l-2 border-l-gold/40 p-2 text-xs flex flex-col gap-1 group"
                 >
                   <div className="flex justify-between gap-2">
-                    <span className="text-cyan-300 break-words">{s.text}</span>
+                    <span className="text-neon/90 break-words">{s.text}</span>
                     <div className="flex items-center gap-1 shrink-0">
                       <button
                         onClick={() => {
                           setReplySuggestionId(s.id);
                           setSuggestionReplyText(s.reply || "");
                         }}
-                        className="text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity"
+                        className="text-neon opacity-0 group-hover:opacity-100 transition-opacity"
                         title="Reply"
                       >
                         <MessageSquare size={12} />
                       </button>
                       <button
                         onClick={() => handleDeleteDoc("suggestions", s.id)}
-                        className="text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"
+                        className="text-gold opacity-0 group-hover:opacity-100 transition-opacity"
                       >
                         <Trash2 size={12} />
                       </button>
@@ -760,50 +760,50 @@ export default function AdminView({ user }: { user: UserData }) {
                           e.key === "Enter" && handleSuggestionReply(s.id)
                         }
                         placeholder="Reply..."
-                        className="flex-1 bg-[#0a1120] border border-cyan-800 rounded px-2 py-1 text-cyan-200 text-[11px] outline-none focus:border-cyan-500"
+                        className="flex-1 bg-[#090b1f] border border-neon/25 rounded px-2 py-1 text-neon/80 text-[11px] outline-none focus:border-neon/40"
                         dir="ltr"
                       />
                       <button
                         onClick={() => handleSuggestionReply(s.id)}
-                        className="text-[10px] bg-cyan-600 hover:bg-cyan-500 text-white px-2 py-1 rounded font-bold"
+                        className="text-[10px] bg-neon hover:bg-neon/80 text-white px-2 py-1 rounded font-bold"
                       >
                         OK
                       </button>
                     </div>
                   )}
                   {s.reply && (
-                    <div className="mt-1 pl-2 border-l-2 border-cyan-500 text-cyan-400">
+                    <div className="mt-1 pl-2 border-l-2 border-neon/40 text-neon">
                       <span className="font-bold">ADMIN:</span> {s.reply}
                     </div>
                   )}
                 </div>
               ))}
               {suggestions.length === 0 && (
-                <span className="text-xs text-cyan-800">
+                <span className="text-xs text-neon/50">
                   NO INCOMING SIGNALS
                 </span>
               )}
             </div>
             <div className="space-y-2 max-h-60 overflow-y-auto custom-scrollbar pr-2">
-              <h4 className="text-[10px] text-cyan-600 uppercase border-b border-cyan-900 pb-1 mb-2">
+              <h4 className="text-[10px] text-neon/75 uppercase border-b border-neon/25 pb-1 mb-2">
                 Hivemind Nexus (Discussions)
               </h4>
               {discussions.map((d) => (
                 <div
                   key={d.id}
-                  className="bg-[#020308] border-l-2 border-l-blue-500 p-2 text-xs flex justify-between group"
+                  className="bg-[#04040a] border-l-2 border-l-neon/40 p-2 text-xs flex justify-between group"
                 >
-                  <span className="text-cyan-300 truncate pr-4">{d.title}</span>
+                  <span className="text-neon/90 truncate pr-4">{d.title}</span>
                   <button
                     onClick={() => handleDeleteDoc("discussions", d.id)}
-                    className="text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"
+                    className="text-gold opacity-0 group-hover:opacity-100 transition-opacity"
                   >
                     <Trash2 size={12} />
                   </button>
                 </div>
               ))}
               {discussions.length === 0 && (
-                <span className="text-xs text-cyan-800">
+                <span className="text-xs text-neon/50">
                   NO INCOMING SIGNALS
                 </span>
               )}
@@ -813,25 +813,25 @@ export default function AdminView({ user }: { user: UserData }) {
 */}
 
         {/* Error Log — كاميرا الأمان للتطبيق */}
-        <div className="bg-[#050B14] border border-red-500/30 p-6 rounded-xl shadow-[0_0_30px_rgba(255,0,0,0.1)_inset] lg:col-span-2">
+        <div className="bg-[#090b1f] border border-gold/30 p-6 rounded-xl shadow-[0_0_30px_rgb(212,175,55,0.1)_inset] lg:col-span-2">
           <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-            <h3 className="text-red-400 font-bold uppercase tracking-widest flex items-center gap-2">
+            <h3 className="text-gold font-bold uppercase tracking-widest flex items-center gap-2">
               <AlertTriangle size={18} /> {isAr ? "سجل الأخطاء" : "Error Log"}
             </h3>
             <div className="flex items-center gap-2">
-              <span className="text-[10px] text-red-300/60">
+              <span className="text-[10px] text-gold/60">
                 {errorLogs.length} {isAr ? "خطأ مسجّل" : "errors"}
               </span>
               <button
                 onClick={() => window.location.reload()}
-                className="text-[10px] bg-red-600/30 hover:bg-red-500/40 text-red-200 px-2 py-1 rounded font-bold transition-colors"
+                className="text-[10px] bg-gold/30 hover:bg-gold/40 text-gold/80 px-2 py-1 rounded font-bold transition-colors"
               >
                 {isAr ? "تحديث" : "Refresh"}
               </button>
               <button
                 onClick={handleClearErrorLog}
                 disabled={errorLogs.length === 0}
-                className="text-[10px] bg-red-600 hover:bg-red-500 text-white px-2 py-1 rounded font-bold transition-colors disabled:opacity-30"
+                className="text-[10px] bg-gold hover:bg-gold/80 text-white px-2 py-1 rounded font-bold transition-colors disabled:opacity-30"
               >
                 {isAr ? "مسح السجل" : "Clear"}
               </button>
@@ -841,8 +841,8 @@ export default function AdminView({ user }: { user: UserData }) {
           <div className="space-y-2 max-h-96 overflow-y-auto custom-scrollbar pr-1">
             {errorLogs.length === 0 && (
               <div className="text-center py-8">
-                <Shield size={28} className="mx-auto mb-2 text-emerald-500" />
-                <p className="text-emerald-400 text-xs font-bold">
+                <Shield size={28} className="mx-auto mb-2 text-lemon" />
+                <p className="text-lemon text-xs font-bold">
                   {isAr ? "لا أخطاء مسجّلة. النظام يعمل بسلاسة 🚀" : "No errors logged. System running smooth 🚀"}
                 </p>
               </div>
@@ -850,7 +850,7 @@ export default function AdminView({ user }: { user: UserData }) {
             {errorLogs.map((err) => (
               <div
                 key={err.id}
-                className="bg-[#020308] border border-red-900/40 p-3 text-xs group"
+                className="bg-[#04040a] border border-gold/40 p-3 text-xs group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <button
@@ -860,50 +860,50 @@ export default function AdminView({ user }: { user: UserData }) {
                     className="text-left flex-1 min-w-0"
                   >
                     <div className="flex items-center gap-2 flex-wrap mb-1">
-                      <span className="text-[9px] uppercase px-1.5 py-0.5 rounded bg-red-500/20 text-red-300 font-bold">
+                      <span className="text-[9px] uppercase px-1.5 py-0.5 rounded bg-gold/20 text-gold/90 font-bold">
                         {err.source || "unknown"}
                       </span>
                       {err.count > 1 && (
-                        <span className="text-[9px] px-1.5 py-0.5 rounded bg-yellow-500/20 text-yellow-300 font-bold">
+                        <span className="text-[9px] px-1.5 py-0.5 rounded bg-gold/20 text-gold/90 font-bold">
                           ×{err.count}
                         </span>
                       )}
-                      <span className="text-[9px] text-gray-500">
+                      <span className="text-[9px] text-white/50">
                         {formatErrorTime(err.ts)}
                       </span>
                       {err.userName && (
-                        <span className="text-[9px] text-cyan-500 truncate">
+                        <span className="text-[9px] text-neon truncate">
                           {err.userName}
                         </span>
                       )}
                     </div>
-                    <div className="text-red-200 break-words leading-relaxed" dir="ltr">
+                    <div className="text-gold/80 break-words leading-relaxed" dir="ltr">
                       {err.message}
                     </div>
                   </button>
                   <button
                     onClick={() => handleDeleteDoc("errors", err.id)}
-                    className="text-red-500 hover:text-red-400 shrink-0 mt-1"
+                    className="text-gold hover:text-gold shrink-0 mt-1"
                     title={isAr ? "حذف" : "Delete"}
                   >
                     <Trash2 size={13} />
                   </button>
                 </div>
                 {expandedErrorId === err.id && (
-                  <div className="mt-2 pt-2 border-t border-red-900/40 space-y-1">
+                  <div className="mt-2 pt-2 border-t border-gold/40 space-y-1">
                     {err.url && (
-                      <div className="text-[9px] text-gray-500 truncate" dir="ltr">
+                      <div className="text-[9px] text-white/50 truncate" dir="ltr">
                         {err.url}
                       </div>
                     )}
                     {err.uid && (
-                      <div className="text-[9px] text-gray-500 truncate" dir="ltr">
+                      <div className="text-[9px] text-white/50 truncate" dir="ltr">
                         uid: {err.uid}
                       </div>
                     )}
                     {err.stack && (
                       <pre
-                        className="mt-1 p-2 bg-black/40 rounded text-[9px] text-orange-300 overflow-x-auto whitespace-pre-wrap max-h-40 overflow-y-auto custom-scrollbar"
+                        className="mt-1 p-2 bg-black/40 rounded text-[9px] text-gold/90 overflow-x-auto whitespace-pre-wrap max-h-40 overflow-y-auto custom-scrollbar"
                         dir="ltr"
                       >
                         {err.stack}
@@ -911,7 +911,7 @@ export default function AdminView({ user }: { user: UserData }) {
                     )}
                     {err.context && (
                       <pre
-                        className="mt-1 p-2 bg-black/40 rounded text-[9px] text-cyan-300 overflow-x-auto whitespace-pre-wrap max-h-40 overflow-y-auto custom-scrollbar"
+                        className="mt-1 p-2 bg-black/40 rounded text-[9px] text-neon/90 overflow-x-auto whitespace-pre-wrap max-h-40 overflow-y-auto custom-scrollbar"
                         dir="ltr"
                       >
                         {JSON.stringify(err.context, null, 2)}
@@ -925,15 +925,15 @@ export default function AdminView({ user }: { user: UserData }) {
         </div>
 
         {/* Media Surveillance */}
-        <div className="bg-[#050B14] border border-cyan-500/30 p-6 rounded-xl shadow-[0_0_30px_rgba(0,255,255,0.1)_inset]">
-          <h3 className="text-cyan-400 font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
+        <div className="bg-[#090b1f] border border-neon/30 p-6 rounded-xl shadow-[0_0_30px_rgb(0,212,255,0.1)_inset]">
+          <h3 className="text-neon font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
             <Eye size={18} /> {isAr ? "مراقبة الوسائط" : "Media Surveillance"}
           </h3>
           <div className="grid grid-cols-3 gap-2 h-60 overflow-y-auto custom-scrollbar pr-1">
             {exhibitions.map((ex) => (
               <div
                 key={ex.id}
-                className="relative group aspect-square border border-cyan-900 overflow-hidden rounded"
+                className="relative group aspect-square border border-neon/25 overflow-hidden rounded"
               >
                 <img
                   src={ex.url || undefined}
@@ -941,17 +941,17 @@ export default function AdminView({ user }: { user: UserData }) {
                   className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-transparent border-2 border-transparent group-hover:border-cyan-400 pointer-events-none transition-all rounded"></div>
+                <div className="absolute inset-0 bg-transparent border-2 border-transparent group-hover:border-neon/40 pointer-events-none transition-all rounded"></div>
                 <button
                   onClick={() => handleDeleteDoc("exhibitions", ex.id)}
-                  className="absolute top-1 right-1 bg-red-900/80 text-white p-1 rounded opacity-0 group-hover:opacity-100"
+                  className="absolute top-1 right-1 bg-gold/80 text-white p-1 rounded opacity-0 group-hover:opacity-100"
                 >
                   <Trash2 size={12} />
                 </button>
               </div>
             ))}
             {exhibitions.length === 0 && (
-              <span className="text-xs text-cyan-800 col-span-3">
+              <span className="text-xs text-neon/50 col-span-3">
                 {isAr ? "لا يوجد وسائط" : "NO MEDIA DETECTED"}
               </span>
             )}
@@ -967,15 +967,15 @@ export default function AdminView({ user }: { user: UserData }) {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="bg-[#050B14] border border-cyan-400 p-6 rounded-xl shadow-[0_0_50px_rgba(0,255,255,0.2)] w-full max-w-md space-y-4"
+              className="bg-[#090b1f] border border-neon/40 p-6 rounded-xl shadow-[0_0_50px_rgb(0,212,255,0.2)] w-full max-w-md space-y-4"
             >
-              <div className="flex justify-between items-center border-b border-cyan-900 pb-2 mb-4">
-                <h3 className="text-cyan-300 font-bold uppercase tracking-widest">
+              <div className="flex justify-between items-center border-b border-neon/25 pb-2 mb-4">
+                <h3 className="text-neon/90 font-bold uppercase tracking-widest">
                   Override Parameter: {editingUser.displayName}
                 </h3>
                 <button
                   onClick={() => setEditingUser(null)}
-                  className="text-cyan-600 hover:text-cyan-300"
+                  className="text-neon/75 hover:text-neon/90"
                 >
                   <X size={20} />
                 </button>
@@ -983,7 +983,7 @@ export default function AdminView({ user }: { user: UserData }) {
 
               <div className="space-y-3 font-mono text-sm">
                 <div>
-                  <label className="text-cyan-600 text-xs uppercase block mb-1">
+                  <label className="text-neon/75 text-xs uppercase block mb-1">
                     XP Value (Focus Minutes)
                   </label>
                   <input
@@ -995,11 +995,11 @@ export default function AdminView({ user }: { user: UserData }) {
                         xp: parseInt(e.target.value) || 0,
                       })
                     }
-                    className="w-full bg-[#020308] border border-cyan-900 rounded p-2 text-cyan-300 focus:outline-none focus:border-cyan-400"
+                    className="w-full bg-[#04040a] border border-neon/25 rounded p-2 text-neon/90 focus:outline-none focus:border-neon/40"
                   />
                 </div>
                 <div>
-                  <label className="text-cyan-600 text-xs uppercase block mb-1">
+                  <label className="text-neon/75 text-xs uppercase block mb-1">
                     Clearance Level (LVL)
                   </label>
                   <input
@@ -1011,11 +1011,11 @@ export default function AdminView({ user }: { user: UserData }) {
                         level: parseInt(e.target.value) || 1,
                       })
                     }
-                    className="w-full bg-[#020308] border border-cyan-900 rounded p-2 text-cyan-300 focus:outline-none focus:border-cyan-400"
+                    className="w-full bg-[#04040a] border border-neon/25 rounded p-2 text-neon/90 focus:outline-none focus:border-neon/40"
                   />
                 </div>
                 <div>
-                  <label className="text-cyan-600 text-xs uppercase block mb-1">
+                  <label className="text-neon/75 text-xs uppercase block mb-1">
                     Total Focus Sessions
                   </label>
                   <input
@@ -1027,11 +1027,11 @@ export default function AdminView({ user }: { user: UserData }) {
                         totalFocusSessions: parseInt(e.target.value) || 0,
                       })
                     }
-                    className="w-full bg-[#020308] border border-cyan-900 rounded p-2 text-cyan-300 focus:outline-none focus:border-cyan-400"
+                    className="w-full bg-[#04040a] border border-neon/25 rounded p-2 text-neon/90 focus:outline-none focus:border-neon/40"
                   />
                 </div>
                 <div>
-                  <label className="text-cyan-600 text-xs uppercase block mb-1">
+                  <label className="text-neon/75 text-xs uppercase block mb-1">
                     Status Override (Activity)
                   </label>
                   <input
@@ -1043,7 +1043,7 @@ export default function AdminView({ user }: { user: UserData }) {
                         currentActivity: e.target.value,
                       })
                     }
-                    className="w-full bg-[#020308] border border-cyan-900 rounded p-2 text-cyan-300 focus:outline-none focus:border-cyan-400"
+                    className="w-full bg-[#04040a] border border-neon/25 rounded p-2 text-neon/90 focus:outline-none focus:border-neon/40"
                   />
                 </div>
               </div>
@@ -1060,13 +1060,13 @@ export default function AdminView({ user }: { user: UserData }) {
                     );
                     setEditingUser(null);
                   }}
-                  className="flex-1 bg-cyan-600/20 border border-cyan-500 text-cyan-400 py-2 uppercase font-bold hover:bg-cyan-500 hover:text-[#020308] transition-all shadow-[0_0_15px_rgba(0,255,255,0.3)]"
+                  className="flex-1 bg-neon/20 border border-neon/40 text-neon py-2 uppercase font-bold hover:bg-neon/80 hover:text-[#04040a] transition-all shadow-[0_0_15px_rgb(0,212,255,0.3)]"
                 >
                   Execute Protocol
                 </button>
                 <button
                   onClick={() => setEditingUser(null)}
-                  className="px-4 border border-cyan-900 text-cyan-600 hover:border-cyan-500 hover:text-cyan-400 uppercase text-xs transition-all"
+                  className="px-4 border border-neon/25 text-neon/75 hover:border-neon/40 hover:text-neon uppercase text-xs transition-all"
                 >
                   Cancel
                 </button>

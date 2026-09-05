@@ -212,18 +212,18 @@ export default function AnalyticsView({
   return (
     <div className="max-w-6xl mx-auto space-y-6 fade-in pb-20">
       <div className="flex items-center justify-between mb-8">
-        <h2 className="text-3xl font-black font-display text-transparent bg-clip-text bg-gradient-to-l from-indigo-400 to-fuchsia-400">
+        <h2 className="text-3xl font-black font-display text-transparent bg-clip-text bg-gradient-to-l from-violet/85 to-violet/85">
           لوحة الإحصائيات (Analytics)
         </h2>
-        <div className="px-4 py-2 bg-indigo-500/20 text-indigo-400 rounded-xl font-bold border border-indigo-500/30">
+        <div className="px-4 py-2 bg-violet/20 text-violet rounded-xl font-bold border border-violet/30">
           مجموع جلسات التركيز: {user.totalFocusSessions || 0}
         </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-space-dark rounded-3xl p-6 border border-white/10 shadow-xl shadow-indigo-900/10 text-right">
+        <div className="bg-space-dark rounded-3xl p-6 border border-white/10 shadow-xl shadow-violet/10 text-right">
           <h3 className="text-xl font-bold mb-6 text-white flex items-center justify-end gap-2">
-            ساعات التركيز <BarChart3 className="text-indigo-400" />
+            ساعات التركيز <BarChart3 className="text-violet" />
           </h3>
           <div className="h-72 w-full" dir="ltr">
             <ResponsiveContainer width="100%" height="100%">
@@ -231,25 +231,25 @@ export default function AnalyticsView({
                 <CartesianGrid strokeDasharray="3 3" stroke="#ffffff10" />
                 <XAxis
                   dataKey="name"
-                  stroke="#a1a1aa"
+                  stroke="#a7c957"
                   fontSize={12}
                   tickLine={false}
                   axisLine={false}
                 />
                 <YAxis
-                  stroke="#a1a1aa"
+                  stroke="#a7c957"
                   fontSize={12}
                   tickLine={false}
                   axisLine={false}
                 />
                 <Tooltip
                   contentStyle={{
-                    backgroundColor: "#0a0b16",
+                    backgroundColor: "#090b1f",
                     borderRadius: "12px",
-                    border: "1px solid rgba(255,255,255,0.1)",
+                    border: "1px solid rgb(255,255,255,0.1)",
                   }}
                   itemStyle={{
-                    color: "#818cf8",
+                    color: "#8c52ff",
                     display: "flex",
                     flexDirection: "row-reverse",
                     gap: "4px",
@@ -258,9 +258,9 @@ export default function AnalyticsView({
                 <Line
                   type="monotone"
                   dataKey="ساعات التركيز"
-                  stroke="#818cf8"
+                  stroke="#8c52ff"
                   strokeWidth={3}
-                  dot={{ fill: "#818cf8", strokeWidth: 2 }}
+                  dot={{ fill: "#8c52ff", strokeWidth: 2 }}
                   activeDot={{ r: 8 }}
                 />
               </LineChart>
@@ -268,9 +268,9 @@ export default function AnalyticsView({
           </div>
         </div>
 
-        <div className="bg-space-dark rounded-3xl p-6 border border-white/10 shadow-xl shadow-fuchsia-900/10 text-right">
+        <div className="bg-space-dark rounded-3xl p-6 border border-white/10 shadow-xl shadow-violet/10 text-right">
           <h3 className="text-xl font-bold mb-6 text-white flex items-center justify-end gap-2">
-            تصنيفك بين الأصدقاء <Users className="text-fuchsia-400" />
+            تصنيفك بين الأصدقاء <Users className="text-violet" />
           </h3>
           <div className="h-72 w-full" dir="ltr">
             <ResponsiveContainer width="100%" height="100%">
@@ -283,7 +283,7 @@ export default function AnalyticsView({
                 />
                 <XAxis
                   type="number"
-                  stroke="#a1a1aa"
+                  stroke="#a7c957"
                   fontSize={12}
                   tickLine={false}
                   axisLine={false}
@@ -292,7 +292,7 @@ export default function AnalyticsView({
                 <YAxis
                   dataKey="name"
                   type="category"
-                  stroke="#a1a1aa"
+                  stroke="#a7c957"
                   fontSize={12}
                   tickLine={false}
                   axisLine={false}
@@ -301,12 +301,12 @@ export default function AnalyticsView({
                 <Tooltip
                   cursor={{ fill: "#ffffff05" }}
                   contentStyle={{
-                    backgroundColor: "#0a0b16",
+                    backgroundColor: "#090b1f",
                     borderRadius: "12px",
-                    border: "1px solid rgba(255,255,255,0.1)",
+                    border: "1px solid rgb(255,255,255,0.1)",
                   }}
                   itemStyle={{
-                    color: "#e879f9",
+                    color: "#8c52ff",
                     display: "flex",
                     flexDirection: "row-reverse",
                     gap: "4px",
@@ -314,7 +314,7 @@ export default function AnalyticsView({
                 />
                 <Bar
                   dataKey="xp"
-                  fill="#e879f9"
+                  fill="#8c52ff"
                   radius={[0, 4, 4, 0]}
                   barSize={24}
                   name="نقاط الخبرة (XP)"

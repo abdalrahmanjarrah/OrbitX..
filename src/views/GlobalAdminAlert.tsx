@@ -53,8 +53,8 @@ export default function GlobalAdminAlert() {
         className="fixed top-10 left-1/2 -translate-x-1/2 w-full max-w-lg z-[950] px-4"
         dir={isAr ? "rtl" : "ltr"}
       >
-        <div className="bg-red-600/95 backdrop-blur-xl border-2 border-red-400 p-4 rounded-2xl shadow-[0_0_50px_rgba(220,38,38,0.5)] flex items-start gap-4">
-          <div className="p-3 bg-red-900/50 rounded-xl text-red-200 shrink-0 mt-1">
+        <div className="bg-gold/95 backdrop-blur-xl border-2 border-gold/40 p-4 rounded-2xl shadow-[0_0_50px_rgb(212,175,55,0.5)] flex items-start gap-4">
+          <div className="p-3 bg-gold/50 rounded-xl text-gold/80 shrink-0 mt-1">
             <AlertTriangle size={24} className="animate-pulse" />
           </div>
           <div className="flex-1 text-right ltr:text-left">
@@ -65,10 +65,10 @@ export default function GlobalAdminAlert() {
                 className="p-1 hover:bg-white/10 rounded-lg transition-colors"
                 title={isAr ? "إغلاق التنبيه" : "Close Alert"}
               >
-                <X size={20} className="text-red-200" />
+                <X size={20} className="text-gold/80" />
               </button>
             </h3>
-            <p className="text-red-50 text-sm font-medium leading-relaxed">
+            <p className="text-gold/70 text-sm font-medium leading-relaxed">
               {alert.message}
             </p>
           </div>

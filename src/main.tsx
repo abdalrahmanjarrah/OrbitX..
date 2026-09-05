@@ -274,13 +274,13 @@ if (isPopup) {
       justifyContent: 'center',
       alignItems: 'center',
       height: '100vh',
-      backgroundColor: '#0a0b16',
+      backgroundColor: '#090b1f',
       color: '#ffffff',
       fontFamily: 'system-ui, sans-serif',
       textAlign: 'center'
     }}>
       <h2 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '8px' }}>جاري تسجيل الدخول...</h2>
-      <p style={{ fontSize: '14px', color: '#8b8fba' }}>سيتم إغلاق هذه النافذة تلقائياً</p>
+      <p style={{ fontSize: '14px', color: '#8c52ff' }}>سيتم إغلاق هذه النافذة تلقائياً</p>
     </div>
   );
 } else {

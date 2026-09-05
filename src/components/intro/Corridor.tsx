@@ -24,7 +24,7 @@ export function Corridor() {
   const metalMat = useMemo(
     () =>
       new THREE.MeshStandardMaterial({
-        color: '#0d0d1a',
+        color: '#090b1f',
         metalness: 0.92,
         roughness: 0.28,
         envMapIntensity: 0.3,
@@ -35,7 +35,7 @@ export function Corridor() {
   const floorMat = useMemo(
     () =>
       new THREE.MeshStandardMaterial({
-        color: '#0a0a14',
+        color: '#090b1f',
         metalness: 0.85,
         roughness: 0.35,
       }),
@@ -67,7 +67,7 @@ export function Corridor() {
       />
 
       {/* Ambient light inside corridor */}
-      <pointLight position={[0, 2, -5]} intensity={0.3} color="#0a1628" distance={20} />
+      <pointLight position={[0, 2, -5]} intensity={0.3} color="#090b1f" distance={20} />
     </group>
   );
 }

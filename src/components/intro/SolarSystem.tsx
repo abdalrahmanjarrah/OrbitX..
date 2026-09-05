@@ -81,15 +81,15 @@ function Sun() {
         <sphereGeometry args={[2, 32, 32]} />
         <meshStandardMaterial
           map={texture}
-          emissive={new THREE.Color('#ffaa00')}
+          emissive={new THREE.Color('#d4af37')}
           emissiveIntensity={1.5}
           emissiveMap={texture}
         />
       </mesh>
-      <pointLight ref={glowRef} color="#ffcc44" intensity={2} distance={60} decay={0.5} />
+      <pointLight ref={glowRef} color="#d4af37" intensity={2} distance={60} decay={0.5} />
       <mesh>
         <sphereGeometry args={[2.3, 16, 16]} />
-        <meshBasicMaterial color="#ff8800" transparent opacity={0.08} side={THREE.BackSide} />
+        <meshBasicMaterial color="#d4af37" transparent opacity={0.08} side={THREE.BackSide} />
       </mesh>
     </group>
   );
@@ -101,7 +101,7 @@ function OrbitalRings() {
       {PLANETS.map((p) => (
         <mesh key={p.name} rotation={[Math.PI / 2, 0, 0]}>
           <torusGeometry args={[p.distance, 0.005, 8, 64]} />
-          <meshBasicMaterial color="#00f3ff" transparent opacity={0.15} />
+          <meshBasicMaterial color="#00d4ff" transparent opacity={0.15} />
         </mesh>
       ))}
     </group>

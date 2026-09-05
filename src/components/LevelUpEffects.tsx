@@ -20,9 +20,9 @@ interface LevelUpEffectsProps {
 // Confetti particle generator
 function createConfetti(count: number) {
   const colors = [
-    "#6366f1", "#a855f7", "#ec4899", "#f59e0b",
-    "#10b981", "#06b6d4", "#f43f5e", "#eab308",
-    "#8b5cf6", "#14b8a6",
+    "#8c52ff", "#8c52ff", "#8c52ff", "#d4af37",
+    "#00e5d4", "#00e5d4", "#d4af37", "#d4af37",
+    "#8c52ff", "#00e5d4",
   ];
   return Array.from({ length: count }, (_, i) => ({
     id: i,
@@ -151,7 +151,7 @@ export default function LevelUpEffects({ xp, previousXp, userId }: LevelUpEffect
                 >
                   <Star
                     size={s.size}
-                    className="text-amber-400 fill-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.8)]"
+                    className="text-gold fill-gold drop-shadow-[0_0_8px_rgb(212,175,55,0.8)]"
                   />
                 </motion.div>
               ))}
@@ -175,10 +175,10 @@ export default function LevelUpEffects({ xp, previousXp, userId }: LevelUpEffect
               <div className={`absolute inset-0 ${levelInfo.colors.bg} rounded-3xl`} />
 
               {/* Inner content */}
-              <div className="relative m-[2px] bg-[#0a0f25] rounded-[calc(1.5rem-2px)] p-6 md:p-8 text-center overflow-hidden">
+              <div className="relative m-[2px] bg-[#090b1f] rounded-[calc(1.5rem-2px)] p-6 md:p-8 text-center overflow-hidden">
                 {/* Background glow */}
                 <div className="absolute inset-0 pointer-events-none">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-indigo-500/10 rounded-full blur-[80px] animate-pulse" />
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-violet/10 rounded-full blur-[80px] animate-pulse" />
                 </div>
 
                 {/* Icon */}
@@ -205,11 +205,11 @@ export default function LevelUpEffects({ xp, previousXp, userId }: LevelUpEffect
                   className="relative z-10"
                 >
                   <h2 className="text-2xl md:text-3xl font-black font-display text-white mb-1 flex items-center justify-center gap-2">
-                    <Sparkles className="text-amber-400" size={24} />
+                    <Sparkles className="text-gold" size={24} />
                     ترقية جديدة!
-                    <Sparkles className="text-amber-400" size={24} />
+                    <Sparkles className="text-gold" size={24} />
                   </h2>
-                  <p className="text-gray-400 text-sm mb-3">
+                  <p className="text-white/60 text-sm mb-3">
                     {levelInfo.isMilestone
                       ? "إنجاز استثنائي! أنت في طريقك لتصبح أسطورة"
                       : "استمر في التركيز، الطريق لا يزال طويلاً"}
@@ -238,11 +238,11 @@ export default function LevelUpEffects({ xp, previousXp, userId }: LevelUpEffect
                   transition={{ delay: 0.5 }}
                   className="relative z-10 flex items-center justify-center gap-2 text-sm"
                 >
-                  <Zap size={16} className="text-amber-400" />
-                  <span className="text-amber-400 font-bold font-mono">
+                  <Zap size={16} className="text-gold" />
+                  <span className="text-gold font-bold font-mono">
                     +{levelInfo.reward} XP
                   </span>
-                  <span className="text-gray-500">مكافأة الترقية</span>
+                  <span className="text-white/50">مكافأة الترقية</span>
                 </motion.div>
 
                 {/* Milestone badge */}
@@ -251,10 +251,10 @@ export default function LevelUpEffects({ xp, previousXp, userId }: LevelUpEffect
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.7, type: "spring" }}
-                    className="relative z-10 mt-4 inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 border border-amber-500/30 rounded-full"
+                    className="relative z-10 mt-4 inline-flex items-center gap-2 px-4 py-2 bg-gold/10 border border-gold/30 rounded-full"
                   >
-                    <Trophy size={14} className="text-amber-400" />
-                    <span className="text-amber-300 text-xs font-bold">
+                    <Trophy size={14} className="text-gold" />
+                    <span className="text-gold/90 text-xs font-bold">
                       لفل milestone! 🎉
                     </span>
                   </motion.div>
@@ -265,7 +265,7 @@ export default function LevelUpEffects({ xp, previousXp, userId }: LevelUpEffect
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1.5 }}
-                  className="relative z-10 text-[10px] text-gray-600 mt-4 font-mono"
+                  className="relative z-10 text-[10px] text-white/45 mt-4 font-mono"
                 >
                   يُغلق تلقائياً...
                 </motion.p>

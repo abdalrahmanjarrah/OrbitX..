@@ -145,14 +145,14 @@ function StudyRoomChatComponent({
             initial={{ height: 0, opacity: 0, y: 20 }}
             animate={{ height: "500px", opacity: 1, y: 0 }}
             exit={{ height: 0, opacity: 0, y: 20 }}
-            className="w-[min(24rem,calc(100vw-2.5rem))] bg-gradient-to-br from-[#0c0c16]/95 to-[#050510]/95 border border-white/10 rounded-2xl overflow-hidden backdrop-blur-xl shadow-2xl shadow-indigo-900/40 mb-4 flex flex-col"
+            className="w-[min(24rem,calc(100vw-2.5rem))] bg-gradient-to-br from-[#090b1f]/95 to-[#04040a]/95 border border-white/10 rounded-2xl overflow-hidden backdrop-blur-xl shadow-2xl shadow-violet/40 mb-4 flex flex-col"
           >
             <div className="p-4 border-b border-white/5 flex items-center justify-between bg-space-dark/80 shrink-0">
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2">
                   <MessageCircle
                     size={18}
-                    className="text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.5)]"
+                    className="text-neon drop-shadow-[0_0_10px_rgb(0,212,255,0.5)]"
                   />
                   <h3 className="font-bold text-right text-sm tracking-wide">
                     دردشة المحطة
@@ -168,8 +168,8 @@ function StudyRoomChatComponent({
                     className={cn(
                       "text-[10px] px-2 py-1 rounded-full font-bold transition-all",
                       room?.isChatLocked
-                        ? "bg-red-500/20 text-red-400 border border-red-500/30 hover:bg-red-500/30"
-                        : "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/30",
+                        ? "bg-gold/20 text-gold border border-gold/30 hover:bg-gold/30"
+                        : "bg-lemon/20 text-lemon border border-lemon/30 hover:bg-lemon/30",
                     )}
                   >
                     {room?.isChatLocked ? "دردشة مغلقة 🔒" : "دردشة مفتوحة 🔓"}
@@ -178,7 +178,7 @@ function StudyRoomChatComponent({
               </div>
               <button
                 onClick={() => setIsChatDrawerOpen(false)}
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-white/60 hover:text-white transition-colors"
               >
                 <X size={18} />
               </button>
@@ -190,7 +190,7 @@ function StudyRoomChatComponent({
             >
               {chatError && (
                 <div
-                  className="sticky top-0 z-25 text-[11px] text-red-300 font-bold bg-red-950/80 border border-red-500/20 p-2.5 rounded-xl backdrop-blur-sm mb-2 text-center shadow-lg animate-bounce"
+                  className="sticky top-0 z-25 text-[11px] text-gold/90 font-bold bg-gold/80 border border-gold/20 p-2.5 rounded-xl backdrop-blur-sm mb-2 text-center shadow-lg animate-bounce"
                   dir={isAr ? "rtl" : "ltr"}
                 >
                   {chatError}
@@ -198,7 +198,7 @@ function StudyRoomChatComponent({
               )}
               {typingNames.length > 0 && (
                 <div
-                  className={cn("sticky top-0 z-10 text-[10px] text-indigo-400 italic mb-2 animate-pulse bg-space-dark/80 p-1.5 rounded-lg backdrop-blur-sm self-start inline-block", isAr ? "text-right" : "text-left")}
+                  className={cn("sticky top-0 z-10 text-[10px] text-violet italic mb-2 animate-pulse bg-space-dark/80 p-1.5 rounded-lg backdrop-blur-sm self-start inline-block", isAr ? "text-right" : "text-left")}
                   dir={isAr ? "rtl" : "ltr"}
                 >
                   {typingNames.slice(0, 3).join(isAr ? " و " : ", ")}{" "}
@@ -220,7 +220,7 @@ function StudyRoomChatComponent({
                   <div className="flex items-center gap-1.5 mb-1">
                     {(user.role === "admin" || msg.userId === user.uid) &&
                       (deletingMsgId === msg.id ? (
-                        <div className="flex items-center gap-1.5 bg-red-500/10 px-1.5 py-0.5 rounded border border-red-500/30">
+                        <div className="flex items-center gap-1.5 bg-gold/10 px-1.5 py-0.5 rounded border border-gold/30">
                           <button
                             onClick={async () => {
                               try {
@@ -246,13 +246,13 @@ function StudyRoomChatComponent({
                                 setDeletingMsgId(null);
                               }
                             }}
-                            className="text-[11px] text-red-500 hover:text-white font-bold"
+                            className="text-[11px] text-gold hover:text-white font-bold"
                           >
                             نعم
                           </button>
                           <button
                             onClick={() => setDeletingMsgId(null)}
-                            className="text-[11px] text-gray-400"
+                            className="text-[11px] text-white/60"
                           >
                             لا
                           </button>
@@ -260,7 +260,7 @@ function StudyRoomChatComponent({
                       ) : (
                         <button
                           onClick={() => setDeletingMsgId(msg.id)}
-                          className="text-red-500 hover:text-red-400 p-1"
+                          className="text-gold hover:text-gold p-1"
                         >
                           <Trash2 size={10} />
                         </button>
@@ -272,10 +272,10 @@ function StudyRoomChatComponent({
                       className={cn(
                         "flex items-center gap-1.5",
                         msg.userId !== "system" &&
-                          "hover:text-indigo-500 transition-colors",
+                          "hover:text-violet transition-colors",
                       )}
                     >
-                      <span className="text-[11px] text-gray-400 font-medium">
+                      <span className="text-[11px] text-white/60 font-medium">
                         {msg.userName}
                       </span>
                       {msg.userPhoto && (
@@ -291,10 +291,10 @@ function StudyRoomChatComponent({
                     className={cn(
                       "px-4 py-2 rounded-2xl text-sm max-w-[85%] leading-relaxed",
                       msg.userId === user.uid
-                        ? "bg-indigo-500 text-white rounded-tr-none"
-                        : "bg-white/10 text-gray-200 rounded-tl-none",
+                        ? "bg-violet/80 text-white rounded-tr-none"
+                        : "bg-white/10 text-white/80 rounded-tl-none",
                       msg.userId === "system" &&
-                        "bg-red-500/20 text-red-400 border border-red-500/30 italic w-full max-w-full text-center",
+                        "bg-gold/20 text-gold border border-gold/30 italic w-full max-w-full text-center",
                     )}
                   >
                     {msg.text}
@@ -358,12 +358,12 @@ function StudyRoomChatComponent({
                               : (isAr ? "اكتب رسالة..." : "Type a message...")
                         }
                         className={cn(
-                          "w-full bg-space-dark shadow-inner border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-indigo-500/50 text-white placeholder:text-gray-600 transition-all",
+                          "w-full bg-space-dark shadow-inner border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-violet/50 text-white placeholder:text-white/45 transition-all",
                           isAr ? "pl-14 text-right" : "pr-14 text-left",
                           isLockedForMe
                             ? isSpectator
-                              ? "border-indigo-500/20 opacity-70 cursor-not-allowed text-gray-400 placeholder:text-indigo-400/50"
-                              : "border-red-500/30 opacity-70 cursor-not-allowed text-gray-400 placeholder:text-red-400/60"
+                              ? "border-violet/20 opacity-70 cursor-not-allowed text-white/60 placeholder:text-violet/50"
+                              : "border-gold/30 opacity-70 cursor-not-allowed text-white/60 placeholder:text-gold/60"
                             : "border-white/5",
                         )}
                         dir={isAr ? "rtl" : "ltr"}
@@ -375,8 +375,8 @@ function StudyRoomChatComponent({
                           "absolute top-1.5 bottom-1.5 px-3 rounded-lg transition-colors flex items-center justify-center",
                           isAr ? "left-1.5" : "right-1.5",
                           isLockedForMe
-                            ? "bg-red-500/10 text-red-400/50 cursor-not-allowed"
-                            : "bg-indigo-500 hover:bg-indigo-600 text-white",
+                            ? "bg-gold/10 text-gold/50 cursor-not-allowed"
+                            : "bg-violet/80 hover:bg-violet text-white",
                         )}
                       >
                         <Send size={16} />
@@ -395,14 +395,14 @@ function StudyRoomChatComponent({
         className={cn(
           "w-12 h-12 rounded-full flex items-center justify-center transition-all shadow-xl",
           isChatDrawerOpen
-            ? "bg-indigo-600 text-white shadow-indigo-900/50"
-            : "bg-space-dark border border-white/10 text-cyan-400 hover:bg-white/5 shadow-black/50",
+            ? "bg-violet text-white shadow-violet/50"
+            : "bg-space-dark border border-white/10 text-neon hover:bg-white/5 shadow-black/50",
         )}
       >
         <MessageCircle
           size={20}
           className={cn(
-            !isChatDrawerOpen && "drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]",
+            !isChatDrawerOpen && "drop-shadow-[0_0_8px_rgb(0,212,255,0.6)]",
           )}
         />
       </button>

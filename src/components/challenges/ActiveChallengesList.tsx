@@ -157,26 +157,26 @@ export const ActiveChallengesList: React.FC<ActiveChallengesListProps> = ({
   if (activeOnly.length === 0) {
     return (
       <div className="relative overflow-hidden rounded-3xl border border-white/5 bg-space-dark/30 backdrop-blur-md p-12 text-center max-w-2xl mx-auto">
-        <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-rose-500/10 blur-3xl pointer-events-none" />
-        <div className="mx-auto w-16 h-16 rounded-2xl bg-rose-500/10 border border-rose-500/25 flex items-center justify-center text-rose-400 mb-6 shadow-[0_0_30px_rgba(244,63,94,0.15)]">
+        <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-gold/10 blur-3xl pointer-events-none" />
+        <div className="mx-auto w-16 h-16 rounded-2xl bg-gold/10 border border-gold/25 flex items-center justify-center text-gold mb-6 shadow-[0_0_30px_rgb(212,175,55,0.15)]">
           <Swords size={26} className="animate-pulse" />
         </div>
         <h3 className="text-xl font-black text-white mb-3">الساحة خالية — لا توجد نزالات نشطة</h3>
-        <p className="text-gray-400 text-sm max-w-md mx-auto mb-8 leading-relaxed">
+        <p className="text-white/60 text-sm max-w-md mx-auto mb-8 leading-relaxed">
           استدعِ رفيقك وافتح نزال تركيز: كل دقيقة دراسة عادية تتحول لنقطة، وأكثرهم
           تركيزاً عند نهاية المدة يرفع راية الفوز.
         </p>
         <div className="flex flex-wrap lg:flex-nowrap justify-center gap-3">
           <button
             onClick={onStartChallengeClick}
-            className="px-5 py-2.5 bg-gradient-to-l from-rose-500 to-amber-600 hover:from-rose-600 hover:to-amber-700 text-white rounded-xl font-bold text-xs shadow-md transition-all flex items-center gap-2 transform active:scale-95"
+            className="px-5 py-2.5 bg-gradient-to-l from-gold to-gold hover:from-gold hover:to-gold text-white rounded-xl font-bold text-xs shadow-md transition-all flex items-center gap-2 transform active:scale-95"
           >
             <Swords size={13} />
             <span>إطلاق نزال تركيز</span>
           </button>
           <button
             onClick={onInviteFriendClick}
-            className="px-5 py-2.5 bg-white/5 hover:bg-white/10 text-gray-200 border border-white/5 rounded-xl font-bold text-xs transition-all transform active:scale-95"
+            className="px-5 py-2.5 bg-white/5 hover:bg-white/10 text-white/80 border border-white/5 rounded-xl font-bold text-xs transition-all transform active:scale-95"
           >
             استدعاء رائد فضاء جديد
           </button>
@@ -225,25 +225,25 @@ const MainEventDuel: React.FC<{
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
-      className="group relative overflow-hidden rounded-3xl border border-rose-500/15 bg-gradient-to-br from-[#121021] via-[#100d1a] to-[#0a0912] shadow-[0_20px_60px_rgba(244,63,94,0.12)] p-6 md:p-8"
+      className="group relative overflow-hidden rounded-3xl border border-gold/15 bg-gradient-to-br from-[#090b1f] via-[#090b1f] to-[#04040a] shadow-[0_20px_60px_rgb(212,175,55,0.12)] p-6 md:p-8"
     >
       {/* خط طاقة علوي */}
       <div className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r ${
-        d.isExpired ? "from-amber-500 via-orange-400 to-amber-500" : "from-rose-500 via-fuchsia-400 to-amber-500"
+        d.isExpired ? "from-gold via-gold/85 to-gold" : "from-gold via-violet/85 to-gold"
       }`} />
 
       {/* توهجات خلفية */}
-      <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-rose-600/12 blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-16 -left-16 w-64 h-64 rounded-full bg-fuchsia-600/8 blur-3xl pointer-events-none" />
+      <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-gold/12 blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-16 -left-16 w-64 h-64 rounded-full bg-violet/8 blur-3xl pointer-events-none" />
 
       {/* الترويسة */}
       <div className="relative z-10 flex items-center justify-between gap-3 mb-6">
         <div className="flex items-center gap-2">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-500/12 border border-rose-500/30 text-rose-300 text-[11px] font-bold">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold/12 border border-gold/30 text-gold/90 text-[11px] font-bold">
             <Star size={11} className="animate-pulse" />
             المواجهة الكبرى
           </span>
-          <span className={`text-[11px] font-bold ${d.isExpired ? "text-amber-400" : "text-emerald-400"} tracking-wide px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/5 flex items-center gap-1`}>
+          <span className={`text-[11px] font-bold ${d.isExpired ? "text-gold" : "text-lemon"} tracking-wide px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/5 flex items-center gap-1`}>
             {d.isExpired ? (
               <>
                 <Skull size={11} />
@@ -258,8 +258,8 @@ const MainEventDuel: React.FC<{
           </span>
         </div>
 
-        <div className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/5 text-gray-200 text-sm font-mono font-bold">
-          <Timer size={14} className="text-amber-400" />
+        <div className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/5 text-white/80 text-sm font-mono font-bold">
+          <Timer size={14} className="text-gold" />
           <span>{d.isExpired ? "انتهى الوقت" : formatDuration(d.minutesLeft)}</span>
         </div>
       </div>
@@ -272,26 +272,26 @@ const MainEventDuel: React.FC<{
               src={d.myPhoto}
               alt={d.myName}
               referrerPolicy="no-referrer"
-              className="w-16 h-16 md:w-20 md:h-20 rounded-2xl object-cover border-2 border-rose-500/60 shadow-[0_0_30px_rgba(244,63,94,0.3)] group-hover:scale-105 transition-transform"
+              className="w-16 h-16 md:w-20 md:h-20 rounded-2xl object-cover border-2 border-gold/60 shadow-[0_0_30px_rgb(212,175,55,0.3)] group-hover:scale-105 transition-transform"
             />
           ) : (
-            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-rose-500/20 border-2 border-rose-500/60 flex items-center justify-center text-rose-300 font-black text-2xl shadow-[0_0_30px_rgba(244,63,94,0.25)]">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gold/20 border-2 border-gold/60 flex items-center justify-center text-gold/90 font-black text-2xl shadow-[0_0_30px_rgb(212,175,55,0.25)]">
               {d.myInitial}
             </div>
           )}
-          <div className="text-xs text-rose-300 font-bold mt-2 truncate max-w-full">
-            أنت {d.myLead && <span className="text-emerald-400">· متقدم ↑</span>}
+          <div className="text-xs text-gold/90 font-bold mt-2 truncate max-w-full">
+            أنت {d.myLead && <span className="text-lemon">· متقدم ↑</span>}
           </div>
-          <div className="text-4xl md:text-5xl font-black text-white mt-1 font-mono tracking-tight drop-shadow-[0_0_20px_rgba(244,63,94,0.4)]">
-            {d.myXp} <span className="text-lg font-bold text-rose-400/80">د</span>
+          <div className="text-4xl md:text-5xl font-black text-white mt-1 font-mono tracking-tight drop-shadow-[0_0_20px_rgb(212,175,55,0.4)]">
+            {d.myXp} <span className="text-lg font-bold text-gold/80">د</span>
           </div>
         </div>
 
         <div className="col-span-1 flex flex-col items-center justify-center gap-1">
-          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-rose-500/20 to-amber-500/20 border border-rose-500/50 flex items-center justify-center text-rose-400 shadow-[0_0_30px_rgba(244,63,94,0.35)] group-hover:scale-110 group-hover:rotate-12 transition-transform">
+          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gold/20 to-gold/20 border border-gold/50 flex items-center justify-center text-gold shadow-[0_0_30px_rgb(212,175,55,0.35)] group-hover:scale-110 group-hover:rotate-12 transition-transform">
             <Swords size={22} />
           </div>
-          <span className="text-[10px] font-black text-gray-500 tracking-widest">VS</span>
+          <span className="text-[10px] font-black text-white/50 tracking-widest">VS</span>
         </div>
 
         <div className="col-span-3 flex flex-col items-center">
@@ -300,18 +300,18 @@ const MainEventDuel: React.FC<{
               src={d.oppPhoto}
               alt={d.opponentName}
               referrerPolicy="no-referrer"
-              className="w-16 h-16 md:w-20 md:h-20 rounded-2xl object-cover border-2 border-fuchsia-500/60 shadow-[0_0_30px_rgba(217,70,239,0.3)] group-hover:scale-105 transition-transform"
+              className="w-16 h-16 md:w-20 md:h-20 rounded-2xl object-cover border-2 border-violet/60 shadow-[0_0_30px_rgb(140,82,255,0.3)] group-hover:scale-105 transition-transform"
             />
           ) : (
-            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-fuchsia-500/20 border-2 border-fuchsia-500/60 flex items-center justify-center text-fuchsia-300 font-black text-2xl shadow-[0_0_30px_rgba(217,70,239,0.25)]">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-violet/20 border-2 border-violet/60 flex items-center justify-center text-violet/90 font-black text-2xl shadow-[0_0_30px_rgb(140,82,255,0.25)]">
               {d.oppInitial}
             </div>
           )}
-          <div className="text-xs text-fuchsia-300 font-bold mt-2 truncate max-w-full">
-            {d.opponentName} {d.oppLead && <span className="text-emerald-400">· متقدم ↑</span>}
+          <div className="text-xs text-violet/90 font-bold mt-2 truncate max-w-full">
+            {d.opponentName} {d.oppLead && <span className="text-lemon">· متقدم ↑</span>}
           </div>
-          <div className="text-4xl md:text-5xl font-black text-white mt-1 font-mono tracking-tight drop-shadow-[0_0_20px_rgba(217,70,239,0.4)]">
-            {d.oppXp} <span className="text-lg font-bold text-fuchsia-400/80">د</span>
+          <div className="text-4xl md:text-5xl font-black text-white mt-1 font-mono tracking-tight drop-shadow-[0_0_20px_rgb(140,82,255,0.4)]">
+            {d.oppXp} <span className="text-lg font-bold text-violet/80">د</span>
           </div>
         </div>
       </div>
@@ -321,22 +321,22 @@ const MainEventDuel: React.FC<{
         <div className="h-3 rounded-full bg-white/[0.04] flex overflow-hidden border border-white/6">
           <div
             style={{ width: `${d.myPercent}%` }}
-            className="bg-gradient-to-r from-rose-500 to-rose-400 h-full transition-all duration-700 ease-out"
+            className="bg-gradient-to-r from-gold to-gold/85 h-full transition-all duration-700 ease-out"
           />
           <div
             style={{ width: `${d.oppPercent}%` }}
-            className="bg-gradient-to-r from-fuchsia-400 to-fuchsia-300 h-full transition-all duration-700 ease-out"
+            className="bg-gradient-to-r from-violet/85 to-violet/70 h-full transition-all duration-700 ease-out"
           />
         </div>
-        <div className="flex justify-between text-[11px] font-mono font-bold text-gray-500 mt-1.5">
-          <span className="text-rose-300/80">أنت: {d.myXp} د</span>
-          <span className="text-fuchsia-300/80">الخصم: {d.oppXp} د</span>
+        <div className="flex justify-between text-[11px] font-mono font-bold text-white/50 mt-1.5">
+          <span className="text-gold/80">أنت: {d.myXp} د</span>
+          <span className="text-violet/80">الخصم: {d.oppXp} د</span>
         </div>
       </div>
 
       {/* تنبيه التخلف */}
       {d.isBehind && (
-        <div className="relative z-10 flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-400/10 border border-amber-400/25 text-amber-400 text-xs mb-5 animate-pulse">
+        <div className="relative z-10 flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gold/10 border border-gold/25 text-gold text-xs mb-5 animate-pulse">
           <Zap size={14} className="animate-pulse shrink-0" />
           <span>خصمك يتقدم عليك بـ <strong className="font-bold font-mono">{d.behindDiff}</strong> دقيقة! شدة تزيد، البطولة ما بتتنازل 🚀</span>
         </div>
@@ -345,7 +345,7 @@ const MainEventDuel: React.FC<{
       {/* الإجراء */}
       <div className="relative z-10 flex items-center gap-3">
         {!d.isExpired && (
-          <p className="flex-1 text-center py-[13px] text-[11px] font-bold text-rose-300/80 bg-rose-500/5 border border-rose-500/20 rounded-xl">
+          <p className="flex-1 text-center py-[13px] text-[11px] font-bold text-gold/80 bg-gold/5 border border-gold/20 rounded-xl">
             ⚡ كل جلسات تركيزك العادية تتحول تلقائياً لنقاط بهذا النزال
           </p>
         )}
@@ -353,8 +353,8 @@ const MainEventDuel: React.FC<{
           onClick={() => onFinish(challenge)}
           className={`py-[13px] px-6 font-bold text-sm transition-all border rounded-xl cursor-pointer ${
             d.isExpired
-              ? "flex-1 bg-gradient-to-l from-amber-500 to-orange-600 border-amber-500/30 text-white shadow-[0_0_20px_rgba(245,158,11,0.3)] animate-[pulse_2s_infinite] hover:brightness-110 active:scale-95 flex items-center justify-center gap-2"
-              : "bg-white/5 hover:bg-white/10 border-white/5 text-gray-300 active:scale-95 flex items-center justify-center gap-2"
+              ? "flex-1 bg-gradient-to-l from-gold to-gold border-gold/30 text-white shadow-[0_0_20px_rgb(212,175,55,0.3)] animate-[pulse_2s_infinite] hover:brightness-110 active:scale-95 flex items-center justify-center gap-2"
+              : "bg-white/5 hover:bg-white/10 border-white/5 text-white/70 active:scale-95 flex items-center justify-center gap-2"
           }`}
         >
           {d.isExpired ? (
@@ -364,7 +364,7 @@ const MainEventDuel: React.FC<{
             </>
           ) : (
             <>
-              <Skull size={14} className="text-rose-400" />
+              <Skull size={14} className="text-gold" />
               إنهاء النزال الآن
             </>
           )}
@@ -386,14 +386,14 @@ const CompactDuelCard: React.FC<{
     <motion.div
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
-      className="group relative overflow-hidden rounded-2xl border border-white/6 bg-gradient-to-br from-[#0f0e1d] to-[#0a0912] p-4 shadow-xl transition-all duration-300 hover:border-rose-500/30 hover:shadow-[0_10px_35px_rgba(244,63,94,0.15)]"
+      className="group relative overflow-hidden rounded-2xl border border-white/6 bg-gradient-to-br from-[#090b1f] to-[#04040a] p-4 shadow-xl transition-all duration-300 hover:border-gold/30 hover:shadow-[0_10px_35px_rgb(212,175,55,0.15)]"
     >
       <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${
-        d.isExpired ? "from-amber-500 via-orange-400 to-amber-500" : "from-rose-500 via-fuchsia-400 to-rose-500"
+        d.isExpired ? "from-gold via-gold/85 to-gold" : "from-gold via-violet/85 to-gold"
       }`} />
 
       <div className="relative z-10 flex items-center justify-between gap-2 mb-3">
-        <span className={`text-[10px] font-bold ${d.isExpired ? "text-amber-400" : "text-rose-400"} tracking-wide px-2 py-0.5 rounded-full bg-white/[0.03] border border-white/5 flex items-center gap-1`}>
+        <span className={`text-[10px] font-bold ${d.isExpired ? "text-gold" : "text-gold"} tracking-wide px-2 py-0.5 rounded-full bg-white/[0.03] border border-white/5 flex items-center gap-1`}>
           {d.isExpired ? (
             <>
               <Skull size={10} />
@@ -406,8 +406,8 @@ const CompactDuelCard: React.FC<{
             </>
           )}
         </span>
-        <div className="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/[0.03] border border-white/5 text-gray-300 text-[11px] font-mono font-bold">
-          <Timer size={11} className="text-amber-400" />
+        <div className="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/[0.03] border border-white/5 text-white/70 text-[11px] font-mono font-bold">
+          <Timer size={11} className="text-gold" />
           <span>{d.isExpired ? "انتهى" : formatDuration(d.minutesLeft)}</span>
         </div>
       </div>
@@ -417,37 +417,37 @@ const CompactDuelCard: React.FC<{
         <div className="flex items-center gap-2.5 flex-1 min-w-0">
           {d.myPhoto ? (
             <img src={d.myPhoto} alt={d.myName} referrerPolicy="no-referrer"
-              className="w-10 h-10 rounded-xl object-cover border-2 border-rose-500/50 shrink-0" />
+              className="w-10 h-10 rounded-xl object-cover border-2 border-gold/50 shrink-0" />
           ) : (
-            <div className="w-10 h-10 rounded-xl bg-rose-500/20 border-2 border-rose-500/50 flex items-center justify-center text-rose-300 font-black text-sm shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-gold/20 border-2 border-gold/50 flex items-center justify-center text-gold/90 font-black text-sm shrink-0">
               {d.myInitial}
             </div>
           )}
           <div className="min-w-0">
-            <div className="text-[10px] text-rose-300 font-bold truncate">أنت {d.myLead && "↑"}</div>
-            <div className="text-xl font-black text-white font-mono">{d.myXp} <span className="text-[10px] text-rose-400/80">د</span></div>
+            <div className="text-[10px] text-gold/90 font-bold truncate">أنت {d.myLead && "↑"}</div>
+            <div className="text-xl font-black text-white font-mono">{d.myXp} <span className="text-[10px] text-gold/80">د</span></div>
           </div>
         </div>
 
         {/* VS */}
         <div className="flex flex-col items-center shrink-0">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-rose-500/15 to-amber-500/15 border border-rose-500/35 flex items-center justify-center text-rose-400">
+          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gold/15 to-gold/15 border border-gold/35 flex items-center justify-center text-gold">
             <Swords size={13} />
           </div>
-          <span className="text-[8px] font-black text-gray-600 tracking-widest mt-0.5">VS</span>
+          <span className="text-[8px] font-black text-white/45 tracking-widest mt-0.5">VS</span>
         </div>
 
         {/* الخصم */}
         <div className="flex items-center gap-2.5 flex-1 min-w-0 justify-end">
           <div className="min-w-0 text-right">
-            <div className="text-[10px] text-fuchsia-300 font-bold truncate">{d.opponentName} {d.oppLead && "↑"}</div>
-            <div className="text-xl font-black text-white font-mono">{d.oppXp} <span className="text-[10px] text-fuchsia-400/80">د</span></div>
+            <div className="text-[10px] text-violet/90 font-bold truncate">{d.opponentName} {d.oppLead && "↑"}</div>
+            <div className="text-xl font-black text-white font-mono">{d.oppXp} <span className="text-[10px] text-violet/80">د</span></div>
           </div>
           {d.oppPhoto ? (
             <img src={d.oppPhoto} alt={d.opponentName} referrerPolicy="no-referrer"
-              className="w-10 h-10 rounded-xl object-cover border-2 border-fuchsia-500/50 shrink-0" />
+              className="w-10 h-10 rounded-xl object-cover border-2 border-violet/50 shrink-0" />
           ) : (
-            <div className="w-10 h-10 rounded-xl bg-fuchsia-500/20 border-2 border-fuchsia-500/50 flex items-center justify-center text-fuchsia-300 font-black text-sm shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-violet/20 border-2 border-violet/50 flex items-center justify-center text-violet/90 font-black text-sm shrink-0">
               {d.oppInitial}
             </div>
           )}
@@ -457,15 +457,15 @@ const CompactDuelCard: React.FC<{
       {/* شريط قوة صغير */}
       <div className="relative z-10 mt-3">
         <div className="h-1.5 rounded-full bg-white/[0.04] flex overflow-hidden border border-white/5">
-          <div style={{ width: `${d.myPercent}%` }} className="bg-gradient-to-r from-rose-500 to-rose-400 h-full transition-all duration-700" />
-          <div style={{ width: `${d.oppPercent}%` }} className="bg-gradient-to-r from-fuchsia-400 to-fuchsia-300 h-full transition-all duration-700" />
+          <div style={{ width: `${d.myPercent}%` }} className="bg-gradient-to-r from-gold to-gold/85 h-full transition-all duration-700" />
+          <div style={{ width: `${d.oppPercent}%` }} className="bg-gradient-to-r from-violet/85 to-violet/70 h-full transition-all duration-700" />
         </div>
       </div>
 
       {/* زر */}
       <div className="relative z-10 mt-3 flex items-center gap-2">
         {d.isBehind && !d.isExpired && (
-          <span className="flex-1 text-[10px] font-bold text-amber-400 flex items-center gap-1">
+          <span className="flex-1 text-[10px] font-bold text-gold flex items-center gap-1">
             <Zap size={10} className="animate-pulse shrink-0" />
             الخصم +{d.behindDiff}
           </span>
@@ -474,8 +474,8 @@ const CompactDuelCard: React.FC<{
           onClick={() => onFinish(challenge)}
           className={`py-2 px-4 font-bold text-[11px] transition-all border rounded-lg cursor-pointer flex items-center justify-center gap-1.5 ${
             d.isExpired
-              ? "flex-1 bg-gradient-to-l from-amber-500 to-orange-600 border-amber-500/30 text-white shadow-[0_0_14px_rgba(245,158,11,0.25)] animate-[pulse_2s_infinite] hover:brightness-110 active:scale-95"
-              : "bg-white/5 hover:bg-white/10 border-white/5 text-gray-300 active:scale-95"
+              ? "flex-1 bg-gradient-to-l from-gold to-gold border-gold/30 text-white shadow-[0_0_14px_rgb(212,175,55,0.25)] animate-[pulse_2s_infinite] hover:brightness-110 active:scale-95"
+              : "bg-white/5 hover:bg-white/10 border-white/5 text-white/70 active:scale-95"
           }`}
         >
           {d.isExpired ? (
@@ -485,7 +485,7 @@ const CompactDuelCard: React.FC<{
             </>
           ) : (
             <>
-              <Skull size={11} className="text-rose-400" />
+              <Skull size={11} className="text-gold" />
               إنهاء
             </>
           )}

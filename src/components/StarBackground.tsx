@@ -14,7 +14,7 @@ export default function StarBackground() {
   const [stars, setStars] = useState<Star[]>([]);
 
   useEffect(() => {
-    const starColors = ['#ffffff', '#c7d2fe', '#fbcfe8', '#a78bfa'];
+    const starColors = ['#ffffff', '#ffffff', '#ffffff', '#8c52ff'];
     const generatedStars: Star[] = Array.from({ length: 55 }).map((_, i) => ({
       id: i,
       top: `${Math.random() * 100}%`,
@@ -28,28 +28,28 @@ export default function StarBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-[#05050A]">
+    <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-[#04040a]">
       {/* Dynamic Nebulas (radial gradients — no blur filter, no blend mode,
           so they animate purely on the GPU compositor) */}
       <div
         className="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] rounded-full opacity-50 animate-[pulse_8s_ease-in-out_infinite]"
         style={{
           background:
-            "radial-gradient(circle, rgba(139,92,246,0.35) 0%, rgba(139,92,246,0.12) 40%, rgba(139,92,246,0) 70%)"
+            "radial-gradient(circle, rgb(140,82,255,0.35) 0%, rgb(140,82,255,0.12) 40%, rgb(140,82,255,0) 70%)"
         }}
       />
       <div
         className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] rounded-full opacity-50 animate-[pulse_10s_ease-in-out_infinite_reverse]"
         style={{
           background:
-            "radial-gradient(circle, rgba(217,70,239,0.25) 0%, rgba(217,70,239,0.08) 45%, rgba(217,70,239,0) 70%)"
+            "radial-gradient(circle, rgb(140,82,255,0.25) 0%, rgb(140,82,255,0.08) 45%, rgb(140,82,255,0) 70%)"
         }}
       />
       <div
         className="absolute top-[30%] left-[60%] w-[40vw] h-[40vw] rounded-full opacity-40 animate-[pulse_12s_ease-in-out_infinite]"
         style={{
           background:
-            "radial-gradient(circle, rgba(59,130,246,0.25) 0%, rgba(59,130,246,0.08) 45%, rgba(59,130,246,0) 70%)"
+            "radial-gradient(circle, rgb(140,82,255,0.25) 0%, rgb(140,82,255,0.08) 45%, rgb(140,82,255,0) 70%)"
         }}
       />
 
@@ -140,9 +140,9 @@ export default function StarBackground() {
           background-color: #ffffff;
           border-radius: 50%;
           box-shadow: 
-            0 0 22px 10px rgba(255, 255, 255, 1),
-            0 0 40px 18px rgba(199, 210, 254, 0.85),
-            0 0 65px 28px rgba(147, 197, 253, 0.6);
+            0 0 22px 10px rgb(255,255,255, 1),
+            0 0 40px 18px rgb(255,255,255, 0.85),
+            0 0 65px 28px rgb(140,82,255, 0.6);
           z-index: 2;
         }
 
@@ -150,7 +150,7 @@ export default function StarBackground() {
         .meteor-trail {
           height: 3.2px;
           width: 280px;
-          background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.55) 45%, rgba(255, 255, 255, 0) 100%);
+          background: linear-gradient(to right, rgb(255,255,255, 1) 0%, rgb(255,255,255, 0.55) 45%, rgb(255,255,255, 0) 100%);
           margin-left: -1px;
         }
 

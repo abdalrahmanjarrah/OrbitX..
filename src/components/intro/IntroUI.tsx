@@ -39,10 +39,10 @@ export function IntroUI({ onLogin, onGuest, inviterName }: IntroViewProps) {
           transition: 'opacity 0.3s',
         }}
       >
-        <div style={{ fontSize: 28, fontWeight: 900, color: '#00f3ff', letterSpacing: -1 }}>
+        <div style={{ fontSize: 28, fontWeight: 900, color: '#00d4ff', letterSpacing: -1 }}>
           OrbitX
         </div>
-        <div style={{ fontSize: 10, color: '#556677', letterSpacing: 4, marginTop: 2 }}>
+        <div style={{ fontSize: 10, color: '#a7c957', letterSpacing: 4, marginTop: 2 }}>
           DEEP SPACE ACADEMY
         </div>
       </div>
@@ -60,10 +60,10 @@ export function IntroUI({ onLogin, onGuest, inviterName }: IntroViewProps) {
             transition: 'opacity 0.4s',
           }}
         >
-          <div style={{ fontSize: 22, fontWeight: 800, color: '#00f3ff', marginBottom: 8 }}>
+          <div style={{ fontSize: 22, fontWeight: 800, color: '#00d4ff', marginBottom: 8 }}>
             {STATIONS[activeScreen].title}
           </div>
-          <div style={{ fontSize: 13, color: '#88aabb', lineHeight: 1.6 }}>
+          <div style={{ fontSize: 13, color: '#a7c957', lineHeight: 1.6 }}>
             {STATIONS[activeScreen].subtitle}
           </div>
         </div>
@@ -84,10 +84,10 @@ export function IntroUI({ onLogin, onGuest, inviterName }: IntroViewProps) {
           <div style={{ fontSize: 42, fontWeight: 900, color: '#ffffff', letterSpacing: -2 }}>
             OrbitX
           </div>
-          <div style={{ fontSize: 16, color: '#6688aa', marginTop: 12, letterSpacing: 2 }}>
+          <div style={{ fontSize: 16, color: '#8c52ff', marginTop: 12, letterSpacing: 2 }}>
             اسحب للأسفل للاستكشاف
           </div>
-          <div style={{ marginTop: 20, fontSize: 24, color: '#00f3ff', animation: 'bounce 1.5s infinite' }}>
+          <div style={{ marginTop: 20, fontSize: 24, color: '#00d4ff', animation: 'bounce 1.5s infinite' }}>
             ↓
           </div>
         </div>
@@ -109,7 +109,7 @@ export function IntroUI({ onLogin, onGuest, inviterName }: IntroViewProps) {
           style={{
             flex: 1,
             height: 2,
-            background: '#1a2a3a',
+            background: '#16002d',
             borderRadius: 1,
             overflow: 'hidden',
           }}
@@ -118,13 +118,13 @@ export function IntroUI({ onLogin, onGuest, inviterName }: IntroViewProps) {
             style={{
               height: '100%',
               width: `${scrollProgress * 100}%`,
-              background: 'linear-gradient(90deg, #00f3ff, #0088ff)',
+              background: 'linear-gradient(90deg, #00d4ff, #00d4ff)',
               borderRadius: 1,
               transition: 'width 0.1s',
             }}
           />
         </div>
-        <div style={{ fontSize: 10, color: '#445566', minWidth: 32, textAlign: 'right' }}>
+        <div style={{ fontSize: 10, color: '#16002d', minWidth: 32, textAlign: 'right' }}>
           {Math.round(scrollProgress * 100)}%
         </div>
       </div>
@@ -137,11 +137,11 @@ export function IntroUI({ onLogin, onGuest, inviterName }: IntroViewProps) {
           top: 32,
           right: 40,
           pointerEvents: 'auto',
-          background: 'rgba(0,243,255,0.08)',
-          border: '1px solid rgba(0,243,255,0.2)',
+          background: 'rgb(0,212,255,0.08)',
+          border: '1px solid rgb(0,212,255,0.2)',
           borderRadius: 8,
           padding: '8px 14px',
-          color: '#00f3ff',
+          color: '#00d4ff',
           fontSize: 12,
           fontWeight: 600,
           cursor: 'pointer',
@@ -166,11 +166,11 @@ export function IntroUI({ onLogin, onGuest, inviterName }: IntroViewProps) {
           <button
             onClick={onLogin}
             style={{
-              background: 'rgba(0,243,255,0.12)',
-              border: '1px solid rgba(0,243,255,0.3)',
+              background: 'rgb(0,212,255,0.12)',
+              border: '1px solid rgb(0,212,255,0.3)',
               borderRadius: 10,
               padding: '8px 20px',
-              color: '#00f3ff',
+              color: '#00d4ff',
               fontSize: 13,
               fontWeight: 700,
               cursor: 'pointer',
@@ -184,10 +184,10 @@ export function IntroUI({ onLogin, onGuest, inviterName }: IntroViewProps) {
             onClick={onGuest}
             style={{
               background: 'transparent',
-              border: '1px solid rgba(255,255,255,0.1)',
+              border: '1px solid rgb(255,255,255,0.1)',
               borderRadius: 10,
               padding: '8px 16px',
-              color: '#556677',
+              color: '#a7c957',
               fontSize: 12,
               fontWeight: 500,
               cursor: 'pointer',
@@ -206,11 +206,11 @@ export function IntroUI({ onLogin, onGuest, inviterName }: IntroViewProps) {
             position: 'absolute',
             top: 80,
             right: 130,
-            background: 'rgba(0,136,255,0.1)',
-            border: '1px solid rgba(0,136,255,0.2)',
+            background: 'rgb(0,212,255,0.1)',
+            border: '1px solid rgb(0,212,255,0.2)',
             borderRadius: 10,
             padding: '6px 16px',
-            color: '#66aaff',
+            color: '#8c52ff',
             fontSize: 11,
             fontWeight: 500,
           }}

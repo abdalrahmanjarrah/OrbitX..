@@ -11,7 +11,7 @@ interface CorridorScreenProps {
   index: number;
 }
 
-const NEON_COLOR = new THREE.Color('#00f3ff');
+const NEON_COLOR = new THREE.Color('#00d4ff');
 const ACTIVATION_DISTANCE = 12;
 const FULL_BRIGHT_DISTANCE = 5;
 
@@ -60,7 +60,7 @@ export function CorridorScreen({ position, rotation, title, description }: Corri
       {/* Screen frame */}
       <mesh>
         <boxGeometry args={[3.4, 2.2, 0.1]} />
-        <meshStandardMaterial color="#0f1525" metalness={0.9} roughness={0.3} />
+        <meshStandardMaterial color="#090b1f" metalness={0.9} roughness={0.3} />
       </mesh>
 
       {/* Screen surface */}
@@ -68,7 +68,7 @@ export function CorridorScreen({ position, rotation, title, description }: Corri
         <planeGeometry args={[3, 1.8]} />
         <meshStandardMaterial
           ref={materialRef}
-          color="#000a14"
+          color="#04040a"
           emissive={NEON_COLOR}
           emissiveIntensity={0}
           transparent
@@ -82,7 +82,7 @@ export function CorridorScreen({ position, rotation, title, description }: Corri
         ref={titleRef}
         position={[0, 0.5, 0.15]}
         fontSize={0.22}
-        color="#00f3ff"
+        color="#00d4ff"
         anchorX="center"
         anchorY="middle"
         maxWidth={2.6}
@@ -96,7 +96,7 @@ export function CorridorScreen({ position, rotation, title, description }: Corri
         ref={descRef}
         position={[0, -0.1, 0.15]}
         fontSize={0.12}
-        color="#6699aa"
+        color="#a7c957"
         anchorX="center"
         anchorY="middle"
         maxWidth={2.6}
@@ -105,13 +105,13 @@ export function CorridorScreen({ position, rotation, title, description }: Corri
       </Text>
 
       {/* Neon glow light */}
-      <pointLight ref={glowRef} color="#00f3ff" intensity={0} distance={8} position={[0, 0, 1]} />
+      <pointLight ref={glowRef} color="#00d4ff" intensity={0} distance={8} position={[0, 0, 1]} />
 
       {/* Corner accents */}
       {[[-1.5, 1, 0.06], [1.5, 1, 0.06], [-1.5, -1, 0.06], [1.5, -1, 0.06]].map((pos, i) => (
         <mesh key={i} position={pos as [number, number, number]}>
           <boxGeometry args={[0.15, 0.15, 0.02]} />
-          <meshStandardMaterial color="#00f3ff" emissive="#00f3ff" emissiveIntensity={0.5} />
+          <meshStandardMaterial color="#00d4ff" emissive="#00d4ff" emissiveIntensity={0.5} />
         </mesh>
       ))}
     </group>

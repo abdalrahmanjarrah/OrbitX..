@@ -303,11 +303,11 @@ export default function NotificationsDropdown({
           setIsOpen(!isOpen);
           if (!isOpen) markAllRead();
         }}
-        className="tour-step-notifications relative p-2 text-gray-400 hover:text-white transition-colors rounded-full hover:bg-white/5 border border-transparent hover:border-white/10"
+        className="tour-step-notifications relative p-2 text-white/60 hover:text-white transition-colors rounded-full hover:bg-white/5 border border-transparent hover:border-white/10"
       >
         <Bell size={20} />
         {unreadCount > 0 && (
-          <span className="absolute top-0 right-0 w-4 h-4 bg-red-500 rounded-full text-[10px] text-white flex items-center justify-center font-bold">
+          <span className="absolute top-0 right-0 w-4 h-4 bg-gold/80 rounded-full text-[10px] text-white flex items-center justify-center font-bold">
             {unreadCount}
           </span>
         )}
@@ -329,11 +329,11 @@ export default function NotificationsDropdown({
               {globalNotifs.map((n) => (
                 <div
                   key={n.id}
-                  className="p-3 border-b border-indigo-500/30 text-sm bg-indigo-900/20"
+                  className="p-3 border-b border-violet/30 text-sm bg-violet/20"
                 >
                   <div className="flex items-center gap-2 mb-1">
-                    <ShieldAlert size={14} className="text-fuchsia-400" />
-                    <span className="font-bold text-fuchsia-400">
+                    <ShieldAlert size={14} className="text-violet" />
+                    <span className="font-bold text-violet">
                       إعلان إداري
                     </span>
                   </div>
@@ -343,7 +343,7 @@ export default function NotificationsDropdown({
                 </div>
               ))}
               {notifications.length === 0 && globalNotifs.length === 0 ? (
-                <div className="p-4 text-center text-sm text-gray-500">
+                <div className="p-4 text-center text-sm text-white/50">
                   لا توجد إشعارات
                 </div>
               ) : (
@@ -362,18 +362,18 @@ export default function NotificationsDropdown({
                             }
                             className="w-6 h-6 rounded-full"
                           />
-                          <span className="font-bold text-indigo-400">
+                          <span className="font-bold text-violet">
                             {n.senderName}
                           </span>
                         </div>
-                        <p className="text-xs text-gray-300">{n.content}</p>
+                        <p className="text-xs text-white/70">{n.content}</p>
                         <div className="flex gap-2">
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
                               handleAcceptFriendRequest(n);
                             }}
-                            className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white text-[10px] font-bold py-1 rounded-lg transition-colors"
+                            className="flex-1 bg-violet hover:bg-violet text-white text-[10px] font-bold py-1 rounded-lg transition-colors"
                           >
                             قبول
                           </button>
@@ -382,7 +382,7 @@ export default function NotificationsDropdown({
                               e.stopPropagation();
                               handleDeclineFriendRequest(n.id);
                             }}
-                            className="flex-1 bg-white/5 hover:bg-white/10 text-gray-400 text-[10px] font-bold py-1 rounded-lg transition-colors"
+                            className="flex-1 bg-white/5 hover:bg-white/10 text-white/60 text-[10px] font-bold py-1 rounded-lg transition-colors"
                           >
                             إلغاء
                           </button>
@@ -397,20 +397,20 @@ export default function NotificationsDropdown({
                               className="w-6 h-6 rounded-full"
                             />
                           ) : (
-                            <Swords size={14} className="text-amber-400" />
+                            <Swords size={14} className="text-gold" />
                           )}
-                          <span className="font-bold text-amber-400">
+                          <span className="font-bold text-gold">
                             {isAr ? "تحدي دراسي" : "Study Challenge"}
                           </span>
                         </div>
-                        <p className="text-xs text-gray-300">{n.content}</p>
+                        <p className="text-xs text-white/70">{n.content}</p>
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
                             setIsOpen(false);
                             onOpenChallenges?.();
                           }}
-                          className="w-full bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/30 text-amber-300 text-[10px] font-bold py-1.5 rounded-lg transition-colors"
+                          className="w-full bg-gold/20 hover:bg-gold/30 border border-gold/30 text-gold/90 text-[10px] font-bold py-1.5 rounded-lg transition-colors"
                         >
                           عرض التحدي
                         </button>
@@ -418,12 +418,12 @@ export default function NotificationsDropdown({
                     ) : n.type === "support_reply" ? (
                       <div className="space-y-1">
                         <div className="flex items-center gap-2">
-                          <Shield size={14} className="text-emerald-400" />
-                          <span className="font-bold text-emerald-400">
+                          <Shield size={14} className="text-lemon" />
+                          <span className="font-bold text-lemon">
                             {isAr ? "رد الإدارة" : "Admin Reply"}
                           </span>
                         </div>
-                        <p className="text-xs text-gray-300">{n.content}</p>
+                        <p className="text-xs text-white/70">{n.content}</p>
                       </div>
                     ) : (
                       n.content

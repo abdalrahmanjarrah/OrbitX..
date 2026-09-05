@@ -495,10 +495,10 @@ export default function FleetsView({ user }: { user: UserData }) {
         `}</style>
 
         {/* Ambient Space Alliance Header Card */}
-        <div className="relative bg-space-dark/85 rounded-3xl p-8 md:p-10 border border-white/10 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] flex flex-col lg:flex-row items-center justify-between gap-8 mb-10 z-10 select-none bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:32px_32px]">
+        <div className="relative bg-space-dark/85 rounded-3xl p-8 md:p-10 border border-white/10 overflow-hidden shadow-[0_20px_50px_rgb(0,0,0,0.8)] flex flex-col lg:flex-row items-center justify-between gap-8 mb-10 z-10 select-none bg-[linear-gradient(rgb(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgb(255,255,255,0.015)_1px,transparent_1px)] bg-[size:32px_32px]">
           {/* Nebula Glow Backdrops */}
-          <div className="absolute -top-32 -left-32 w-96 h-96 bg-indigo-600/15 rounded-full blur-[140px] pointer-events-none animate-[glow-pulse_8s_infinite_ease-in-out]" />
-          <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-fuchsia-600/15 rounded-full blur-[140px] pointer-events-none animate-[glow-pulse_12s_infinite_ease-in-out]" />
+          <div className="absolute -top-32 -left-32 w-96 h-96 bg-violet/15 rounded-full blur-[140px] pointer-events-none animate-[glow-pulse_8s_infinite_ease-in-out]" />
+          <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-violet/15 rounded-full blur-[140px] pointer-events-none animate-[glow-pulse_12s_infinite_ease-in-out]" />
 
           {/* Radar Sweep Layer */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[480px] border border-white/[0.015] rounded-full pointer-events-none flex items-center justify-center">
@@ -509,17 +509,17 @@ export default function FleetsView({ user }: { user: UserData }) {
               className="absolute inset-0 rounded-full pointer-events-none"
               style={{ animation: "radar-sweep 22s linear infinite" }}
             >
-              <div className="absolute left-1/2 top-0 w-[1px] h-1/2 bg-gradient-to-b from-indigo-500/8 via-transparent to-transparent origin-bottom" />
+              <div className="absolute left-1/2 top-0 w-[1px] h-1/2 bg-gradient-to-b from-violet/8 via-transparent to-transparent origin-bottom" />
             </div>
           </div>
 
           {/* Floating Drift Particles */}
           <div
-            className="absolute w-2 h-2 bg-indigo-400 rounded-full blur-[1px] opacity-10 animate-[particle-drift-1_15s_infinite_ease-in-out]"
+            className="absolute w-2 h-2 bg-violet/55 rounded-full blur-[1px] opacity-10 animate-[particle-drift-1_15s_infinite_ease-in-out]"
             style={{ top: "25%", left: "15%" }}
           />
           <div
-            className="absolute w-1.5 h-1.5 bg-fuchsia-400 rounded-full blur-[1px] opacity-15 animate-[particle-drift-2_22s_infinite_ease-in-out]"
+            className="absolute w-1.5 h-1.5 bg-violet/55 rounded-full blur-[1px] opacity-15 animate-[particle-drift-2_22s_infinite_ease-in-out]"
             style={{ bottom: "30%", left: "40%" }}
           />
           <div
@@ -534,10 +534,10 @@ export default function FleetsView({ user }: { user: UserData }) {
           {/* Left Textual Info Module */}
           <div className="flex flex-col lg:flex-row items-center gap-8 relative z-10 text-center lg:text-right w-full lg:w-auto">
             {/* Immersive Pulsing Rocket Orbiter */}
-            <div className="relative w-32 h-32 flex items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500/10 via-slate-800/20 to-fuchsia-500/10 border border-white/10 shadow-[0_0_40px_rgba(99,102,241,0.18)] shrink-0 select-none">
+            <div className="relative w-32 h-32 flex items-center justify-center rounded-2xl bg-gradient-to-br from-violet/10 via-white/20 to-violet/10 border border-white/10 shadow-[0_0_40px_rgb(140,82,255,0.18)] shrink-0 select-none">
               {/* Outer orbit dots */}
-              <div className="absolute inset-1.5 border border-dashed border-indigo-500/15 rounded-full animate-[spin_55s_linear_infinite]" />
-              <div className="absolute inset-4 border border-dashed border-fuchsia-500/15 rounded-full animate-[spin_35s_linear_infinite_reverse]" />
+              <div className="absolute inset-1.5 border border-dashed border-violet/15 rounded-full animate-[spin_55s_linear_infinite]" />
+              <div className="absolute inset-4 border border-dashed border-violet/15 rounded-full animate-[spin_35s_linear_infinite_reverse]" />
               {/* Centered Rocket with gentle hover drift */}
               <motion.div
                 animate={{ y: [0, -6, 0] }}
@@ -548,31 +548,31 @@ export default function FleetsView({ user }: { user: UserData }) {
                 }}
                 className="relative z-10"
               >
-                <Rocket className="w-14 h-14 text-indigo-400/90 filter drop-shadow-[0_0_15px_rgba(99,102,241,0.55)]" />
+                <Rocket className="w-14 h-14 text-violet/90 filter drop-shadow-[0_0_15px_rgb(140,82,255,0.55)]" />
               </motion.div>
             </div>
 
             <div className="flex-1 space-y-3">
-              <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-l from-indigo-400 via-fuchsia-400 to-indigo-300 flex items-center justify-center lg:justify-start gap-3">
+              <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-l from-violet/85 via-violet/85 to-violet/70 flex items-center justify-center lg:justify-start gap-3">
                 الأساطيل الفضائية
               </h1>
-              <p className="text-gray-300/95 max-w-xl text-sm md:text-base leading-relaxed font-sans">
+              <p className="text-white/95 max-w-xl text-sm md:text-base leading-relaxed font-sans">
                 أنت لست وحدك في هذا الكون المعرفي المهيب. تقدم وانضم إلى نخبة
                 رواد الفضاء، أو أسس أسطولك الخاص لقيادة دفة التطوير، مشاركة
                 التحديات، وتحقيق نقاط الخبرة كقوة موحدة!
               </p>
               {/* Features inline bento specifiers */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-y-2 gap-x-5 text-xs text-gray-400 font-medium">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-y-2 gap-x-5 text-xs text-white/60 font-medium">
                 <span className="flex items-center gap-1.5 bg-white/5 px-2.5 py-1 rounded-md border border-white/5">
-                  <Users size={13} className="text-indigo-400" /> تحالف حتى 10
+                  <Users size={13} className="text-violet" /> تحالف حتى 10
                   أعضاء
                 </span>
                 <span className="flex items-center gap-1.5 bg-white/5 px-2.5 py-1 rounded-md border border-white/5">
-                  <MessageCircle size={13} className="text-fuchsia-400" /> غرف
+                  <MessageCircle size={13} className="text-violet" /> غرف
                   تواصل مدمجة
                 </span>
                 <span className="flex items-center gap-1.5 bg-white/5 px-2.5 py-1 rounded-md border border-white/5">
-                  <Star size={13} className="text-yellow-400" /> منافسة XP
+                  <Star size={13} className="text-gold" /> منافسة XP
                   جماعية
                 </span>
               </div>
@@ -585,12 +585,12 @@ export default function FleetsView({ user }: { user: UserData }) {
               onClick={() => setIsCreating(true)}
               className={cn(
                 "w-full lg:w-auto font-black px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-3 text-base shadow-lg cursor-pointer",
-                "bg-gradient-to-l from-indigo-500 via-indigo-600 to-fuchsia-600 text-white hover:scale-105 hover:shadow-[0_0_30px_rgba(99,102,241,0.5)] border border-indigo-400/30",
+                "bg-gradient-to-l from-violet via-violet to-violet text-white hover:scale-105 hover:shadow-[0_0_30px_rgb(140,82,255,0.5)] border border-violet/30",
               )}
             >
               <Plus size={22} className="animate-pulse" /> تأسيس أسطول جديد
             </button>
-            <span className="text-[10px] text-indigo-400/60 font-mono tracking-wider">
+            <span className="text-[10px] text-violet/60 font-mono tracking-wider">
               المنصة متاحة لجميع رواد الفضاء
             </span>
           </div>
@@ -600,14 +600,14 @@ export default function FleetsView({ user }: { user: UserData }) {
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-space-dark/95 backdrop-blur-xl p-8 rounded-3xl border border-indigo-500/30 shadow-2xl mb-8 relative"
+            className="bg-space-dark/95 backdrop-blur-xl p-8 rounded-3xl border border-violet/30 shadow-2xl mb-8 relative"
           >
             <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
               <span>تأسيس أسطول جديد ✨</span>
             </h3>
             <form onSubmit={handleCreateFleet} className="space-y-4">
               <div>
-                <label className="block text-gray-400 mb-2 font-bold text-sm">
+                <label className="block text-white/60 mb-2 font-bold text-sm">
                   اسم الأسطول
                 </label>
                 <input
@@ -615,12 +615,12 @@ export default function FleetsView({ user }: { user: UserData }) {
                   value={newFleetName}
                   onChange={(e) => setNewFleetName(e.target.value)}
                   maxLength={25}
-                  className="w-full bg-[#05060d] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
+                  className="w-full bg-[#04040a] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-violet/40 transition-colors"
                   placeholder="مثال: رواد التميز..."
                 />
               </div>
               <div>
-                <label className="block text-gray-400 mb-2 font-bold text-sm">
+                <label className="block text-white/60 mb-2 font-bold text-sm">
                   وصف الأسطول (الأهداف والرؤية)
                 </label>
                 <textarea
@@ -628,21 +628,21 @@ export default function FleetsView({ user }: { user: UserData }) {
                   value={newFleetDesc}
                   onChange={(e) => setNewFleetDesc(e.target.value)}
                   maxLength={150}
-                  className="w-full bg-[#05060d] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 h-24 transition-colors resize-none"
+                  className="w-full bg-[#04040a] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-violet/40 h-24 transition-colors resize-none"
                   placeholder="نطمح لأن نكون الأسطول الأول في المجرة..."
                 />
               </div>
               <div className="flex gap-4 pt-2">
                 <button
                   type="submit"
-                  className="flex-1 bg-indigo-500 text-white font-bold py-3 rounded-xl hover:bg-indigo-400 transition-colors"
+                  className="flex-1 bg-violet/80 text-white font-bold py-3 rounded-xl hover:bg-violet/55 transition-colors"
                 >
                   تأسيس الان
                 </button>
                 <button
                   type="button"
                   onClick={() => setIsCreating(false)}
-                  className="px-6 bg-white/5 text-gray-400 font-bold rounded-xl hover:bg-white/10 transition-colors"
+                  className="px-6 bg-white/5 text-white/60 font-bold rounded-xl hover:bg-white/10 transition-colors"
                 >
                   إلغاء
                 </button>
@@ -653,27 +653,27 @@ export default function FleetsView({ user }: { user: UserData }) {
 
         {invitedFleets.length > 0 && (
           <div className="mb-12">
-            <h3 className="text-xl font-bold text-fuchsia-400 mb-4 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-violet mb-4 flex items-center gap-2">
               <Shield size={20} /> دعوات الانضمام
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {invitedFleets.map((fleet) => (
                 <div
                   key={fleet.id}
-                  className="bg-fuchsia-900/10 backdrop-blur-md rounded-3xl p-6 border border-fuchsia-500/20 shadow-lg relative overflow-hidden group hover:border-fuchsia-500/40 transition-all duration-300"
+                  className="bg-violet/10 backdrop-blur-md rounded-3xl p-6 border border-violet/20 shadow-lg relative overflow-hidden group hover:border-violet/40 transition-all duration-300"
                 >
                   <div className="flex justify-between items-start mb-4">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-600 to-fuchsia-600 flex items-center justify-center text-white font-black text-2xl shadow-[0_0_15px_rgba(217,70,239,0.3)]">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet to-violet flex items-center justify-center text-white font-black text-2xl shadow-[0_0_15px_rgb(140,82,255,0.3)]">
                       {fleet.name.charAt(0)}
                     </div>
-                    <div className="flex items-center gap-1.5 text-xs font-bold bg-white/5 border border-white/10 px-3 py-1.5 rounded-full text-indigo-300">
+                    <div className="flex items-center gap-1.5 text-xs font-bold bg-white/5 border border-white/10 px-3 py-1.5 rounded-full text-violet/90">
                       <Users size={14} /> {fleet.members?.length || 0}/10
                     </div>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">
                     {fleet.name}
                   </h3>
-                  <p className="text-gray-400 text-sm h-10 line-clamp-2 mb-4">
+                  <p className="text-white/60 text-sm h-10 line-clamp-2 mb-4">
                     {fleet.description}
                   </p>
 
@@ -681,13 +681,13 @@ export default function FleetsView({ user }: { user: UserData }) {
                     <button
                       onClick={() => handleAcceptInvite(fleet.id)}
                       disabled={fleet.members?.length >= 10}
-                      className="flex-1 py-2 rounded-xl font-bold text-sm bg-fuchsia-500 hover:bg-fuchsia-600 text-white transition-colors disabled:opacity-50"
+                      className="flex-1 py-2 rounded-xl font-bold text-sm bg-violet/80 hover:bg-violet text-white transition-colors disabled:opacity-50"
                     >
                       قبول
                     </button>
                     <button
                       onClick={() => handleRejectInvite(fleet.id)}
-                      className="px-4 py-2 rounded-xl font-bold text-sm bg-white/5 hover:bg-white/10 text-gray-400 transition-colors"
+                      className="px-4 py-2 rounded-xl font-bold text-sm bg-white/5 hover:bg-white/10 text-white/60 transition-colors"
                     >
                       رفض
                     </button>
@@ -705,40 +705,40 @@ export default function FleetsView({ user }: { user: UserData }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.05 }}
-              className="bg-space-dark/85 backdrop-blur-xl rounded-3xl p-6 border border-white/10 hover:border-indigo-500/40 hover:shadow-[0_15px_30px_rgba(99,102,241,0.15)] transition-all duration-300 relative overflow-hidden group shadow-md hover:-translate-y-1"
+              className="bg-space-dark/85 backdrop-blur-xl rounded-3xl p-6 border border-white/10 hover:border-violet/40 hover:shadow-[0_15px_30px_rgb(140,82,255,0.15)] transition-all duration-300 relative overflow-hidden group shadow-md hover:-translate-y-1"
             >
-              <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-l from-indigo-500 via-fuchsia-500 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-l from-violet via-violet to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
 
               <div className="flex justify-between items-start mb-4 relative z-10">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-600 to-fuchsia-600 flex items-center justify-center text-white font-black text-2xl shadow-[0_0_15px_rgba(99,102,241,0.4)]">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet to-violet flex items-center justify-center text-white font-black text-2xl shadow-[0_0_15px_rgb(140,82,255,0.4)]">
                   {fleet.name.charAt(0)}
                 </div>
-                <div className="flex items-center gap-1.5 text-xs font-bold bg-white/5 border border-white/10 px-3 py-1.5 rounded-full text-indigo-300">
+                <div className="flex items-center gap-1.5 text-xs font-bold bg-white/5 border border-white/10 px-3 py-1.5 rounded-full text-violet/90">
                   <Users size={14} /> {fleet.members?.length || 0}/10
                 </div>
               </div>
               <h3 className="text-xl font-bold text-white mb-2 relative z-10">
                 {fleet.name}
               </h3>
-              <p className="text-gray-400 text-sm h-10 line-clamp-2 mb-4 relative z-10">
+              <p className="text-white/60 text-sm h-10 line-clamp-2 mb-4 relative z-10">
                 {fleet.description}
               </p>
 
               <div className="grid grid-cols-2 gap-4 mb-6 relative z-10">
                 <div className="flex flex-col items-center bg-white/[0.03] border border-white/5 rounded-xl py-2 px-1 hover:bg-white/[0.06] transition-colors">
-                  <span className="text-yellow-400 font-black text-lg flex items-center gap-1">
+                  <span className="text-gold font-black text-lg flex items-center gap-1">
                     <Star size={14} /> {fleet.xp}
                   </span>
-                  <span className="text-[10px] text-gray-500 font-medium">
+                  <span className="text-[10px] text-white/50 font-medium">
                     نقاط الخبرة
                   </span>
                 </div>
                 <div className="flex flex-col items-center bg-white/[0.03] border border-white/5 rounded-xl py-2 px-1 hover:bg-white/[0.06] transition-colors">
-                  <span className="text-sky-400 font-black text-lg flex items-center gap-1">
+                  <span className="text-neon font-black text-lg flex items-center gap-1">
                     <Timer size={14} />{" "}
                     {Math.floor((fleet.totalFocusHours || 0) * 10) / 10}
                   </span>
-                  <span className="text-[10px] text-gray-500 font-medium">
+                  <span className="text-[10px] text-white/50 font-medium">
                     ساعات التركيز
                   </span>
                 </div>
@@ -747,7 +747,7 @@ export default function FleetsView({ user }: { user: UserData }) {
               <button
                 onClick={() => handleJoinFleet(fleet.id)}
                 disabled={fleet.members?.length >= 10}
-                className="w-full relative z-10 py-3 rounded-xl bg-space-dark hover:bg-indigo-500 hover:text-white border border-indigo-500/20 hover:border-indigo-500 transition-all font-bold duration-300 disabled:bg-space-dark/50 disabled:text-gray-500 disabled:border-transparent disabled:cursor-not-allowed"
+                className="w-full relative z-10 py-3 rounded-xl bg-space-dark hover:bg-violet/80 hover:text-white border border-violet/20 hover:border-violet/40 transition-all font-bold duration-300 disabled:bg-space-dark/50 disabled:text-white/50 disabled:border-transparent disabled:cursor-not-allowed"
               >
                 {fleet.members?.length >= 10 ? "الأسطول ممتلئ" : "انضم للأسطول"}
               </button>
@@ -756,23 +756,23 @@ export default function FleetsView({ user }: { user: UserData }) {
           {allFleets.length === 0 && !isCreating && (
             <div className="col-span-full py-24 bg-space-dark/70 rounded-3xl border border-transparent flex flex-col items-center justify-center text-center relative overflow-hidden select-none">
               {/* Subtle background circles */}
-              <div className="absolute w-72 h-72 bg-indigo-500/5 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute w-72 h-72 bg-violet/5 rounded-full blur-2xl pointer-events-none" />
               <div className="absolute w-[400px] h-[400px] border border-dashed border-white/[0.02] rounded-full pointer-events-none animate-[spin_60s_linear_infinite]" />
 
               <div className="relative z-10 flex flex-col items-center max-w-md px-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-indigo-500/5 to-slate-800/10 rounded-full flex items-center justify-center mb-6 border border-white/5 shadow-inner">
-                  <Rocket className="w-10 h-10 text-indigo-400/50 animate-bounce" />
+                <div className="w-20 h-20 bg-gradient-to-br from-violet/5 to-white/10 rounded-full flex items-center justify-center mb-6 border border-white/5 shadow-inner">
+                  <Rocket className="w-10 h-10 text-violet/50 animate-bounce" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">
                   المدار خالٍ بالكامل
                 </h3>
-                <p className="text-gray-400/90 text-sm leading-relaxed mb-8">
+                <p className="text-white/90 text-sm leading-relaxed mb-8">
                   لا توجد أساطيل فضائية مسجلة في هذا القطاع حتى الآن. كن البادئ
                   بالخطوة الأولى وأرسل رسالتك التاريخية لتأسيس أول حلف برّاق!
                 </p>
                 <button
                   onClick={() => setIsCreating(true)}
-                  className="px-6 py-3 bg-space-dark hover:bg-indigo-600 hover:text-white text-indigo-400 border border-indigo-500/20 hover:border-indigo-500 font-bold rounded-xl transition-all duration-300"
+                  className="px-6 py-3 bg-space-dark hover:bg-violet hover:text-white text-violet border border-violet/20 hover:border-violet/40 font-bold rounded-xl transition-all duration-300"
                 >
                   تأسيس الأسطول الأول 🚀
                 </button>
@@ -789,13 +789,13 @@ export default function FleetsView({ user }: { user: UserData }) {
       className="max-w-6xl mx-auto space-y-6 fade-in pb-20 mt-8 px-4"
       dir={isAr ? "rtl" : "ltr"}
     >
-      <div className="bg-space-dark/85 backdrop-blur-xl rounded-3xl p-8 border border-white/12 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85)] relative overflow-hidden">
+      <div className="bg-space-dark/85 backdrop-blur-xl rounded-3xl p-8 border border-white/12 shadow-[0_25px_60px_-15px_rgb(0,0,0,0.85)] relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10 pointer-events-none"></div>
-        <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-l from-indigo-500 via-fuchsia-500 to-cyan-500"></div>
+        <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-l from-violet via-violet to-neon"></div>
 
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative z-10">
           <div className="flex items-center gap-6">
-            <div className="w-20 h-20 bg-gradient-to-br from-indigo-600 to-fuchsia-600 rounded-2xl flex items-center justify-center text-4xl font-black text-white shadow-[0_0_30px_rgba(99,102,241,0.5)]">
+            <div className="w-20 h-20 bg-gradient-to-br from-violet to-violet rounded-2xl flex items-center justify-center text-4xl font-black text-white shadow-[0_0_30px_rgb(140,82,255,0.5)]">
               {activeFleet.name.charAt(0)}
             </div>
             <div>
@@ -803,11 +803,11 @@ export default function FleetsView({ user }: { user: UserData }) {
                 <h1 className="text-3xl font-black text-white">
                   {activeFleet.name}
                 </h1>
-                <span className="text-xs bg-indigo-500/20 text-indigo-400 px-3 py-1.5 rounded-full border border-indigo-500/30 whitespace-nowrap">
+                <span className="text-xs bg-violet/20 text-violet px-3 py-1.5 rounded-full border border-violet/30 whitespace-nowrap">
                   أسطولك التعاوني
                 </span>
               </div>
-              <p className="text-gray-400 mt-2 max-w-lg font-sans">
+              <p className="text-white/60 mt-2 max-w-lg font-sans">
                 {activeFleet.description}
               </p>
             </div>
@@ -815,28 +815,28 @@ export default function FleetsView({ user }: { user: UserData }) {
           <div className="flex flex-col items-end gap-3 shrink-0">
             <div className="flex items-center gap-6 bg-white/[0.03] rounded-2xl p-4 border border-white/5 hover:border-white/10 transition-colors duration-300">
               <div className="text-center">
-                <div className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-t from-yellow-500 to-yellow-200">
+                <div className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-t from-gold to-gold/70">
                   {activeFleet.xp}
                 </div>
-                <div className="text-[10px] text-gray-500 uppercase tracking-widest mt-1">
+                <div className="text-[10px] text-white/50 uppercase tracking-widest mt-1">
                   مجموع XP
                 </div>
               </div>
               <div className="w-px h-10 bg-white/10"></div>
               <div className="text-center">
-                <div className="text-2xl font-black text-sky-400">
+                <div className="text-2xl font-black text-neon">
                   {Math.floor((activeFleet.totalFocusHours || 0) * 10) / 10}
                 </div>
-                <div className="text-[10px] text-gray-500 uppercase tracking-widest mt-1">
+                <div className="text-[10px] text-white/50 uppercase tracking-widest mt-1">
                   ساعات التركيز
                 </div>
               </div>
               <div className="w-px h-10 bg-white/10"></div>
               <div className="text-center">
-                <div className="text-2xl font-black text-indigo-400">
+                <div className="text-2xl font-black text-violet">
                   {activeFleet.members?.length || 0}
                 </div>
-                <div className="text-[10px] text-gray-500 uppercase tracking-widest mt-1">
+                <div className="text-[10px] text-white/50 uppercase tracking-widest mt-1">
                   أعضاء
                 </div>
               </div>
@@ -846,25 +846,25 @@ export default function FleetsView({ user }: { user: UserData }) {
                 {!isConfirmingDisband ? (
                   <button
                     onClick={() => setIsConfirmingDisband(true)}
-                    className="text-xs bg-red-500/10 text-red-500 hover:bg-red-500 hover:text-white border border-red-500/30 hover:border-red-500 transition-all font-bold flex items-center gap-2 px-4 py-2 rounded-xl shadow-sm"
+                    className="text-xs bg-gold/10 text-gold hover:bg-gold/80 hover:text-white border border-gold/30 hover:border-gold/40 transition-all font-bold flex items-center gap-2 px-4 py-2 rounded-xl shadow-sm"
                   >
                     <Trash2 size={14} /> تفكيك الأسطول
                   </button>
                 ) : (
-                  <div className="flex flex-col gap-2 bg-red-500/10 p-2 rounded-xl border border-red-500/30">
-                    <div className="text-xs text-red-400 font-bold text-center">
+                  <div className="flex flex-col gap-2 bg-gold/10 p-2 rounded-xl border border-gold/30">
+                    <div className="text-xs text-gold font-bold text-center">
                       هل أنت متأكد نهائياً؟
                     </div>
                     <div className="flex gap-2">
                       <button
                         onClick={handleDisbandFleet}
-                        className="flex-1 text-xs bg-red-500 text-white hover:bg-red-600 transition-all font-bold py-1.5 rounded-lg"
+                        className="flex-1 text-xs bg-gold/80 text-white hover:bg-gold transition-all font-bold py-1.5 rounded-lg"
                       >
                         نعم، فكك
                       </button>
                       <button
                         onClick={() => setIsConfirmingDisband(false)}
-                        className="flex-1 text-xs bg-white/10 text-gray-300 hover:bg-white/20 transition-all font-bold py-1.5 rounded-lg"
+                        className="flex-1 text-xs bg-white/10 text-white/70 hover:bg-white/20 transition-all font-bold py-1.5 rounded-lg"
                       >
                         تراجع
                       </button>
@@ -877,25 +877,25 @@ export default function FleetsView({ user }: { user: UserData }) {
                 {!isConfirmingLeave ? (
                   <button
                     onClick={() => setIsConfirmingLeave(true)}
-                    className="text-xs bg-white/5 hover:bg-red-500/10 text-red-500 transition-all font-bold flex items-center gap-2 px-4 py-2 rounded-xl shadow-sm border border-transparent hover:border-red-500/30"
+                    className="text-xs bg-white/5 hover:bg-gold/10 text-gold transition-all font-bold flex items-center gap-2 px-4 py-2 rounded-xl shadow-sm border border-transparent hover:border-gold/30"
                   >
                     <LogOut size={14} /> مغادرة الأسطول
                   </button>
                 ) : (
-                  <div className="flex flex-col gap-2 bg-red-500/10 p-2 rounded-xl border border-red-500/30">
-                    <div className="text-xs text-red-400 font-bold text-center">
+                  <div className="flex flex-col gap-2 bg-gold/10 p-2 rounded-xl border border-gold/30">
+                    <div className="text-xs text-gold font-bold text-center">
                       متأكد من المغادرة؟
                     </div>
                     <div className="flex gap-2">
                       <button
                         onClick={handleLeaveFleet}
-                        className="flex-1 text-xs bg-red-500 text-white hover:bg-red-600 transition-all font-bold py-1.5 rounded-lg"
+                        className="flex-1 text-xs bg-gold/80 text-white hover:bg-gold transition-all font-bold py-1.5 rounded-lg"
                       >
                         نعم، غادر
                       </button>
                       <button
                         onClick={() => setIsConfirmingLeave(false)}
-                        className="flex-1 text-xs bg-white/10 text-gray-300 hover:bg-white/20 transition-all font-bold py-1.5 rounded-lg"
+                        className="flex-1 text-xs bg-white/10 text-white/70 hover:bg-white/20 transition-all font-bold py-1.5 rounded-lg"
                       >
                         تراجع
                       </button>
@@ -912,7 +912,7 @@ export default function FleetsView({ user }: { user: UserData }) {
         <div className="lg:col-span-2 bg-space-dark/90 backdrop-blur-xl rounded-3xl border border-white/10 flex flex-col min-h-[400px] lg:h-full overflow-hidden shadow-xl">
           <div className="p-5 border-b border-white/10 flex items-center justify-between bg-white/[0.02]">
             <h3 className="text-lg font-bold text-white flex items-center gap-2">
-              <MessageCircle size={20} className="text-fuchsia-400" /> غرفة
+              <MessageCircle size={20} className="text-violet" /> غرفة
               تواصل الأسطول
             </h3>
           </div>
@@ -936,12 +936,12 @@ export default function FleetsView({ user }: { user: UserData }) {
                   className={`flex flex-col gap-1 max-w-[75%] ${msg.userId === user.uid ? "items-start" : "items-end"}`}
                 >
                   <span
-                    className={`text-xs opacity-70 font-bold ${msg.userId === user.uid ? "text-indigo-300" : "text-gray-400"}`}
+                    className={`text-xs opacity-70 font-bold ${msg.userId === user.uid ? "text-violet/90" : "text-white/60"}`}
                   >
                     {msg.userName}
                   </span>
                   <div
-                    className={`rounded-2xl p-4 text-sm shadow-sm leading-relaxed ${msg.userId === user.uid ? "bg-gradient-to-br from-indigo-600 to-indigo-700 text-white rounded-tr-sm" : "bg-[#15162c] border border-white/5 text-gray-200 rounded-tl-sm"}`}
+                    className={`rounded-2xl p-4 text-sm shadow-sm leading-relaxed ${msg.userId === user.uid ? "bg-gradient-to-br from-violet to-violet text-white rounded-tr-sm" : "bg-[#090b1f] border border-white/5 text-white/80 rounded-tl-sm"}`}
                   >
                     {msg.text}
                   </div>
@@ -949,7 +949,7 @@ export default function FleetsView({ user }: { user: UserData }) {
               </div>
             ))}
             {fleetChat.length === 0 && (
-              <div className="flex flex-col items-center justify-center h-full text-gray-500 space-y-4 opacity-50">
+              <div className="flex flex-col items-center justify-center h-full text-white/50 space-y-4 opacity-50">
                 <MessageSquare size={48} />
                 <p className="text-sm">
                   غرفة التواصل تبدو هادئة.. ابدأ المحادثة الآن!
@@ -958,18 +958,18 @@ export default function FleetsView({ user }: { user: UserData }) {
             )}
           </div>
 
-          <div className="p-4 border-t border-white/10 bg-[#070811]">
+          <div className="p-4 border-t border-white/10 bg-[#04040a]">
             <form onSubmit={handleSendFleetMsg} className="flex gap-3">
               <input
                 value={newMsg}
                 onChange={(e) => setNewMsg(e.target.value)}
                 placeholder="أرسل رسالة لطاقم الأسطول..."
-                className="flex-1 bg-white/5 border border-white/10 rounded-2xl px-5 py-3.5 text-white focus:outline-none focus:border-indigo-500 focus:bg-white/10 transition-all text-sm"
+                className="flex-1 bg-white/5 border border-white/10 rounded-2xl px-5 py-3.5 text-white focus:outline-none focus:border-violet/40 focus:bg-white/10 transition-all text-sm"
               />
               <button
                 type="submit"
                 disabled={!newMsg.trim()}
-                className="bg-gradient-to-br from-indigo-500 to-fuchsia-500 hover:from-indigo-400 hover:to-fuchsia-400 disabled:from-white/10 disabled:to-white/10 disabled:text-gray-500 text-white px-5 rounded-2xl transition-all shrink-0 flex items-center justify-center shadow-lg"
+                className="bg-gradient-to-br from-violet to-violet hover:from-violet/85 hover:to-violet/85 disabled:from-white/10 disabled:to-white/10 disabled:text-white/50 text-white px-5 rounded-2xl transition-all shrink-0 flex items-center justify-center shadow-lg"
               >
                 <Send size={20} className="-translate-x-0.5" />
               </button>
@@ -980,9 +980,9 @@ export default function FleetsView({ user }: { user: UserData }) {
         <div className="bg-space-dark/90 backdrop-blur-xl rounded-3xl border border-white/10 p-6 shadow-xl flex flex-col min-h-[300px] lg:h-full">
           <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
             <h3 className="text-lg font-bold text-white flex items-center gap-2">
-              <Shield size={20} className="text-indigo-400" /> طاقم الأسطول
+              <Shield size={20} className="text-violet" /> طاقم الأسطول
             </h3>
-            <span className="text-xs bg-white/10 px-2.5 py-1 rounded-full text-gray-300 font-mono tracking-widest">
+            <span className="text-xs bg-white/10 px-2.5 py-1 rounded-full text-white/70 font-mono tracking-widest">
               {activeFleet.members?.length}/10
             </span>
           </div>
@@ -991,7 +991,7 @@ export default function FleetsView({ user }: { user: UserData }) {
             {fleetMembers.map((m) => (
               <div
                 key={m.uid}
-                className="flex items-center gap-3 p-3 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-indigo-500/30 hover:bg-indigo-500/5 transition-all group"
+                className="flex items-center gap-3 p-3 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-violet/30 hover:bg-violet/5 transition-all group"
               >
                 <img
                   src={
@@ -999,7 +999,7 @@ export default function FleetsView({ user }: { user: UserData }) {
                     `https://api.dicebear.com/7.x/bottts/svg?seed=${m.uid}`
                   }
                   alt=""
-                  className="w-11 h-11 rounded-full border-2 border-white/10 group-hover:border-indigo-400 transition-colors shadow-sm"
+                  className="w-11 h-11 rounded-full border-2 border-white/10 group-hover:border-violet/40 transition-colors shadow-sm"
                   referrerPolicy="no-referrer"
                 />
                 <div className="flex-1 min-w-0">
@@ -1008,20 +1008,20 @@ export default function FleetsView({ user }: { user: UserData }) {
                       {m.displayName}
                     </span>
                     {activeFleet.ownerId === m.uid ? (
-                      <span className="text-[10px] bg-yellow-500/20 text-yellow-500 px-2 py-0.5 rounded-full border border-yellow-500/30 font-bold">
+                      <span className="text-[10px] bg-gold/20 text-gold px-2 py-0.5 rounded-full border border-gold/30 font-bold">
                         مؤسس الأسطول 👑
                       </span>
                     ) : activeFleet.coAdmins?.includes(m.uid) ? (
-                      <span className="text-[10px] bg-indigo-500/20 text-indigo-400 px-2 py-0.5 rounded-full border border-indigo-500/30">
+                      <span className="text-[10px] bg-violet/20 text-violet px-2 py-0.5 rounded-full border border-violet/30">
                         نائب مسؤول
                       </span>
                     ) : null}
                   </div>
                   <div className="flex items-center gap-3 mt-1">
-                    <div className="text-[11px] text-indigo-300 font-medium">
+                    <div className="text-[11px] text-violet/90 font-medium">
                       مستوى {m.level}
                     </div>
-                    <div className="text-[11px] text-yellow-500/80 font-medium flex items-center gap-1">
+                    <div className="text-[11px] text-gold/80 font-medium flex items-center gap-1">
                       <Star size={10} /> {m.xp}
                     </div>
                   </div>
@@ -1031,30 +1031,30 @@ export default function FleetsView({ user }: { user: UserData }) {
                     {activeFleet.coAdmins?.includes(m.uid) ? (
                       <button
                         onClick={() => handleDemoteMember(m.uid)}
-                        className="text-[10px] px-2 py-1 bg-fuchsia-500/10 text-fuchsia-400 hover:bg-fuchsia-500/20 rounded-md transition-colors whitespace-nowrap"
+                        className="text-[10px] px-2 py-1 bg-violet/10 text-violet hover:bg-violet/20 rounded-md transition-colors whitespace-nowrap"
                       >
                         سحب نائب مسؤول
                       </button>
                     ) : (
                       <button
                         onClick={() => handlePromoteMember(m.uid)}
-                        className="text-[10px] px-2 py-1 bg-indigo-500/10 text-indigo-400 hover:bg-indigo-500/20 rounded-md transition-colors whitespace-nowrap"
+                        className="text-[10px] px-2 py-1 bg-violet/10 text-violet hover:bg-violet/20 rounded-md transition-colors whitespace-nowrap"
                       >
                         ترقية لنائب مسؤول
                       </button>
                     )}
                     {kickingMemberId === m.uid ? (
-                      <div className="flex items-center gap-1.5 bg-red-500/10 px-1 py-1 rounded-md border border-red-500/30">
-                        <span className="text-[11px] text-red-500">طرد؟</span>
+                      <div className="flex items-center gap-1.5 bg-gold/10 px-1 py-1 rounded-md border border-gold/30">
+                        <span className="text-[11px] text-gold">طرد؟</span>
                         <button
                           onClick={() => handleKickMember(m.uid)}
-                          className="text-[11px] text-white bg-red-500 px-1.5 py-0.5 rounded"
+                          className="text-[11px] text-white bg-gold/80 px-1.5 py-0.5 rounded"
                         >
                           نعم
                         </button>
                         <button
                           onClick={() => setKickingMemberId(null)}
-                          className="text-[11px] text-gray-400 px-1.5 py-0.5"
+                          className="text-[11px] text-white/60 px-1.5 py-0.5"
                         >
                           لا
                         </button>
@@ -1062,7 +1062,7 @@ export default function FleetsView({ user }: { user: UserData }) {
                     ) : (
                       <button
                         onClick={() => setKickingMemberId(m.uid)}
-                        className="text-[10px] px-2 py-1 bg-red-500/10 text-red-500 hover:bg-red-500/20 rounded-md transition-colors whitespace-nowrap"
+                        className="text-[10px] px-2 py-1 bg-gold/10 text-gold hover:bg-gold/20 rounded-md transition-colors whitespace-nowrap"
                       >
                         طرد
                       </button>

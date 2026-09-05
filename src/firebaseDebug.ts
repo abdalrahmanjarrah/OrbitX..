@@ -742,12 +742,12 @@ function createVisualDiagnosticsPanel() {
         width: 480px;
         height: 100vh;
         z-index: 100000;
-        background: #06070d;
-        border-left: 1px solid #141829;
-        color: #d1d5db;
+        background: #04040a;
+        border-left: 1px solid #090b1f;
+        color: #ffffff;
         font-family: 'JetBrains Mono', ui-monospace, monospace;
         font-size: 11px;
-        box-shadow: -10px 0 35px rgba(0, 0, 0, 0.7);
+        box-shadow: -10px 0 35px rgb(0,0,0, 0.7);
         transition: right 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         display: flex;
         flex-direction: column;
@@ -759,22 +759,22 @@ function createVisualDiagnosticsPanel() {
       }
       .diag-hud-header {
         padding: 14px 18px;
-        background: #090b14;
-        border-bottom: 1px solid #141829;
+        background: #090b1f;
+        border-bottom: 1px solid #090b1f;
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
       .diag-hud-tabs {
         display: flex;
-        background: #0b0e1a;
-        border-bottom: 1px solid #141829;
+        background: #090b1f;
+        border-bottom: 1px solid #090b1f;
       }
       .diag-hud-tab-btn {
         flex: 1;
         background: none;
         border: none;
-        color: #6b7280;
+        color: #a7c957;
         padding: 10px 6px;
         cursor: pointer;
         font-family: inherit;
@@ -786,12 +786,12 @@ function createVisualDiagnosticsPanel() {
         text-transform: uppercase;
       }
       .diag-hud-tab-btn:hover {
-        color: #9ca3af;
+        color: #a7c957;
       }
       .diag-hud-tab-btn.is-active {
-        color: #818cf8;
-        border-bottom-color: #818cf8;
-        background: rgba(129, 140, 248, 0.04);
+        color: #8c52ff;
+        border-bottom-color: #8c52ff;
+        background: rgb(140,82,255, 0.04);
       }
       .diag-hud-tab-content {
         display: none;
@@ -805,8 +805,8 @@ function createVisualDiagnosticsPanel() {
         gap: 14px;
       }
       .diag-metric-card {
-        background: #0a0d17;
-        border: 1px solid #141a30;
+        background: #090b1f;
+        border: 1px solid #090b1f;
         border-radius: 6px;
         padding: 12px;
       }
@@ -816,26 +816,26 @@ function createVisualDiagnosticsPanel() {
         gap: 10px 16px;
       }
       .diag-metric-title {
-        color: #6366f1;
+        color: #8c52ff;
         font-size: 9px;
         font-weight: bold;
         text-transform: uppercase;
         margin-bottom: 8px;
         letter-spacing: 0.5px;
-        border-bottom: 1px solid rgba(99, 102, 241, 0.15);
+        border-bottom: 1px solid rgb(140,82,255, 0.15);
         padding-bottom: 2px;
       }
       .diag-stat-label {
-        color: #9cb3c9;
+        color: #8c52ff;
       }
       .diag-stat-val {
         font-weight: bold;
-        color: #f3f4f6;
+        color: #ffffff;
       }
       .diag-warning-tag {
-        background: rgba(239, 68, 68, 0.1);
-        border: 1px solid rgba(239, 68, 68, 0.3);
-        color: #ef4444;
+        background: rgb(212,175,55, 0.1);
+        border: 1px solid rgb(212,175,55, 0.3);
+        color: #d4af37;
         border-radius: 4px;
         padding: 8px 12px;
         font-size: 10px;
@@ -850,11 +850,11 @@ function createVisualDiagnosticsPanel() {
         line-height: 1.4;
         font-size: 10px;
       }
-      .diag-trace-row-info { background: rgba(59, 130, 246, 0.05); color: #93c5fd; }
-      .diag-trace-row-success { background: rgba(16, 185, 129, 0.05); color: #6ee7b7; }
-      .diag-trace-row-warning { background: rgba(245, 158, 11, 0.06); color: #fde047; }
-      .diag-trace-row-error { background: rgba(239, 68, 68, 0.06); color: #fca5a5; }
-      .diag-trace-row-critical { background: rgba(220, 38, 38, 0.15); color: #f87171; border-left: 2px solid #ef4444; }
+      .diag-trace-row-info { background: rgb(140,82,255, 0.05); color: #8c52ff; }
+      .diag-trace-row-success { background: rgb(0,229,212, 0.05); color: #00e5d4; }
+      .diag-trace-row-warning { background: rgb(212,175,55, 0.06); color: #d4af37; }
+      .diag-trace-row-error { background: rgb(212,175,55, 0.06); color: #d4af37; }
+      .diag-trace-row-critical { background: rgb(212,175,55, 0.15); color: #d4af37; border-left: 2px solid #d4af37; }
       
       .diag-toggle-beacon {
         position: fixed;
@@ -862,8 +862,8 @@ function createVisualDiagnosticsPanel() {
         right: 12px;
         width: 16px;
         height: 16px;
-        background: rgba(99, 102, 241, 0.15);
-        border: 1px solid rgba(99, 102, 241, 0.4);
+        background: rgb(140,82,255, 0.15);
+        border: 1px solid rgb(140,82,255, 0.4);
         border-radius: 50%;
         cursor: pointer;
         z-index: 99999;
@@ -873,21 +873,21 @@ function createVisualDiagnosticsPanel() {
         transition: all 0.25s ease;
       }
       .diag-toggle-beacon:hover {
-        background: rgba(99, 102, 241, 0.5);
+        background: rgb(140,82,255, 0.5);
         transform: scale(1.15);
       }
       .diag-toggle-beacon-pulse {
         width: 8px;
         height: 8px;
         border-radius: 50%;
-        background: #818cf8;
+        background: #8c52ff;
       }
       .diag-toggle-beacon.has-issue {
-        background: rgba(239, 68, 68, 0.15);
-        border: 1px solid rgba(239, 68, 68, 0.6);
+        background: rgb(212,175,55, 0.15);
+        border: 1px solid rgb(212,175,55, 0.6);
       }
       .diag-toggle-beacon.has-issue .diag-toggle-beacon-pulse {
-        background: #f87171;
+        background: #d4af37;
         animation: diag-pulse 0.8s infinite alternate;
       }
       @keyframes diag-pulse {
@@ -912,10 +912,10 @@ function createVisualDiagnosticsPanel() {
   panel.className = "diag-hud-overlay";
   panel.innerHTML = `
     <div class="diag-hud-header">
-      <div style="font-weight: bold; color: #818cf8; font-size: 11.5px; display: flex; align-items: center; gap: 8px;">
+      <div style="font-weight: bold; color: #8c52ff; font-size: 11.5px; display: flex; align-items: center; gap: 8px;">
         <span>🛸 METRIC OBSERVABILITY HUD</span>
       </div>
-      <button id="diag-close-btn" style="background:none; border:none; color: #6b7280; cursor: pointer; font-size: 18px; hover:color:white;">&times;</button>
+      <button id="diag-close-btn" style="background:none; border:none; color: #a7c957; cursor: pointer; font-size: 18px; hover:color:white;">&times;</button>
     </div>
     
     <!-- Collapsible Tabs Navigation -->
@@ -934,8 +934,8 @@ function createVisualDiagnosticsPanel() {
       <div class="diag-metric-card">
         <div class="diag-metric-title">Diagnostic Metrics</div>
         <div class="diag-metric-group">
-          <div><span class="diag-stat-label">Instance ID:</span> <span class="diag-stat-val" style="color: #6366f1;" id="field-instance-id">-</span></div>
-          <div><span class="diag-stat-label">Multi-tab Active:</span> <span class="diag-stat-val" id="field-multi-tab" style="color:#10b981;">No</span></div>
+          <div><span class="diag-stat-label">Instance ID:</span> <span class="diag-stat-val" style="color: #8c52ff;" id="field-instance-id">-</span></div>
+          <div><span class="diag-stat-label">Multi-tab Active:</span> <span class="diag-stat-val" id="field-multi-tab" style="color:#00e5d4;">No</span></div>
           <div><span class="diag-stat-label">Network RTT:</span> <span class="diag-stat-val" id="field-rtt">-</span></div>
           <div><span class="diag-stat-label">Conn State:</span> <span class="diag-stat-val" id="field-conn-state">-</span></div>
           <div><span class="diag-stat-label">System Skew:</span> <span class="diag-stat-val" id="field-skew">-</span></div>
@@ -956,9 +956,9 @@ function createVisualDiagnosticsPanel() {
       
       <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">
         <span class="diag-metric-title" style="margin: 0; border: none; padding: 0;">Stream Debug Trace</span>
-        <button id="diag-clear-logs" style="background: none; border: none; font-size: 9px; color: #6366f1; cursor: pointer; text-decoration: underline;">Clear</button>
+        <button id="diag-clear-logs" style="background: none; border: none; font-size: 9px; color: #8c52ff; cursor: pointer; text-decoration: underline;">Clear</button>
       </div>
-      <div id="diag-stream-pane" style="overflow-y: auto; flex: 1; border: 1px solid #141829; border-radius: 4px; padding: 8px; background: #030408; height: 220px;">
+      <div id="diag-stream-pane" style="overflow-y: auto; flex: 1; border: 1px solid #090b1f; border-radius: 4px; padding: 8px; background: #04040a; height: 220px;">
         Trace engine initialized. Waiting...
       </div>
     </div>
@@ -968,22 +968,22 @@ function createVisualDiagnosticsPanel() {
       <div class="diag-metric-card">
         <div class="diag-metric-title">Projected API Volume Estimator</div>
         <div class="diag-metric-group">
-          <div><span class="diag-stat-label">Est. Reads:</span> <span class="diag-stat-val" style="color: #6ee7b7;" id="f-reads">0</span></div>
-          <div><span class="diag-stat-label">Est. Writes:</span> <span class="diag-stat-val" style="color: #fb7185;" id="f-writes">0</span></div>
+          <div><span class="diag-stat-label">Est. Reads:</span> <span class="diag-stat-val" style="color: #00e5d4;" id="f-reads">0</span></div>
+          <div><span class="diag-stat-label">Est. Writes:</span> <span class="diag-stat-val" style="color: #d4af37;" id="f-writes">0</span></div>
           <div><span class="diag-stat-label">getDoc calls:</span> <span class="diag-stat-val" id="f-getDoc">0</span></div>
           <div><span class="diag-stat-label">getDocs calls:</span> <span class="diag-stat-val" id="f-getDocs">0</span></div>
           <div><span class="diag-stat-label">updateDoc:</span> <span class="diag-stat-val" id="f-updateDoc">0</span></div>
           <div><span class="diag-stat-label">addDoc:</span> <span class="diag-stat-val" id="f-addDoc">0</span></div>
           <div><span class="diag-stat-label">setDoc:</span> <span class="diag-stat-val" id="f-setDoc">0</span></div>
           <div><span class="diag-stat-label">deleteDoc:</span> <span class="diag-stat-val" id="f-deleteDoc">0</span></div>
-          <div><span class="diag-stat-label">Transactions:</span> <span class="diag-stat-val" style="color:#c084fc;" id="f-transactions">0</span></div>
-          <div><span class="diag-stat-label">onSnapshot refs:</span> <span class="diag-stat-val" style="color:#fbbf24;" id="f-snaps">0</span></div>
+          <div><span class="diag-stat-label">Transactions:</span> <span class="diag-stat-val" style="color:#8c52ff;" id="f-transactions">0</span></div>
+          <div><span class="diag-stat-label">onSnapshot refs:</span> <span class="diag-stat-val" style="color:#d4af37;" id="f-snaps">0</span></div>
         </div>
       </div>
 
       <div class="diag-metric-card">
         <div class="diag-metric-title">Snapshot Stethoscope Observers</div>
-        <div id="diag-fs-listeners" style="display: flex; flex-direction: column; gap: 8px; font-size: 10px; color: #9ca3af; max-height: 250px; overflow-y: auto;">
+        <div id="diag-fs-listeners" style="display: flex; flex-direction: column; gap: 8px; font-size: 10px; color: #a7c957; max-height: 250px; overflow-y: auto;">
           No listeners active currently.
         </div>
       </div>
@@ -996,14 +996,14 @@ function createVisualDiagnosticsPanel() {
         <div style="flex:1; overflow-y:auto; max-height: 400px;">
           <table style="width: 100%; border-collapse: collapse; font-size: 10px;">
             <thead>
-              <tr style="border-bottom: 1px solid #141829; text-align: left; color:#818cf8;">
+              <tr style="border-bottom: 1px solid #090b1f; text-align: left; color:#8c52ff;">
                 <th style="padding: 6px 4px;">Component</th>
                 <th style="padding: 6px 4px;">Renders</th>
                 <th style="padding: 6px 4px;">Last Reason</th>
               </tr>
             </thead>
             <tbody id="diag-render-table-body">
-              <tr><td colspan="3" style="padding:10px; text-align:center; color:#4b5563;">No component logs recorded.</td></tr>
+              <tr><td colspan="3" style="padding:10px; text-align:center; color:#16002d;">No component logs recorded.</td></tr>
             </tbody>
           </table>
         </div>
@@ -1016,14 +1016,14 @@ function createVisualDiagnosticsPanel() {
         <div class="diag-metric-title">Time Engine & Drift Analyzer</div>
         <div class="diag-metric-group">
           <div><span class="diag-stat-label">Active Worker:</span> <span class="diag-stat-val" id="clk-worker">0</span></div>
-          <div><span class="diag-stat-label">Max Drift Spike:</span> <span class="diag-stat-val" style="color:#fb7185;" id="clk-drift">0ms</span></div>
-          <div><span class="diag-stat-label">Intervals Active:</span> <span class="diag-stat-val" style="color:#fde047;" id="clk-intervals">0</span></div>
+          <div><span class="diag-stat-label">Max Drift Spike:</span> <span class="diag-stat-val" style="color:#d4af37;" id="clk-drift">0ms</span></div>
+          <div><span class="diag-stat-label">Intervals Active:</span> <span class="diag-stat-val" style="color:#d4af37;" id="clk-intervals">0</span></div>
         </div>
       </div>
 
       <div class="diag-metric-card">
         <div class="diag-metric-title">Active Global Intervals</div>
-        <div id="diag-intervals-list" style="max-height: 120px; overflow-y:auto; font-size:9.5px; color:#9ca3af; display:flex; flex-direction:column; gap:4px;">
+        <div id="diag-intervals-list" style="max-height: 120px; overflow-y:auto; font-size:9.5px; color:#a7c957; display:flex; flex-direction:column; gap:4px;">
           No active global interval registrations.
         </div>
       </div>
@@ -1097,25 +1097,25 @@ function createVisualDiagnosticsPanel() {
     const rtt = document.getElementById("field-rtt");
     if (rtt) {
       rtt.textContent = `${data.averageLatencyMs}ms${data.latencySpikesCount > 0 ? ` (Spikes: ${data.latencySpikesCount})` : ''}`;
-      rtt.style.color = data.averageLatencyMs > 2000 ? "#ef4444" : "#10b981";
+      rtt.style.color = data.averageLatencyMs > 2000 ? "#d4af37" : "#00e5d4";
     }
 
     const connState = document.getElementById("field-conn-state");
     if (connState) {
       connState.textContent = data.connectionState;
       if (data.connectionState === "Healthy") {
-        connState.style.color = "#10b981";
+        connState.style.color = "#00e5d4";
       } else if (data.connectionState === "Slow") {
-        connState.style.color = "#fbbf24";
+        connState.style.color = "#d4af37";
       } else {
-        connState.style.color = "#ef4444";
+        connState.style.color = "#d4af37";
       }
     }
 
     const skew = document.getElementById("field-skew");
     if (skew) {
       skew.textContent = `${data.clockSkewMs}ms`;
-      skew.style.color = Math.abs(data.clockSkewMs) > 5000 ? "#fbbf24" : "#38bdf8";
+      skew.style.color = Math.abs(data.clockSkewMs) > 5000 ? "#d4af37" : "#00d4ff";
     }
 
     const readF = document.getElementById("field-readers");
@@ -1124,7 +1124,7 @@ function createVisualDiagnosticsPanel() {
     const mt = document.getElementById("field-multi-tab");
     if (mt) {
       mt.textContent = data.tabOpenCount > 1 ? `Open (${data.tabOpenCount} tabs)` : 'No';
-      mt.style.color = data.tabOpenCount > 1 ? "#ef4444" : "#10b981";
+      mt.style.color = data.tabOpenCount > 1 ? "#d4af37" : "#00e5d4";
     }
 
     const cw = document.getElementById("field-workers");
@@ -1202,9 +1202,9 @@ function createVisualDiagnosticsPanel() {
         listenersContainer.innerHTML = data.activeListeners.map(l => {
           const isDupe = l.count > 1;
           return `
-            <div style="display: flex; justify-content: space-between; padding: 4px 6px; background: ${isDupe ? 'rgba(239, 68, 68, 0.08)' : '#0d101d'}; border: 1px solid ${isDupe ? 'rgba(239,68,68,0.2)' : 'transparent'}; border-radius: 4px;">
-              <span style="color: ${isDupe ? '#f87171' : '#e2e8f0'}; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 320px;" title="${l.path}">${l.path}</span>
-              <span style="font-weight: bold; color: ${isDupe ? '#ef4444' : '#818cf8'};">${l.count} inst (${l.age}s)</span>
+            <div style="display: flex; justify-content: space-between; padding: 4px 6px; background: ${isDupe ? 'rgb(212,175,55, 0.08)' : '#090b1f'}; border: 1px solid ${isDupe ? 'rgb(212,175,55,0.2)' : 'transparent'}; border-radius: 4px;">
+              <span style="color: ${isDupe ? '#d4af37' : '#ffffff'}; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 320px;" title="${l.path}">${l.path}</span>
+              <span style="font-weight: bold; color: ${isDupe ? '#d4af37' : '#8c52ff'};">${l.count} inst (${l.age}s)</span>
             </div>
           `;
         }).join("");
@@ -1216,15 +1216,15 @@ function createVisualDiagnosticsPanel() {
     if (renderTable) {
       const renderEntries = Object.entries(data.renderTracker);
       if (renderEntries.length === 0) {
-        renderTable.innerHTML = `<tr><td colspan="3" style="padding:10px; text-align:center; color:#4b5563;">No component logs recorded.</td></tr>`;
+        renderTable.innerHTML = `<tr><td colspan="3" style="padding:10px; text-align:center; color:#16002d;">No component logs recorded.</td></tr>`;
       } else {
         renderTable.innerHTML = renderEntries.map(([comp, val]) => {
           const elapsedSecs = Math.round((Date.now() - val.lastRender) / 1000);
           return `
-            <tr style="border-bottom: 1px solid #141829; hover:bg-white/5;">
-              <td style="padding: 6px 4px; font-weight: bold; color: #fff;">${comp}</td>
-              <td style="padding: 6px 4px; color: #10b981;">${val.count} <span style="font-size:8px; opacity:0.65;">(${elapsedSecs}s ago)</span></td>
-              <td style="padding: 6px 4px; color: #9ca3af; max-width: 200px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" title="${val.history[0] || '-'}">${val.history[0] || "-"}</td>
+            <tr style="border-bottom: 1px solid #090b1f; hover:bg-white/5;">
+              <td style="padding: 6px 4px; font-weight: bold; color: #ffffff;">${comp}</td>
+              <td style="padding: 6px 4px; color: #00e5d4;">${val.count} <span style="font-size:8px; opacity:0.65;">(${elapsedSecs}s ago)</span></td>
+              <td style="padding: 6px 4px; color: #a7c957; max-width: 200px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" title="${val.history[0] || '-'}">${val.history[0] || "-"}</td>
             </tr>
           `;
         }).join("");
@@ -1238,7 +1238,7 @@ function createVisualDiagnosticsPanel() {
     const clkDrift = document.getElementById("clk-drift");
     if (clkDrift) {
       clkDrift.textContent = `${Math.round(data.maxDriftDetected)}ms`;
-      clkDrift.style.color = data.maxDriftDetected > 300 ? "#ef4444" : "#10b981";
+      clkDrift.style.color = data.maxDriftDetected > 300 ? "#d4af37" : "#00e5d4";
     }
 
     const clkIntervals = document.getElementById("clk-intervals");
@@ -1250,9 +1250,9 @@ function createVisualDiagnosticsPanel() {
         intList.textContent = "No active global registrations.";
       } else {
         intList.innerHTML = data.trackedIntervals.map(i => `
-          <div style="display: flex; justify-content: space-between; padding: 2px 4px; background:#0d101d; border-radius:3px;">
+          <div style="display: flex; justify-content: space-between; padding: 2px 4px; background:#090b1f; border-radius:3px;">
             <span style="overflow:hidden; text-overflow:ellipsis; max-width:320px;">${i.name}</span>
-            <span style="color:#fde047;">${i.timeout}ms</span>
+            <span style="color:#d4af37;">${i.timeout}ms</span>
           </div>
         `).join("");
       }
@@ -1261,17 +1261,17 @@ function createVisualDiagnosticsPanel() {
     const xpH = document.getElementById("diag-xp-history");
     if (xpH) {
       if (data.xpHistory.length === 0) {
-        xpH.innerHTML = `<div style="padding:10px; text-align:center; color:#4b5563;">Waiting for transactions...</div>`;
+        xpH.innerHTML = `<div style="padding:10px; text-align:center; color:#16002d;">Waiting for transactions...</div>`;
       } else {
         xpH.innerHTML = data.xpHistory.map(h => {
-          let color = "#10b981"; // success
-          if (h.status === "blocked") color = "#fde047";
-          if (h.status === "cooldown") color = "#6b7280";
+          let color = "#00e5d4"; // success
+          if (h.status === "blocked") color = "#d4af37";
+          if (h.status === "cooldown") color = "#a7c957";
           return `
-            <div style="font-size:9px; padding: 4px 6px; background: #0d101d; border-radius: 4px; border-left: 2px solid ${color};">
+            <div style="font-size:9px; padding: 4px 6px; background: #090b1f; border-radius: 4px; border-left: 2px solid ${color};">
               <span style="opacity: 0.6; float:right;">${new Date(h.timestamp).toLocaleTimeString()}</span>
               <span style="font-weight:bold; color:${color};">[${h.status.toUpperCase()}]</span> 
-              <span style="color: #fff;">${h.amount > 0 ? '+' : ''}${h.amount} XP</span> (${h.source})
+              <span style="color: #ffffff;">${h.amount > 0 ? '+' : ''}${h.amount} XP</span> (${h.source})
               ${h.details ? `<div style="opacity:0.75; font-size:8px; margin-top:2px;">${h.details}</div>` : ''}
             </div>
           `;

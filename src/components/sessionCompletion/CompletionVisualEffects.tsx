@@ -15,13 +15,13 @@ export const CompletionVisualEffects: React.FC = React.memo(() => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
       {/* Stars and cosmic background depth */}
-      <div className="absolute inset-0 bg-radial-gradient from-indigo-950/20 via-[#030614]/80 to-[#020308] opacity-90" />
+      <div className="absolute inset-0 bg-radial-gradient from-panel/20 via-[#04040a]/80 to-[#04040a] opacity-90" />
       
       {/* Twinkling Cosmic Stars */}
       {stars.map((star) => (
         <motion.div
           key={star.id}
-          className="absolute rounded-full bg-cyan-400/80 shadow-[0_0_8px_rgba(34,211,238,0.8)]"
+          className="absolute rounded-full bg-neon/80 shadow-[0_0_8px_rgb(0,212,255,0.8)]"
           style={{
             top: star.top,
             left: star.left,
@@ -60,13 +60,13 @@ export const CompletionVisualEffects: React.FC = React.memo(() => {
             strokeDasharray="6 12 4 8"
           />
           {/* Orbital satellite node */}
-          <circle cx="50" cy="6" r="1.5" fill="#22d3ee" className="shadow-[0_0_12px_rgba(34,211,238,1)]" />
+          <circle cx="50" cy="6" r="1.5" fill="#00d4ff" className="shadow-[0_0_12px_rgb(0,212,255,1)]" />
           
           <defs>
             <linearGradient id="orbitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#4f46e5" stopOpacity="0.4" />
-              <stop offset="50%" stopColor="#fdba74" stopOpacity="0.1" />
-              <stop offset="100%" stopColor="#22d3ee" stopOpacity="0.4" />
+              <stop offset="0%" stopColor="#8c52ff" stopOpacity="0.4" />
+              <stop offset="50%" stopColor="#d4af37" stopOpacity="0.1" />
+              <stop offset="100%" stopColor="#00d4ff" stopOpacity="0.4" />
             </linearGradient>
           </defs>
         </motion.svg>
@@ -90,12 +90,12 @@ export const CompletionVisualEffects: React.FC = React.memo(() => {
             strokeDasharray="12 6"
           />
           {/* Inner satellite node */}
-          <circle cx="10" cy="50" r="1" fill="#4f46e5" />
+          <circle cx="10" cy="50" r="1" fill="#8c52ff" />
           
           <defs>
             <linearGradient id="innerOrbitGradient" x1="100%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#22d3ee" stopOpacity="0.3" />
-              <stop offset="100%" stopColor="#4f46e5" stopOpacity="0.3" />
+              <stop offset="0%" stopColor="#00d4ff" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#8c52ff" stopOpacity="0.3" />
             </linearGradient>
           </defs>
         </motion.svg>
@@ -103,7 +103,7 @@ export const CompletionVisualEffects: React.FC = React.memo(() => {
 
       {/* Dynamic ambient pulse */}
       <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[220px] rounded-full bg-cyan-500/5 blur-3xl pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[220px] rounded-full bg-neon/5 blur-3xl pointer-events-none"
         animate={{
           scale: [0.9, 1.25, 0.9],
           opacity: [0.4, 0.8, 0.4]

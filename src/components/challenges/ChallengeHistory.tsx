@@ -41,32 +41,32 @@ export const ChallengeHistory: React.FC<ChallengeHistoryProps> = ({
       label: "معدل الفوز",
       value: `${winRate}%`,
       sub: `${wins} فوز / ${totalCompleted} نزالات`,
-      accent: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
-      valueColor: "text-emerald-400",
+      accent: "text-lemon bg-lemon/10 border-lemon/20",
+      valueColor: "text-lemon",
     },
     {
       icon: <TrendingUp size={15} />,
       label: "أعلى نتيجة فوز",
       value: `+${maxVictoriousXp} XP`,
       sub: "في نزال واحد",
-      accent: "text-amber-400 bg-amber-500/10 border-amber-500/20",
-      valueColor: "text-amber-400",
+      accent: "text-gold bg-gold/10 border-gold/20",
+      valueColor: "text-gold",
     },
     {
       icon: <Crosshair size={15} />,
       label: "إجمالي الهزائم",
       value: `${losses}`,
       sub: "فرصة للتعويض",
-      accent: "text-rose-400 bg-rose-500/10 border-rose-500/20",
-      valueColor: "text-rose-400",
+      accent: "text-gold bg-gold/10 border-gold/20",
+      valueColor: "text-gold",
     },
     {
       icon: <Award size={15} />,
       label: "التعادلات",
       value: `${draws}`,
       sub: "توازن الطاقات",
-      accent: "text-gray-300 bg-white/5 border-white/10",
-      valueColor: "text-gray-300",
+      accent: "text-white/70 bg-white/5 border-white/10",
+      valueColor: "text-white/70",
     },
   ];
 
@@ -77,14 +77,14 @@ export const ChallengeHistory: React.FC<ChallengeHistoryProps> = ({
         {stats.map((s) => (
           <div key={s.label} className="p-4 rounded-2xl bg-space-dark/50 border border-white/5 flex flex-col justify-between gap-3 hover:border-white/10 transition-colors">
             <div className="flex items-center justify-between">
-              <span className="text-xs text-gray-400 font-medium">{s.label}</span>
+              <span className="text-xs text-white/60 font-medium">{s.label}</span>
               <span className={`w-8 h-8 rounded-lg flex items-center justify-center ${s.accent}`}>
                 {s.icon}
               </span>
             </div>
             <div className="flex items-baseline gap-2">
               <span className={`text-2xl font-black font-mono ${s.valueColor}`}>{s.value}</span>
-              <span className="text-[10px] text-gray-500 font-mono">{s.sub}</span>
+              <span className="text-[10px] text-white/50 font-mono">{s.sub}</span>
             </div>
           </div>
         ))}
@@ -93,7 +93,7 @@ export const ChallengeHistory: React.FC<ChallengeHistoryProps> = ({
       {/* Ledger history listing */}
       <div className="p-6 rounded-3xl border border-white/5 bg-space-dark/30">
         <h3 className="text-sm font-bold text-white flex items-center gap-2 mb-4">
-          <Trophy size={15} className="text-amber-400" />
+          <Trophy size={15} className="text-gold" />
           <span>سجل النزالات السابقة</span>
         </h3>
 
@@ -101,7 +101,7 @@ export const ChallengeHistory: React.FC<ChallengeHistoryProps> = ({
           <div className="text-center py-12 max-w-sm mx-auto">
             <div className="text-3xl mb-3">⚔️</div>
             <h4 className="text-sm font-bold text-white mb-1.5">لم تخض أي نزالات بعد</h4>
-            <p className="text-[11px] text-gray-500 leading-relaxed">
+            <p className="text-[11px] text-white/50 leading-relaxed">
               بعد إنهاء أول نزال ستظهر نتائجك وإحصائياتك هنا.
             </p>
           </div>
@@ -117,13 +117,13 @@ export const ChallengeHistory: React.FC<ChallengeHistoryProps> = ({
               const isDraw = challenge.winnerId === "draw";
 
               let resultLabel = "خسارة";
-              let resultClass = "text-rose-400 bg-rose-500/10 border-rose-500/20";
+              let resultClass = "text-gold bg-gold/10 border-gold/20";
               if (isWinner) {
                 resultLabel = "انتصار 🏆";
-                resultClass = "text-emerald-400 bg-emerald-500/10 border-emerald-500/20";
+                resultClass = "text-lemon bg-lemon/10 border-lemon/20";
               } else if (isDraw) {
                 resultLabel = "تعادل 🤝";
-                resultClass = "text-gray-300 bg-white/5 border-white/10";
+                resultClass = "text-white/70 bg-white/5 border-white/10";
               }
 
               const challengeDate = challenge.completedAt
@@ -144,11 +144,11 @@ export const ChallengeHistory: React.FC<ChallengeHistoryProps> = ({
                     <div className="min-w-0">
                       <div className="text-sm font-bold text-white flex items-center gap-1.5">
                         <span className="truncate">ضد {opponentName}</span>
-                        <span className="text-[10px] text-gray-500 font-mono shrink-0">({challengeDate})</span>
+                        <span className="text-[10px] text-white/50 font-mono shrink-0">({challengeDate})</span>
                       </div>
-                      <div className="text-xs text-gray-400 mt-1 flex items-center gap-3 flex-wrap">
+                      <div className="text-xs text-white/60 mt-1 flex items-center gap-3 flex-wrap">
                         <span className="flex items-center gap-1 text-[11px] font-mono">
-                          <Swords size={11} className="text-amber-400" />
+                          <Swords size={11} className="text-gold" />
                           <span>نتيجتك: {myXp} XP</span>
                         </span>
                         <span className="flex items-center gap-1 text-[11px] font-mono border-r border-white/10 pr-3">
@@ -159,9 +159,9 @@ export const ChallengeHistory: React.FC<ChallengeHistoryProps> = ({
                   </div>
 
                   <div className="flex items-center justify-between md:justify-end gap-6 md:text-left self-stretch md:self-auto border-t md:border-0 border-white/5 pt-3 md:pt-0">
-                    <span className="md:hidden text-xs text-gray-500">مدة النزال</span>
-                    <div className="flex items-center gap-1 text-xs text-gray-400 font-mono shrink-0">
-                      <Timer size={13} className="text-amber-400" />
+                    <span className="md:hidden text-xs text-white/50">مدة النزال</span>
+                    <div className="flex items-center gap-1 text-xs text-white/60 font-mono shrink-0">
+                      <Timer size={13} className="text-gold" />
                       <span>{challenge.durationMinutes} دقيقة تركيز</span>
                     </div>
                   </div>
