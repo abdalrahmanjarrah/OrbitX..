@@ -17,7 +17,7 @@ describe("cn (className merger)", () => {
 
   it("lets later classes override earlier conflicting tailwind classes", () => {
     expect(cn("px-2", "px-4")).toBe("px-4");
-    expect(cn("text-red-500", "text-blue-500")).toBe("text-blue-500");
+    expect(cn("text-gold", "text-neon")).toBe("text-neon");
   });
 
   it("handles empty input", () => {
