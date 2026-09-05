@@ -15,7 +15,7 @@ export default function StarBackground() {
 
   useEffect(() => {
     const starColors = ['#ffffff', '#c7d2fe', '#fbcfe8', '#a78bfa'];
-    const generatedStars: Star[] = Array.from({ length: 150 }).map((_, i) => ({
+    const generatedStars: Star[] = Array.from({ length: 55 }).map((_, i) => ({
       id: i,
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
@@ -74,11 +74,11 @@ export default function StarBackground() {
         ))}
       </div>
 
-      {/* Highly Realistic Thin Shooting Stars with Ambient Space Flashes */}
+      {/* Highly Realistic Thin Shooting Stars (no full-screen color-dodge flash
+          layers — those forced a full-screen blend every second and hurt perf) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Meteor 1 */}
         <div className="meteor-container meteor-1">
-          <div className="meteor-flash" />
           <div className="meteor-body">
             <div className="meteor-nucleus" />
             <div className="meteor-trail" />
@@ -87,7 +87,6 @@ export default function StarBackground() {
 
         {/* Meteor 2 */}
         <div className="meteor-container meteor-2">
-          <div className="meteor-flash" />
           <div className="meteor-body">
             <div className="meteor-nucleus" />
             <div className="meteor-trail" />
@@ -96,7 +95,6 @@ export default function StarBackground() {
 
         {/* Meteor 3 */}
         <div className="meteor-container meteor-3">
-          <div className="meteor-flash" />
           <div className="meteor-body">
             <div className="meteor-nucleus" />
             <div className="meteor-trail" />
@@ -105,7 +103,6 @@ export default function StarBackground() {
 
         {/* Meteor 4 */}
         <div className="meteor-container meteor-4">
-          <div className="meteor-flash" />
           <div className="meteor-body">
             <div className="meteor-nucleus" />
             <div className="meteor-trail" />
@@ -124,17 +121,6 @@ export default function StarBackground() {
           pointer-events: none;
           opacity: 0;
           z-index: 1;
-        }
-
-        /* Ambient high-atmosphere brief flash */
-        .meteor-flash {
-          position: fixed;
-          inset: 0;
-          background-color: rgba(255, 255, 255, 0.05);
-          mix-blend-mode: color-dodge;
-          pointer-events: none;
-          opacity: 0;
-          z-index: 0;
         }
 
         .meteor-body {
@@ -174,21 +160,12 @@ export default function StarBackground() {
           left: 95%;
           animation: meteor-flow-1 24s linear infinite;
         }
-        .meteor-1 .meteor-flash {
-          animation: flash-flow-1 24s ease-out infinite;
-        }
 
         @keyframes meteor-flow-1 {
           0%, 0.5% { transform: translate(0, 0); opacity: 0; }
           1% { opacity: 1; }
           14% { transform: translate(-650px, 303px); opacity: 0; }
           100% { transform: translate(-650px, 303px); opacity: 0; }
-        }
-        @keyframes flash-flow-1 {
-          0%, 0.5% { opacity: 0; }
-          1.5% { opacity: 0.14; }
-          7% { opacity: 0; }
-          100% { opacity: 0; }
         }
 
         /* Meteor 2 Configuration */
@@ -197,21 +174,12 @@ export default function StarBackground() {
           left: 100%;
           animation: meteor-flow-2 28s linear infinite 8s;
         }
-        .meteor-2 .meteor-flash {
-          animation: flash-flow-2 28s ease-out infinite 8s;
-        }
 
         @keyframes meteor-flow-2 {
           0%, 0.5% { transform: translate(0, 0); opacity: 0; }
           1% { opacity: 1; }
           13% { transform: translate(-700px, 326px); opacity: 0; }
           100% { transform: translate(-700px, 326px); opacity: 0; }
-        }
-        @keyframes flash-flow-2 {
-          0%, 0.5% { opacity: 0; }
-          1.5% { opacity: 0.14; }
-          6.5% { opacity: 0; }
-          100% { opacity: 0; }
         }
 
         /* Meteor 3 Configuration */
@@ -220,21 +188,12 @@ export default function StarBackground() {
           left: 90%;
           animation: meteor-flow-3 32s linear infinite 16s;
         }
-        .meteor-3 .meteor-flash {
-          animation: flash-flow-3 32s ease-out infinite 16s;
-        }
 
         @keyframes meteor-flow-3 {
           0%, 0.4% { transform: translate(0, 0); opacity: 0; }
           1% { opacity: 1; }
           12% { transform: translate(-600px, 280px); opacity: 0; }
           100% { transform: translate(-600px, 280px); opacity: 0; }
-        }
-        @keyframes flash-flow-3 {
-          0%, 0.4% { opacity: 0; }
-          1.5% { opacity: 0.14; }
-          6% { opacity: 0; }
-          100% { opacity: 0; }
         }
 
         /* Meteor 4 Configuration */
@@ -243,21 +202,12 @@ export default function StarBackground() {
           left: 100%;
           animation: meteor-flow-4 36s linear infinite 24s;
         }
-        .meteor-4 .meteor-flash {
-          animation: flash-flow-4 36s ease-out infinite 24s;
-        }
 
         @keyframes meteor-flow-4 {
           0%, 0.4% { transform: translate(0, 0); opacity: 0; }
           1% { opacity: 1; }
           12% { transform: translate(-680px, 317px); opacity: 0; }
           100% { transform: translate(-680px, 317px); opacity: 0; }
-        }
-        @keyframes flash-flow-4 {
-          0%, 0.4% { opacity: 0; }
-          1.5% { opacity: 0.14; }
-          6% { opacity: 0; }
-          100% { opacity: 0; }
         }
       `}</style>
     </div>

@@ -376,7 +376,15 @@ export default function QuranPlayer() {
       <audio
         ref={audioRef}
         src={getAudioUrl()}
+        preload="none"
         onEnded={() => setIsPlaying(false)}
+        onError={() => {
+          setIsPlaying(false);
+          if (audioRef.current) {
+            audioRef.current.removeAttribute("src");
+            audioRef.current.load();
+          }
+        }}
       />
       <AnimatePresence>
         {isOpen && (

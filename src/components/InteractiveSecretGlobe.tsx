@@ -94,6 +94,20 @@ export default function InteractiveSecretGlobe() {
     );
   };
 
+  const pendingMoveRef = useRef<{ x: number; y: number } | null>(null);
+  const rafRef = useRef<number | null>(null);
+
+  const scheduleMove = (x: number, y: number) => {
+    pendingMoveRef.current = { x, y };
+    if (rafRef.current !== null) return;
+    rafRef.current = requestAnimationFrame(() => {
+      rafRef.current = null;
+      const p = pendingMoveRef.current;
+      pendingMoveRef.current = null;
+      if (p) handleMove(p.x, p.y);
+    });
+  };
+
   const handleEnd = () => {
     setIsDragging(false);
   };
@@ -102,10 +116,10 @@ export default function InteractiveSecretGlobe() {
     if (!isDragging) return;
 
     const handleWindowMouseMove = (e: MouseEvent) =>
-      handleMove(e.clientX, e.clientY);
+      scheduleMove(e.clientX, e.clientY);
     const handleWindowTouchMove = (e: TouchEvent) => {
       if (e.touches && e.touches[0]) {
-        handleMove(e.touches[0].clientX, e.touches[0].clientY);
+        scheduleMove(e.touches[0].clientX, e.touches[0].clientY);
       }
     };
     const handleWindowEnd = () => handleEnd();
@@ -122,6 +136,10 @@ export default function InteractiveSecretGlobe() {
       window.removeEventListener("mouseup", handleWindowEnd);
       window.removeEventListener("touchmove", handleWindowTouchMove);
       window.removeEventListener("touchend", handleWindowEnd);
+      if (rafRef.current !== null) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
     };
   }, [isDragging]);
 
