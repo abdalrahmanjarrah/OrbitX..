@@ -6,25 +6,43 @@ import { motion, AnimatePresence } from "motion/react";
 import { playSound } from "../lib/sound";
 import { useLanguage } from "../context/LanguageContext";
 
+const SEEN_KEY = "orbitx_admin_alerts_seen_v1";
+
+const getSeenIds = (): Set<string> => {
+  try {
+    const raw = window.localStorage.getItem(SEEN_KEY);
+    if (!raw) return new Set();
+    return new Set(JSON.parse(raw));
+  } catch {
+    return new Set();
+  }
+};
+
+const markSeen = (id: string) => {
+  try {
+    const ids = getSeenIds();
+    ids.add(id);
+    window.localStorage.setItem(SEEN_KEY, JSON.stringify(Array.from(ids)));
+  } catch {}
+};
+
 export default function GlobalAdminAlert() {
   const { isAr, t } = useLanguage();
   const [alert, setAlert] = useState<any | null>(null);
   const shownAlertsRef = useRef<Set<string>>(new Set());
 
   useEffect(() => {
-    // Only fetch alerts created extremely recently (we only want new realtime alerts)
+    // Show each admin message ONCE per browser — remember across reloads in localStorage,
+    // and dedupe within the current session too.
     const q = query(collection(db, "admin_alerts"), orderBy("createdAt", "desc"), limit(1));
     const unsub = onSnapshot(q, (snap) => {
       if (!snap.empty) {
         const data = snap.docs[0].data();
         const id = snap.docs[0].id;
-        
-        // Prevent showing old alerts on load, only show if it's within last 30 seconds
-        const now = Date.now();
-        const alertTime = data.createdAt?.toDate ? data.createdAt.toDate().getTime() : now;
-        
-        if (!shownAlertsRef.current.has(id) && (now - alertTime < 30000)) {
+
+        if (!shownAlertsRef.current.has(id) && !getSeenIds().has(id)) {
           shownAlertsRef.current.add(id);
+          markSeen(id);
           setAlert({ id, ...data });
           try {
             playSound("notification"); // Fallback to whatever sound is available in sound.ts
