@@ -1,0 +1,11 @@
+import{c as i,a_ as c}from"./index-B4jhgdY3.js";/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const u=[["path",{d:"M21 12a9 9 0 1 1-6.219-8.56",key:"13zald"}]],k=i("loader-circle",u);/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const d=[["path",{d:"M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15",key:"143lza"}],["path",{d:"M11 12 5.12 2.2",key:"qhuxz6"}],["path",{d:"m13 12 5.88-9.8",key:"hbye0f"}],["path",{d:"M8 7h8",key:"i86dvs"}],["circle",{cx:"12",cy:"17",r:"5",key:"qbz8iq"}],["path",{d:"M12 18v-2h-.5",key:"fawc4q"}]],w=i("medal",d),p="BAUpOUlsrmXMfVQCwdDgAYB-_6bKUSmxu7dYUe2kFE0hVfR6rQJd7IgdCZaZ6salzHP2cgAlH6Hu_DnUfn4mbok";function h(e){const n="=".repeat((4-e.length%4)%4),a=(e+n).replace(/-/g,"+").replace(/_/g,"/"),t=window.atob(a),r=new Uint8Array(t.length);for(let s=0;s<t.length;s++)r[s]=t.charCodeAt(s);return r}async function f(){var e;try{const{data:n}=await c.getSession();return((e=n.session)==null?void 0:e.access_token)||""}catch{return""}}async function o(e,n){try{const a=await f(),t={"Content-Type":"application/json"};return a&&(t.Authorization=`Bearer ${a}`),(await fetch(e,{method:"POST",headers:t,body:JSON.stringify(n)})).ok}catch{return!1}}function l(){return"serviceWorker"in navigator&&"PushManager"in window&&"Notification"in window&&!0}async function b(e){var n,a;if(!l()||!e)return!1;try{if(Notification.permission==="denied"||Notification.permission==="default"&&await Notification.requestPermission()!=="granted")return!1;const t=await navigator.serviceWorker.ready;let r=await t.pushManager.getSubscription();r||(r=await t.pushManager.subscribe({userVisibleOnly:!0,applicationServerKey:h(p)}));const s=r.toJSON();return await o("/api/push/subscribe",{uid:e,subscription:{endpoint:r.endpoint,keys:{p256dh:(n=s.keys)==null?void 0:n.p256dh,auth:(a=s.keys)==null?void 0:a.auth}}})}catch{return!1}}async function m(e,n,a,t){return e?o("/api/push/send",{uid:e,title:n,body:a||"",url:t}):!1}export{k as L,w as M,b as e,l as i,m as s};
